@@ -1,6 +1,12 @@
 ﻿/**
 * 
 * このテストファイルは各サンプルファイルの .sspj の読み込み時間を計測するためのテストです。
+*
+* 使い方.
+* sspj_files こちらの変数に必要なパスを追記し、実行します。
+* デフォルトではサンプルデータのRingo.sspjを読み込みます。
+*
+* 以上
 * 
 */
 
@@ -38,33 +44,9 @@ bool load_test(FilePathView path)
 
 void Main()
 {
-	// 各サンプルファイル
+	// 各ファイルパス
 	constexpr const char32_t* sspj_files[] =
-	{
-		U"ss6sample/animation_template/character_sample1/character_sample1.sspj",
-		U"ss6sample/animation_template/character_template1/character_template1.sspj",
-
-		U"ss6sample/AnimeMaking/AnimeMaking.sspj",
-
-		U"ss6sample/basic_samples/Antarctic/AntarcticProject.sspj",
-		U"ss6sample/basic_samples/Card/CardProject.sspj",
-		U"ss6sample/basic_samples/Comipo/ComipoProject.sspj",
-		U"ss6sample/basic_samples/Effect/EffectProject.sspj",
-		U"ss6sample/basic_samples/Mask/Mask.sspj",
-		U"ss6sample/basic_samples/MeshBone/Knight.sspj",
-		U"ss6sample/basic_samples/Robo/RoboProject.sspj",
-
-		U"ss6sample/chara_box/box_00_00.sspj",
-
-		U"ss6sample/example_ui_button/button/original/button.sspj",
-		U"ss6sample/example_ui_button/button/packed_texture/button.sspj",
-		U"ss6sample/example_ui_button/effect/click.sspj",
-
-		U"ss6sample/ParticleEffect/ParticleEffect.sspj",
-		U"ss6sample/ParticleEffect_ACTMV/ParticleEffect_ACTMV.sspj",
-
-		U"ss6sample/SPR/spr_00_00.sspj",
-
+	{		
 		U"ss6sample/Ringo/Ringo.sspj",
 	};
 
