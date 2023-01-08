@@ -352,6 +352,4 @@ MigrationBackup/
 # 
 *[Dd]ebug*
 *[Rr]elease*
-settings.ini
-built-in_resource_supporter.ini
-s3d_built-in_resource_supporter/App/test/*
+ss6sdk_for_s3d/App/ss6sample/*
