@@ -49,4 +49,4 @@ OpenSiv3Dのリポジトリからコピーし`./ss6sdk_for_s3d/ThirdParty/tinyxm
 
 構成コピー元はDebugで、プリプロセッサ定義に(USE_SAMPLE_MAIN)を追加しただけです。  
 定義名から実行するサンプルファイルを推測できます。  
-テスト詳細は該当の各`./ss6sdk_for_s3d/SampleMain/*.cpp`ファイルを確認ください。  
+サンプルの詳細は該当の各`./ss6sdk_for_s3d/SampleMain/*.cpp`ファイルを確認ください。  
