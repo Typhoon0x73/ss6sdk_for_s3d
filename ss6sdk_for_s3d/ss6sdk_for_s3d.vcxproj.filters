@@ -169,6 +169,12 @@
     <Filter Include="Header Files\TestMain">
       <UniqueIdentifier>{88667bf9-5a6c-4b34-9e5d-208055e164eb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\SampleMain">
+      <UniqueIdentifier>{314d6c4b-9b4d-4de7-81d2-248b604625ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SampleMain">
+      <UniqueIdentifier>{55f7debb-6f98-4626-a10e-d4e8cb7d1ddd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -221,6 +227,9 @@
     </ClCompile>
     <ClCompile Include="TestMain\sspjLoadingTimeTest.cpp">
       <Filter>Source Files\TestMain</Filter>
+    </ClCompile>
+    <ClCompile Include="SampleMain\cellmapDrawSample.cpp">
+      <Filter>Source Files\SampleMain</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -904,6 +913,9 @@
     </ClInclude>
     <ClInclude Include="TestMain\__TestDefine.h">
       <Filter>Header Files\TestMain</Filter>
+    </ClInclude>
+    <ClInclude Include="SampleMain\__SampleDefine.h">
+      <Filter>Header Files\SampleMain</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
