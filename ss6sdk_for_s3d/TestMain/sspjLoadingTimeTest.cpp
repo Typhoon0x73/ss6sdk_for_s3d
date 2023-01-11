@@ -44,6 +44,9 @@ bool load_test(FilePathView path)
 
 void Main()
 {
+	// 計測に影響があるので先に開いておく
+	Console.open();
+
 	// 各ファイルパス
 	constexpr const char32_t* sspj_files[] =
 	{		
