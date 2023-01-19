@@ -231,6 +231,9 @@
     <ClCompile Include="SampleMain\cellmapDrawSample.cpp">
       <Filter>Source Files\SampleMain</Filter>
     </ClCompile>
+    <ClCompile Include="SampleMain\buffer2DDrawSample.cpp">
+      <Filter>Source Files\SampleMain</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="App\icon.ico">
