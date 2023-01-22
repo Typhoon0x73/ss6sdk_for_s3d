@@ -209,6 +209,15 @@
     <ClCompile Include="SampleMain\buffer2DDrawSample.cpp" />
     <ClCompile Include="SampleMain\cellmapDrawSample.cpp" />
     <ClCompile Include="TestMain\sspjLoadingTimeTest.cpp" />
+    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_animedecode.cpp" />
+    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_cellmap.cpp" />
+    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_effect.cpp" />
+    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_effect2.cpp" />
+    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_effectfunction.cpp" />
+    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_matrix.cpp" />
+    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_mesh.cpp" />
+    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_PartState.cpp" />
+    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_render.cpp" />
     <ClCompile Include="ThirdParty\ss6sdk\common\loader\ssarchiver.cpp" />
     <ClCompile Include="ThirdParty\ss6sdk\common\loader\ssattribute.cpp" />
     <ClCompile Include="ThirdParty\ss6sdk\common\loader\sscharconverter.cpp" />
@@ -426,6 +435,20 @@
   <ItemGroup>
     <ClInclude Include="SampleMain\__SampleDefine.h" />
     <ClInclude Include="TestMain\__TestDefine.h" />
+    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ISsEffectRender.h" />
+    <ClInclude Include="ThirdParty\ss6sdk\common\animator\MersenneTwister.h" />
+    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_animedecode.h" />
+    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_cellmap.h" />
+    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_effect.h" />
+    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_effect2.h" />
+    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_effectfunction.h" />
+    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_macro.h" />
+    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_matrix.h" />
+    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_mesh.h" />
+    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_PartState.h" />
+    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_render.h" />
+    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_types.h" />
+    <ClInclude Include="ThirdParty\ss6sdk\common\animator\xorshift32.h" />
     <ClInclude Include="ThirdParty\ss6sdk\common\loader\ssarchiver.h" />
     <ClInclude Include="ThirdParty\ss6sdk\common\loader\ssattribute.h" />
     <ClInclude Include="ThirdParty\ss6sdk\common\loader\sscharconverter.h" />

@@ -175,6 +175,12 @@
     <Filter Include="Header Files\SampleMain">
       <UniqueIdentifier>{55f7debb-6f98-4626-a10e-d4e8cb7d1ddd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\ThirdParty\ss6sdk\common\animator">
+      <UniqueIdentifier>{00355c43-0ea5-465e-a94d-4fffd336310c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ThirdParty\ss6sdk\common\animator">
+      <UniqueIdentifier>{8a7d26e3-0fa5-498c-bf39-15cde7684507}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -233,6 +239,33 @@
     </ClCompile>
     <ClCompile Include="SampleMain\buffer2DDrawSample.cpp">
       <Filter>Source Files\SampleMain</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_render.cpp">
+      <Filter>Source Files\ThirdParty\ss6sdk\common\animator</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_mesh.cpp">
+      <Filter>Source Files\ThirdParty\ss6sdk\common\animator</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_matrix.cpp">
+      <Filter>Source Files\ThirdParty\ss6sdk\common\animator</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_effectfunction.cpp">
+      <Filter>Source Files\ThirdParty\ss6sdk\common\animator</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_effect2.cpp">
+      <Filter>Source Files\ThirdParty\ss6sdk\common\animator</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_effect.cpp">
+      <Filter>Source Files\ThirdParty\ss6sdk\common\animator</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_cellmap.cpp">
+      <Filter>Source Files\ThirdParty\ss6sdk\common\animator</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_animedecode.cpp">
+      <Filter>Source Files\ThirdParty\ss6sdk\common\animator</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_PartState.cpp">
+      <Filter>Source Files\ThirdParty\ss6sdk\common\animator</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -919,6 +952,48 @@
     </ClInclude>
     <ClInclude Include="SampleMain\__SampleDefine.h">
       <Filter>Header Files\SampleMain</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParty\ss6sdk\common\animator\xorshift32.h">
+      <Filter>Header Files\ThirdParty\ss6sdk\common\animator</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_render.h">
+      <Filter>Header Files\ThirdParty\ss6sdk\common\animator</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_types.h">
+      <Filter>Header Files\ThirdParty\ss6sdk\common\animator</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_mesh.h">
+      <Filter>Header Files\ThirdParty\ss6sdk\common\animator</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_matrix.h">
+      <Filter>Header Files\ThirdParty\ss6sdk\common\animator</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_effectfunction.h">
+      <Filter>Header Files\ThirdParty\ss6sdk\common\animator</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_macro.h">
+      <Filter>Header Files\ThirdParty\ss6sdk\common\animator</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_effect2.h">
+      <Filter>Header Files\ThirdParty\ss6sdk\common\animator</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_effect.h">
+      <Filter>Header Files\ThirdParty\ss6sdk\common\animator</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_cellmap.h">
+      <Filter>Header Files\ThirdParty\ss6sdk\common\animator</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_animedecode.h">
+      <Filter>Header Files\ThirdParty\ss6sdk\common\animator</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_PartState.h">
+      <Filter>Header Files\ThirdParty\ss6sdk\common\animator</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParty\ss6sdk\common\animator\MersenneTwister.h">
+      <Filter>Header Files\ThirdParty\ss6sdk\common\animator</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ISsEffectRender.h">
+      <Filter>Header Files\ThirdParty\ss6sdk\common\animator</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
