@@ -23,7 +23,8 @@ bool SsCellMapList::preloadTexture(SsProject* proj)
 
 	for (auto i = proj->textureList.begin(); i != proj->textureList.end(); i++)
 	{
-		String fname = Unicode::FromUTF8(*i);
+		FilePath basePath = Unicode::FromUTF8(proj->getImageBasepath());
+		String fname = FileSystem::PathAppend(basePath, Unicode::FromUTF8(*i));
 		TextureAsset::Register(FileSystem::FileName(fname), fname);
 		TextureAsset::Load(FileSystem::FileName(fname));
 	}
@@ -54,6 +55,7 @@ SsCelMapLinker::SsCelMapLinker(SsCellMap* cellmap, SsString filePath)
 	}
 
 	FilePath fullpath = FileSystem::FullPath(Unicode::FromUTF8(filePath));
+	fullpath = FileSystem::PathAppend(fullpath, Unicode::FromUTF8(cellmap->imagePath));
 
 //	DEBUG_PRINTF("TextureFile Load %s \n", fullpath.c_str());
 //	tex = SSTextureFactory::loadTexture(fullpath.c_str());

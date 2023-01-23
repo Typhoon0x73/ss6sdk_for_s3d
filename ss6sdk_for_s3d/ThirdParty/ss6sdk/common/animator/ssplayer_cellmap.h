@@ -23,7 +23,7 @@ struct SsCellValue
 
 	SsCellValue() :  
 		cell(0) ,  
-		texture(0)
+		texture()
 		{}
 };
 
