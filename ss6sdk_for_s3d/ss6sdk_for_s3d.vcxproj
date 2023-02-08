@@ -208,6 +208,8 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="SampleMain\buffer2DDrawSample.cpp" />
     <ClCompile Include="SampleMain\cellmapDrawSample.cpp" />
+    <ClCompile Include="SpriteStudio\SSProject.cpp" />
+    <ClCompile Include="SpriteStudio\SSProjectSettings.cpp" />
     <ClCompile Include="TestMain\sspjLoadingTimeTest.cpp" />
     <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_animedecode.cpp" />
     <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_cellmap.cpp" />
@@ -434,6 +436,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SampleMain\__SampleDefine.h" />
+    <ClInclude Include="SpriteStudio\SSCommon.hpp" />
+    <ClInclude Include="SpriteStudio\SSProject.hpp" />
+    <ClInclude Include="SpriteStudio\SSProjectSettings.hpp" />
     <ClInclude Include="TestMain\__TestDefine.h" />
     <ClInclude Include="ThirdParty\ss6sdk\common\animator\ISsEffectRender.h" />
     <ClInclude Include="ThirdParty\ss6sdk\common\animator\MersenneTwister.h" />

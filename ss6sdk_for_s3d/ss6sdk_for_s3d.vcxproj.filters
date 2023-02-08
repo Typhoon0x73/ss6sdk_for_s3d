@@ -181,6 +181,12 @@
     <Filter Include="Header Files\ThirdParty\ss6sdk\common\animator">
       <UniqueIdentifier>{8a7d26e3-0fa5-498c-bf39-15cde7684507}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\SpriteStudio">
+      <UniqueIdentifier>{66bfe896-b1b6-4ecd-8203-8bcba6b00c7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SpriteStudio">
+      <UniqueIdentifier>{d138b53d-852b-4478-93ed-3841a7de82d8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -266,6 +272,12 @@
     </ClCompile>
     <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_PartState.cpp">
       <Filter>Source Files\ThirdParty\ss6sdk\common\animator</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteStudio\SSProject.cpp">
+      <Filter>Source Files\SpriteStudio</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteStudio\SSProjectSettings.cpp">
+      <Filter>Source Files\SpriteStudio</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -994,6 +1006,15 @@
     </ClInclude>
     <ClInclude Include="ThirdParty\ss6sdk\common\animator\ISsEffectRender.h">
       <Filter>Header Files\ThirdParty\ss6sdk\common\animator</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteStudio\SSProject.hpp">
+      <Filter>Header Files\SpriteStudio</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteStudio\SSProjectSettings.hpp">
+      <Filter>Header Files\SpriteStudio</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteStudio\SSCommon.hpp">
+      <Filter>Header Files\SpriteStudio</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
