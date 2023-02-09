@@ -13,14 +13,15 @@ namespace s3d
 
 		~SSProject() = default;
 
-		explicit SSProject(FilePathView path);
+		explicit SSProject(FilePathView path, bool createEditorParam);
 
-		bool load(FilePathView path);
+		bool load(FilePathView path, bool createEditorParam);
 
 	private:
 
 		FilePath          m_projectDirectory{ U"" }; //!< exeからのプロジェクトのディレクトリ相対パス
 		FilePath          m_projectFileName { U"" }; //!< プロジェクトファイル名
+		String            m_projectName     { U"" }; //!< プロジェクト名
 		SSProjectSettings m_projectSettings {};      //!< プロジェクト設定
 	};
 }

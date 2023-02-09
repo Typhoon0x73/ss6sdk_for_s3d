@@ -17,6 +17,19 @@ namespace s3d
 
 	private:
 
+		// -------------------------------------------------
+		// 解析用関数
+		// -------------------------------------------------
+		void parseAnimeBaseDirectory      (StringView text);
+		void parseCellMapBaseDirectory    (StringView text);
+		void parseImageBaseDirectory      (StringView text);
+		void parseEffectBaseDirectory     (StringView text);
+		void parseExportBaseDirectory     (StringView text);
+		void parseQueryExportBaseDirectory(StringView text);
+		void parseWrapMode                (StringView text);
+		void parseFilterMode              (StringView text);
+		void parseVertexAnimeFloat        (StringView text);
+
 		FilePath           m_animeBaseDirectory      { U"" };   //!< .ssaeを保存するフォルダへの相対パス
 		FilePath           m_cellMapBaseDirectory    { U"" };   //!< .ssceを保存するフォルダへの相対パス
 		FilePath           m_imageBaseDirectory      { U"" };   //!< 画像を保存するフォルダへの相対パス
