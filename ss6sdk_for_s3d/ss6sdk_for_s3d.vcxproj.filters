@@ -1016,5 +1016,11 @@
     <ClInclude Include="SpriteStudio\SSCommon.hpp">
       <Filter>Header Files\SpriteStudio</Filter>
     </ClInclude>
+    <ClInclude Include="SpriteStudio\SSAnimeSettings.hpp">
+      <Filter>Header Files\SpriteStudio</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteStudio\SSBackgroundSettings.hpp">
+      <Filter>Header Files\SpriteStudio</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

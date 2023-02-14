@@ -436,6 +436,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SampleMain\__SampleDefine.h" />
+    <ClInclude Include="SpriteStudio\SSAnimeSettings.hpp" />
+    <ClInclude Include="SpriteStudio\SSBackgroundSettings.hpp" />
     <ClInclude Include="SpriteStudio\SSCommon.hpp" />
     <ClInclude Include="SpriteStudio\SSProject.hpp" />
     <ClInclude Include="SpriteStudio\SSProjectSettings.hpp" />
