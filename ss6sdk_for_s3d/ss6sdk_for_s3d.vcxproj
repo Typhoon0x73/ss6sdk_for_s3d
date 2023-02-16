@@ -208,6 +208,8 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="SampleMain\buffer2DDrawSample.cpp" />
     <ClCompile Include="SampleMain\cellmapDrawSample.cpp" />
+    <ClCompile Include="SpriteStudio\SSAnimeSettings.cpp" />
+    <ClCompile Include="SpriteStudio\SSBackgroundSettings.cpp" />
     <ClCompile Include="SpriteStudio\SSProject.cpp" />
     <ClCompile Include="SpriteStudio\SSProjectSettings.cpp" />
     <ClCompile Include="TestMain\sspjLoadingTimeTest.cpp" />
@@ -439,6 +441,7 @@
     <ClInclude Include="SpriteStudio\SSAnimeSettings.hpp" />
     <ClInclude Include="SpriteStudio\SSBackgroundSettings.hpp" />
     <ClInclude Include="SpriteStudio\SSCommon.hpp" />
+    <ClInclude Include="SpriteStudio\SSParseUtilities.hpp" />
     <ClInclude Include="SpriteStudio\SSProject.hpp" />
     <ClInclude Include="SpriteStudio\SSProjectSettings.hpp" />
     <ClInclude Include="TestMain\__TestDefine.h" />

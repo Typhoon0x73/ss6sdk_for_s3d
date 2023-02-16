@@ -20,15 +20,15 @@ namespace s3d
 		// -------------------------------------------------
 		// 解析用関数
 		// -------------------------------------------------
-		void parseAnimeBaseDirectory      (StringView text);
-		void parseCellMapBaseDirectory    (StringView text);
-		void parseImageBaseDirectory      (StringView text);
-		void parseEffectBaseDirectory     (StringView text);
-		void parseExportBaseDirectory     (StringView text);
-		void parseQueryExportBaseDirectory(StringView text);
-		void parseWrapMode                (StringView text);
-		void parseFilterMode              (StringView text);
-		void parseVertexAnimeFloat        (StringView text);
+		void parseAnimeBaseDirectory      (const XMLElement& element);
+		void parseCellMapBaseDirectory    (const XMLElement& element);
+		void parseImageBaseDirectory      (const XMLElement& element);
+		void parseEffectBaseDirectory     (const XMLElement& element);
+		void parseExportBaseDirectory     (const XMLElement& element);
+		void parseQueryExportBaseDirectory(const XMLElement& element);
+		void parseWrapMode                (const XMLElement& element);
+		void parseFilterMode              (const XMLElement& element);
+		void parseVertexAnimeFloat        (const XMLElement& element);
 
 		FilePath           m_animeBaseDirectory      { U"" };   //!< .ssaeを保存するフォルダへの相対パス
 		FilePath           m_cellMapBaseDirectory    { U"" };   //!< .ssceを保存するフォルダへの相対パス

@@ -1,14 +1,6 @@
 ﻿
 # include "SSProjectSettings.hpp"
-
-namespace
-{
-	bool ParseIntToBool(StringView s)
-	{
-		int32 parse = ParseInt<int32>(s);
-		return (parse > 0);
-	}
-}
+# include "SSParseUtilities.hpp"
 
 namespace s3d
 {
@@ -20,16 +12,16 @@ namespace s3d
 		{
 			m_pEditorParam.reset(new SSProjectSettings::EditorParam());
 		}
-		static const HashTable<String, void(SSProjectSettings::*)(StringView)> SETTINGS_PARSE_TABLE = {
-			{ SS_PROJECT_SETTINGS_TAG_STRINGS[SSProjectSettingTag_animeBaseDirectory      ], &SSProjectSettings::parseAnimeBaseDirectory       },
-			{ SS_PROJECT_SETTINGS_TAG_STRINGS[SSProjectSettingTag_cellMapBaseDirectory    ], &SSProjectSettings::parseCellMapBaseDirectory     },
-			{ SS_PROJECT_SETTINGS_TAG_STRINGS[SSProjectSettingTag_imageBaseDirectory      ], &SSProjectSettings::parseImageBaseDirectory       },
-			{ SS_PROJECT_SETTINGS_TAG_STRINGS[SSProjectSettingTag_effectBaseDirectory     ], &SSProjectSettings::parseEffectBaseDirectory      },
-			{ SS_PROJECT_SETTINGS_TAG_STRINGS[SSProjectSettingTag_exportBaseDirectory     ], &SSProjectSettings::parseExportBaseDirectory      },
-			{ SS_PROJECT_SETTINGS_TAG_STRINGS[SSProjectSettingTag_queryExportBaseDirectory], &SSProjectSettings::parseQueryExportBaseDirectory },
-			{ SS_PROJECT_SETTINGS_TAG_STRINGS[SSProjectSettingTag_wrapMode                ], &SSProjectSettings::parseWrapMode                 },
-			{ SS_PROJECT_SETTINGS_TAG_STRINGS[SSProjectSettingTag_filterMode              ], &SSProjectSettings::parseFilterMode               },
-			{ SS_PROJECT_SETTINGS_TAG_STRINGS[SSProjectSettingTag_vertexAnimeFloat        ], &SSProjectSettings::parseVertexAnimeFloat         },
+		static const HashTable<String, void(SSProjectSettings::*)(const XMLElement&)> SETTINGS_PARSE_TABLE = {
+			{ SS_PROJECT_SETTINGS_TAG_STRINGS[SSProjectSettingsTag_animeBaseDirectory      ], &SSProjectSettings::parseAnimeBaseDirectory       },
+			{ SS_PROJECT_SETTINGS_TAG_STRINGS[SSProjectSettingsTag_cellMapBaseDirectory    ], &SSProjectSettings::parseCellMapBaseDirectory     },
+			{ SS_PROJECT_SETTINGS_TAG_STRINGS[SSProjectSettingsTag_imageBaseDirectory      ], &SSProjectSettings::parseImageBaseDirectory       },
+			{ SS_PROJECT_SETTINGS_TAG_STRINGS[SSProjectSettingsTag_effectBaseDirectory     ], &SSProjectSettings::parseEffectBaseDirectory      },
+			{ SS_PROJECT_SETTINGS_TAG_STRINGS[SSProjectSettingsTag_exportBaseDirectory     ], &SSProjectSettings::parseExportBaseDirectory      },
+			{ SS_PROJECT_SETTINGS_TAG_STRINGS[SSProjectSettingsTag_queryExportBaseDirectory], &SSProjectSettings::parseQueryExportBaseDirectory },
+			{ SS_PROJECT_SETTINGS_TAG_STRINGS[SSProjectSettingsTag_wrapMode                ], &SSProjectSettings::parseWrapMode                 },
+			{ SS_PROJECT_SETTINGS_TAG_STRINGS[SSProjectSettingsTag_filterMode              ], &SSProjectSettings::parseFilterMode               },
+			{ SS_PROJECT_SETTINGS_TAG_STRINGS[SSProjectSettingsTag_vertexAnimeFloat        ], &SSProjectSettings::parseVertexAnimeFloat         },
 		};
 		for (auto element = settings.firstChild(); element; element = element.nextSibling())
 		{
@@ -37,7 +29,7 @@ namespace s3d
 			{
 				if (table.first == element.name())
 				{
-					(this->*(table.second))(element.text());
+					(this->*(table.second))(element);
 					break;
 				}
 			}
@@ -51,39 +43,39 @@ namespace s3d
 		return true;
 	}
 
-	void SSProjectSettings::parseAnimeBaseDirectory(StringView text)
+	void SSProjectSettings::parseAnimeBaseDirectory(const XMLElement& element)
 	{
-		m_animeBaseDirectory = text;
+		m_animeBaseDirectory = element.text();
 	}
 
-	void SSProjectSettings::parseCellMapBaseDirectory(StringView text)
+	void SSProjectSettings::parseCellMapBaseDirectory(const XMLElement& element)
 	{
-		m_cellMapBaseDirectory = text;
+		m_cellMapBaseDirectory = element.text();
 	}
 
-	void SSProjectSettings::parseImageBaseDirectory(StringView text)
+	void SSProjectSettings::parseImageBaseDirectory(const XMLElement& element)
 	{
-		m_imageBaseDirectory = text;
+		m_imageBaseDirectory = element.text();
 	}
 
-	void SSProjectSettings::parseEffectBaseDirectory(StringView text)
+	void SSProjectSettings::parseEffectBaseDirectory(const XMLElement& element)
 	{
-		m_effectBaseDirectory = text;
+		m_effectBaseDirectory = element.text();
 	}
 
-	void SSProjectSettings::parseExportBaseDirectory(StringView text)
+	void SSProjectSettings::parseExportBaseDirectory(const XMLElement& element)
 	{
-		m_exportBaseDirectory = text;
+		m_exportBaseDirectory = element.text();
 	}
 
-	void SSProjectSettings::parseQueryExportBaseDirectory(StringView text)
+	void SSProjectSettings::parseQueryExportBaseDirectory(const XMLElement& element)
 	{
-		m_queryExportBaseDirectory = ParseIntToBool(text);
+		m_queryExportBaseDirectory = SSParseUtilities::parseIntToBool(element.text());
 	}
 
-	void SSProjectSettings::parseWrapMode(StringView text)
+	void SSProjectSettings::parseWrapMode(const XMLElement& element)
 	{
-		auto wrapMode = SS_TEXTURE_WRAP_MODE_TABLE.find(text);
+		auto wrapMode = SS_TEXTURE_WRAP_MODE_TABLE.find(element.text());
 		if (wrapMode != SS_TEXTURE_WRAP_MODE_TABLE.end())
 		{
 			m_wrapMode = wrapMode->second;
@@ -94,9 +86,9 @@ namespace s3d
 		}
 	}
 
-	void SSProjectSettings::parseFilterMode(StringView text)
+	void SSProjectSettings::parseFilterMode(const XMLElement& element)
 	{
-		auto filterMode = SS_TEXTURE_FILTER_MODE_TABLE.find(text);
+		auto filterMode = SS_TEXTURE_FILTER_MODE_TABLE.find(element.text());
 		if (filterMode != SS_TEXTURE_FILTER_MODE_TABLE.end())
 		{
 			m_filterMode = filterMode->second;
@@ -107,8 +99,8 @@ namespace s3d
 		}
 	}
 
-	void SSProjectSettings::parseVertexAnimeFloat(StringView text)
+	void SSProjectSettings::parseVertexAnimeFloat(const XMLElement& element)
 	{
-		m_vertexAnimeFloat = ParseIntToBool(text);
+		m_vertexAnimeFloat = SSParseUtilities::parseIntToBool(element.text());
 	}
 }
