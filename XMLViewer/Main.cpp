@@ -326,6 +326,25 @@ namespace CustomGUI
 	}
 }
 
+void CreateXML(FilePathView path)
+{
+	if (not FileSystem::IsFile(path))
+	{
+		return;
+	}
+	reader.reset(new XMLReader{ path });
+	if (reader == nullptr)
+	{
+		return;
+	}
+	root.reset(new TreeView{ reader->name() });
+	if (root == nullptr)
+	{
+		return;
+	}
+	addXMLElement(root.get(), *reader);
+}
+
 namespace MenuFunc
 {
 	void OpenXMLFile(void)
@@ -345,10 +364,7 @@ namespace MenuFunc
 				FileFilter::AllFiles()
 			}))
 		{
-			auto path = filePath.value();
-			reader.reset(new XMLReader{ path });
-			root.reset(new TreeView{ reader->name() });
-			addXMLElement(root.get(), *reader);
+			CreateXML(filePath.value());
 		}
 	}
 
@@ -392,8 +408,17 @@ void Main()
 	Polygon maskPolygon{ Shape2D::Ngon(4, SCENE_WIDTH, Scene::CenterF(), 45_deg) };
 	maskPolygon.addHole(VIEW_RECT);
 
+	DragDrop::AcceptFilePaths(true);
+
 	while (System::Update())
 	{
+		const auto& dropFilePaths = DragDrop::GetDroppedFilePaths();
+		if (dropFilePaths.size() > 0)
+		{
+			size_t endIndex = dropFilePaths.size() - 1;
+			CreateXML(dropFilePaths[endIndex].path);
+			continue;
+		}
 		const Vec2 viewPos{ VIEW_OFFSET - scroll };
 		if (auto itemIndex = menuBar.update())
 		{
