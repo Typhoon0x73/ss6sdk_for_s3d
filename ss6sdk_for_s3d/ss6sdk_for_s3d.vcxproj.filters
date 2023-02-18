@@ -285,6 +285,9 @@
     <ClCompile Include="SpriteStudio\SSAnimeSettings.cpp">
       <Filter>Source Files\SpriteStudio</Filter>
     </ClCompile>
+    <ClCompile Include="SpriteStudio\SSTexturePackSettings.cpp">
+      <Filter>Source Files\SpriteStudio</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="App\icon.ico">
@@ -1029,6 +1032,9 @@
       <Filter>Header Files\SpriteStudio</Filter>
     </ClInclude>
     <ClInclude Include="SpriteStudio\SSParseUtilities.hpp">
+      <Filter>Header Files\SpriteStudio</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteStudio\SSTexturePackSettings.hpp">
       <Filter>Header Files\SpriteStudio</Filter>
     </ClInclude>
   </ItemGroup>

@@ -17,17 +17,20 @@ namespace s3d
 		exportPath,
 		settings,
 		animeSettings,
+		texPackSettings,
 	};
-	constexpr size_t SSProjectTag_name          = static_cast<size_t>(SSProjectTag::name         );
-	constexpr size_t SSProjectTag_exportPath    = static_cast<size_t>(SSProjectTag::exportPath   );
-	constexpr size_t SSProjectTag_settings      = static_cast<size_t>(SSProjectTag::settings     );
-	constexpr size_t SSProjectTag_animeSettings = static_cast<size_t>(SSProjectTag::animeSettings);
+	constexpr size_t SSProjectTag_name            = static_cast<size_t>(SSProjectTag::name           );
+	constexpr size_t SSProjectTag_exportPath      = static_cast<size_t>(SSProjectTag::exportPath     );
+	constexpr size_t SSProjectTag_settings        = static_cast<size_t>(SSProjectTag::settings       );
+	constexpr size_t SSProjectTag_animeSettings   = static_cast<size_t>(SSProjectTag::animeSettings  );
+	constexpr size_t SSProjectTag_texPackSettings = static_cast<size_t>(SSProjectTag::texPackSettings);
 
 	constexpr const char32_t* const SS_PROJECT_TAG_STRINGS[] = {
 		U"name",
 		U"exportPath",
 		U"settings",
 		U"animeSettings",
+		U"texPackSettings",
 	};
 
 	enum class SSProjectSettingsTag {
@@ -136,6 +139,27 @@ namespace s3d
 		U"imageOffset",
 		U"imageCanvas",
 		U"imagePivot",
+	};
+
+	enum class SSTexturePackSettingsTag {
+		maxSize,
+		forcePo2,
+		forceSquare,
+		margin,
+		padding,
+	};
+	constexpr size_t SSTexturePackSettingsTag_maxSize     = static_cast<size_t>(SSTexturePackSettingsTag::maxSize    );
+	constexpr size_t SSTexturePackSettingsTag_forcePo2    = static_cast<size_t>(SSTexturePackSettingsTag::forcePo2   );
+	constexpr size_t SSTexturePackSettingsTag_forceSquare = static_cast<size_t>(SSTexturePackSettingsTag::forceSquare);
+	constexpr size_t SSTexturePackSettingsTag_margin      = static_cast<size_t>(SSTexturePackSettingsTag::margin     );
+	constexpr size_t SSTexturePackSettingsTag_padding     = static_cast<size_t>(SSTexturePackSettingsTag::padding    );
+
+	constexpr const char32_t* const SS_TEXTURE_PACK_SETTINGS_TAG_STRINGS[] = {
+		U"maxSize",
+		U"forcePo2",
+		U"forceSquare",
+		U"margin",
+		U"padding",
 	};
 
 	static const HashTable<String, TextureAddressMode> SS_TEXTURE_WRAP_MODE_TABLE = {

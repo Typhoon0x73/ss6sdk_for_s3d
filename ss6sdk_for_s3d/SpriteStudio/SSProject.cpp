@@ -26,9 +26,10 @@ namespace s3d
 		}
 
 		static const HashTable<String, void (SSProject::*)(const XMLElement&)> PARSE_TABLE = {
-			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_name         ], &SSProject::parseFileName      },
-			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_settings     ], &SSProject::parseSettings      },
-			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_animeSettings], &SSProject::parseAnimeSettings },
+			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_name           ], &SSProject::parseFileName        },
+			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_settings       ], &SSProject::parseSettings        },
+			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_animeSettings  ], &SSProject::parseAnimeSettings   },
+			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_texPackSettings], &SSProject::parseTexPackSettings },
 		};
 		static const HashTable<String, void (SSProject::*)(const XMLElement&)> EDITOR_PARSE_TABLE = {
 			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_exportPath], &SSProject::parseExportPath },
@@ -85,5 +86,10 @@ namespace s3d
 	void SSProject::parseAnimeSettings(const XMLElement& element)
 	{
 		m_animeSettings.load(element, isCreateEditorParam());
+	}
+
+	void SSProject::parseTexPackSettings(const XMLElement& element)
+	{
+		m_texPackSettings.load(element, isCreateEditorParam());
 	}
 }
