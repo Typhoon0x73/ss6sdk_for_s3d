@@ -4,7 +4,7 @@
 # include "SSProjectSettings.hpp"
 # include "SSAnimeSettings.hpp"
 # include "SSTexturePackSettings.hpp"
-//# include "SSExternalTextures.hpp"
+# include "SSExternalTextures.hpp"
 
 namespace s3d
 {
@@ -50,7 +50,7 @@ namespace s3d
 		Array<FilePath>       m_cellmapNames     {};      //!< セルマップ名一覧
 		Array<FilePath>       m_animepackNames   {};      //!< アニメーションパック名一覧
 		Array<FilePath>       m_effectFileNames  {};      //!< エフェクトファイル名一覧
-		//SSExternalTextures    m_ExternalTextures {};      //!< 他プロジェクトの画像情報
+		SSExternalTextures    m_ExternalTextures {};      //!< 他プロジェクトの画像情報
 
 		struct EditorParam
 		{
