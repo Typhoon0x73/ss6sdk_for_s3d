@@ -162,6 +162,39 @@ namespace s3d
 		U"padding",
 	};
 
+	enum class SSExternalTexturesTag {
+		files,
+	};
+	constexpr size_t SSExternalTexturesTag_files = static_cast<size_t>(SSExternalTexturesTag::files);
+
+	constexpr const char32_t* const SS_EXTERNAL_TEXTURES_TAG_STRINGS[] = {
+		U"files",
+	};
+
+	enum class SSExternalTexturesFilesTag {
+		value,
+	};
+	constexpr size_t SSExternalTexturesFilesTag_value = static_cast<size_t>(SSExternalTexturesFilesTag::value);
+
+	constexpr const char32_t* const SS_EXTERNAL_TEXTURES_FILES_TAG_STRINGS[] = {
+		U"value",
+	};
+
+	enum class SSExternalTexturesFilesValueTag {
+		pathName,
+		index,
+		flags,
+	};
+	constexpr size_t SSExternalTexturesFilesValueTag_pathName = static_cast<size_t>(SSExternalTexturesFilesValueTag::pathName);
+	constexpr size_t SSExternalTexturesFilesValueTag_index    = static_cast<size_t>(SSExternalTexturesFilesValueTag::index   );
+	constexpr size_t SSExternalTexturesFilesValueTag_flags    = static_cast<size_t>(SSExternalTexturesFilesValueTag::flags   );
+
+	constexpr const char32_t* const SS_EXTERNAL_TEXTURES_FILES_VALUE_TAG_STRINGS[] = {
+		U"pathName",
+		U"index",
+		U"flags",
+	};
+
 	static const HashTable<String, TextureAddressMode> SS_TEXTURE_WRAP_MODE_TABLE = {
 		{ U"clamp", TextureAddressMode::Clamp },
 	};

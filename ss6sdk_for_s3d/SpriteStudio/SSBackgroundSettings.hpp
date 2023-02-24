@@ -18,8 +18,15 @@ namespace s3d
 		bool load(const XMLElement& bgSettings, bool createEditorParam);
 
 	private:
-
-		struct Value;
+		
+		struct Value
+		{
+			FilePath m_imagePath  { U"" };
+			int32    m_imageDisp  { 0 };
+			Point    m_imageOffset{ 0, 0 };
+			Size     m_imageCanvas{ 0, 0 };
+			Float2   m_imagePivot { 0.0f, 0.0f };
+		};
 
 		// -------------------------------------------------
 		// 解析用関数
@@ -30,15 +37,6 @@ namespace s3d
 		void parseValueImageOffset(const XMLElement& element, Value& out);
 		void parseValueImageCanvas(const XMLElement& element, Value& out);
 		void parseValueImagePivot (const XMLElement& element, Value& out);
-
-		struct Value
-		{
-			FilePath m_imagePath  { U"" };
-			int32    m_imageDisp  { 0 };
-			Point    m_imageOffset{ 0, 0 };
-			Size     m_imageCanvas{ 0, 0 };
-			Float2   m_imagePivot { 0.0f, 0.0f };
-		};
 
 		Array<Value> m_values{};
 	};
