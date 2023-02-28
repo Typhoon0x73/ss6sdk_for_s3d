@@ -22,7 +22,7 @@ namespace s3d
 		{
 			struct Value
 			{
-				FilePath m_pathName{ U"" };
+				FilePath m_PathName{ U"" };
 				int32    m_index   { 0 };
 				int32    m_flags   { 0 };
 			};

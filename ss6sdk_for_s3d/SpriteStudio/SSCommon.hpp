@@ -18,12 +18,20 @@ namespace s3d
 		settings,
 		animeSettings,
 		texPackSettings,
+		cellmapNames,
+		animepackNames,
+		effectFileNames,
+		ExternalTextures,
 	};
-	constexpr size_t SSProjectTag_name            = static_cast<size_t>(SSProjectTag::name           );
-	constexpr size_t SSProjectTag_exportPath      = static_cast<size_t>(SSProjectTag::exportPath     );
-	constexpr size_t SSProjectTag_settings        = static_cast<size_t>(SSProjectTag::settings       );
-	constexpr size_t SSProjectTag_animeSettings   = static_cast<size_t>(SSProjectTag::animeSettings  );
-	constexpr size_t SSProjectTag_texPackSettings = static_cast<size_t>(SSProjectTag::texPackSettings);
+	constexpr size_t SSProjectTag_name             = static_cast<size_t>(SSProjectTag::name            );
+	constexpr size_t SSProjectTag_exportPath       = static_cast<size_t>(SSProjectTag::exportPath      );
+	constexpr size_t SSProjectTag_settings         = static_cast<size_t>(SSProjectTag::settings        );
+	constexpr size_t SSProjectTag_animeSettings    = static_cast<size_t>(SSProjectTag::animeSettings   );
+	constexpr size_t SSProjectTag_texPackSettings  = static_cast<size_t>(SSProjectTag::texPackSettings );
+	constexpr size_t SSProjectTag_cellmapNames     = static_cast<size_t>(SSProjectTag::cellmapNames    );
+	constexpr size_t SSProjectTag_animepackNames   = static_cast<size_t>(SSProjectTag::animepackNames  );
+	constexpr size_t SSProjectTag_effectFileNames  = static_cast<size_t>(SSProjectTag::effectFileNames );
+	constexpr size_t SSProjectTag_ExternalTextures = static_cast<size_t>(SSProjectTag::ExternalTextures);
 
 	constexpr const char32_t* const SS_PROJECT_TAG_STRINGS[] = {
 		U"name",
@@ -31,6 +39,10 @@ namespace s3d
 		U"settings",
 		U"animeSettings",
 		U"texPackSettings",
+		U"cellmapNames",
+		U"animepackNames",
+		U"effectFileNames",
+		U"ExternalTextures",
 	};
 
 	enum class SSProjectSettingsTag {
@@ -181,16 +193,16 @@ namespace s3d
 	};
 
 	enum class SSExternalTexturesFilesValueTag {
-		pathName,
+		PathName,
 		index,
 		flags,
 	};
-	constexpr size_t SSExternalTexturesFilesValueTag_pathName = static_cast<size_t>(SSExternalTexturesFilesValueTag::pathName);
+	constexpr size_t SSExternalTexturesFilesValueTag_PathName = static_cast<size_t>(SSExternalTexturesFilesValueTag::PathName);
 	constexpr size_t SSExternalTexturesFilesValueTag_index    = static_cast<size_t>(SSExternalTexturesFilesValueTag::index   );
 	constexpr size_t SSExternalTexturesFilesValueTag_flags    = static_cast<size_t>(SSExternalTexturesFilesValueTag::flags   );
 
 	constexpr const char32_t* const SS_EXTERNAL_TEXTURES_FILES_VALUE_TAG_STRINGS[] = {
-		U"pathName",
+		U"PathName",
 		U"index",
 		U"flags",
 	};

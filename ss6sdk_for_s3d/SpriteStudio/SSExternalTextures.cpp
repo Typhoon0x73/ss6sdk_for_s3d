@@ -14,13 +14,14 @@ namespace s3d
 		static const HashTable<String, void(SSExternalTextures::*)(const XMLElement&)> PARSE_TABLE = {
 			{ SS_EXTERNAL_TEXTURES_TAG_STRINGS[SSExternalTexturesTag_files], &SSExternalTextures::parseFiles },
 		};
-		for (XMLElement element = ExternalTextures.firstChild(); element; element = ExternalTextures.nextSibling())
+		for (XMLElement element = ExternalTextures.firstChild(); element; element = element.nextSibling())
 		{
 			for (const auto& table : PARSE_TABLE)
 			{
 				if (table.first == element.name())
 				{
 					(this->*(table.second))(element);
+					break;
 				}
 			}
 		}
@@ -40,6 +41,7 @@ namespace s3d
 				if (table.first == element.name())
 				{
 					(this->*(table.second))(element, file);
+					break;
 				}
 			}
 		}
@@ -49,18 +51,19 @@ namespace s3d
 	void SSExternalTextures::parseValue(const XMLElement& value, FileParam& outParam)
 	{
 		static const HashTable<String, void(SSExternalTextures::*)(const XMLElement&, FileParam::Value&)> PARSE_TABLE = {
-			{ SS_EXTERNAL_TEXTURES_FILES_VALUE_TAG_STRINGS[SSExternalTexturesFilesValueTag_pathName], &SSExternalTextures::parsePathName },
+			{ SS_EXTERNAL_TEXTURES_FILES_VALUE_TAG_STRINGS[SSExternalTexturesFilesValueTag_PathName], &SSExternalTextures::parsePathName },
 			{ SS_EXTERNAL_TEXTURES_FILES_VALUE_TAG_STRINGS[SSExternalTexturesFilesValueTag_index   ], &SSExternalTextures::parseIndex    },
 			{ SS_EXTERNAL_TEXTURES_FILES_VALUE_TAG_STRINGS[SSExternalTexturesFilesValueTag_flags   ], &SSExternalTextures::parseFlags    },
 		};
 		FileParam::Value v;
-		for (XMLElement element = value.firstChild(); element; element = value.nextSibling())
+		for (XMLElement element = value.firstChild(); element; element = element.nextSibling())
 		{
 			for (const auto& table : PARSE_TABLE)
 			{
 				if (table.first == element.name())
 				{
 					(this->*(table.second))(element, v);
+					break;
 				}
 			}
 		}
@@ -69,7 +72,7 @@ namespace s3d
 
 	void SSExternalTextures::parsePathName(const XMLElement& element, FileParam::Value& outValue)
 	{
-		outValue.m_pathName = element.text();
+		outValue.m_PathName = element.text();
 	}
 
 	void SSExternalTextures::parseIndex(const XMLElement& element, FileParam::Value& outValue)

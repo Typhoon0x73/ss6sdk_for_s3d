@@ -34,13 +34,16 @@ namespace s3d
 		// -------------------------------------------------
 		// 解析用関数
 		// -------------------------------------------------
-		void parseFileName       (const XMLElement& element);
-		void parseExportPath     (const XMLElement& element);
-		void parseSettings       (const XMLElement& element);
-		void parseAnimeSettings  (const XMLElement& element);
-		void parseTexPackSettings(const XMLElement& element);
+		void parseFileName        (const XMLElement& element);
+		void parseExportPath      (const XMLElement& element);
+		void parseSettings        (const XMLElement& element);
+		void parseAnimeSettings   (const XMLElement& element);
+		void parseTexPackSettings (const XMLElement& element);
+		void parseCellmapNames    (const XMLElement& element);
+		void parseAnimepackNames  (const XMLElement& element);
+		void parseEffectFileNames (const XMLElement& element);
+		void parseExternalTextures(const XMLElement& element);
 
-		CreateEditorParam     m_createEditorParam{};      //!< エディタ用パラメータを生成する設定
 		FilePath              m_projectDirectory { U"" }; //!< exeからのプロジェクトのディレクトリ相対パス
 		FilePath              m_projectFileName  { U"" }; //!< プロジェクトファイル名
 		String                m_name             { U"" }; //!< プロジェクト名

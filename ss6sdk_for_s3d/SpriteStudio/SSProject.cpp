@@ -19,17 +19,20 @@ namespace s3d
 		}
 		m_projectDirectory  = FileSystem::RelativePath(FileSystem::ParentPath(path), FileSystem::ModulePath());
 		m_projectFileName   = FileSystem::FileName(path);
-		m_createEditorParam = createEditorParam;
-		if (isCreateEditorParam())
+		if (createEditorParam == CreateEditorParam::Create)
 		{
 			m_pEditorParam.reset(new EditorParam());
 		}
 
 		static const HashTable<String, void (SSProject::*)(const XMLElement&)> PARSE_TABLE = {
-			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_name           ], &SSProject::parseFileName        },
-			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_settings       ], &SSProject::parseSettings        },
-			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_animeSettings  ], &SSProject::parseAnimeSettings   },
-			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_texPackSettings], &SSProject::parseTexPackSettings },
+			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_name            ], &SSProject::parseFileName         },
+			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_settings        ], &SSProject::parseSettings         },
+			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_animeSettings   ], &SSProject::parseAnimeSettings    },
+			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_texPackSettings ], &SSProject::parseTexPackSettings  },
+			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_cellmapNames    ], &SSProject::parseCellmapNames     },
+			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_animepackNames  ], &SSProject::parseAnimepackNames   },
+			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_effectFileNames ], &SSProject::parseEffectFileNames  },
+			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_ExternalTextures], &SSProject::parseExternalTextures },
 		};
 		static const HashTable<String, void (SSProject::*)(const XMLElement&)> EDITOR_PARSE_TABLE = {
 			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_exportPath], &SSProject::parseExportPath },
@@ -65,22 +68,22 @@ namespace s3d
 
 	bool SSProject::isCreateEditorParam() const
 	{
-		return (m_createEditorParam == CreateEditorParam::Create);
+		return (m_pEditorParam.get() != nullptr);
 	}
 
 	void SSProject::parseFileName(const XMLElement& element)
 	{
-		m_projectName = element.text();
+		m_name = element.text();
 	}
 
 	void SSProject::parseExportPath(const XMLElement& element)
 	{
-		m_pEditorParam->m_projectExportPath = element.text();
+		m_pEditorParam->m_exportPath = element.text();
 	}
 
 	void SSProject::parseSettings(const XMLElement& element)
 	{
-		m_projectSettings.load(element, isCreateEditorParam());
+		m_settings.load(element, isCreateEditorParam());
 	}
 
 	void SSProject::parseAnimeSettings(const XMLElement& element)
@@ -91,5 +94,43 @@ namespace s3d
 	void SSProject::parseTexPackSettings(const XMLElement& element)
 	{
 		m_texPackSettings.load(element, isCreateEditorParam());
+	}
+
+	void SSProject::parseCellmapNames(const XMLElement& element)
+	{
+		for (auto e = element.firstChild(); e; e = e.nextSibling())
+		{
+			if (U"value" == e.name())
+			{
+				m_cellmapNames.emplace_back(e.text());
+			}
+		}
+	}
+
+	void SSProject::parseAnimepackNames(const XMLElement& element)
+	{
+		for (auto e = element.firstChild(); e; e = e.nextSibling())
+		{
+			if (U"value" == e.name())
+			{
+				m_animepackNames.emplace_back(e.text());
+			}
+		}
+	}
+
+	void SSProject::parseEffectFileNames(const XMLElement& element)
+	{
+		for (auto e = element.firstChild(); e; e = e.nextSibling())
+		{
+			if (U"value" == e.name())
+			{
+				m_effectFileNames.emplace_back(e.text());
+			}
+		}
+	}
+
+	void SSProject::parseExternalTextures(const XMLElement& element)
+	{
+		m_ExternalTextures.load(element, isCreateEditorParam());
 	}
 }
