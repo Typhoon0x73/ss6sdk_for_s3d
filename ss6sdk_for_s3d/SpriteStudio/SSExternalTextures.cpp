@@ -34,7 +34,7 @@ namespace s3d
 			{ SS_EXTERNAL_TEXTURES_FILES_TAG_STRINGS[SSExternalTexturesFilesTag_value], &SSExternalTextures::parseValue },
 		};
 		FileParam file;
-		for (XMLElement element = files.firstChild(); element; element = files.nextSibling())
+		for (XMLElement element = files.firstChild(); element; element = element.nextSibling())
 		{
 			for (const auto& table : PARSE_TABLE)
 			{
