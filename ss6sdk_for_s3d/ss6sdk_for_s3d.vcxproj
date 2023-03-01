@@ -210,6 +210,8 @@
     <ClCompile Include="SampleMain\cellmapDrawSample.cpp" />
     <ClCompile Include="SpriteStudio\SSAnimeSettings.cpp" />
     <ClCompile Include="SpriteStudio\SSBackgroundSettings.cpp" />
+    <ClCompile Include="SpriteStudio\SSCellInfo.cpp" />
+    <ClCompile Include="SpriteStudio\SSCellMap.cpp" />
     <ClCompile Include="SpriteStudio\SSExternalTextures.cpp" />
     <ClCompile Include="SpriteStudio\SSProject.cpp" />
     <ClCompile Include="SpriteStudio\SSProjectSettings.cpp" />
@@ -442,6 +444,8 @@
     <ClInclude Include="SampleMain\__SampleDefine.h" />
     <ClInclude Include="SpriteStudio\SSAnimeSettings.hpp" />
     <ClInclude Include="SpriteStudio\SSBackgroundSettings.hpp" />
+    <ClInclude Include="SpriteStudio\SSCellInfo.hpp" />
+    <ClInclude Include="SpriteStudio\SSCellMap.hpp" />
     <ClInclude Include="SpriteStudio\SSCommon.hpp" />
     <ClInclude Include="SpriteStudio\SSExternalTextures.hpp" />
     <ClInclude Include="SpriteStudio\SSParseUtilities.hpp" />

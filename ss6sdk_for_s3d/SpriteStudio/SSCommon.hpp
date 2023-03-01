@@ -12,6 +12,13 @@ namespace s3d
 	class SSRenderingSettings {};
 	class SSEffectSettings {};
 
+	/// @brief エディタ用パラメータを生成するかの列挙値
+	enum class SSCreateEditorParam
+	{
+		NoCreate,                 //!< 生成しない
+		Create,                   //!< 生成する
+	};
+
 	enum class SSProjectTag {
 		name,
 		exportPath,

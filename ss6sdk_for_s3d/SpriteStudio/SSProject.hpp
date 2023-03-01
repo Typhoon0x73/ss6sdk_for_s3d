@@ -1,6 +1,7 @@
 ﻿
 # pragma once
 # include <Siv3D.hpp>
+# include "SSCommon.hpp"
 # include "SSProjectSettings.hpp"
 # include "SSAnimeSettings.hpp"
 # include "SSTexturePackSettings.hpp"
@@ -12,20 +13,13 @@ namespace s3d
 	{
 	public:
 
-		/// @brief エディタ用パラメータを生成するかの列挙値
-		enum class CreateEditorParam
-		{
-			NoCreate,                 //!< 生成しない
-			Create,                   //!< 生成する
-		};
-
 		SSProject() = default;
 
 		~SSProject() = default;
 
-		explicit SSProject(FilePathView path, CreateEditorParam createEditorParam);
+		explicit SSProject(FilePathView path, SSCreateEditorParam createEditorParam);
 
-		bool load(FilePathView path, CreateEditorParam createEditorParam);
+		bool load(FilePathView path, SSCreateEditorParam createEditorParam);
 
 		bool isCreateEditorParam() const;
 
