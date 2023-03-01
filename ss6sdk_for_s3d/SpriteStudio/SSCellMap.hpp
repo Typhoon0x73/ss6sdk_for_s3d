@@ -3,6 +3,7 @@
 # include <Siv3D.hpp>
 # include "SSCommon.hpp"
 # include "SSCellInfo.hpp"
+# include "SSTexturePackSettings.hpp"
 
 namespace s3d
 {
@@ -22,13 +23,30 @@ namespace s3d
 
 	private:
 
-		void parseCells(const XMLElement& element);
+		void parseName      (const XMLElement& element);
+		void parseExportPath(const XMLElement& element);
+		void parseImagePath (const XMLElement& element);
+		void parsePixelSize (const XMLElement& element);
+		void parseWrapMode  (const XMLElement& element);
+		void parseFilterMode(const XMLElement& element);
+		void parseCells     (const XMLElement& element);
 
-		Array<SSCellInfo> m_cells{};
+		String             m_name      { U"" };
+		FilePath           m_exportPath{ U"" };
+		FilePath           m_imagePath { U"" };
+		Size               m_pixelSize { 0, 0 };
+		TextureAddressMode m_wrapMode  {};
+		TextureFilter      m_filterMode{};
+		Array<SSCellInfo>  m_cells     {};
 
 		struct EditorParam
 		{
-
+			unknownStr            m_generator          { U"" };
+			unknown32             m_packed             { 0 };
+			bool                  m_overrideTexSettings{ false };
+			unknownStr            m_imagePathAtImport  { U"" };
+			FilePath              m_packInfoFilePath   { U"" };
+			SSTexturePackSettings m_texPackSettings    {};        //!< 現状、sspjと同様の設定のため退避
 		};
 		std::unique_ptr<EditorParam> m_pEditorParam{ nullptr };
 	};

@@ -18,6 +18,30 @@ namespace s3d
 		return (m_pEditorParam.get() != nullptr);
 	}
 
+	void SSCellMap::parseName(const XMLElement& element)
+	{
+	}
+
+	void SSCellMap::parseExportPath(const XMLElement& element)
+	{
+	}
+
+	void SSCellMap::parseImagePath(const XMLElement& element)
+	{
+	}
+
+	void SSCellMap::parsePixelSize(const XMLElement& element)
+	{
+	}
+
+	void SSCellMap::parseWrapMode(const XMLElement& element)
+	{
+	}
+
+	void SSCellMap::parseFilterMode(const XMLElement& element)
+	{
+	}
+
 	void SSCellMap::parseCells(const XMLElement& element)
 	{
 		for (XMLElement e = element.firstChild(); e; e = e.nextSibling())
