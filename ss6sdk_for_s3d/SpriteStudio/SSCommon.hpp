@@ -240,4 +240,49 @@ namespace s3d
 		U"filterMode",
 		U"cells",
 	};
+
+	enum class SSCellInfoTag {
+		name         ,
+		pos          ,
+		size         ,
+		pivot        ,
+		rotated      ,
+		orgImageName ,
+		posStable    ,
+		ismesh       ,
+		divtype      ,
+		innerPoint   ,
+		outerPoint   ,
+		meshPointList,
+		meshTriList  ,
+	};
+	constexpr size_t SSCellInfoTag_name          = static_cast<size_t>(SSCellInfoTag::name         );
+	constexpr size_t SSCellInfoTag_pos           = static_cast<size_t>(SSCellInfoTag::pos          );
+	constexpr size_t SSCellInfoTag_size          = static_cast<size_t>(SSCellInfoTag::size         );
+	constexpr size_t SSCellInfoTag_pivot         = static_cast<size_t>(SSCellInfoTag::pivot        );
+	constexpr size_t SSCellInfoTag_rotated       = static_cast<size_t>(SSCellInfoTag::rotated      );
+	constexpr size_t SSCellInfoTag_orgImageName  = static_cast<size_t>(SSCellInfoTag::orgImageName );
+	constexpr size_t SSCellInfoTag_posStable     = static_cast<size_t>(SSCellInfoTag::posStable    );
+	constexpr size_t SSCellInfoTag_ismesh        = static_cast<size_t>(SSCellInfoTag::ismesh       );
+	constexpr size_t SSCellInfoTag_divtype       = static_cast<size_t>(SSCellInfoTag::divtype      );
+	constexpr size_t SSCellInfoTag_innerPoint    = static_cast<size_t>(SSCellInfoTag::innerPoint   );
+	constexpr size_t SSCellInfoTag_outerPoint    = static_cast<size_t>(SSCellInfoTag::outerPoint   );
+	constexpr size_t SSCellInfoTag_meshPointList = static_cast<size_t>(SSCellInfoTag::meshPointList);
+	constexpr size_t SSCellInfoTag_meshTriList   = static_cast<size_t>(SSCellInfoTag::meshTriList  );
+
+	constexpr const char32_t* const SS_CELLINFO_TAG_STRINGS[] = {
+		U"name",
+		U"pos",
+		U"size",
+		U"pivot",
+		U"rotated",
+		U"orgImageName",
+		U"posStable",
+		U"ismesh",
+		U"divtype",
+		U"innerPoint",
+		U"outerPoint",
+		U"meshPointList",
+		U"meshTriList",
+	};
 }

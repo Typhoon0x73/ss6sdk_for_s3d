@@ -18,6 +18,20 @@ namespace s3d
 
 	private:
 
+		void parseName         (const XMLElement& element);
+		void parsePos          (const XMLElement& element);
+		void parseSize         (const XMLElement& element);
+		void parsePivot        (const XMLElement& element);
+		void parseRotated      (const XMLElement& element);
+		void parseOrgImageName (const XMLElement& element);
+		void parsePosStable    (const XMLElement& element);
+		void parseIsmesh       (const XMLElement& element);
+		void parseDivtype      (const XMLElement& element);
+		void parseInnerPoint   (const XMLElement& element);
+		void parseOuterPoint   (const XMLElement& element);
+		void parseMeshPointList(const XMLElement& element);
+		void parseMeshTriList  (const XMLElement& element);
+
 		String               m_name         { U"" };
 		Point                m_pos          { 0, 0 };
 		Size                 m_size         { 0, 0 };
