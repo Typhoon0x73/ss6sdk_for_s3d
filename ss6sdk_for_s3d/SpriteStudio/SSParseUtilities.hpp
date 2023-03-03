@@ -4,6 +4,14 @@
 
 namespace s3d
 {
+
+	static const HashTable<String, TextureAddressMode> SS_TEXTURE_WRAP_MODE_TABLE = {
+		{ U"clamp", TextureAddressMode::Clamp },
+	};
+	static const HashTable<String, TextureFilter> SS_TEXTURE_FILTER_MODE_TABLE = {
+		{ U"linear", TextureFilter::Linear },
+	};
+
 	class SSParseUtilities
 	{
 	private:
@@ -48,10 +56,30 @@ namespace s3d
 			return ParseOr<ColorF>(U"#{}"_fmt(tmpStr), ColorF{ 1.0 });
 		}
 
-		inline static bool parseIntToBool(StringView s)
+		inline static bool parseIntToBool(StringView text)
 		{
-			int32 parse = ParseInt<int32>(s);
+			int32 parse = ParseInt<int32>(text);
 			return (parse > 0);
+		}
+
+		inline static TextureAddressMode parseTextureAddressMode(StringView text)
+		{
+			const auto& data = SS_TEXTURE_WRAP_MODE_TABLE.find(text);
+			if (data == SS_TEXTURE_WRAP_MODE_TABLE.end())
+			{
+				return TextureAddressMode::Clamp;
+			}
+			return data->second;
+		}
+
+		inline static TextureFilter parseTextureFilterMode(StringView text)
+		{
+			const auto& data = SS_TEXTURE_FILTER_MODE_TABLE.find(text);
+			if (data == SS_TEXTURE_FILTER_MODE_TABLE.end())
+			{
+				return TextureFilter::Linear;
+			}
+			return data->second;
 		}
 	};
 }

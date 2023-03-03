@@ -23,6 +23,9 @@ namespace s3d
 
 		bool isCreateEditorParam() const;
 
+		const Array<FilePath>& getCellMapNames() const;
+		Optional<FilePathView> getCellMapName(size_t index) const;
+
 	private:
 
 		// -------------------------------------------------

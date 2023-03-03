@@ -23,6 +23,9 @@ namespace s3d
 
 	private:
 
+		// -------------------------------------------------
+		// 解析用関数
+		// -------------------------------------------------
 		void parseName      (const XMLElement& element);
 		void parseExportPath(const XMLElement& element);
 		void parseImagePath (const XMLElement& element);

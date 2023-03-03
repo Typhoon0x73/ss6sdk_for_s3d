@@ -71,6 +71,20 @@ namespace s3d
 		return (m_pEditorParam.get() != nullptr);
 	}
 
+	const Array<FilePath>& SSProject::getCellMapNames() const
+	{
+		return m_cellmapNames;
+	}
+
+	Optional<FilePathView> SSProject::getCellMapName(size_t index) const
+	{
+		if (m_cellmapNames.size() <= index)
+		{
+			return none;
+		}
+		return m_cellmapNames[index];
+	}
+
 	void SSProject::parseFileName(const XMLElement& element)
 	{
 		m_name = element.text();
