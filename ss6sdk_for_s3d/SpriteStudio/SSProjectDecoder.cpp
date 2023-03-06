@@ -21,10 +21,11 @@ namespace s3d
 			return false;
 		}
 
+		// cellmaps
 		const auto& cellmapNames = m_project.getCellMapNames();
 		for (const auto& cellmapName : cellmapNames)
 		{
-			auto cellmap = std::make_unique<SSCellMap>(cellmapName, SSCreateEditorParam::NoCreate);
+			auto cellmap = std::make_unique<SSCellMap>(cellmapName, isCreateEditorParam);
 			m_cellmaps.emplace_back(std::move(cellmap));
 		}
 
@@ -42,6 +43,14 @@ namespace s3d
 				m_textureMap[cellmap->getName()] = Texture(cellmap->getImagePath());
 				FileSystem::ChangeCurrentDirectory(oldPath);
 			}
+		}
+
+		// animePacks
+		const auto& animePackNames = m_project.getAnimePackNames();
+		for (const auto& animePackName : animePackNames)
+		{
+			auto animePack = std::make_unique<SSAnimePack>(animePackName, isCreateEditorParam);
+			m_animePacks.emplace_back(std::move(animePack));
 		}
 
 		FileSystem::ChangeCurrentDirectory(currentPath);

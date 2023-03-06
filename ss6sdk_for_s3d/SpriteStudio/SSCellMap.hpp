@@ -15,9 +15,9 @@ namespace s3d
 
 		~SSCellMap() = default;
 
-		explicit SSCellMap(FilePathView path, SSCreateEditorParam createEditorParam);
+		explicit SSCellMap(FilePathView ssce, bool createEditorParam);
 
-		bool load(FilePathView path, SSCreateEditorParam createEditorParam);
+		bool load(FilePathView ssce, bool createEditorParam);
 
 		bool isCreateEditorParam() const;
 

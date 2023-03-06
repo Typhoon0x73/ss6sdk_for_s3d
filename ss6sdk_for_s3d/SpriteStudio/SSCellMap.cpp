@@ -4,14 +4,14 @@
 
 namespace s3d
 {
-	SSCellMap::SSCellMap(FilePathView path, SSCreateEditorParam createEditorParam)
+	SSCellMap::SSCellMap(FilePathView ssce, bool createEditorParam)
 	{
-		load(path, createEditorParam);
+		load(ssce, createEditorParam);
 	}
 
-	bool SSCellMap::load(FilePathView path, SSCreateEditorParam createEditorParam)
+	bool SSCellMap::load(FilePathView ssce, bool createEditorParam)
 	{
-		XMLReader reader{ path };
+		XMLReader reader{ ssce };
 		if (not reader.isOpen() or reader.isNull())
 		{
 			return false;

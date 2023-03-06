@@ -4,15 +4,15 @@
 namespace s3d
 {
 
-	SSProject::SSProject(FilePathView path, bool createEditorParam)
+	SSProject::SSProject(FilePathView sspj, bool createEditorParam)
 		: SSProject()
 	{
-		load(path, createEditorParam);
+		load(sspj, createEditorParam);
 	}
 
-	bool SSProject::load(FilePathView path, bool createEditorParam)
+	bool SSProject::load(FilePathView sspj, bool createEditorParam)
 	{
-		XMLReader reader{ path };
+		XMLReader reader{ sspj };
 		if (not reader.isOpen() or reader.isNull())
 		{
 			return false;
@@ -81,6 +81,20 @@ namespace s3d
 			return none;
 		}
 		return m_cellmapNames[index];
+	}
+
+	const Array<FilePath>& SSProject::getAnimePackNames() const
+	{
+		return m_animepackNames;
+	}
+
+	Optional<FilePathView> SSProject::getAnimePackName(size_t index) const
+	{
+		if (m_animepackNames.size() <= index)
+		{
+			return none;
+		}
+		return m_animepackNames[index];
 	}
 
 	void SSProject::parseFileName(const XMLElement& element)

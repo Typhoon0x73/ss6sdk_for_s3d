@@ -3,6 +3,7 @@
 # include <Siv3D.hpp>
 # include "SSProject.hpp"
 # include "SSCellMap.hpp"
+# include "SSAnimePack.hpp"
 
 namespace s3d
 {
@@ -20,10 +21,11 @@ namespace s3d
 
 	private:
 
-		SSProject                         m_project         {};      //!< sspjデータ
-		Array<std::unique_ptr<SSCellMap>> m_cellmaps        {};      //!< ssceデータ
-		HashTable<String, Texture>        m_textureMap      {};      //!< 利用する画像(key = セルマップ名)
-		FilePath                          m_projectDirectory{ U"" }; //!< exeからのプロジェクトのディレクトリ相対パス
-		FilePath                          m_projectFileName { U"" }; //!< プロジェクトファイル名
+		SSProject                           m_project         {};      //!< sspjデータ
+		Array<std::unique_ptr<SSCellMap>>   m_cellmaps        {};      //!< ssceデータ
+		Array<std::unique_ptr<SSAnimePack>> m_animePacks      {};      //!< ssaeデータ
+		HashTable<String, Texture>          m_textureMap      {};      //!< 利用する画像(key = セルマップ名)
+		FilePath                            m_projectDirectory{ U"" }; //!< exeからのプロジェクトのディレクトリ相対パス
+		FilePath                            m_projectFileName { U"" }; //!< プロジェクトファイル名
 	};
 }

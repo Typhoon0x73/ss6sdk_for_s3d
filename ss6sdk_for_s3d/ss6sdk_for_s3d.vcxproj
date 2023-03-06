@@ -208,6 +208,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="SampleMain\buffer2DDrawSample.cpp" />
     <ClCompile Include="SampleMain\cellmapDrawSample.cpp" />
+    <ClCompile Include="SpriteStudio\SSAnimePack.cpp" />
     <ClCompile Include="SpriteStudio\SSAnimeSettings.cpp" />
     <ClCompile Include="SpriteStudio\SSBackgroundSettings.cpp" />
     <ClCompile Include="SpriteStudio\SSCellInfo.cpp" />
@@ -443,6 +444,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SampleMain\__SampleDefine.h" />
+    <ClInclude Include="SpriteStudio\SSAnimePack.hpp" />
     <ClInclude Include="SpriteStudio\SSAnimeSettings.hpp" />
     <ClInclude Include="SpriteStudio\SSBackgroundSettings.hpp" />
     <ClInclude Include="SpriteStudio\SSCellInfo.hpp" />

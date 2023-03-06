@@ -17,14 +17,17 @@ namespace s3d
 
 		~SSProject() = default;
 
-		explicit SSProject(FilePathView path, bool createEditorParam);
+		explicit SSProject(FilePathView sspj, bool createEditorParam);
 
-		bool load(FilePathView path, bool createEditorParam);
+		bool load(FilePathView sspj, bool createEditorParam);
 
 		bool isCreateEditorParam() const;
 
 		const Array<FilePath>& getCellMapNames() const;
 		Optional<FilePathView> getCellMapName(size_t index) const;
+
+		const Array<FilePath>& getAnimePackNames() const;
+		Optional<FilePathView> getAnimePackName(size_t index) const;
 
 	private:
 
