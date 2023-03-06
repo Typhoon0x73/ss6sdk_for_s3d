@@ -18,6 +18,9 @@ namespace s3d
 
 	private:
 
+		// -------------------------------------------------
+		// 解析用関数
+		// -------------------------------------------------
 		void parseName         (const XMLElement& element);
 		void parsePos          (const XMLElement& element);
 		void parseSize         (const XMLElement& element);
@@ -36,7 +39,7 @@ namespace s3d
 		Point                m_pos          { 0, 0 };
 		Size                 m_size         { 0, 0 };
 		Float2               m_pivot        { 0.0f, 0.0f };
-		int32_t              m_rotated      { 0 };
+		int32                m_rotated      { 0 };
 		String               m_orgImageName { U"" };
 		bool                 m_posStable    { false };
 		bool                 m_ismesh       { false };

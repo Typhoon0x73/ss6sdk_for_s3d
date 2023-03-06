@@ -214,6 +214,7 @@
     <ClCompile Include="SpriteStudio\SSCellMap.cpp" />
     <ClCompile Include="SpriteStudio\SSExternalTextures.cpp" />
     <ClCompile Include="SpriteStudio\SSProject.cpp" />
+    <ClCompile Include="SpriteStudio\SSProjectDecoder.cpp" />
     <ClCompile Include="SpriteStudio\SSProjectSettings.cpp" />
     <ClCompile Include="SpriteStudio\SSTexturePackSettings.cpp" />
     <ClCompile Include="TestMain\sspjLoadingTimeTest.cpp" />
@@ -450,6 +451,7 @@
     <ClInclude Include="SpriteStudio\SSExternalTextures.hpp" />
     <ClInclude Include="SpriteStudio\SSParseUtilities.hpp" />
     <ClInclude Include="SpriteStudio\SSProject.hpp" />
+    <ClInclude Include="SpriteStudio\SSProjectDecoder.hpp" />
     <ClInclude Include="SpriteStudio\SSProjectSettings.hpp" />
     <ClInclude Include="SpriteStudio\SSTexturePackSettings.hpp" />
     <ClInclude Include="TestMain\__TestDefine.h" />

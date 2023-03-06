@@ -46,6 +46,31 @@ namespace s3d
 		return (m_pEditorParam.get() != nullptr);
 	}
 
+	StringView SSCellMap::getName() const
+	{
+		return m_name;
+	}
+
+	FilePathView SSCellMap::getExportPath() const
+	{
+		return m_exportPath;
+	}
+
+	FilePathView SSCellMap::getImagePath() const
+	{
+		return m_imagePath;
+	}
+
+	TextureAddressMode SSCellMap::getWrapMode() const
+	{
+		return m_wrapMode;
+	}
+
+	TextureFilter SSCellMap::getFilterMode() const
+	{
+		return m_filterMode;
+	}
+
 	void SSCellMap::parseName(const XMLElement& element)
 	{
 		m_name = element.text();

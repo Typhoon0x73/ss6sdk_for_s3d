@@ -297,6 +297,9 @@
     <ClCompile Include="SpriteStudio\SSCellMap.cpp">
       <Filter>Source Files\SpriteStudio</Filter>
     </ClCompile>
+    <ClCompile Include="SpriteStudio\SSProjectDecoder.cpp">
+      <Filter>Source Files\SpriteStudio</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="App\icon.ico">
@@ -1053,6 +1056,9 @@
       <Filter>Header Files\SpriteStudio</Filter>
     </ClInclude>
     <ClInclude Include="SpriteStudio\SSCellInfo.hpp">
+      <Filter>Header Files\SpriteStudio</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteStudio\SSProjectDecoder.hpp">
       <Filter>Header Files\SpriteStudio</Filter>
     </ClInclude>
   </ItemGroup>

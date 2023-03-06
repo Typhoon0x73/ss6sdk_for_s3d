@@ -17,9 +17,9 @@ namespace s3d
 
 		~SSProject() = default;
 
-		explicit SSProject(FilePathView path, SSCreateEditorParam createEditorParam);
+		explicit SSProject(FilePathView path, bool createEditorParam);
 
-		bool load(FilePathView path, SSCreateEditorParam createEditorParam);
+		bool load(FilePathView path, bool createEditorParam);
 
 		bool isCreateEditorParam() const;
 
@@ -41,8 +41,6 @@ namespace s3d
 		void parseEffectFileNames (const XMLElement& element);
 		void parseExternalTextures(const XMLElement& element);
 
-		FilePath              m_projectDirectory { U"" }; //!< exeからのプロジェクトのディレクトリ相対パス
-		FilePath              m_projectFileName  { U"" }; //!< プロジェクトファイル名
 		String                m_name             { U"" }; //!< プロジェクト名
 		SSProjectSettings     m_settings         {};      //!< プロジェクト設定
 		SSAnimeSettings       m_animeSettings    {};      //!< アニメーション設定

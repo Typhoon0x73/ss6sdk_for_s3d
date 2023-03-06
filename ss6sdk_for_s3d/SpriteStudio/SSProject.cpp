@@ -4,22 +4,20 @@
 namespace s3d
 {
 
-	SSProject::SSProject(FilePathView path, SSCreateEditorParam createEditorParam)
+	SSProject::SSProject(FilePathView path, bool createEditorParam)
 		: SSProject()
 	{
 		load(path, createEditorParam);
 	}
 
-	bool SSProject::load(FilePathView path, SSCreateEditorParam createEditorParam)
+	bool SSProject::load(FilePathView path, bool createEditorParam)
 	{
 		XMLReader reader{ path };
 		if (not reader.isOpen() or reader.isNull())
 		{
 			return false;
 		}
-		m_projectDirectory  = FileSystem::RelativePath(FileSystem::ParentPath(path), FileSystem::ModulePath());
-		m_projectFileName   = FileSystem::FileName(path);
-		if (createEditorParam == SSCreateEditorParam::Create)
+		if (createEditorParam)
 		{
 			m_pEditorParam.reset(new EditorParam());
 		}

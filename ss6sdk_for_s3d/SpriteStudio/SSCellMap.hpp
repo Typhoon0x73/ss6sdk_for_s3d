@@ -21,6 +21,16 @@ namespace s3d
 
 		bool isCreateEditorParam() const;
 
+		StringView getName() const;
+
+		FilePathView getExportPath() const;
+
+		FilePathView getImagePath() const;
+
+		TextureAddressMode getWrapMode() const;
+
+		TextureFilter getFilterMode() const;
+
 	private:
 
 		// -------------------------------------------------

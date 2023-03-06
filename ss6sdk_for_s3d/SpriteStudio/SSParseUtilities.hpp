@@ -29,7 +29,7 @@ namespace s3d
 		inline static Point parsePoint(const String& text)
 		{
 			String tmpStr = U"({})"_fmt(convertSpaceToComma(text));
-			return ParseOr<Point>(tmpStr, Point{ 0, 0 });
+			return ParseOr<Point>(tmpStr, Point::Zero());
 		}
 
 		inline static Size parseSize(const String& text)
@@ -37,16 +37,27 @@ namespace s3d
 			return parsePoint(text);
 		}
 
+		inline static TriangleIndex parseTriangleIndex(const String& text)
+		{
+			TriangleIndex re = TriangleIndex::Zero();
+			size_t firstPos  = text.indexOf(U' ', 0);
+			size_t secondPos = text.indexOf(U' ', firstPos + 1);
+			re.i0 = ParseOr<int32, int32>(text.substr(0, firstPos), 0);
+			re.i1 = ParseOr<int32, int32>(text.substr((firstPos + 1), secondPos - (firstPos + 1)), 0);
+			re.i2 = ParseOr<int32, int32>(text.substr((secondPos + 1)), 0);
+			return re;
+		}
+
 		inline static Float2 parseFloat2(const String& text)
 		{
 			String tmpStr = U"({})"_fmt(convertSpaceToComma(text));
-			return ParseOr<Float2>(tmpStr, Float2{ 0.0f, 0.0f });
+			return ParseOr<Float2>(tmpStr, Float2::Zero());
 		}
 
 		inline static Vec2 parseVec2(const String& text)
 		{
 			String tmpStr = U"({})"_fmt(convertSpaceToComma(text));
-			return ParseOr<Vec2>(tmpStr, Vec2{ 0.0f, 0.0f });
+			return ParseOr<Vec2>(tmpStr, Vec2::Zero());
 		}
 
 		inline static ColorF parseColorF(StringView text)
