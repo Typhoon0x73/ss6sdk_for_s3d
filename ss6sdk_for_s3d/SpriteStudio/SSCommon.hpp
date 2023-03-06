@@ -285,4 +285,28 @@ namespace s3d
 		U"meshPointList",
 		U"meshTriList",
 	};
+
+	enum class SSAnimePackTag {
+		settings    ,
+		name        ,
+		exportPath  ,
+		Model       ,
+		cellmapNames,
+		animeList   ,
+	};
+	constexpr size_t SSAnimePackTag_settings     = static_cast<size_t>(SSAnimePackTag::settings    );
+	constexpr size_t SSAnimePackTag_name         = static_cast<size_t>(SSAnimePackTag::name        );
+	constexpr size_t SSAnimePackTag_exportPath   = static_cast<size_t>(SSAnimePackTag::exportPath  );
+	constexpr size_t SSAnimePackTag_Model        = static_cast<size_t>(SSAnimePackTag::Model       );
+	constexpr size_t SSAnimePackTag_cellmapNames = static_cast<size_t>(SSAnimePackTag::cellmapNames);
+	constexpr size_t SSAnimePackTag_animeList    = static_cast<size_t>(SSAnimePackTag::animeList   );
+
+	constexpr const char32_t* const SS_ANIME_PACK_TAG_STRINGS[] = {
+		U"settings",
+		U"name",
+		U"exportPath",
+		U"Model",
+		U"cellmapNames",
+		U"animeList",
+	};
 }
