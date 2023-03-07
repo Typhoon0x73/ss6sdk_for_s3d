@@ -25,15 +25,15 @@ namespace s3d
 		static const HashTable<String, void (SSProject::*)(const XMLElement&)> PARSE_TABLE = {
 			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_name            ], &SSProject::parseFileName         },
 			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_settings        ], &SSProject::parseSettings         },
-			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_animeSettings   ], &SSProject::parseAnimeSettings    },
-			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_texPackSettings ], &SSProject::parseTexPackSettings  },
 			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_cellmapNames    ], &SSProject::parseCellmapNames     },
 			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_animepackNames  ], &SSProject::parseAnimepackNames   },
 			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_effectFileNames ], &SSProject::parseEffectFileNames  },
 			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_ExternalTextures], &SSProject::parseExternalTextures },
 		};
 		static const HashTable<String, void (SSProject::*)(const XMLElement&)> EDITOR_PARSE_TABLE = {
-			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_exportPath], &SSProject::parseExportPath },
+			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_exportPath      ], &SSProject::parseExportPath       },
+			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_animeSettings   ], &SSProject::parseAnimeSettings    },
+			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_texPackSettings ], &SSProject::parseTexPackSettings  },
 		};
 
 		for (auto element = reader.firstChild(); element; element = element.nextSibling())
@@ -114,12 +114,12 @@ namespace s3d
 
 	void SSProject::parseAnimeSettings(const XMLElement& element)
 	{
-		m_animeSettings.load(element, isCreateEditorParam());
+		m_pEditorParam->m_animeSettings.load(element, isCreateEditorParam());
 	}
 
 	void SSProject::parseTexPackSettings(const XMLElement& element)
 	{
-		m_texPackSettings.load(element, isCreateEditorParam());
+		m_pEditorParam->m_texPackSettings.load(element, isCreateEditorParam());
 	}
 
 	void SSProject::parseCellmapNames(const XMLElement& element)

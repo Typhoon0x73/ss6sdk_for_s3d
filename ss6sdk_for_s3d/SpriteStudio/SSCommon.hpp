@@ -219,23 +219,26 @@ namespace s3d
 		exportPath,
 		imagePath ,
 		pixelSize ,
+		overrideTexSettings,
 		wrapMode  ,
 		filterMode,
 		cells     ,
 	};
-	constexpr size_t SSCellMapTag_name       = static_cast<size_t>(SSCellMapTag::name      );
-	constexpr size_t SSCellMapTag_exportPath = static_cast<size_t>(SSCellMapTag::exportPath);
-	constexpr size_t SSCellMapTag_imagePath  = static_cast<size_t>(SSCellMapTag::imagePath );
-	constexpr size_t SSCellMapTag_pixelSize  = static_cast<size_t>(SSCellMapTag::pixelSize );
-	constexpr size_t SSCellMapTag_wrapMode   = static_cast<size_t>(SSCellMapTag::wrapMode  );
-	constexpr size_t SSCellMapTag_filterMode = static_cast<size_t>(SSCellMapTag::filterMode);
-	constexpr size_t SSCellMapTag_cells      = static_cast<size_t>(SSCellMapTag::cells     );
+	constexpr size_t SSCellMapTag_name                = static_cast<size_t>(SSCellMapTag::name               );
+	constexpr size_t SSCellMapTag_exportPath          = static_cast<size_t>(SSCellMapTag::exportPath         );
+	constexpr size_t SSCellMapTag_imagePath           = static_cast<size_t>(SSCellMapTag::imagePath          );
+	constexpr size_t SSCellMapTag_pixelSize           = static_cast<size_t>(SSCellMapTag::pixelSize          );
+	constexpr size_t SSCellMapTag_overrideTexSettings = static_cast<size_t>(SSCellMapTag::overrideTexSettings);
+	constexpr size_t SSCellMapTag_wrapMode            = static_cast<size_t>(SSCellMapTag::wrapMode           );
+	constexpr size_t SSCellMapTag_filterMode          = static_cast<size_t>(SSCellMapTag::filterMode         );
+	constexpr size_t SSCellMapTag_cells               = static_cast<size_t>(SSCellMapTag::cells              );
 
 	constexpr const char32_t* const SS_CELLMAP_TAG_STRINGS[] = {
 		U"name",
 		U"exportPath",
 		U"imagePath",
 		U"pixelSize",
+		U"overrideTexSettings",
 		U"wrapMode",
 		U"filterMode",
 		U"cells",

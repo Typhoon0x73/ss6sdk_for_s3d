@@ -18,13 +18,14 @@ namespace s3d
 		}
 
 		static const HashTable<String, void(SSCellMap::*)(const XMLElement&)> PARSE_TABLE = {
-			{ SS_CELLMAP_TAG_STRINGS[SSCellMapTag_name      ], &SSCellMap::parseName       },
-			{ SS_CELLMAP_TAG_STRINGS[SSCellMapTag_exportPath], &SSCellMap::parseExportPath },
-			{ SS_CELLMAP_TAG_STRINGS[SSCellMapTag_imagePath ], &SSCellMap::parseImagePath  },
-			{ SS_CELLMAP_TAG_STRINGS[SSCellMapTag_pixelSize ], &SSCellMap::parsePixelSize  },
-			{ SS_CELLMAP_TAG_STRINGS[SSCellMapTag_wrapMode  ], &SSCellMap::parseWrapMode   },
-			{ SS_CELLMAP_TAG_STRINGS[SSCellMapTag_filterMode], &SSCellMap::parseFilterMode },
-			{ SS_CELLMAP_TAG_STRINGS[SSCellMapTag_cells     ], &SSCellMap::parseCells      },
+			{ SS_CELLMAP_TAG_STRINGS[SSCellMapTag_name               ], &SSCellMap::parseName                },
+			{ SS_CELLMAP_TAG_STRINGS[SSCellMapTag_exportPath         ], &SSCellMap::parseExportPath          },
+			{ SS_CELLMAP_TAG_STRINGS[SSCellMapTag_imagePath          ], &SSCellMap::parseImagePath           },
+			{ SS_CELLMAP_TAG_STRINGS[SSCellMapTag_pixelSize          ], &SSCellMap::parsePixelSize           },
+			{ SS_CELLMAP_TAG_STRINGS[SSCellMapTag_overrideTexSettings], &SSCellMap::parseOverrideTexSettings },
+			{ SS_CELLMAP_TAG_STRINGS[SSCellMapTag_wrapMode           ], &SSCellMap::parseWrapMode            },
+			{ SS_CELLMAP_TAG_STRINGS[SSCellMapTag_filterMode         ], &SSCellMap::parseFilterMode          },
+			{ SS_CELLMAP_TAG_STRINGS[SSCellMapTag_cells              ], &SSCellMap::parseCells               },
 		};
 
 		for (auto element = reader.firstChild(); element; element = element.nextSibling())
@@ -89,6 +90,11 @@ namespace s3d
 	void SSCellMap::parsePixelSize(const XMLElement& element)
 	{
 		m_pixelSize = SSParseUtilities::parseSize(element.text());
+	}
+
+	void SSCellMap::parseOverrideTexSettings(const XMLElement& element)
+	{
+		m_overrideTexSettings = SSParseUtilities::parseIntToBool(element.text());
 	}
 
 	void SSCellMap::parseWrapMode(const XMLElement& element)
