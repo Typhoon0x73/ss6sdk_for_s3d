@@ -2,7 +2,10 @@
 # pragma once
 # include <Siv3D.hpp>
 
-# define ASSERT(x) __debugbreak()
+# define SS_ENUM_TO_CONST_NUM(enumtype,name)  constexpr int64 enumtype##_##name = static_cast<int64>(enumtype##::##name);
+# define SS_CONSTEXPR_STRINGS_BEGIN(enumtype) constexpr const char32_t* const enumtype##_STRINGS[] = {
+# define SS_CONSTEXPR_STRINGS_END             };
+# define SS_TO_U32_STR(name)                  U ## #name
 
 namespace s3d
 {
@@ -20,70 +23,70 @@ namespace s3d
 	};
 
 	enum class SSProjectTag {
-		name,
-		exportPath,
-		settings,
-		animeSettings,
-		texPackSettings,
-		cellmapNames,
-		animepackNames,
-		effectFileNames,
+		name            ,
+		exportPath      ,
+		settings        ,
+		animeSettings   ,
+		texPackSettings ,
+		cellmapNames    ,
+		animepackNames  ,
+		effectFileNames ,
 		ExternalTextures,
 	};
-	constexpr size_t SSProjectTag_name             = static_cast<size_t>(SSProjectTag::name            );
-	constexpr size_t SSProjectTag_exportPath       = static_cast<size_t>(SSProjectTag::exportPath      );
-	constexpr size_t SSProjectTag_settings         = static_cast<size_t>(SSProjectTag::settings        );
-	constexpr size_t SSProjectTag_animeSettings    = static_cast<size_t>(SSProjectTag::animeSettings   );
-	constexpr size_t SSProjectTag_texPackSettings  = static_cast<size_t>(SSProjectTag::texPackSettings );
-	constexpr size_t SSProjectTag_cellmapNames     = static_cast<size_t>(SSProjectTag::cellmapNames    );
-	constexpr size_t SSProjectTag_animepackNames   = static_cast<size_t>(SSProjectTag::animepackNames  );
-	constexpr size_t SSProjectTag_effectFileNames  = static_cast<size_t>(SSProjectTag::effectFileNames );
-	constexpr size_t SSProjectTag_ExternalTextures = static_cast<size_t>(SSProjectTag::ExternalTextures);
+	SS_ENUM_TO_CONST_NUM(SSProjectTag,name            )
+	SS_ENUM_TO_CONST_NUM(SSProjectTag,exportPath      )
+	SS_ENUM_TO_CONST_NUM(SSProjectTag,settings        )
+	SS_ENUM_TO_CONST_NUM(SSProjectTag,animeSettings   )
+	SS_ENUM_TO_CONST_NUM(SSProjectTag,texPackSettings )
+	SS_ENUM_TO_CONST_NUM(SSProjectTag,cellmapNames    )
+	SS_ENUM_TO_CONST_NUM(SSProjectTag,animepackNames  )
+	SS_ENUM_TO_CONST_NUM(SSProjectTag,effectFileNames )
+	SS_ENUM_TO_CONST_NUM(SSProjectTag,ExternalTextures)
 
-	constexpr const char32_t* const SS_PROJECT_TAG_STRINGS[] = {
-		U"name",
-		U"exportPath",
-		U"settings",
-		U"animeSettings",
-		U"texPackSettings",
-		U"cellmapNames",
-		U"animepackNames",
-		U"effectFileNames",
-		U"ExternalTextures",
-	};
+	SS_CONSTEXPR_STRINGS_BEGIN(SS_PROJECT_TAG)
+		SS_TO_U32_STR(name            ),
+		SS_TO_U32_STR(exportPath      ),
+		SS_TO_U32_STR(settings        ),
+		SS_TO_U32_STR(animeSettings   ),
+		SS_TO_U32_STR(texPackSettings ),
+		SS_TO_U32_STR(cellmapNames    ),
+		SS_TO_U32_STR(animepackNames  ),
+		SS_TO_U32_STR(effectFileNames ),
+		SS_TO_U32_STR(ExternalTextures),
+	SS_CONSTEXPR_STRINGS_END
 
 	enum class SSProjectSettingsTag {
-		animeBaseDirectory,
-		cellMapBaseDirectory,
-		imageBaseDirectory,
-		effectBaseDirectory,
-		exportBaseDirectory,
+		animeBaseDirectory      ,
+		cellMapBaseDirectory    ,
+		imageBaseDirectory      ,
+		effectBaseDirectory     ,
+		exportBaseDirectory     ,
 		queryExportBaseDirectory,
-		wrapMode,
-		filterMode,
-		vertexAnimeFloat,
+		wrapMode                ,
+		filterMode              ,
+		vertexAnimeFloat        ,
 	};
-	constexpr size_t SSProjectSettingsTag_animeBaseDirectory       = static_cast<size_t>(SSProjectSettingsTag::animeBaseDirectory      );
-	constexpr size_t SSProjectSettingsTag_cellMapBaseDirectory     = static_cast<size_t>(SSProjectSettingsTag::cellMapBaseDirectory    );
-	constexpr size_t SSProjectSettingsTag_imageBaseDirectory       = static_cast<size_t>(SSProjectSettingsTag::imageBaseDirectory      );
-	constexpr size_t SSProjectSettingsTag_effectBaseDirectory      = static_cast<size_t>(SSProjectSettingsTag::effectBaseDirectory     );
-	constexpr size_t SSProjectSettingsTag_exportBaseDirectory      = static_cast<size_t>(SSProjectSettingsTag::exportBaseDirectory     );
-	constexpr size_t SSProjectSettingsTag_queryExportBaseDirectory = static_cast<size_t>(SSProjectSettingsTag::queryExportBaseDirectory);
-	constexpr size_t SSProjectSettingsTag_wrapMode                 = static_cast<size_t>(SSProjectSettingsTag::wrapMode                );
-	constexpr size_t SSProjectSettingsTag_filterMode               = static_cast<size_t>(SSProjectSettingsTag::filterMode              );
-	constexpr size_t SSProjectSettingsTag_vertexAnimeFloat         = static_cast<size_t>(SSProjectSettingsTag::vertexAnimeFloat        );
+	SS_ENUM_TO_CONST_NUM(SSProjectSettingsTag,animeBaseDirectory      )
+	SS_ENUM_TO_CONST_NUM(SSProjectSettingsTag,cellMapBaseDirectory    )
+	SS_ENUM_TO_CONST_NUM(SSProjectSettingsTag,imageBaseDirectory      )
+	SS_ENUM_TO_CONST_NUM(SSProjectSettingsTag,effectBaseDirectory     )
+	SS_ENUM_TO_CONST_NUM(SSProjectSettingsTag,exportBaseDirectory     )
+	SS_ENUM_TO_CONST_NUM(SSProjectSettingsTag,queryExportBaseDirectory)
+	SS_ENUM_TO_CONST_NUM(SSProjectSettingsTag,wrapMode                )
+	SS_ENUM_TO_CONST_NUM(SSProjectSettingsTag,filterMode              )
+	SS_ENUM_TO_CONST_NUM(SSProjectSettingsTag,vertexAnimeFloat        )
 
-	constexpr const char32_t* const SS_PROJECT_SETTINGS_TAG_STRINGS[] = {
-		U"animeBaseDirectory",
-		U"cellMapBaseDirectory",
-		U"imageBaseDirectory",
-		U"effectBaseDirectory",
-		U"exportBaseDirectory",
-		U"queryExportBaseDirectory",
-		U"wrapMode",
-		U"filterMode",
-		U"vertexAnimeFloat",
-	};
+	SS_CONSTEXPR_STRINGS_BEGIN(SS_PROJECT_SETTINGS_TAG)
+		SS_TO_U32_STR(animeBaseDirectory      ),
+		SS_TO_U32_STR(cellMapBaseDirectory    ),
+		SS_TO_U32_STR(imageBaseDirectory      ),
+		SS_TO_U32_STR(effectBaseDirectory     ),
+		SS_TO_U32_STR(exportBaseDirectory     ),
+		SS_TO_U32_STR(queryExportBaseDirectory),
+		SS_TO_U32_STR(wrapMode                ),
+		SS_TO_U32_STR(filterMode              ),
+		SS_TO_U32_STR(vertexAnimeFloat        ),
+	SS_CONSTEXPR_STRINGS_END
 
 	enum class SSAnimeSettingsTag {
 		fps		   ,
@@ -100,149 +103,122 @@ namespace s3d
 		bgSettings ,
 		outStartNum,
 	};
-	constexpr size_t SSAnimeSettingsTag_fps         = static_cast<size_t>(SSAnimeSettingsTag::fps        );
-	constexpr size_t SSAnimeSettingsTag_frameCount  = static_cast<size_t>(SSAnimeSettingsTag::frameCount );
-	constexpr size_t SSAnimeSettingsTag_sortMode    = static_cast<size_t>(SSAnimeSettingsTag::sortMode   );
-	constexpr size_t SSAnimeSettingsTag_canvasSize  = static_cast<size_t>(SSAnimeSettingsTag::canvasSize );
-	constexpr size_t SSAnimeSettingsTag_pivot       = static_cast<size_t>(SSAnimeSettingsTag::pivot      );
-	constexpr size_t SSAnimeSettingsTag_bgColor     = static_cast<size_t>(SSAnimeSettingsTag::bgColor    );
-	constexpr size_t SSAnimeSettingsTag_gridSize    = static_cast<size_t>(SSAnimeSettingsTag::gridSize   );
-	constexpr size_t SSAnimeSettingsTag_gridColor   = static_cast<size_t>(SSAnimeSettingsTag::gridColor  );
-	constexpr size_t SSAnimeSettingsTag_ik_depth    = static_cast<size_t>(SSAnimeSettingsTag::ik_depth   );
-	constexpr size_t SSAnimeSettingsTag_startFrame  = static_cast<size_t>(SSAnimeSettingsTag::startFrame );
-	constexpr size_t SSAnimeSettingsTag_endFrame    = static_cast<size_t>(SSAnimeSettingsTag::endFrame   );
-	constexpr size_t SSAnimeSettingsTag_bgSettings  = static_cast<size_t>(SSAnimeSettingsTag::bgSettings );
-	constexpr size_t SSAnimeSettingsTag_outStartNum = static_cast<size_t>(SSAnimeSettingsTag::outStartNum);
+	SS_ENUM_TO_CONST_NUM(SSAnimeSettingsTag,fps        )
+	SS_ENUM_TO_CONST_NUM(SSAnimeSettingsTag,frameCount )
+	SS_ENUM_TO_CONST_NUM(SSAnimeSettingsTag,sortMode   )
+	SS_ENUM_TO_CONST_NUM(SSAnimeSettingsTag,canvasSize )
+	SS_ENUM_TO_CONST_NUM(SSAnimeSettingsTag,pivot      )
+	SS_ENUM_TO_CONST_NUM(SSAnimeSettingsTag,bgColor    )
+	SS_ENUM_TO_CONST_NUM(SSAnimeSettingsTag,gridSize   )
+	SS_ENUM_TO_CONST_NUM(SSAnimeSettingsTag,gridColor  )
+	SS_ENUM_TO_CONST_NUM(SSAnimeSettingsTag,ik_depth   )
+	SS_ENUM_TO_CONST_NUM(SSAnimeSettingsTag,startFrame )
+	SS_ENUM_TO_CONST_NUM(SSAnimeSettingsTag,endFrame   )
+	SS_ENUM_TO_CONST_NUM(SSAnimeSettingsTag,bgSettings )
+	SS_ENUM_TO_CONST_NUM(SSAnimeSettingsTag,outStartNum)
 
-	constexpr const char32_t* const SS_ANIME_SETTINGS_TAG_STRINGS[] = {
-		U"fps",
-		U"frameCount",
-		U"sortMode",
-		U"canvasSize",
-		U"pivot",
-		U"bgColor",
-		U"gridSize",
-		U"gridColor",
-		U"ik_depth",
-		U"startFrame",
-		U"endFrame",
-		U"bgSettings",
-		U"outStartNum",
-	};
+	SS_CONSTEXPR_STRINGS_BEGIN(SS_ANIME_SETTINGS_TAG)
+		SS_TO_U32_STR(fps        ),
+		SS_TO_U32_STR(frameCount ),
+		SS_TO_U32_STR(sortMode   ),
+		SS_TO_U32_STR(canvasSize ),
+		SS_TO_U32_STR(pivot      ),
+		SS_TO_U32_STR(bgColor    ),
+		SS_TO_U32_STR(gridSize   ),
+		SS_TO_U32_STR(gridColor  ),
+		SS_TO_U32_STR(ik_depth   ),
+		SS_TO_U32_STR(startFrame ),
+		SS_TO_U32_STR(endFrame   ),
+		SS_TO_U32_STR(bgSettings ),
+		SS_TO_U32_STR(outStartNum),
+	SS_CONSTEXPR_STRINGS_END
 
 	enum class SSBackgroundSettingsTag {
-		value,
-	};
-	constexpr size_t SSBackGroundSettingsTag_value = static_cast<size_t>(SSBackgroundSettingsTag::value);
-
-	constexpr const char32_t* const SS_BACKGROUND_SETTINGS_TAG_STRINGS[] = {
-		U"value",
-	};
-
-	enum class SSBackgroundSettingsValueTag {
-		imagePath,
-		imageDisp,
+		imagePath  ,
+		imageDisp  ,
 		imageOffset,
 		imageCanvas,
-		imagePivot,
+		imagePivot ,
 	};
-	constexpr size_t SSBackGroundSettingsValueTag_imagePath   = static_cast<size_t>(SSBackgroundSettingsValueTag::imagePath  );
-	constexpr size_t SSBackGroundSettingsValueTag_imageDisp   = static_cast<size_t>(SSBackgroundSettingsValueTag::imageDisp  );
-	constexpr size_t SSBackGroundSettingsValueTag_imageOffset = static_cast<size_t>(SSBackgroundSettingsValueTag::imageOffset);
-	constexpr size_t SSBackGroundSettingsValueTag_imageCanvas = static_cast<size_t>(SSBackgroundSettingsValueTag::imageCanvas);
-	constexpr size_t SSBackGroundSettingsValueTag_imagePivot  = static_cast<size_t>(SSBackgroundSettingsValueTag::imagePivot );
+	SS_ENUM_TO_CONST_NUM(SSBackgroundSettingsTag,imagePath  )
+	SS_ENUM_TO_CONST_NUM(SSBackgroundSettingsTag,imageDisp  )
+	SS_ENUM_TO_CONST_NUM(SSBackgroundSettingsTag,imageOffset)
+	SS_ENUM_TO_CONST_NUM(SSBackgroundSettingsTag,imageCanvas)
+	SS_ENUM_TO_CONST_NUM(SSBackgroundSettingsTag,imagePivot )
 
-	constexpr const char32_t* const SS_BACKGROUND_SETTINGS_VALUE_TAG_STRINGS[] = {
-		U"imagePath",
-		U"imageDisp",
-		U"imageOffset",
-		U"imageCanvas",
-		U"imagePivot",
-	};
+	SS_CONSTEXPR_STRINGS_BEGIN(SS_BACKGROUND_SETTINGS_TAG)
+		SS_TO_U32_STR(imagePath  ),
+		SS_TO_U32_STR(imageDisp  ),
+		SS_TO_U32_STR(imageOffset),
+		SS_TO_U32_STR(imageCanvas),
+		SS_TO_U32_STR(imagePivot ),
+	SS_CONSTEXPR_STRINGS_END
 
 	enum class SSTexturePackSettingsTag {
-		maxSize,
-		forcePo2,
+		maxSize    ,
+		forcePo2   ,
 		forceSquare,
-		margin,
-		padding,
+		margin     ,
+		padding    ,
 	};
-	constexpr size_t SSTexturePackSettingsTag_maxSize     = static_cast<size_t>(SSTexturePackSettingsTag::maxSize    );
-	constexpr size_t SSTexturePackSettingsTag_forcePo2    = static_cast<size_t>(SSTexturePackSettingsTag::forcePo2   );
-	constexpr size_t SSTexturePackSettingsTag_forceSquare = static_cast<size_t>(SSTexturePackSettingsTag::forceSquare);
-	constexpr size_t SSTexturePackSettingsTag_margin      = static_cast<size_t>(SSTexturePackSettingsTag::margin     );
-	constexpr size_t SSTexturePackSettingsTag_padding     = static_cast<size_t>(SSTexturePackSettingsTag::padding    );
+	SS_ENUM_TO_CONST_NUM(SSTexturePackSettingsTag,maxSize    )
+	SS_ENUM_TO_CONST_NUM(SSTexturePackSettingsTag,forcePo2   )
+	SS_ENUM_TO_CONST_NUM(SSTexturePackSettingsTag,forceSquare)
+	SS_ENUM_TO_CONST_NUM(SSTexturePackSettingsTag,margin     )
+	SS_ENUM_TO_CONST_NUM(SSTexturePackSettingsTag,padding    )
 
-	constexpr const char32_t* const SS_TEXTURE_PACK_SETTINGS_TAG_STRINGS[] = {
-		U"maxSize",
-		U"forcePo2",
-		U"forceSquare",
-		U"margin",
-		U"padding",
-	};
+	SS_CONSTEXPR_STRINGS_BEGIN(SS_TEXTURE_PACK_SETTINGS_TAG)
+		SS_TO_U32_STR(maxSize    ),
+		SS_TO_U32_STR(forcePo2   ),
+		SS_TO_U32_STR(forceSquare),
+		SS_TO_U32_STR(margin     ),
+		SS_TO_U32_STR(padding    ),
+	SS_CONSTEXPR_STRINGS_END
 
 	enum class SSExternalTexturesTag {
-		files,
-	};
-	constexpr size_t SSExternalTexturesTag_files = static_cast<size_t>(SSExternalTexturesTag::files);
-
-	constexpr const char32_t* const SS_EXTERNAL_TEXTURES_TAG_STRINGS[] = {
-		U"files",
-	};
-
-	enum class SSExternalTexturesFilesTag {
-		value,
-	};
-	constexpr size_t SSExternalTexturesFilesTag_value = static_cast<size_t>(SSExternalTexturesFilesTag::value);
-
-	constexpr const char32_t* const SS_EXTERNAL_TEXTURES_FILES_TAG_STRINGS[] = {
-		U"value",
-	};
-
-	enum class SSExternalTexturesFilesValueTag {
 		PathName,
-		index,
-		flags,
+		index   ,
+		flags   ,
 	};
-	constexpr size_t SSExternalTexturesFilesValueTag_PathName = static_cast<size_t>(SSExternalTexturesFilesValueTag::PathName);
-	constexpr size_t SSExternalTexturesFilesValueTag_index    = static_cast<size_t>(SSExternalTexturesFilesValueTag::index   );
-	constexpr size_t SSExternalTexturesFilesValueTag_flags    = static_cast<size_t>(SSExternalTexturesFilesValueTag::flags   );
+	SS_ENUM_TO_CONST_NUM(SSExternalTexturesTag,PathName)
+	SS_ENUM_TO_CONST_NUM(SSExternalTexturesTag,index   )
+	SS_ENUM_TO_CONST_NUM(SSExternalTexturesTag,flags   )
 
-	constexpr const char32_t* const SS_EXTERNAL_TEXTURES_FILES_VALUE_TAG_STRINGS[] = {
-		U"PathName",
-		U"index",
-		U"flags",
-	};
+	SS_CONSTEXPR_STRINGS_BEGIN(SS_EXTERNAL_TEXTURES_TAG)
+		SS_TO_U32_STR(PathName),
+		SS_TO_U32_STR(index   ),
+		SS_TO_U32_STR(flags   ),
+	SS_CONSTEXPR_STRINGS_END
 
 	enum class SSCellMapTag {
-		name      ,
-		exportPath,
-		imagePath ,
-		pixelSize ,
+		name               ,
+		exportPath         ,
+		imagePath          ,
+		pixelSize          ,
 		overrideTexSettings,
-		wrapMode  ,
-		filterMode,
-		cells     ,
+		wrapMode           ,
+		filterMode         ,
+		cells              ,
 	};
-	constexpr size_t SSCellMapTag_name                = static_cast<size_t>(SSCellMapTag::name               );
-	constexpr size_t SSCellMapTag_exportPath          = static_cast<size_t>(SSCellMapTag::exportPath         );
-	constexpr size_t SSCellMapTag_imagePath           = static_cast<size_t>(SSCellMapTag::imagePath          );
-	constexpr size_t SSCellMapTag_pixelSize           = static_cast<size_t>(SSCellMapTag::pixelSize          );
-	constexpr size_t SSCellMapTag_overrideTexSettings = static_cast<size_t>(SSCellMapTag::overrideTexSettings);
-	constexpr size_t SSCellMapTag_wrapMode            = static_cast<size_t>(SSCellMapTag::wrapMode           );
-	constexpr size_t SSCellMapTag_filterMode          = static_cast<size_t>(SSCellMapTag::filterMode         );
-	constexpr size_t SSCellMapTag_cells               = static_cast<size_t>(SSCellMapTag::cells              );
+	SS_ENUM_TO_CONST_NUM(SSCellMapTag,name               )
+	SS_ENUM_TO_CONST_NUM(SSCellMapTag,exportPath         )
+	SS_ENUM_TO_CONST_NUM(SSCellMapTag,imagePath          )
+	SS_ENUM_TO_CONST_NUM(SSCellMapTag,pixelSize          )
+	SS_ENUM_TO_CONST_NUM(SSCellMapTag,overrideTexSettings)
+	SS_ENUM_TO_CONST_NUM(SSCellMapTag,wrapMode           )
+	SS_ENUM_TO_CONST_NUM(SSCellMapTag,filterMode         )
+	SS_ENUM_TO_CONST_NUM(SSCellMapTag,cells              )
 
-	constexpr const char32_t* const SS_CELLMAP_TAG_STRINGS[] = {
-		U"name",
-		U"exportPath",
-		U"imagePath",
-		U"pixelSize",
-		U"overrideTexSettings",
-		U"wrapMode",
-		U"filterMode",
-		U"cells",
-	};
+	SS_CONSTEXPR_STRINGS_BEGIN(SS_CELLMAP_TAG)
+		SS_TO_U32_STR(name               ),
+		SS_TO_U32_STR(exportPath         ),
+		SS_TO_U32_STR(imagePath          ),
+		SS_TO_U32_STR(pixelSize          ),
+		SS_TO_U32_STR(overrideTexSettings),
+		SS_TO_U32_STR(wrapMode           ),
+		SS_TO_U32_STR(filterMode         ),
+		SS_TO_U32_STR(cells              ),
+	SS_CONSTEXPR_STRINGS_END
 
 	enum class SSCellInfoTag {
 		name         ,
@@ -259,35 +235,35 @@ namespace s3d
 		meshPointList,
 		meshTriList  ,
 	};
-	constexpr size_t SSCellInfoTag_name          = static_cast<size_t>(SSCellInfoTag::name         );
-	constexpr size_t SSCellInfoTag_pos           = static_cast<size_t>(SSCellInfoTag::pos          );
-	constexpr size_t SSCellInfoTag_size          = static_cast<size_t>(SSCellInfoTag::size         );
-	constexpr size_t SSCellInfoTag_pivot         = static_cast<size_t>(SSCellInfoTag::pivot        );
-	constexpr size_t SSCellInfoTag_rotated       = static_cast<size_t>(SSCellInfoTag::rotated      );
-	constexpr size_t SSCellInfoTag_orgImageName  = static_cast<size_t>(SSCellInfoTag::orgImageName );
-	constexpr size_t SSCellInfoTag_posStable     = static_cast<size_t>(SSCellInfoTag::posStable    );
-	constexpr size_t SSCellInfoTag_ismesh        = static_cast<size_t>(SSCellInfoTag::ismesh       );
-	constexpr size_t SSCellInfoTag_divtype       = static_cast<size_t>(SSCellInfoTag::divtype      );
-	constexpr size_t SSCellInfoTag_innerPoint    = static_cast<size_t>(SSCellInfoTag::innerPoint   );
-	constexpr size_t SSCellInfoTag_outerPoint    = static_cast<size_t>(SSCellInfoTag::outerPoint   );
-	constexpr size_t SSCellInfoTag_meshPointList = static_cast<size_t>(SSCellInfoTag::meshPointList);
-	constexpr size_t SSCellInfoTag_meshTriList   = static_cast<size_t>(SSCellInfoTag::meshTriList  );
+	SS_ENUM_TO_CONST_NUM(SSCellInfoTag,name         )
+	SS_ENUM_TO_CONST_NUM(SSCellInfoTag,pos          )
+	SS_ENUM_TO_CONST_NUM(SSCellInfoTag,size         )
+	SS_ENUM_TO_CONST_NUM(SSCellInfoTag,pivot        )
+	SS_ENUM_TO_CONST_NUM(SSCellInfoTag,rotated      )
+	SS_ENUM_TO_CONST_NUM(SSCellInfoTag,orgImageName )
+	SS_ENUM_TO_CONST_NUM(SSCellInfoTag,posStable    )
+	SS_ENUM_TO_CONST_NUM(SSCellInfoTag,ismesh       )
+	SS_ENUM_TO_CONST_NUM(SSCellInfoTag,divtype      )
+	SS_ENUM_TO_CONST_NUM(SSCellInfoTag,innerPoint   )
+	SS_ENUM_TO_CONST_NUM(SSCellInfoTag,outerPoint   )
+	SS_ENUM_TO_CONST_NUM(SSCellInfoTag,meshPointList)
+	SS_ENUM_TO_CONST_NUM(SSCellInfoTag,meshTriList  )
 
-	constexpr const char32_t* const SS_CELLINFO_TAG_STRINGS[] = {
-		U"name",
-		U"pos",
-		U"size",
-		U"pivot",
-		U"rotated",
-		U"orgImageName",
-		U"posStable",
-		U"ismesh",
-		U"divtype",
-		U"innerPoint",
-		U"outerPoint",
-		U"meshPointList",
-		U"meshTriList",
-	};
+	SS_CONSTEXPR_STRINGS_BEGIN(SS_CELLINFO_TAG)
+		SS_TO_U32_STR(name         ),
+		SS_TO_U32_STR(pos          ),
+		SS_TO_U32_STR(size         ),
+		SS_TO_U32_STR(pivot        ),
+		SS_TO_U32_STR(rotated      ),
+		SS_TO_U32_STR(orgImageName ),
+		SS_TO_U32_STR(posStable    ),
+		SS_TO_U32_STR(ismesh       ),
+		SS_TO_U32_STR(divtype      ),
+		SS_TO_U32_STR(innerPoint   ),
+		SS_TO_U32_STR(outerPoint   ),
+		SS_TO_U32_STR(meshPointList),
+		SS_TO_U32_STR(meshTriList  ),
+	SS_CONSTEXPR_STRINGS_END
 
 	enum class SSAnimePackTag {
 		settings    ,
@@ -297,19 +273,24 @@ namespace s3d
 		cellmapNames,
 		animeList   ,
 	};
-	constexpr size_t SSAnimePackTag_settings     = static_cast<size_t>(SSAnimePackTag::settings    );
-	constexpr size_t SSAnimePackTag_name         = static_cast<size_t>(SSAnimePackTag::name        );
-	constexpr size_t SSAnimePackTag_exportPath   = static_cast<size_t>(SSAnimePackTag::exportPath  );
-	constexpr size_t SSAnimePackTag_Model        = static_cast<size_t>(SSAnimePackTag::Model       );
-	constexpr size_t SSAnimePackTag_cellmapNames = static_cast<size_t>(SSAnimePackTag::cellmapNames);
-	constexpr size_t SSAnimePackTag_animeList    = static_cast<size_t>(SSAnimePackTag::animeList   );
+	SS_ENUM_TO_CONST_NUM(SSAnimePackTag,settings    )
+	SS_ENUM_TO_CONST_NUM(SSAnimePackTag,name        )
+	SS_ENUM_TO_CONST_NUM(SSAnimePackTag,exportPath  )
+	SS_ENUM_TO_CONST_NUM(SSAnimePackTag,Model       )
+	SS_ENUM_TO_CONST_NUM(SSAnimePackTag,cellmapNames)
+	SS_ENUM_TO_CONST_NUM(SSAnimePackTag,animeList   )
 
-	constexpr const char32_t* const SS_ANIME_PACK_TAG_STRINGS[] = {
-		U"settings",
-		U"name",
-		U"exportPath",
-		U"Model",
-		U"cellmapNames",
-		U"animeList",
-	};
+	SS_CONSTEXPR_STRINGS_BEGIN(SS_ANIME_PACK_TAG)
+		SS_TO_U32_STR(settings    ),
+		SS_TO_U32_STR(name        ),
+		SS_TO_U32_STR(exportPath  ),
+		SS_TO_U32_STR(Model       ),
+		SS_TO_U32_STR(cellmapNames),
+		SS_TO_U32_STR(animeList   ),
+	SS_CONSTEXPR_STRINGS_END
 }
+
+# undef SS_ENUM_TO_CONST_NUM
+# undef SS_CONSTEXPR_STRINGS_BEGIN
+# undef SS_CONSTEXPR_STRINGS_END            
+# undef SS_TO_U32_STR

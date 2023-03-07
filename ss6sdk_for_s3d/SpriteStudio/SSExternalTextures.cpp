@@ -12,7 +12,7 @@ namespace s3d
 	bool SSExternalTextures::load(const XMLElement& ExternalTextures, bool createEditorParam)
 	{
 		static const HashTable<String, void(SSExternalTextures::*)(const XMLElement&)> PARSE_TABLE = {
-			{ SS_EXTERNAL_TEXTURES_TAG_STRINGS[SSExternalTexturesTag_files], &SSExternalTextures::parseFiles },
+			{ U"files", &SSExternalTextures::parseFiles },
 		};
 		for (XMLElement element = ExternalTextures.firstChild(); element; element = element.nextSibling())
 		{
@@ -31,7 +31,7 @@ namespace s3d
 	void SSExternalTextures::parseFiles(const XMLElement& files)
 	{
 		static const HashTable<String, void(SSExternalTextures::*)(const XMLElement&, FileParam&)> PARSE_TABLE = {
-			{ SS_EXTERNAL_TEXTURES_FILES_TAG_STRINGS[SSExternalTexturesFilesTag_value], &SSExternalTextures::parseValue },
+			{ U"value", &SSExternalTextures::parseValue },
 		};
 		FileParam file;
 		for (XMLElement element = files.firstChild(); element; element = element.nextSibling())
@@ -51,9 +51,9 @@ namespace s3d
 	void SSExternalTextures::parseValue(const XMLElement& value, FileParam& outParam)
 	{
 		static const HashTable<String, void(SSExternalTextures::*)(const XMLElement&, FileParam::Value&)> PARSE_TABLE = {
-			{ SS_EXTERNAL_TEXTURES_FILES_VALUE_TAG_STRINGS[SSExternalTexturesFilesValueTag_PathName], &SSExternalTextures::parsePathName },
-			{ SS_EXTERNAL_TEXTURES_FILES_VALUE_TAG_STRINGS[SSExternalTexturesFilesValueTag_index   ], &SSExternalTextures::parseIndex    },
-			{ SS_EXTERNAL_TEXTURES_FILES_VALUE_TAG_STRINGS[SSExternalTexturesFilesValueTag_flags   ], &SSExternalTextures::parseFlags    },
+			{ SS_EXTERNAL_TEXTURES_TAG_STRINGS[SSExternalTexturesTag_PathName], &SSExternalTextures::parsePathName },
+			{ SS_EXTERNAL_TEXTURES_TAG_STRINGS[SSExternalTexturesTag_index   ], &SSExternalTextures::parseIndex    },
+			{ SS_EXTERNAL_TEXTURES_TAG_STRINGS[SSExternalTexturesTag_flags   ], &SSExternalTextures::parseFlags    },
 		};
 		FileParam::Value v;
 		for (XMLElement element = value.firstChild(); element; element = element.nextSibling())

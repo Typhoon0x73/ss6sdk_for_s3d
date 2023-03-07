@@ -12,7 +12,7 @@ namespace s3d
 	bool SSBackgroundSettings::load(const XMLElement& bgSettings, bool createEditorParam)
 	{
 		static const HashTable<String, void(SSBackgroundSettings::*)(const XMLElement&)> PARSE_TABLE = {
-			{ SS_BACKGROUND_SETTINGS_TAG_STRINGS[SSBackGroundSettingsTag_value], &SSBackgroundSettings::parseValue },
+			{ U"value", &SSBackgroundSettings::parseValue },
 		};
 		for (auto element = bgSettings.firstChild(); element; element = element.nextSibling())
 		{
@@ -31,11 +31,11 @@ namespace s3d
 	void SSBackgroundSettings::parseValue(const XMLElement& value)
 	{
 		static const HashTable<String, void(SSBackgroundSettings::*)(const XMLElement&, Value&)> PARSE_TABLE = {
-			{ SS_BACKGROUND_SETTINGS_VALUE_TAG_STRINGS[SSBackGroundSettingsValueTag_imagePath  ], &SSBackgroundSettings::parseValueImagePath   },
-			{ SS_BACKGROUND_SETTINGS_VALUE_TAG_STRINGS[SSBackGroundSettingsValueTag_imageDisp  ], &SSBackgroundSettings::parseValueImageDisp   },
-			{ SS_BACKGROUND_SETTINGS_VALUE_TAG_STRINGS[SSBackGroundSettingsValueTag_imageOffset], &SSBackgroundSettings::parseValueImageOffset },
-			{ SS_BACKGROUND_SETTINGS_VALUE_TAG_STRINGS[SSBackGroundSettingsValueTag_imageCanvas], &SSBackgroundSettings::parseValueImageCanvas },
-			{ SS_BACKGROUND_SETTINGS_VALUE_TAG_STRINGS[SSBackGroundSettingsValueTag_imagePivot ], &SSBackgroundSettings::parseValueImagePivot  },
+			{ SS_BACKGROUND_SETTINGS_TAG_STRINGS[SSBackgroundSettingsTag_imagePath  ], &SSBackgroundSettings::parseValueImagePath   },
+			{ SS_BACKGROUND_SETTINGS_TAG_STRINGS[SSBackgroundSettingsTag_imageDisp  ], &SSBackgroundSettings::parseValueImageDisp   },
+			{ SS_BACKGROUND_SETTINGS_TAG_STRINGS[SSBackgroundSettingsTag_imageOffset], &SSBackgroundSettings::parseValueImageOffset },
+			{ SS_BACKGROUND_SETTINGS_TAG_STRINGS[SSBackgroundSettingsTag_imageCanvas], &SSBackgroundSettings::parseValueImageCanvas },
+			{ SS_BACKGROUND_SETTINGS_TAG_STRINGS[SSBackgroundSettingsTag_imagePivot ], &SSBackgroundSettings::parseValueImagePivot  },
 		};
 		Value outValue;
 		for (auto element = value.firstChild(); element; element = element.nextSibling())
