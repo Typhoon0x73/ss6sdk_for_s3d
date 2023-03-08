@@ -2,10 +2,32 @@
 # pragma once
 # include <Siv3D.hpp>
 
+# pragma region "setup macros"
+# if defined(SS_ENUM_TO_CONST_NUM)
+#     pragma push_macro("SS_ENUM_TO_CONST_NUM")
+#     define IS_PUSH_MACRO_SS_ENUM_TO_CONST_NUM
+# endif //defined(SS_ENUM_TO_CONST_NUM)
+
+# if defined(SS_CONSTEXPR_STRINGS_BEGIN)
+#     pragma push_macro("SS_CONSTEXPR_STRINGS_BEGIN")
+#     define IS_PUSH_MACRO_SS_CONSTEXPR_STRINGS_BEGIN
+# endif //defined(SS_CONSTEXPR_STRINGS_BEGIN)
+
+# if defined(SS_CONSTEXPR_STRINGS_END)
+#     pragma push_macro("SS_CONSTEXPR_STRINGS_END")
+#     define IS_PUSH_MACRO_SS_CONSTEXPR_STRINGS_END
+# endif //defined(SS_CONSTEXPR_STRINGS_END)
+
+# if defined(SS_TO_U32_STR)
+#     pragma push_macro("SS_TO_U32_STR")
+#     define IS_PUSH_MACRO_SS_TO_U32_STR
+# endif //defined(SS_TO_U32_STR)
+
 # define SS_ENUM_TO_CONST_NUM(enumtype,name)  constexpr int64 enumtype##_##name = static_cast<int64>(enumtype##::##name);
 # define SS_CONSTEXPR_STRINGS_BEGIN(enumtype) constexpr const char32_t* const enumtype##_STRINGS[] = {
 # define SS_CONSTEXPR_STRINGS_END             };
 # define SS_TO_U32_STR(name)                  U ## #name
+# pragma endregion
 
 namespace s3d
 {
@@ -290,7 +312,29 @@ namespace s3d
 	SS_CONSTEXPR_STRINGS_END
 }
 
-# undef SS_ENUM_TO_CONST_NUM
-# undef SS_CONSTEXPR_STRINGS_BEGIN
-# undef SS_CONSTEXPR_STRINGS_END            
+# pragma region "cleanup macros"
 # undef SS_TO_U32_STR
+# undef SS_CONSTEXPR_STRINGS_END            
+# undef SS_CONSTEXPR_STRINGS_BEGIN
+# undef SS_ENUM_TO_CONST_NUM
+
+# if defined(IS_PUSH_MACRO_SS_TO_U32_STR)
+#     undef IS_PUSH_MACRO_SS_TO_U32_STR
+#     pragma pop_macro("SS_TO_U32_STR")
+# endif// defined(IS_PUSH_MACRO_SS_TO_U32_STR)
+
+# if defined(IS_PUSH_MACRO_SS_CONSTEXPR_STRINGS_END)
+#     undef IS_PUSH_MACRO_SS_CONSTEXPR_STRINGS_END
+#     pragma pop_macro("SS_CONSTEXPR_STRINGS_END")
+# endif// defined(IS_PUSH_MACRO_SS_CONSTEXPR_STRINGS_END)
+
+# if defined(IS_PUSH_MACRO_SS_CONSTEXPR_STRINGS_BEGIN)
+#     undef IS_PUSH_MACRO_SS_CONSTEXPR_STRINGS_BEGIN
+#     pragma pop_macro("SS_CONSTEXPR_STRINGS_BEGIN")
+# endif// defined(IS_PUSH_MACRO_SS_CONSTEXPR_STRINGS_BEGIN)
+
+# if defined(IS_PUSH_MACRO_SS_ENUM_TO_CONST_NUM)
+#     undef IS_PUSH_MACRO_SS_ENUM_TO_CONST_NUM
+#     pragma pop_macro("SS_ENUM_TO_CONST_NUM")
+# endif// defined(IS_PUSH_MACRO_SS_ENUM_TO_CONST_NUM)
+# pragma endregion
