@@ -6,10 +6,13 @@ namespace s3d
 {
 
 	static const HashTable<String, TextureAddressMode> SS_TEXTURE_WRAP_MODE_TABLE = {
-		{ U"clamp", TextureAddressMode::Clamp },
+		{ U"clamp" , TextureAddressMode::Clamp  },
+		{ U"repeat", TextureAddressMode::Repeat },
+		{ U"mirror", TextureAddressMode::Mirror },
 	};
 	static const HashTable<String, TextureFilter> SS_TEXTURE_FILTER_MODE_TABLE = {
-		{ U"linear", TextureFilter::Linear },
+		{ U"nearlest", TextureFilter::Nearest },
+		{ U"linear"  , TextureFilter::Linear  },
 	};
 
 	class SSParseUtilities
