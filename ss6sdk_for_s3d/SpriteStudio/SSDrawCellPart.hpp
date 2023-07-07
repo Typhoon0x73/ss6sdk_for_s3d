@@ -18,7 +18,7 @@ namespace sssdk
 
 		void setCellmaps(ISSCellmaps* cellmaps);
 
-	private:
+	protected:
 
 		ISSCellmaps* m_pCellmaps;
 		const SSCell* m_pCell;
