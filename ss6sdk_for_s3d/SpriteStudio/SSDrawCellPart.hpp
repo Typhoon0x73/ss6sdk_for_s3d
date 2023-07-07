@@ -6,6 +6,7 @@
 
 namespace sssdk
 {
+	class SSCell;
 	class ISSCellmaps;
 	class SSDrawCellPart : public SSDrawPart
 	{

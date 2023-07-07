@@ -128,9 +128,9 @@ namespace sssdk
 						const auto& lines = value.text().split(U' ');
 						if (not lines.isEmpty())
 						{
-							int32 x = ParseOr<int32, int32>(lines[0], 0);
-							int32 y = ParseOr<int32, int32>(lines[1], 0);
-							int32 z = ParseOr<int32, int32>(lines[2], 0);
+							uint32 x = ParseOr<uint32, uint32>(lines[0], 0);
+							uint32 y = ParseOr<uint32, uint32>(lines[1], 0);
+							uint32 z = ParseOr<uint32, uint32>(lines[2], 0);
 							m_meshTriangleIndices.emplace_back(x, y, z);
 						}
 					}
