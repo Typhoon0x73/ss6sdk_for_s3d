@@ -264,6 +264,9 @@
     <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_PartState.cpp">
       <Filter>Source Files\ThirdParty\ss6sdk\common\animator</Filter>
     </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="App\icon.ico">
