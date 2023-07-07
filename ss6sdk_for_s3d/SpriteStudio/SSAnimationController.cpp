@@ -159,7 +159,6 @@ namespace sssdk
 	void SSAnimationController::setTime(double t)
 	{
 		m_tick = t;
-		Print << m_tick;
 		updatePart(calcFrame());
 	}
 
@@ -211,7 +210,6 @@ namespace sssdk
 
 	void SSAnimationController::updatePart(int32 frame)
 	{
-		Print << frame;
 		for (const auto& it : m_drawParts)
 		{
 			if (not it)
