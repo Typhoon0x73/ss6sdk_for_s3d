@@ -30,7 +30,7 @@ namespace sssdk
 		SIV3D_NODISCARD_CXX20 const Array<Point>& getInnerPoints() const;
 		SIV3D_NODISCARD_CXX20 const Array<Point>& getOuterPoints() const;
 		SIV3D_NODISCARD_CXX20 const Array<Point>& getMeshPoints() const;
-		SIV3D_NODISCARD_CXX20 const Array<TriangleIndex32>& getMeshTriangleIndexs() const;
+		SIV3D_NODISCARD_CXX20 const Array<TriangleIndex32>& getMeshTriangleIndices() const;
 
 	private:
 
@@ -47,7 +47,7 @@ namespace sssdk
 		Array<Point> m_innerPoints;
 		Array<Point> m_outerPoints;
 		Array<Point> m_meshPoints;
-		Array<TriangleIndex32> m_meshTriangleIndexs;
+		Array<TriangleIndex32> m_meshTriangleIndices;
 	};
 }
 

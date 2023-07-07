@@ -14,7 +14,7 @@ namespace sssdk
 		, m_innerPoints{}
 		, m_outerPoints{}
 		, m_meshPoints{}
-		, m_meshTriangleIndexs{}
+		, m_meshTriangleIndices{}
 	{
 	}
 
@@ -131,7 +131,7 @@ namespace sssdk
 							int32 x = ParseOr<int32, int32>(lines[0], 0);
 							int32 y = ParseOr<int32, int32>(lines[1], 0);
 							int32 z = ParseOr<int32, int32>(lines[2], 0);
-							m_meshTriangleIndexs.emplace_back(x, y, z);
+							m_meshTriangleIndices.emplace_back(x, y, z);
 						}
 					}
 				}
@@ -190,8 +190,8 @@ namespace sssdk
 		return m_meshPoints;
 	}
 
-	const Array<TriangleIndex32>& SSCell::getMeshTriangleIndexs() const
+	const Array<TriangleIndex32>& SSCell::getMeshTriangleIndices() const
 	{
-		return m_meshTriangleIndexs;
+		return m_meshTriangleIndices;
 	}
 }
