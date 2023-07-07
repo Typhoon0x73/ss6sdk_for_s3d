@@ -1,67 +1,54 @@
-﻿
-# pragma once
-# include <Siv3D.hpp>
-# include "SSCommon.hpp"
-# include "SSCellInfo.hpp"
-# include "SSTexturePackSettings.hpp"
+﻿#pragma once
+#ifndef SS_CELLMAP_H_
+#define SS_CELLMAP_H_
 
-namespace s3d
+#include <Siv3D.hpp>
+#include "SSCell.hpp"
+
+namespace sssdk
 {
-	class SSCellMap
+	class SSProject;
+	class SSCellmap
 	{
 	public:
 
-		SSCellMap() = default;
+		explicit SSCellmap(SSProject* project);
+		explicit SSCellmap(SSProject* project, FilePathView path);
+		virtual ~SSCellmap();
 
-		~SSCellMap() = default;
+		bool load(FilePathView path);
 
-		explicit SSCellMap(FilePathView ssce, bool createEditorParam);
+		SIV3D_NODISCARD_CXX20 StringView getTextureKey() const;
+		SIV3D_NODISCARD_CXX20 StringView getVersion() const;
 
-		bool load(FilePathView ssce, bool createEditorParam);
+		SIV3D_NODISCARD_CXX20 StringView getName() const;
 
-		bool isCreateEditorParam() const;
+		SIV3D_NODISCARD_CXX20 FilePathView getImagePath() const;
+		SIV3D_NODISCARD_CXX20 const Size& getPixelSize() const;
 
-		StringView getName() const;
+		SIV3D_NODISCARD_CXX20 TextureAddressMode getWrapMode() const;
+		SIV3D_NODISCARD_CXX20 TextureFilter getFilterMode() const;
 
-		FilePathView getExportPath() const;
-
-		FilePathView getImagePath() const;
-
-		TextureAddressMode getWrapMode() const;
-
-		TextureFilter getFilterMode() const;
+		SIV3D_NODISCARD_CXX20 const Array<SSCell>& getCells() const;
+		SIV3D_NODISCARD_CXX20 const SSCell* const getCell(StringView name) const;
 
 	private:
 
-		// -------------------------------------------------
-		// 解析用関数
-		// -------------------------------------------------
-		void parseName               (const XMLElement& element);
-		void parseExportPath         (const XMLElement& element);
-		void parseImagePath          (const XMLElement& element);
-		void parsePixelSize          (const XMLElement& element);
-		void parseOverrideTexSettings(const XMLElement& element);
-		void parseWrapMode           (const XMLElement& element);
-		void parseFilterMode         (const XMLElement& element);
-		void parseCells              (const XMLElement& element);
+		SSProject* m_pProject;
+		String m_textureKey;
 
-		String             m_name               { U"" };
-		FilePath           m_exportPath         { U"" };
-		FilePath           m_imagePath          { U"" };
-		Size               m_pixelSize          { 0, 0 };
-		bool               m_overrideTexSettings{ false }; // wrapMode,filterModeをSSProjectではなく、こちらを参照するフラグ
-		TextureAddressMode m_wrapMode           {};
-		TextureFilter      m_filterMode         {};
-		Array<SSCellInfo>  m_cells              {};
+		String m_version;
 
-		struct EditorParam
-		{
-			unknownStr            m_generator          { U"" };
-			unknown32             m_packed             { 0 };
-			unknownStr            m_imagePathAtImport  { U"" };
-			FilePath              m_packInfoFilePath   { U"" };
-			SSTexturePackSettings m_texPackSettings    {};        //!< パック時の参照情報
-		};
-		std::unique_ptr<EditorParam> m_pEditorParam{ nullptr };
+		String m_name;
+
+		FilePath m_imagePath;
+		Size m_pixelSize;
+
+		TextureAddressMode m_wrapMode;
+		TextureFilter m_filterMode;
+
+		Array<SSCell> m_cells;
 	};
 }
+
+#endif // !SS_CELLMAP_H_

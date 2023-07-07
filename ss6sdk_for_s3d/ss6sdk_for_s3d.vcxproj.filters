@@ -136,51 +136,6 @@
     <Filter Include="Resource Files\engine\font\min">
       <UniqueIdentifier>{1b103960-f11a-4515-b4f1-f59333ce00d9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\ThirdParty">
-      <UniqueIdentifier>{9afcb026-d6ce-4bc1-b9c5-7766aa0dd607}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\ThirdParty\tinyxml2">
-      <UniqueIdentifier>{052a40fd-9deb-4b3b-9978-8048a227d785}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\ThirdParty\ss6sdk">
-      <UniqueIdentifier>{843b9fd9-609c-48b2-9420-88bdb6c2e390}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\ThirdParty\ss6sdk\common">
-      <UniqueIdentifier>{b9278f35-2468-497b-88a1-aa12c9ed18a7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\ThirdParty\ss6sdk\common\loader">
-      <UniqueIdentifier>{8dbb031b-126f-49de-8f61-8b3ebf3ca9de}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\ThirdParty">
-      <UniqueIdentifier>{4510f14d-147d-4803-98f8-dcf7203fcacf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\ThirdParty\ss6sdk">
-      <UniqueIdentifier>{2a2a3693-e619-4206-b0ea-4e5ccae9f1d4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\ThirdParty\ss6sdk\common">
-      <UniqueIdentifier>{a430b751-7e77-4448-9ab5-450116ab896f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\ThirdParty\ss6sdk\common\loader">
-      <UniqueIdentifier>{3c7000a5-2248-4700-9ee4-ba67c8e81229}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\TestMain">
-      <UniqueIdentifier>{b6ea8368-4cc5-40f2-ba39-3775c591130f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\TestMain">
-      <UniqueIdentifier>{88667bf9-5a6c-4b34-9e5d-208055e164eb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\SampleMain">
-      <UniqueIdentifier>{314d6c4b-9b4d-4de7-81d2-248b604625ff}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\SampleMain">
-      <UniqueIdentifier>{55f7debb-6f98-4626-a10e-d4e8cb7d1ddd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\ThirdParty\ss6sdk\common\animator">
-      <UniqueIdentifier>{00355c43-0ea5-465e-a94d-4fffd336310c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\ThirdParty\ss6sdk\common\animator">
-      <UniqueIdentifier>{8a7d26e3-0fa5-498c-bf39-15cde7684507}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\SpriteStudio">
       <UniqueIdentifier>{66bfe896-b1b6-4ecd-8203-8bcba6b00c7a}</UniqueIdentifier>
     </Filter>
@@ -195,112 +150,58 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ThirdParty\ss6sdk\common\loader\ssarchiver.cpp">
-      <Filter>Source Files\ThirdParty\ss6sdk\common\loader</Filter>
-    </ClCompile>
-    <ClCompile Include="ThirdParty\ss6sdk\common\loader\ssattribute.cpp">
-      <Filter>Source Files\ThirdParty\ss6sdk\common\loader</Filter>
-    </ClCompile>
-    <ClCompile Include="ThirdParty\ss6sdk\common\loader\sscharconverter.cpp">
-      <Filter>Source Files\ThirdParty\ss6sdk\common\loader</Filter>
-    </ClCompile>
-    <ClCompile Include="ThirdParty\ss6sdk\common\loader\SsEffectBehavior.cpp">
-      <Filter>Source Files\ThirdParty\ss6sdk\common\loader</Filter>
-    </ClCompile>
-    <ClCompile Include="ThirdParty\ss6sdk\common\loader\SsEffectElement.cpp">
-      <Filter>Source Files\ThirdParty\ss6sdk\common\loader</Filter>
-    </ClCompile>
-    <ClCompile Include="ThirdParty\ss6sdk\common\loader\ssInterpolation.cpp">
-      <Filter>Source Files\ThirdParty\ss6sdk\common\loader</Filter>
-    </ClCompile>
-    <ClCompile Include="ThirdParty\ss6sdk\common\loader\ssloader_ssae.cpp">
-      <Filter>Source Files\ThirdParty\ss6sdk\common\loader</Filter>
-    </ClCompile>
-    <ClCompile Include="ThirdParty\ss6sdk\common\loader\ssloader_ssce.cpp">
-      <Filter>Source Files\ThirdParty\ss6sdk\common\loader</Filter>
-    </ClCompile>
-    <ClCompile Include="ThirdParty\ss6sdk\common\loader\ssloader_ssee.cpp">
-      <Filter>Source Files\ThirdParty\ss6sdk\common\loader</Filter>
-    </ClCompile>
-    <ClCompile Include="ThirdParty\ss6sdk\common\loader\ssloader_sspj.cpp">
-      <Filter>Source Files\ThirdParty\ss6sdk\common\loader</Filter>
-    </ClCompile>
-    <ClCompile Include="ThirdParty\ss6sdk\common\loader\ssloader_ssqe.cpp">
-      <Filter>Source Files\ThirdParty\ss6sdk\common\loader</Filter>
-    </ClCompile>
-    <ClCompile Include="ThirdParty\ss6sdk\common\loader\ssstring_uty.cpp">
-      <Filter>Source Files\ThirdParty\ss6sdk\common\loader</Filter>
-    </ClCompile>
-    <ClCompile Include="ThirdParty\ss6sdk\common\loader\sstypes.cpp">
-      <Filter>Source Files\ThirdParty\ss6sdk\common\loader</Filter>
-    </ClCompile>
-    <ClCompile Include="ThirdParty\ss6sdk\common\loader\ssvalue.cpp">
-      <Filter>Source Files\ThirdParty\ss6sdk\common\loader</Filter>
-    </ClCompile>
-    <ClCompile Include="TestMain\sspjLoadingTimeTest.cpp">
-      <Filter>Source Files\TestMain</Filter>
-    </ClCompile>
-    <ClCompile Include="SampleMain\cellmapDrawSample.cpp">
-      <Filter>Source Files\SampleMain</Filter>
-    </ClCompile>
-    <ClCompile Include="SampleMain\buffer2DDrawSample.cpp">
-      <Filter>Source Files\SampleMain</Filter>
-    </ClCompile>
-    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_render.cpp">
-      <Filter>Source Files\ThirdParty\ss6sdk\common\animator</Filter>
-    </ClCompile>
-    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_mesh.cpp">
-      <Filter>Source Files\ThirdParty\ss6sdk\common\animator</Filter>
-    </ClCompile>
-    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_matrix.cpp">
-      <Filter>Source Files\ThirdParty\ss6sdk\common\animator</Filter>
-    </ClCompile>
-    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_effectfunction.cpp">
-      <Filter>Source Files\ThirdParty\ss6sdk\common\animator</Filter>
-    </ClCompile>
-    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_effect2.cpp">
-      <Filter>Source Files\ThirdParty\ss6sdk\common\animator</Filter>
-    </ClCompile>
-    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_effect.cpp">
-      <Filter>Source Files\ThirdParty\ss6sdk\common\animator</Filter>
-    </ClCompile>
-    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_cellmap.cpp">
-      <Filter>Source Files\ThirdParty\ss6sdk\common\animator</Filter>
-    </ClCompile>
-    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_animedecode.cpp">
-      <Filter>Source Files\ThirdParty\ss6sdk\common\animator</Filter>
-    </ClCompile>
-    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_PartState.cpp">
-      <Filter>Source Files\ThirdParty\ss6sdk\common\animator</Filter>
-    </ClCompile>
-    <ClCompile Include="SpriteStudio\SSProject.cpp">
+    <ClCompile Include="SpriteStudio\SSAnimation.cpp">
       <Filter>Source Files\SpriteStudio</Filter>
     </ClCompile>
-    <ClCompile Include="SpriteStudio\SSProjectSettings.cpp">
+    <ClCompile Include="SpriteStudio\SSAnimationController.cpp">
       <Filter>Source Files\SpriteStudio</Filter>
     </ClCompile>
-    <ClCompile Include="SpriteStudio\SSBackgroundSettings.cpp">
+    <ClCompile Include="SpriteStudio\SSAnimationPack.cpp">
+      <Filter>Source Files\SpriteStudio</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteStudio\SSAnimationPart.cpp">
       <Filter>Source Files\SpriteStudio</Filter>
     </ClCompile>
     <ClCompile Include="SpriteStudio\SSAnimeSettings.cpp">
       <Filter>Source Files\SpriteStudio</Filter>
     </ClCompile>
-    <ClCompile Include="SpriteStudio\SSTexturePackSettings.cpp">
+    <ClCompile Include="SpriteStudio\SSAttribute.cpp">
       <Filter>Source Files\SpriteStudio</Filter>
     </ClCompile>
-    <ClCompile Include="SpriteStudio\SSExternalTextures.cpp">
+    <ClCompile Include="SpriteStudio\SSAttributeKeyValue.cpp">
       <Filter>Source Files\SpriteStudio</Filter>
     </ClCompile>
-    <ClCompile Include="SpriteStudio\SSCellInfo.cpp">
+    <ClCompile Include="SpriteStudio\SSBoneItem.cpp">
       <Filter>Source Files\SpriteStudio</Filter>
     </ClCompile>
-    <ClCompile Include="SpriteStudio\SSCellMap.cpp">
+    <ClCompile Include="SpriteStudio\SSCell.cpp">
       <Filter>Source Files\SpriteStudio</Filter>
     </ClCompile>
-    <ClCompile Include="SpriteStudio\SSProjectDecoder.cpp">
+    <ClCompile Include="SpriteStudio\SSCellmap.cpp">
       <Filter>Source Files\SpriteStudio</Filter>
     </ClCompile>
-    <ClCompile Include="SpriteStudio\SSAnimePack.cpp">
+    <ClCompile Include="SpriteStudio\SSDrawCellPart.cpp">
+      <Filter>Source Files\SpriteStudio</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteStudio\SSDrawPart.cpp">
+      <Filter>Source Files\SpriteStudio</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteStudio\SSMeshBind.cpp">
+      <Filter>Source Files\SpriteStudio</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteStudio\SSModel.cpp">
+      <Filter>Source Files\SpriteStudio</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteStudio\SSModelPart.cpp">
+      <Filter>Source Files\SpriteStudio</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteStudio\SSProject.cpp">
+      <Filter>Source Files\SpriteStudio</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteStudio\SSSettings.cpp">
+      <Filter>Source Files\SpriteStudio</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteStudio\SSValue.cpp">
       <Filter>Source Files\SpriteStudio</Filter>
     </ClCompile>
   </ItemGroup>
@@ -935,136 +836,61 @@
     <ClInclude Include="stdafx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ThirdParty\ss6sdk\common\loader\ssarchiver.h">
-      <Filter>Header Files\ThirdParty\ss6sdk\common\loader</Filter>
+    <ClInclude Include="SpriteStudio\SSDrawCellPart.hpp">
+      <Filter>Header Files\SpriteStudio</Filter>
     </ClInclude>
-    <ClInclude Include="ThirdParty\ss6sdk\common\loader\ssattribute.h">
-      <Filter>Header Files\ThirdParty\ss6sdk\common\loader</Filter>
+    <ClInclude Include="SpriteStudio\SSDrawPart.hpp">
+      <Filter>Header Files\SpriteStudio</Filter>
     </ClInclude>
-    <ClInclude Include="ThirdParty\ss6sdk\common\loader\sscharconverter.h">
-      <Filter>Header Files\ThirdParty\ss6sdk\common\loader</Filter>
+    <ClInclude Include="SpriteStudio\SSMeshBind.hpp">
+      <Filter>Header Files\SpriteStudio</Filter>
     </ClInclude>
-    <ClInclude Include="ThirdParty\ss6sdk\common\loader\SsEffectBehavior.h">
-      <Filter>Header Files\ThirdParty\ss6sdk\common\loader</Filter>
+    <ClInclude Include="SpriteStudio\SSModel.hpp">
+      <Filter>Header Files\SpriteStudio</Filter>
     </ClInclude>
-    <ClInclude Include="ThirdParty\ss6sdk\common\loader\SsEffectElement.h">
-      <Filter>Header Files\ThirdParty\ss6sdk\common\loader</Filter>
-    </ClInclude>
-    <ClInclude Include="ThirdParty\ss6sdk\common\loader\ssInterpolation.h">
-      <Filter>Header Files\ThirdParty\ss6sdk\common\loader</Filter>
-    </ClInclude>
-    <ClInclude Include="ThirdParty\ss6sdk\common\loader\ssloader.h">
-      <Filter>Header Files\ThirdParty\ss6sdk\common\loader</Filter>
-    </ClInclude>
-    <ClInclude Include="ThirdParty\ss6sdk\common\loader\ssloader_ssae.h">
-      <Filter>Header Files\ThirdParty\ss6sdk\common\loader</Filter>
-    </ClInclude>
-    <ClInclude Include="ThirdParty\ss6sdk\common\loader\ssloader_ssce.h">
-      <Filter>Header Files\ThirdParty\ss6sdk\common\loader</Filter>
-    </ClInclude>
-    <ClInclude Include="ThirdParty\ss6sdk\common\loader\ssloader_ssee.h">
-      <Filter>Header Files\ThirdParty\ss6sdk\common\loader</Filter>
-    </ClInclude>
-    <ClInclude Include="ThirdParty\ss6sdk\common\loader\ssloader_sspj.h">
-      <Filter>Header Files\ThirdParty\ss6sdk\common\loader</Filter>
-    </ClInclude>
-    <ClInclude Include="ThirdParty\ss6sdk\common\loader\ssloader_ssqe.h">
-      <Filter>Header Files\ThirdParty\ss6sdk\common\loader</Filter>
-    </ClInclude>
-    <ClInclude Include="ThirdParty\ss6sdk\common\loader\ssstring_uty.h">
-      <Filter>Header Files\ThirdParty\ss6sdk\common\loader</Filter>
-    </ClInclude>
-    <ClInclude Include="ThirdParty\ss6sdk\common\loader\sstypes.h">
-      <Filter>Header Files\ThirdParty\ss6sdk\common\loader</Filter>
-    </ClInclude>
-    <ClInclude Include="ThirdParty\ss6sdk\common\loader\ssvalue.h">
-      <Filter>Header Files\ThirdParty\ss6sdk\common\loader</Filter>
-    </ClInclude>
-    <ClInclude Include="ThirdParty\tinyxml2\tinyxml2.h">
-      <Filter>Header Files\ThirdParty\tinyxml2</Filter>
-    </ClInclude>
-    <ClInclude Include="TestMain\__TestDefine.h">
-      <Filter>Header Files\TestMain</Filter>
-    </ClInclude>
-    <ClInclude Include="SampleMain\__SampleDefine.h">
-      <Filter>Header Files\SampleMain</Filter>
-    </ClInclude>
-    <ClInclude Include="ThirdParty\ss6sdk\common\animator\xorshift32.h">
-      <Filter>Header Files\ThirdParty\ss6sdk\common\animator</Filter>
-    </ClInclude>
-    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_render.h">
-      <Filter>Header Files\ThirdParty\ss6sdk\common\animator</Filter>
-    </ClInclude>
-    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_types.h">
-      <Filter>Header Files\ThirdParty\ss6sdk\common\animator</Filter>
-    </ClInclude>
-    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_mesh.h">
-      <Filter>Header Files\ThirdParty\ss6sdk\common\animator</Filter>
-    </ClInclude>
-    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_matrix.h">
-      <Filter>Header Files\ThirdParty\ss6sdk\common\animator</Filter>
-    </ClInclude>
-    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_effectfunction.h">
-      <Filter>Header Files\ThirdParty\ss6sdk\common\animator</Filter>
-    </ClInclude>
-    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_macro.h">
-      <Filter>Header Files\ThirdParty\ss6sdk\common\animator</Filter>
-    </ClInclude>
-    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_effect2.h">
-      <Filter>Header Files\ThirdParty\ss6sdk\common\animator</Filter>
-    </ClInclude>
-    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_effect.h">
-      <Filter>Header Files\ThirdParty\ss6sdk\common\animator</Filter>
-    </ClInclude>
-    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_cellmap.h">
-      <Filter>Header Files\ThirdParty\ss6sdk\common\animator</Filter>
-    </ClInclude>
-    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_animedecode.h">
-      <Filter>Header Files\ThirdParty\ss6sdk\common\animator</Filter>
-    </ClInclude>
-    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_PartState.h">
-      <Filter>Header Files\ThirdParty\ss6sdk\common\animator</Filter>
-    </ClInclude>
-    <ClInclude Include="ThirdParty\ss6sdk\common\animator\MersenneTwister.h">
-      <Filter>Header Files\ThirdParty\ss6sdk\common\animator</Filter>
-    </ClInclude>
-    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ISsEffectRender.h">
-      <Filter>Header Files\ThirdParty\ss6sdk\common\animator</Filter>
+    <ClInclude Include="SpriteStudio\SSModelPart.hpp">
+      <Filter>Header Files\SpriteStudio</Filter>
     </ClInclude>
     <ClInclude Include="SpriteStudio\SSProject.hpp">
       <Filter>Header Files\SpriteStudio</Filter>
     </ClInclude>
-    <ClInclude Include="SpriteStudio\SSProjectSettings.hpp">
+    <ClInclude Include="SpriteStudio\SSSettings.hpp">
       <Filter>Header Files\SpriteStudio</Filter>
     </ClInclude>
-    <ClInclude Include="SpriteStudio\SSCommon.hpp">
+    <ClInclude Include="SpriteStudio\SSValue.hpp">
+      <Filter>Header Files\SpriteStudio</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteStudio\SSAnimation.hpp">
+      <Filter>Header Files\SpriteStudio</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteStudio\SSAnimationController.hpp">
+      <Filter>Header Files\SpriteStudio</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteStudio\SSAnimationPack.hpp">
+      <Filter>Header Files\SpriteStudio</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteStudio\SSAnimationPart.hpp">
       <Filter>Header Files\SpriteStudio</Filter>
     </ClInclude>
     <ClInclude Include="SpriteStudio\SSAnimeSettings.hpp">
       <Filter>Header Files\SpriteStudio</Filter>
     </ClInclude>
-    <ClInclude Include="SpriteStudio\SSBackgroundSettings.hpp">
+    <ClInclude Include="SpriteStudio\SSAttribute.hpp">
       <Filter>Header Files\SpriteStudio</Filter>
     </ClInclude>
-    <ClInclude Include="SpriteStudio\SSParseUtilities.hpp">
+    <ClInclude Include="SpriteStudio\SSAttributeKeyValue.hpp">
       <Filter>Header Files\SpriteStudio</Filter>
     </ClInclude>
-    <ClInclude Include="SpriteStudio\SSTexturePackSettings.hpp">
+    <ClInclude Include="SpriteStudio\SSBoneItem.hpp">
       <Filter>Header Files\SpriteStudio</Filter>
     </ClInclude>
-    <ClInclude Include="SpriteStudio\SSExternalTextures.hpp">
+    <ClInclude Include="SpriteStudio\SSCell.hpp">
       <Filter>Header Files\SpriteStudio</Filter>
     </ClInclude>
-    <ClInclude Include="SpriteStudio\SSCellMap.hpp">
+    <ClInclude Include="SpriteStudio\SSCellmap.hpp">
       <Filter>Header Files\SpriteStudio</Filter>
     </ClInclude>
-    <ClInclude Include="SpriteStudio\SSCellInfo.hpp">
-      <Filter>Header Files\SpriteStudio</Filter>
-    </ClInclude>
-    <ClInclude Include="SpriteStudio\SSProjectDecoder.hpp">
-      <Filter>Header Files\SpriteStudio</Filter>
-    </ClInclude>
-    <ClInclude Include="SpriteStudio\SSAnimePack.hpp">
+    <ClInclude Include="SpriteStudio\SSDefine.hpp">
       <Filter>Header Files\SpriteStudio</Filter>
     </ClInclude>
   </ItemGroup>

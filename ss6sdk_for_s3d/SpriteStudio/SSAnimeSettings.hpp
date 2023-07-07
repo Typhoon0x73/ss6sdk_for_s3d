@@ -1,63 +1,46 @@
-﻿
-# pragma once
-# include <Siv3D.hpp>
-# include "SSBackgroundSettings.hpp"
+﻿#pragma once
+#ifndef SS_ANIME_SETTINGS_H_
+#define SS_ANIME_SETTINGS_H_
 
-namespace s3d
+#include <Siv3D.hpp>
+#include "SSDefine.hpp"
+
+namespace sssdk
 {
-
 	class SSAnimeSettings
 	{
 	public:
 
-		enum class SortMode
-		{
-			prio,
-			posz,
-		};
+		explicit SSAnimeSettings();
+		explicit SSAnimeSettings(const XMLElement& element);
+		virtual ~SSAnimeSettings();
 
-		SSAnimeSettings() = default;
+		bool load(const XMLElement& element);
 
-		~SSAnimeSettings() = default;
+		SIV3D_NODISCARD_CXX20 int32 getFps() const;
+		SIV3D_NODISCARD_CXX20 int32 getFrameCount() const;
 
-		explicit SSAnimeSettings(const XMLElement& animeSettings, bool createEditorParam);
+		SIV3D_NODISCARD_CXX20 SortMode getSortMode() const;
 
-		bool load(const XMLElement& animeSettings, bool createEditorParam);
+		SIV3D_NODISCARD_CXX20 const Size& getCanvasSize() const;
+		SIV3D_NODISCARD_CXX20 const Vec2& getPivot() const;
+
+		SIV3D_NODISCARD_CXX20 int32 getStartFrame() const;
+		SIV3D_NODISCARD_CXX20 int32 getEndFrame() const;
 
 	private:
 
-		// -------------------------------------------------
-		// 解析用関数
-		// -------------------------------------------------
-		void parseFps               (const XMLElement& element);
-		void parseFrameCount        (const XMLElement& element);
-		void parseSortMode          (const XMLElement& element);
-		void parseCanvasSize        (const XMLElement& element);
-		void parsePivot             (const XMLElement& element);
-		void parseBackGroundColor   (const XMLElement& element);
-		void parseGridSize          (const XMLElement& element);
-		void parseGridColor         (const XMLElement& element);
-		void parseIKDepth           (const XMLElement& element);
-		void parseStartFrame        (const XMLElement& element);
-		void parseEndFrame          (const XMLElement& element);
-		void parseBackgroundSettings(const XMLElement& element);
-		void parseOutStartNum       (const XMLElement& element);
+		int32 m_fps;
+		int32 m_frameCount;
 
-		bool m_isCreateEditorParam{ false };
+		SortMode m_sortMode;
 
-		int32                m_fps        { 0 };
-		int32                m_frameCount { 0 };
-		SortMode             m_sortMode   {};
-		Size                 m_canvasSize { 0, 0 };
-		Float2               m_pivot      { 0.0f, 0.0f };
-		ColorF               m_bgColor    {};
-		int32                m_gridSize   { 0 };
-		ColorF               m_gridColor  {};
-		int32                m_ik_depth   { 0 };
-		int32                m_startFrame { 0 };
-		int32                m_endFrame   { 0 };
-		SSBackgroundSettings m_bgSettings {};
-		int32                m_outStartNum{ 0 };
+		Size m_canvasSize;
+		Vec2 m_pivot;
 
+		int32 m_startFrame;
+		int32 m_endFrame;
 	};
 }
+
+#endif // !SS_ANIME_SETTINGS_H_

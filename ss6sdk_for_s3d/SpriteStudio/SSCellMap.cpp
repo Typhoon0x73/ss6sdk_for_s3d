@@ -1,120 +1,161 @@
 ﻿
-# include "SSCellMap.hpp"
-# include "SSParseUtilities.hpp"
+#include "SSProject.hpp"
+#include "SSCellmap.hpp"
 
-namespace s3d
+namespace sssdk
 {
-	SSCellMap::SSCellMap(FilePathView ssce, bool createEditorParam)
+	SSCellmap::SSCellmap(SSProject* project)
+		: m_pProject{ project }
+		, m_textureKey{ U"" }
+		, m_version{ U"" }
+		, m_name{ U"" }
+		, m_imagePath{ U"" }
+		, m_pixelSize{ 0, 0 }
+		, m_wrapMode{ TextureAddressMode::Clamp }
+		, m_filterMode{ TextureFilter::Linear }
 	{
-		load(ssce, createEditorParam);
 	}
 
-	bool SSCellMap::load(FilePathView ssce, bool createEditorParam)
+	SSCellmap::SSCellmap(SSProject* project, FilePathView path)
+		: SSCellmap(project)
 	{
-		XMLReader reader{ ssce };
-		if (not reader.isOpen() or reader.isNull())
+		load(path);
+	}
+
+	SSCellmap::~SSCellmap()
+	{
+	}
+
+	bool SSCellmap::load(FilePathView path)
+	{
+		XMLReader reader{ path };
+		if (not reader)
 		{
 			return false;
 		}
-
-		static const HashTable<String, void(SSCellMap::*)(const XMLElement&)> PARSE_TABLE = {
-			{ SS_CELLMAP_TAG_STRINGS[SSCellMapTag_name               ], &SSCellMap::parseName                },
-			{ SS_CELLMAP_TAG_STRINGS[SSCellMapTag_exportPath         ], &SSCellMap::parseExportPath          },
-			{ SS_CELLMAP_TAG_STRINGS[SSCellMapTag_imagePath          ], &SSCellMap::parseImagePath           },
-			{ SS_CELLMAP_TAG_STRINGS[SSCellMapTag_pixelSize          ], &SSCellMap::parsePixelSize           },
-			{ SS_CELLMAP_TAG_STRINGS[SSCellMapTag_overrideTexSettings], &SSCellMap::parseOverrideTexSettings },
-			{ SS_CELLMAP_TAG_STRINGS[SSCellMapTag_wrapMode           ], &SSCellMap::parseWrapMode            },
-			{ SS_CELLMAP_TAG_STRINGS[SSCellMapTag_filterMode         ], &SSCellMap::parseFilterMode          },
-			{ SS_CELLMAP_TAG_STRINGS[SSCellMapTag_cells              ], &SSCellMap::parseCells               },
-		};
-
-		for (auto element = reader.firstChild(); element; element = element.nextSibling())
+		for (const auto& attribute : reader.attributes())
 		{
-			for (const auto& table : PARSE_TABLE)
+			if (attribute.first == U"version")
 			{
-				if (table.first == element.name())
+				m_version = attribute.second;
+			}
+		}
+		for (auto child = reader.firstChild(); child; child = child.nextSibling())
+		{
+			const auto& name = child.name();
+			if (name == U"name")
+			{
+				m_name = child.text();
+			}
+			else if (name == U"imagePath")
+			{
+				m_imagePath = child.text();
+			}
+			else if (name == U"pixelSize")
+			{
+				const auto& lines = child.text().split(U' ');
+				m_pixelSize.x = ParseOr<int32>(lines[0], 0);
+				m_pixelSize.y = ParseOr<int32>(lines[1], 0);
+			}
+			else if (name == U"wrapMode")
+			{
+				const auto& text = child.text();
+				if (text == U"repeat")
 				{
-					(this->*(table.second))(element);
-					break;
+					m_wrapMode = TextureAddressMode::Repeat;
+				}
+				else if (text == U"mirror")
+				{
+					m_wrapMode = TextureAddressMode::Mirror;
+				}
+				else if (text == U"clamp")
+				{
+					m_wrapMode = TextureAddressMode::Clamp;
+				}
+				else if (text == U"border")
+				{
+					m_wrapMode = TextureAddressMode::Border;
 				}
 			}
+			else if (name == U"filterMode")
+			{
+				const auto& text = child.text();
+				if (text == U"nearest")
+				{
+					m_filterMode = TextureFilter::Nearest;
+				}
+				else if (text == U"linear")
+				{
+					m_filterMode = TextureFilter::Linear;
+				}
+			}
+			else if (name == U"cells")
+			{
+				for (auto cell = child.firstChild(); cell; cell = cell.nextSibling())
+				{
+					m_cells.emplace_back(cell);
+				}
+			}
+		}
+		const auto& imageDir = m_pProject->getImageFileDirectory();
+		const auto& texturePath = FileSystem::PathAppend(imageDir, m_imagePath);
+		m_textureKey = m_pProject->getName() + U".sspj_" + m_name + U".ssce_" + m_imagePath;
+		if (not TextureAsset::Register(m_textureKey, texturePath))
+		{
+			return false;
 		}
 		return true;
 	}
 
-	bool SSCellMap::isCreateEditorParam() const
+	StringView SSCellmap::getTextureKey() const
 	{
-		return (m_pEditorParam.get() != nullptr);
+		return m_textureKey;
 	}
 
-	StringView SSCellMap::getName() const
+	StringView SSCellmap::getVersion() const
+	{
+		return m_version;
+	}
+
+	StringView SSCellmap::getName() const
 	{
 		return m_name;
 	}
 
-	FilePathView SSCellMap::getExportPath() const
-	{
-		return m_exportPath;
-	}
-
-	FilePathView SSCellMap::getImagePath() const
+	FilePathView SSCellmap::getImagePath() const
 	{
 		return m_imagePath;
 	}
 
-	TextureAddressMode SSCellMap::getWrapMode() const
+	const Size& SSCellmap::getPixelSize() const
+	{
+		return m_pixelSize;
+	}
+
+	TextureAddressMode SSCellmap::getWrapMode() const
 	{
 		return m_wrapMode;
 	}
 
-	TextureFilter SSCellMap::getFilterMode() const
+	TextureFilter SSCellmap::getFilterMode() const
 	{
 		return m_filterMode;
 	}
 
-	void SSCellMap::parseName(const XMLElement& element)
+	const Array<SSCell>& SSCellmap::getCells() const
 	{
-		m_name = element.text();
+		return m_cells;
 	}
 
-	void SSCellMap::parseExportPath(const XMLElement& element)
+	const SSCell* const SSCellmap::getCell(StringView name) const
 	{
-		m_exportPath = element.text();
-	}
-
-	void SSCellMap::parseImagePath(const XMLElement& element)
-	{
-		m_imagePath = element.text();
-	}
-
-	void SSCellMap::parsePixelSize(const XMLElement& element)
-	{
-		m_pixelSize = SSParseUtilities::parseSize(element.text());
-	}
-
-	void SSCellMap::parseOverrideTexSettings(const XMLElement& element)
-	{
-		m_overrideTexSettings = SSParseUtilities::parseIntToBool(element.text());
-	}
-
-	void SSCellMap::parseWrapMode(const XMLElement& element)
-	{
-		m_wrapMode = SSParseUtilities::parseTextureAddressMode(element.text());
-	}
-
-	void SSCellMap::parseFilterMode(const XMLElement& element)
-	{
-		m_filterMode = SSParseUtilities::parseTextureFilterMode(element.text());
-	}
-
-	void SSCellMap::parseCells(const XMLElement& element)
-	{
-		for (XMLElement e = element.firstChild(); e; e = e.nextSibling())
+		for (const auto& cell : m_cells)
 		{
-			if (U"cell" == e.name())
+			if (cell.getName() == name)
 			{
-				m_cells.emplace_back(SSCellInfo(e, isCreateEditorParam()));
+				return &cell;
 			}
 		}
+		return nullptr;
 	}
 }

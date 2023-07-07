@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<SpriteStudioProject version="2.00.02" edition="Professional" editorVersion="6.6.1">
+	<name>Ringo</name>
+	<exportPath></exportPath>
+	<settings>
+		<animeBaseDirectory></animeBaseDirectory>
+		<cellMapBaseDirectory></cellMapBaseDirectory>
+		<imageBaseDirectory></imageBaseDirectory>
+		<effectBaseDirectory></effectBaseDirectory>
+		<exportBaseDirectory>Export</exportBaseDirectory>
+		<queryExportBaseDirectory>1</queryExportBaseDirectory>
+		<copyWhenImportImageIsOutside>1</copyWhenImportImageIsOutside>
+		<exportAnimeFileFormat>SSAX</exportAnimeFileFormat>
+		<exportCellMapFileFormat>invalid</exportCellMapFileFormat>
+		<exportCellMap>0</exportCellMap>
+		<copyImageWhenExportCellmap>1</copyImageWhenExportCellmap>
+		<ssConverterOptions></ssConverterOptions>
+		<player>any</player>
+		<signal></signal>
+		<strictVer4>0</strictVer4>
+		<dontUseMatrixForTransform>0</dontUseMatrixForTransform>
+		<rootPartFunctionAsVer4>0</rootPartFunctionAsVer4>
+		<interpolateColorBlendAsVer4>1</interpolateColorBlendAsVer4>
+		<interpolateVertexOffsetAsVer4>1</interpolateVertexOffsetAsVer4>
+		<restrictXYAsInteger>0</restrictXYAsInteger>
+		<inheritRatesNoKeySave>1</inheritRatesNoKeySave>
+		<availableInterpolationTypes>
+			<item>none</item>
+			<item>linear</item>
+			<item>hermite</item>
+			<item>bezier</item>
+			<item>acceleration</item>
+			<item>deceleration</item>
+		</availableInterpolationTypes>
+		<availableAttributes>
+			<item>CELL</item>
+			<item>POSX</item>
+			<item>POSY</item>
+			<item>POSZ</item>
+			<item>ROTX</item>
+			<item>ROTY</item>
+			<item>ROTZ</item>
+			<item>SCLX</item>
+			<item>SCLY</item>
+			<item>ALPH</item>
+			<item>PRIO</item>
+			<item>FLPH</item>
+			<item>FLPV</item>
+			<item>HIDE</item>
+			<item>VCOL</item>
+			<item>VERT</item>
+			<item>PVTX</item>
+			<item>PVTY</item>
+			<item>ANCX</item>
+			<item>ANCY</item>
+			<item>SIZX</item>
+			<item>SIZY</item>
+			<item>IFLH</item>
+			<item>IFLV</item>
+			<item>BNDR</item>
+			<item>USER</item>
+		</availableAttributes>
+		<availableFeatures>
+			<value>bone</value>
+			<value>effect</value>
+			<value>mask</value>
+			<value>mesh</value>
+		</availableFeatures>
+		<defaultSetAttributes>
+			<item>POSX</item>
+			<item>POSY</item>
+			<item>ROTZ</item>
+			<item>HIDE</item>
+		</defaultSetAttributes>
+		<wrapMode>clamp</wrapMode>
+		<filterMode>linear</filterMode>
+		<interpolationType>linear</interpolationType>
+		<coordUnit>rate</coordUnit>
+		<renderingSettings>
+			<outputFolder>D:/ss_data/ringo/Export</outputFolder>
+			<outputType>AVI2</outputType>
+			<bgColor>FF606060</bgColor>
+			<addAnimeName>0</addAnimeName>
+			<addTimeStamp>0</addTimeStamp>
+			<addAlphaChanel>0</addAlphaChanel>
+			<imageSizeRatioW>50</imageSizeRatioW>
+			<imageSizeRatioH>50</imageSizeRatioH>
+			<imageSizeRatioFix>1</imageSizeRatioFix>
+			<imageSizeIsPixcel>0</imageSizeIsPixcel>
+			<imageSizeExpansion0>0</imageSizeExpansion0>
+			<imageSizeExpansion1>0</imageSizeExpansion1>
+			<imageSizeExpansion2>0</imageSizeExpansion2>
+			<imageSizeExpansion3>0</imageSizeExpansion3>
+		</renderingSettings>
+		<effectSettings>
+			<gridSize>50</gridSize>
+		</effectSettings>
+		<cellTags />
+		<useDecimalDigit>2</useDecimalDigit>
+		<opacifyOutsideCanvasFrame>1</opacifyOutsideCanvasFrame>
+		<convertImageToPMA>0</convertImageToPMA>
+		<blendImageAsPMA>0</blendImageAsPMA>
+		<unpremultiplyAlpha>0</unpremultiplyAlpha>
+		<vertexAnimeFloat>1</vertexAnimeFloat>
+		<allowNPOT>0</allowNPOT>
+		<maxLoadableImageWidth>4096</maxLoadableImageWidth>
+		<maxLoadableImageHeight>4096</maxLoadableImageHeight>
+		<maxLoadableImageFileSize>73400320</maxLoadableImageFileSize>
+		<instanceStackMax>100</instanceStackMax>
+		<selectedAttrSelPreset>0</selectedAttrSelPreset>
+		<attrSelPresetNameA></attrSelPresetNameA>
+		<attrSelPresetA />
+		<attrSelPresetNameB></attrSelPresetNameB>
+		<attrSelPresetB />
+		<attrSelPresetNameC></attrSelPresetNameC>
+		<attrSelPresetC />
+		<attrSelPresetNameD></attrSelPresetNameD>
+		<attrSelPresetD />
+		<attrSelPresetNameE></attrSelPresetNameE>
+		<attrSelPresetE />
+		<attrSelPresetNameF></attrSelPresetNameF>
+		<attrSelPresetF />
+		<attrSelPresetNameG></attrSelPresetNameG>
+		<attrSelPresetG />
+		<attrSelPresetNameH></attrSelPresetNameH>
+		<attrSelPresetH />
+		<attrSelPresetNameI></attrSelPresetNameI>
+		<attrSelPresetI />
+		<attrSelPresetNameJ></attrSelPresetNameJ>
+		<attrSelPresetJ />
+	</settings>
+	<animeSettings>
+		<fps>30</fps>
+		<frameCount>11</frameCount>
+		<sortMode>prio</sortMode>
+		<canvasSize>320 320</canvasSize>
+		<pivot>0 0</pivot>
+		<bgColor>FF323232</bgColor>
+		<gridSize>32</gridSize>
+		<gridColor>FF808080</gridColor>
+		<ik_depth>3</ik_depth>
+		<startFrame>0</startFrame>
+		<endFrame>10</endFrame>
+		<bgSettings>
+			<value>
+				<imagePath></imagePath>
+				<imageDisp>1</imageDisp>
+				<imageOffset>0 0</imageOffset>
+				<imageCanvas>0 0</imageCanvas>
+				<imagePivot>0 0</imagePivot>
+			</value>
+			<value>
+				<imagePath></imagePath>
+				<imageDisp>1</imageDisp>
+				<imageOffset>0 0</imageOffset>
+				<imageCanvas>0 0</imageCanvas>
+				<imagePivot>0 0</imagePivot>
+			</value>
+		</bgSettings>
+		<outStartNum>0</outStartNum>
+	</animeSettings>
+	<texPackSettings>
+		<maxSize>4096 4096</maxSize>
+		<forcePo2>1</forcePo2>
+		<forceSquare>0</forceSquare>
+		<margin>0</margin>
+		<padding>1</padding>
+	</texPackSettings>
+	<cellmapNames>
+		<value>Ringo.ssce</value>
+	</cellmapNames>
+	<animepackNames>
+		<value>Ringo.ssae</value>
+		<value>Ringo_tyu.ssae</value>
+	</animepackNames>
+	<sequencepackNames>
+		<value>Ringo.ssqe</value>
+	</sequencepackNames>
+	<lastAnimeFile>Ringo.ssae</lastAnimeFile>
+	<lastAnimeName>attack1</lastAnimeName>
+	<lastPart></lastPart>
+	<lastCellMapFile></lastCellMapFile>
+	<lastCell></lastCell>
+	<lastEffectFile></lastEffectFile>
+	<setupmode>0</setupmode>
+	<expandAnimation />
+	<expandSequence />
+</SpriteStudioProject>

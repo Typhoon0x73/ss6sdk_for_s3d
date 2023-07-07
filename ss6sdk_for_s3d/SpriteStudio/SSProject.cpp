@@ -1,162 +1,231 @@
 ﻿
-# include "SSProject.hpp"
+#include "SSProject.hpp"
 
-namespace s3d
+namespace sssdk
 {
-
-	SSProject::SSProject(FilePathView sspj, bool createEditorParam)
-		: SSProject()
+	SSProject::SSProject()
+		: m_version{ U"" }
+		, m_ssEditorVersion{ U"" }
+		, m_projectDirectiory{ U"" }
+		, m_name{ U"" }
+		, m_settings{}
+		, m_animeSettings{}
+		, m_cellmapNames{}
+		, m_animepackNames{}
+		, m_effectFileNames{}
+		, m_cellmaps{}
+		, m_animPacks{}
 	{
-		load(sspj, createEditorParam);
 	}
 
-	bool SSProject::load(FilePathView sspj, bool createEditorParam)
+	SSProject::SSProject(FilePathView path)
+		: SSProject()
 	{
-		XMLReader reader{ sspj };
-		if (not reader.isOpen() or reader.isNull())
+		load(path);
+	}
+
+	SSProject::~SSProject()
+	{
+	}
+
+	bool SSProject::load(FilePathView path)
+	{
+		XMLReader reader{ path };
+		if (not reader)
 		{
 			return false;
 		}
-		if (createEditorParam)
-		{
-			m_pEditorParam.reset(new EditorParam());
-		}
+		m_projectDirectiory = FileSystem::ParentPath(path);
 
-		static const HashTable<String, void (SSProject::*)(const XMLElement&)> PARSE_TABLE = {
-			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_name            ], &SSProject::parseFileName         },
-			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_settings        ], &SSProject::parseSettings         },
-			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_cellmapNames    ], &SSProject::parseCellmapNames     },
-			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_animepackNames  ], &SSProject::parseAnimepackNames   },
-			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_effectFileNames ], &SSProject::parseEffectFileNames  },
-			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_ExternalTextures], &SSProject::parseExternalTextures },
-		};
-		static const HashTable<String, void (SSProject::*)(const XMLElement&)> EDITOR_PARSE_TABLE = {
-			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_exportPath      ], &SSProject::parseExportPath       },
-			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_animeSettings   ], &SSProject::parseAnimeSettings    },
-			{ SS_PROJECT_TAG_STRINGS[SSProjectTag_texPackSettings ], &SSProject::parseTexPackSettings  },
-		};
-
-		for (auto element = reader.firstChild(); element; element = element.nextSibling())
+		for (const auto& attribute : reader.attributes())
 		{
-			for (const auto& table : PARSE_TABLE)
+			if (attribute.first == U"version")
 			{
-				if (table.first == element.name())
-				{
-					(this->*(table.second))(element);
-					break;
-				}
+				m_version = attribute.second;
+			}
+			else if (attribute.first == U"editorVersion")
+			{
+				m_ssEditorVersion = attribute.second;
 			}
 		}
-		if (m_pEditorParam && isCreateEditorParam())
+		for (auto child = reader.firstChild(); child; child = child.nextSibling())
 		{
-			for (auto element = reader.firstChild(); element; element = element.nextSibling())
+			const auto& name = child.name();
+			if (name == U"name")
 			{
-				for (const auto& table : EDITOR_PARSE_TABLE)
+				m_name = child.text();
+			}
+			else if (name == U"settings")
+			{
+				if (not m_settings.load(child))
 				{
-					if (table.first == element.name())
+					return false;
+				}
+			}
+			else if (name == U"animeSettings")
+			{
+				if (not m_animeSettings.load(child))
+				{
+					return false;
+				}
+			}
+			else if (name == U"cellmapNames")
+			{
+				for (auto value = child.firstChild(); value; value = value.nextSibling())
+				{
+					if (value.name() == U"value")
 					{
-						(this->*(table.second))(element);
-						break;
+						m_cellmapNames.emplace_back(value.text());
 					}
 				}
 			}
+			else if (name == U"animepackNames")
+			{
+				for (auto value = child.firstChild(); value; value = value.nextSibling())
+				{
+					if (value.name() == U"value")
+					{
+						m_animepackNames.emplace_back(value.text());
+					}
+				}
+			}
+			else if (name == U"effectFileNames")
+			{
+				for (auto value = child.firstChild(); value; value = value.nextSibling())
+				{
+					if (value.name() == U"value")
+					{
+						m_effectFileNames.emplace_back(value.text());
+					}
+				}
+			}
+			else if (name == U"ExternalTextures")
+			{
+				// TODO
+			}
+		}
+
+		const FilePath& ssceDir = getSSCEFileDirectory();
+		for (const auto& cellmapName : m_cellmapNames)
+		{
+			const FilePath& cellPath = FileSystem::PathAppend(ssceDir, cellmapName);
+			m_cellmaps.emplace_back(this, cellPath);
+		}
+
+		const FilePath& ssaeDir = getSSAEFileDirectory();
+		for (const auto& animepackName : m_animepackNames)
+		{
+			const FilePath& animPackPath = FileSystem::PathAppend(ssaeDir, animepackName);
+			m_animPacks.emplace_back(animPackPath);
 		}
 		return true;
 	}
 
-	bool SSProject::isCreateEditorParam() const
+	StringView SSProject::getVersion() const
 	{
-		return (m_pEditorParam.get() != nullptr);
+		return m_version;
 	}
 
-	const Array<FilePath>& SSProject::getCellMapNames() const
+	StringView SSProject::getSpriteStudioEditorVersion() const
+	{
+		return m_ssEditorVersion;
+	}
+
+	const FilePath& SSProject::getProjectFileDirectory() const
+	{
+		return m_projectDirectiory;
+	}
+
+	FilePath SSProject::getImageFileDirectory() const
+	{
+		return FileSystem::PathAppend(m_projectDirectiory, m_settings.getImageBaseDirectory());
+	}
+
+	FilePath SSProject::getSSCEFileDirectory() const
+	{
+		return FileSystem::PathAppend(m_projectDirectiory, m_settings.getCellmapBaseDirectory());
+	}
+
+	FilePath SSProject::getSSAEFileDirectory() const
+	{
+		return FileSystem::PathAppend(m_projectDirectiory, m_settings.getAnimeBaseDirectory());
+	}
+
+	FilePath SSProject::getSSEEFileDirectory() const
+	{
+		return FileSystem::PathAppend(m_projectDirectiory, m_settings.getEffectBaseDirectory());
+	}
+
+	StringView SSProject::getName() const
+	{
+		return m_name;
+	}
+
+	const SSSettings& SSProject::getSettings() const
+	{
+		return m_settings;
+	}
+
+	const SSAnimeSettings& SSProject::getAnimeSettings() const
+	{
+		return m_animeSettings;
+	}
+
+	const Array<String>& SSProject::getCellmapNames() const
 	{
 		return m_cellmapNames;
 	}
 
-	Optional<FilePathView> SSProject::getCellMapName(size_t index) const
-	{
-		if (m_cellmapNames.size() <= index)
-		{
-			return none;
-		}
-		return m_cellmapNames[index];
-	}
-
-	const Array<FilePath>& SSProject::getAnimePackNames() const
+	const Array<String>& SSProject::getAnimepackNames() const
 	{
 		return m_animepackNames;
 	}
 
-	Optional<FilePathView> SSProject::getAnimePackName(size_t index) const
+	const Array<String>& SSProject::getEffectFileNames() const
 	{
-		if (m_animepackNames.size() <= index)
+		return m_effectFileNames;
+	}
+
+	const SSCellmap* const SSProject::getCellmap(StringView ssce) const
+	{
+		for (const auto& it : m_cellmaps)
 		{
-			return none;
-		}
-		return m_animepackNames[index];
-	}
-
-	void SSProject::parseFileName(const XMLElement& element)
-	{
-		m_name = element.text();
-	}
-
-	void SSProject::parseExportPath(const XMLElement& element)
-	{
-		m_pEditorParam->m_exportPath = element.text();
-	}
-
-	void SSProject::parseSettings(const XMLElement& element)
-	{
-		m_settings.load(element, isCreateEditorParam());
-	}
-
-	void SSProject::parseAnimeSettings(const XMLElement& element)
-	{
-		m_pEditorParam->m_animeSettings.load(element, isCreateEditorParam());
-	}
-
-	void SSProject::parseTexPackSettings(const XMLElement& element)
-	{
-		m_pEditorParam->m_texPackSettings.load(element, isCreateEditorParam());
-	}
-
-	void SSProject::parseCellmapNames(const XMLElement& element)
-	{
-		for (auto e = element.firstChild(); e; e = e.nextSibling())
-		{
-			if (U"value" == e.name())
+			if (it.getName() == ssce)
 			{
-				m_cellmapNames.emplace_back(e.text());
+				return &it;
 			}
 		}
+		return nullptr;
 	}
 
-	void SSProject::parseAnimepackNames(const XMLElement& element)
+	const SSCellmap* const SSProject::getCellmap(uint64 index) const
 	{
-		for (auto e = element.firstChild(); e; e = e.nextSibling())
+		if (index < 0 or index >= m_cellmaps.size())
 		{
-			if (U"value" == e.name())
+			return nullptr;
+		}
+		return &m_cellmaps[index];
+	}
+
+	const SSAnimationPack* const SSProject::getAnimPack(StringView ssae) const
+	{
+		for (const auto& it : m_animPacks)
+		{
+			if (it.getName() == ssae)
 			{
-				m_animepackNames.emplace_back(e.text());
+				return &it;
 			}
 		}
+		return nullptr;
 	}
 
-	void SSProject::parseEffectFileNames(const XMLElement& element)
+	const SSAnimation* const SSProject::getAnimation(StringView ssae, StringView anim) const
 	{
-		for (auto e = element.firstChild(); e; e = e.nextSibling())
+		const auto* animPack = getAnimPack(ssae);
+		if (animPack == nullptr)
 		{
-			if (U"value" == e.name())
-			{
-				m_effectFileNames.emplace_back(e.text());
-			}
+			return nullptr;
 		}
-	}
-
-	void SSProject::parseExternalTextures(const XMLElement& element)
-	{
-		m_ExternalTextures.load(element, isCreateEditorParam());
+		return animPack->getAnimation(anim);
 	}
 }

@@ -1,116 +1,118 @@
 ﻿
-# include "SSAnimeSettings.hpp"
-# include "SSCommon.hpp"
-# include "SSParseUtilities.hpp"
+#include "SSAnimeSettings.hpp"
 
-namespace s3d
+namespace sssdk
 {
-	SSAnimeSettings::SSAnimeSettings(const XMLElement& animeSettings, bool createEditorParam)
+	SSAnimeSettings::SSAnimeSettings()
+		: m_fps{ 30 }
+		, m_frameCount{ 0 }
+		, m_sortMode{ SortMode::prio }
+		, m_canvasSize{ 800, 600 }
+		, m_pivot{ 0.0, 0.0 }
+		, m_startFrame{ 0 }
+		, m_endFrame{ 0 }
 	{
-		load(animeSettings, createEditorParam);
 	}
 
-	bool SSAnimeSettings::load(const XMLElement& animeSettings, bool createEditorParam)
+	SSAnimeSettings::SSAnimeSettings(const XMLElement& element)
+		: SSAnimeSettings()
 	{
-		m_isCreateEditorParam = createEditorParam;
-		static const HashTable<String, void(SSAnimeSettings::*)(const XMLElement&)> PARSE_TABLE = {
-			{ SS_ANIME_SETTINGS_TAG_STRINGS[SSAnimeSettingsTag_fps        ], &SSAnimeSettings::parseFps                },
-			{ SS_ANIME_SETTINGS_TAG_STRINGS[SSAnimeSettingsTag_frameCount ], &SSAnimeSettings::parseFrameCount         },
-			{ SS_ANIME_SETTINGS_TAG_STRINGS[SSAnimeSettingsTag_sortMode   ], &SSAnimeSettings::parseSortMode           },
-			{ SS_ANIME_SETTINGS_TAG_STRINGS[SSAnimeSettingsTag_canvasSize ], &SSAnimeSettings::parseCanvasSize         },
-			{ SS_ANIME_SETTINGS_TAG_STRINGS[SSAnimeSettingsTag_pivot      ], &SSAnimeSettings::parsePivot              },
-			{ SS_ANIME_SETTINGS_TAG_STRINGS[SSAnimeSettingsTag_bgColor    ], &SSAnimeSettings::parseBackGroundColor    },
-			{ SS_ANIME_SETTINGS_TAG_STRINGS[SSAnimeSettingsTag_gridSize   ], &SSAnimeSettings::parseGridSize           },
-			{ SS_ANIME_SETTINGS_TAG_STRINGS[SSAnimeSettingsTag_gridColor  ], &SSAnimeSettings::parseGridColor          },
-			{ SS_ANIME_SETTINGS_TAG_STRINGS[SSAnimeSettingsTag_ik_depth   ], &SSAnimeSettings::parseIKDepth            },
-			{ SS_ANIME_SETTINGS_TAG_STRINGS[SSAnimeSettingsTag_startFrame ], &SSAnimeSettings::parseStartFrame         },
-			{ SS_ANIME_SETTINGS_TAG_STRINGS[SSAnimeSettingsTag_endFrame   ], &SSAnimeSettings::parseEndFrame           },
-			{ SS_ANIME_SETTINGS_TAG_STRINGS[SSAnimeSettingsTag_bgSettings ], &SSAnimeSettings::parseBackgroundSettings },
-			{ SS_ANIME_SETTINGS_TAG_STRINGS[SSAnimeSettingsTag_outStartNum], &SSAnimeSettings::parseOutStartNum        },
-		};
-		for (auto element = animeSettings.firstChild(); element; element = element.nextSibling())
+		load(element);
+	}
+
+	SSAnimeSettings::~SSAnimeSettings()
+	{
+	}
+
+	bool SSAnimeSettings::load(const XMLElement& element)
+	{
+		if (not (element.name() == U"animeSettings"
+			or element.name() == U"settings"))
 		{
-			for (const auto& table : PARSE_TABLE)
+			return false;
+		}
+		for (auto child = element.firstChild(); child; child = child.nextSibling())
+		{
+			const auto& name = child.name();
+			if (name == U"fps")
 			{
-				if (table.first == element.name())
+				m_fps = ParseOr<int32, int32>(child.text(), 0);
+			}
+			else if (name == U"frameCount")
+			{
+				m_frameCount = ParseOr<int32, int32>(child.text(), 0);
+			}
+			else if (name == U"sortMode")
+			{
+				const auto& text = child.text();
+				if (text == U"prio")
 				{
-					(this->*(table.second))(element);
-					break;
+					m_sortMode = SortMode::prio;
 				}
+				else if (text == U"z")
+				{
+					m_sortMode = SortMode::z;
+				}
+			}
+			else if (name == U"canvasSize")
+			{
+				const auto& lines = child.text().split(U' ');
+				m_canvasSize.x = ParseOr<int32, int32>(lines[0], 0);
+				m_canvasSize.y = ParseOr<int32, int32>(lines[1], 0);
+			}
+			else if (name == U"pivot")
+			{
+				const auto& lines = child.text().split(U' ');
+				m_pivot.x = ParseOr<double, double>(lines[0], 0.0);
+				m_pivot.y = ParseOr<double, double>(lines[1], 0.0);
+			}
+			else if (name == U"startFrame")
+			{
+				m_startFrame = ParseOr<int32, int32>(child.text(), 0);
+			}
+			else if (name == U"endFrame")
+			{
+				m_endFrame = ParseOr<int32, int32>(child.text(), 0);
 			}
 		}
 		return true;
 	}
+}
 
-	void SSAnimeSettings::parseFps(const XMLElement& element)
-	{
-		m_fps = ParseOr<int32, int32>(element.text(), 0);
-	}
 
-	void SSAnimeSettings::parseFrameCount(const XMLElement& element)
-	{
-		m_frameCount = ParseOr<int32, int32>(element.text(), 0);
-	}
 
-	void SSAnimeSettings::parseSortMode(const XMLElement& element)
-	{
-		if (element.text() == U"prio")
-		{
-			m_sortMode = SortMode::prio;
-		}
-		else if (element.text() == U"posz")
-		{
-			m_sortMode = SortMode::posz;
-		}
-	}
 
-	void SSAnimeSettings::parseCanvasSize(const XMLElement& element)
-	{
-		m_canvasSize = SSParseUtilities::parseSize(element.text());
-	}
+SIV3D_NODISCARD_CXX20 int32 sssdk::SSAnimeSettings::getFps() const
+{
+    return m_fps;
+}
 
-	void SSAnimeSettings::parsePivot(const XMLElement& element)
-	{
-		m_pivot = SSParseUtilities::parseFloat2(element.text());
-	}
+SIV3D_NODISCARD_CXX20 int32 sssdk::SSAnimeSettings::getFrameCount() const
+{
+    return m_frameCount;
+}
 
-	void SSAnimeSettings::parseBackGroundColor(const XMLElement& element)
-	{
-		m_bgColor = SSParseUtilities::parseColorF(element.text());
-	}
+SIV3D_NODISCARD_CXX20 sssdk::SortMode sssdk::SSAnimeSettings::getSortMode() const
+{
+    return m_sortMode;
+}
 
-	void SSAnimeSettings::parseGridSize(const XMLElement& element)
-	{
-		m_gridSize = ParseOr<int32, int32>(element.text(), 0);
-	}
+SIV3D_NODISCARD_CXX20 const Size& sssdk::SSAnimeSettings::getCanvasSize() const
+{
+	return m_canvasSize;
+}
 
-	void SSAnimeSettings::parseGridColor(const XMLElement& element)
-	{
-		m_gridColor = SSParseUtilities::parseColorF(element.text());
-	}
+SIV3D_NODISCARD_CXX20 const Vec2& sssdk::SSAnimeSettings::getPivot() const
+{
+	return m_pivot;
+}
 
-	void SSAnimeSettings::parseIKDepth(const XMLElement& element)
-	{
-		m_ik_depth = ParseOr<int32, int32>(element.text(), 0);
-	}
+SIV3D_NODISCARD_CXX20 int32 sssdk::SSAnimeSettings::getStartFrame() const
+{
+    return m_startFrame;
+}
 
-	void SSAnimeSettings::parseStartFrame(const XMLElement& element)
-	{
-		m_startFrame = ParseOr<int32, int32>(element.text(), 0);
-	}
-
-	void SSAnimeSettings::parseEndFrame(const XMLElement& element)
-	{
-		m_endFrame = ParseOr<int32, int32>(element.text(), 0);
-	}
-
-	void SSAnimeSettings::parseBackgroundSettings(const XMLElement& element)
-	{
-		m_bgSettings.load(element, m_isCreateEditorParam);
-	}
-
-	void SSAnimeSettings::parseOutStartNum(const XMLElement& element)
-	{
-		m_outStartNum = ParseOr<int32, int32>(element.text(), 0);
-	}
+SIV3D_NODISCARD_CXX20 int32 sssdk::SSAnimeSettings::getEndFrame() const
+{
+    return m_endFrame;
 }

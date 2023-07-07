@@ -32,18 +32,6 @@
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='USE_SAMPLE_MAIN|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='USE_TEST_MAIN|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
@@ -59,35 +47,11 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='USE_SAMPLE_MAIN|x64'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='USE_TEST_MAIN|x64'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)Intermediate\$(ProjectName)\Debug\</OutDir>
-    <IntDir>$(SolutionDir)Intermediate\$(ProjectName)\Debug\Intermediate\</IntDir>
-    <TargetName>$(ProjectName)(debug)</TargetName>
-    <LocalDebuggerWorkingDirectory>$(ProjectDir)App</LocalDebuggerWorkingDirectory>
-    <IncludePath>$(SIV3D_0_6_6)\include;$(SIV3D_0_6_6)\include\ThirdParty;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SIV3D_0_6_6)\lib\Windows;$(LibraryPath)</LibraryPath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='USE_SAMPLE_MAIN|x64'">
-    <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)Intermediate\$(ProjectName)\Debug\</OutDir>
-    <IntDir>$(SolutionDir)Intermediate\$(ProjectName)\Debug\Intermediate\</IntDir>
-    <TargetName>$(ProjectName)(debug)</TargetName>
-    <LocalDebuggerWorkingDirectory>$(ProjectDir)App</LocalDebuggerWorkingDirectory>
-    <IncludePath>$(SIV3D_0_6_6)\include;$(SIV3D_0_6_6)\include\ThirdParty;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SIV3D_0_6_6)\lib\Windows;$(LibraryPath)</LibraryPath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='USE_TEST_MAIN|x64'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)Intermediate\$(ProjectName)\Debug\</OutDir>
     <IntDir>$(SolutionDir)Intermediate\$(ProjectName)\Debug\Intermediate\</IntDir>
@@ -110,54 +74,6 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;_ENABLE_EXTENDED_ALIGNED_STORAGE;_SILENCE_CXX20_CISO646_REMOVED_WARNING;_SILENCE_ALL_CXX23_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
-      <DisableSpecificWarnings>26451;26812;%(DisableSpecificWarnings)</DisableSpecificWarnings>
-      <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <ForcedIncludeFiles>stdafx.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
-    </ClCompile>
-    <Link>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <SubSystem>Windows</SubSystem>
-      <DelayLoadDLLs>advapi32.dll;crypt32.dll;dwmapi.dll;gdi32.dll;imm32.dll;ole32.dll;oleaut32.dll;opengl32.dll;shell32.dll;shlwapi.dll;user32.dll;winmm.dll;ws2_32.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
-    </Link>
-    <PostBuildEvent>
-      <Command>xcopy /I /D /Y "$(OutDir)$(TargetFileName)" "$(ProjectDir)App"</Command>
-    </PostBuildEvent>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='USE_SAMPLE_MAIN|x64'">
-    <ClCompile>
-      <WarningLevel>Level4</WarningLevel>
-      <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>USE_SAMPLE_MAIN;_DEBUG;_WINDOWS;_ENABLE_EXTENDED_ALIGNED_STORAGE;_SILENCE_CXX20_CISO646_REMOVED_WARNING;_SILENCE_ALL_CXX23_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
-      <DisableSpecificWarnings>26451;26812;%(DisableSpecificWarnings)</DisableSpecificWarnings>
-      <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <ForcedIncludeFiles>stdafx.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
-    </ClCompile>
-    <Link>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <SubSystem>Windows</SubSystem>
-      <DelayLoadDLLs>advapi32.dll;crypt32.dll;dwmapi.dll;gdi32.dll;imm32.dll;ole32.dll;oleaut32.dll;opengl32.dll;shell32.dll;shlwapi.dll;user32.dll;winmm.dll;ws2_32.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
-    </Link>
-    <PostBuildEvent>
-      <Command>xcopy /I /D /Y "$(OutDir)$(TargetFileName)" "$(ProjectDir)App"</Command>
-    </PostBuildEvent>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='USE_TEST_MAIN|x64'">
-    <ClCompile>
-      <WarningLevel>Level4</WarningLevel>
-      <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>USE_TEST_MAIN;_DEBUG;_WINDOWS;_ENABLE_EXTENDED_ALIGNED_STORAGE;_SILENCE_CXX20_CISO646_REMOVED_WARNING;_SILENCE_ALL_CXX23_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -206,46 +122,26 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="SampleMain\buffer2DDrawSample.cpp" />
-    <ClCompile Include="SampleMain\cellmapDrawSample.cpp" />
-    <ClCompile Include="SpriteStudio\SSAnimePack.cpp" />
+    <ClCompile Include="SpriteStudio\SSAnimation.cpp" />
+    <ClCompile Include="SpriteStudio\SSAnimationController.cpp" />
+    <ClCompile Include="SpriteStudio\SSAnimationPack.cpp" />
+    <ClCompile Include="SpriteStudio\SSAnimationPart.cpp" />
     <ClCompile Include="SpriteStudio\SSAnimeSettings.cpp" />
-    <ClCompile Include="SpriteStudio\SSBackgroundSettings.cpp" />
-    <ClCompile Include="SpriteStudio\SSCellInfo.cpp" />
-    <ClCompile Include="SpriteStudio\SSCellMap.cpp" />
-    <ClCompile Include="SpriteStudio\SSExternalTextures.cpp" />
+    <ClCompile Include="SpriteStudio\SSAttribute.cpp" />
+    <ClCompile Include="SpriteStudio\SSAttributeKeyValue.cpp" />
+    <ClCompile Include="SpriteStudio\SSBoneItem.cpp" />
+    <ClCompile Include="SpriteStudio\SSCell.cpp" />
+    <ClCompile Include="SpriteStudio\SSCellmap.cpp" />
+    <ClCompile Include="SpriteStudio\SSDrawCellPart.cpp" />
+    <ClCompile Include="SpriteStudio\SSDrawPart.cpp" />
+    <ClCompile Include="SpriteStudio\SSMeshBind.cpp" />
+    <ClCompile Include="SpriteStudio\SSModel.cpp" />
+    <ClCompile Include="SpriteStudio\SSModelPart.cpp" />
     <ClCompile Include="SpriteStudio\SSProject.cpp" />
-    <ClCompile Include="SpriteStudio\SSProjectDecoder.cpp" />
-    <ClCompile Include="SpriteStudio\SSProjectSettings.cpp" />
-    <ClCompile Include="SpriteStudio\SSTexturePackSettings.cpp" />
-    <ClCompile Include="TestMain\sspjLoadingTimeTest.cpp" />
-    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_animedecode.cpp" />
-    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_cellmap.cpp" />
-    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_effect.cpp" />
-    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_effect2.cpp" />
-    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_effectfunction.cpp" />
-    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_matrix.cpp" />
-    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_mesh.cpp" />
-    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_PartState.cpp" />
-    <ClCompile Include="ThirdParty\ss6sdk\common\animator\ssplayer_render.cpp" />
-    <ClCompile Include="ThirdParty\ss6sdk\common\loader\ssarchiver.cpp" />
-    <ClCompile Include="ThirdParty\ss6sdk\common\loader\ssattribute.cpp" />
-    <ClCompile Include="ThirdParty\ss6sdk\common\loader\sscharconverter.cpp" />
-    <ClCompile Include="ThirdParty\ss6sdk\common\loader\SsEffectBehavior.cpp" />
-    <ClCompile Include="ThirdParty\ss6sdk\common\loader\SsEffectElement.cpp" />
-    <ClCompile Include="ThirdParty\ss6sdk\common\loader\ssInterpolation.cpp" />
-    <ClCompile Include="ThirdParty\ss6sdk\common\loader\ssloader_ssae.cpp" />
-    <ClCompile Include="ThirdParty\ss6sdk\common\loader\ssloader_ssce.cpp" />
-    <ClCompile Include="ThirdParty\ss6sdk\common\loader\ssloader_ssee.cpp" />
-    <ClCompile Include="ThirdParty\ss6sdk\common\loader\ssloader_sspj.cpp" />
-    <ClCompile Include="ThirdParty\ss6sdk\common\loader\ssloader_ssqe.cpp" />
-    <ClCompile Include="ThirdParty\ss6sdk\common\loader\ssstring_uty.cpp" />
-    <ClCompile Include="ThirdParty\ss6sdk\common\loader\sstypes.cpp" />
-    <ClCompile Include="ThirdParty\ss6sdk\common\loader\ssvalue.cpp" />
+    <ClCompile Include="SpriteStudio\SSSettings.cpp" />
+    <ClCompile Include="SpriteStudio\SSValue.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='USE_SAMPLE_MAIN|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='USE_TEST_MAIN|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
   </ItemGroup>
@@ -443,51 +339,26 @@
     <Xml Include="App\example\xml\test.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SampleMain\__SampleDefine.h" />
-    <ClInclude Include="SpriteStudio\SSAnimePack.hpp" />
+    <ClInclude Include="SpriteStudio\SSAnimation.hpp" />
+    <ClInclude Include="SpriteStudio\SSAnimationController.hpp" />
+    <ClInclude Include="SpriteStudio\SSAnimationPack.hpp" />
+    <ClInclude Include="SpriteStudio\SSAnimationPart.hpp" />
     <ClInclude Include="SpriteStudio\SSAnimeSettings.hpp" />
-    <ClInclude Include="SpriteStudio\SSBackgroundSettings.hpp" />
-    <ClInclude Include="SpriteStudio\SSCellInfo.hpp" />
-    <ClInclude Include="SpriteStudio\SSCellMap.hpp" />
-    <ClInclude Include="SpriteStudio\SSCommon.hpp" />
-    <ClInclude Include="SpriteStudio\SSExternalTextures.hpp" />
-    <ClInclude Include="SpriteStudio\SSParseUtilities.hpp" />
+    <ClInclude Include="SpriteStudio\SSAttribute.hpp" />
+    <ClInclude Include="SpriteStudio\SSAttributeKeyValue.hpp" />
+    <ClInclude Include="SpriteStudio\SSBoneItem.hpp" />
+    <ClInclude Include="SpriteStudio\SSCell.hpp" />
+    <ClInclude Include="SpriteStudio\SSCellmap.hpp" />
+    <ClInclude Include="SpriteStudio\SSDefine.hpp" />
+    <ClInclude Include="SpriteStudio\SSDrawCellPart.hpp" />
+    <ClInclude Include="SpriteStudio\SSDrawPart.hpp" />
+    <ClInclude Include="SpriteStudio\SSMeshBind.hpp" />
+    <ClInclude Include="SpriteStudio\SSModel.hpp" />
+    <ClInclude Include="SpriteStudio\SSModelPart.hpp" />
     <ClInclude Include="SpriteStudio\SSProject.hpp" />
-    <ClInclude Include="SpriteStudio\SSProjectDecoder.hpp" />
-    <ClInclude Include="SpriteStudio\SSProjectSettings.hpp" />
-    <ClInclude Include="SpriteStudio\SSTexturePackSettings.hpp" />
-    <ClInclude Include="TestMain\__TestDefine.h" />
-    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ISsEffectRender.h" />
-    <ClInclude Include="ThirdParty\ss6sdk\common\animator\MersenneTwister.h" />
-    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_animedecode.h" />
-    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_cellmap.h" />
-    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_effect.h" />
-    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_effect2.h" />
-    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_effectfunction.h" />
-    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_macro.h" />
-    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_matrix.h" />
-    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_mesh.h" />
-    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_PartState.h" />
-    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_render.h" />
-    <ClInclude Include="ThirdParty\ss6sdk\common\animator\ssplayer_types.h" />
-    <ClInclude Include="ThirdParty\ss6sdk\common\animator\xorshift32.h" />
-    <ClInclude Include="ThirdParty\ss6sdk\common\loader\ssarchiver.h" />
-    <ClInclude Include="ThirdParty\ss6sdk\common\loader\ssattribute.h" />
-    <ClInclude Include="ThirdParty\ss6sdk\common\loader\sscharconverter.h" />
-    <ClInclude Include="ThirdParty\ss6sdk\common\loader\SsEffectBehavior.h" />
-    <ClInclude Include="ThirdParty\ss6sdk\common\loader\SsEffectElement.h" />
-    <ClInclude Include="ThirdParty\ss6sdk\common\loader\ssInterpolation.h" />
-    <ClInclude Include="ThirdParty\ss6sdk\common\loader\ssloader.h" />
-    <ClInclude Include="ThirdParty\ss6sdk\common\loader\ssloader_ssae.h" />
-    <ClInclude Include="ThirdParty\ss6sdk\common\loader\ssloader_ssce.h" />
-    <ClInclude Include="ThirdParty\ss6sdk\common\loader\ssloader_ssee.h" />
-    <ClInclude Include="ThirdParty\ss6sdk\common\loader\ssloader_sspj.h" />
-    <ClInclude Include="ThirdParty\ss6sdk\common\loader\ssloader_ssqe.h" />
-    <ClInclude Include="ThirdParty\ss6sdk\common\loader\ssstring_uty.h" />
-    <ClInclude Include="ThirdParty\ss6sdk\common\loader\sstypes.h" />
-    <ClInclude Include="ThirdParty\ss6sdk\common\loader\ssvalue.h" />
+    <ClInclude Include="SpriteStudio\SSSettings.hpp" />
+    <ClInclude Include="SpriteStudio\SSValue.hpp" />
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="ThirdParty\tinyxml2\tinyxml2.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App\example\obj\blacksmith.obj">
