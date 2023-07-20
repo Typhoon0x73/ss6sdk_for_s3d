@@ -133,6 +133,7 @@
     <ClCompile Include="SpriteStudio\SSCell.cpp" />
     <ClCompile Include="SpriteStudio\SSCellmap.cpp" />
     <ClCompile Include="SpriteStudio\SSDrawCellPart.cpp" />
+    <ClCompile Include="SpriteStudio\SSDrawMeshPart.cpp" />
     <ClCompile Include="SpriteStudio\SSDrawPart.cpp" />
     <ClCompile Include="SpriteStudio\SSMeshBind.cpp" />
     <ClCompile Include="SpriteStudio\SSModel.cpp" />
@@ -351,6 +352,7 @@
     <ClInclude Include="SpriteStudio\SSCellmap.hpp" />
     <ClInclude Include="SpriteStudio\SSDefine.hpp" />
     <ClInclude Include="SpriteStudio\SSDrawCellPart.hpp" />
+    <ClInclude Include="SpriteStudio\SSDrawMeshPart.hpp" />
     <ClInclude Include="SpriteStudio\SSDrawPart.hpp" />
     <ClInclude Include="SpriteStudio\SSMeshBind.hpp" />
     <ClInclude Include="SpriteStudio\SSModel.hpp" />
