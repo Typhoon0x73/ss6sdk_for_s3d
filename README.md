@@ -52,3 +52,83 @@ OpenSiv3Dのリポジトリからコピーし`./use_sdk/ThirdParty/tinyxml2/tiny
 構成コピー元はDebugで、プリプロセッサ定義に(USE_SAMPLE_MAIN)を追加しただけです。  
 定義名から実行するサンプルファイルを推測できます。  
 サンプルの詳細は該当の各`./use_sdk/SampleMain/*.cpp`ファイルを確認ください。  
+
+## 対応項目  
+ - Parts  
+   - [ ] null  
+   - [ ] normal  
+   - [ ] shape  
+   - [ ] text  
+   - [ ] nines  
+   - [ ] instance  
+   - [ ] armature  
+   - [ ] effect  
+   - [ ] mesh  
+   - [ ] movenode  
+   - [ ] constraint  
+   - [ ] mask  
+   - [ ] joint  
+   - [ ] bonejoint  
+   - [ ] transform_constraint  
+   - [ ] camera  
+   - [ ] audio  
+ - Attribute
+   - [ ] cell  
+   - [ ] pos_x  
+   - [ ] pos_y  
+   - [ ] pos_z  
+   - [ ] rot_x  
+   - [ ] rot_y  
+   - [ ] rot_z  
+   - [ ] scale_x  
+   - [ ] scale_y  
+   - [ ] local_scale_x  
+   - [ ] local_scale_y  
+   - [ ] alpha  
+   - [ ] local_alpha  
+   - [ ] prio  
+   - [ ] flip_h  
+   - [ ] flip_v  
+   - [ ] hide  
+   - [ ] parts_color  
+   - [ ] vertex_color  
+   - [ ] shader  
+   - [ ] vertex_trans  
+   - [ ] pivot_x  
+   - [ ] pivot_y  
+   - [ ] anchor_x  
+   - [ ] anchor_y  
+   - [ ] size_x  
+   - [ ] size_y  
+   - [ ] image_flip_h  
+   - [ ] image_flip_v  
+   - [ ] uv_trans_x  
+   - [ ] uv_trans_y  
+   - [ ] uv_rotate_z  
+   - [ ] uv_scale_x  
+   - [ ] uv_scale_y  
+   - [ ] bounds_r  
+   - [ ] mask  
+   - [ ] user  
+   - [ ] signal  
+   - [ ] instance_param  
+   - [ ] effect_param  
+   - [ ] deform_param  
+   - [ ] audio_param  
+   - [ ] texture_change  
+ - DrawMode
+   - [ ] mix  
+   - [ ] mul  
+   - [ ] add  
+   - [ ] sub  
+   - [ ] mul_alpha  
+   - [ ] screen  
+   - [ ] exclusion  
+   - [ ] invert  
+ - InterpolationType
+   - [ ] none  
+   - [ ] linear  
+   - [ ] hermite  
+   - [ ] bezier  
+   - [ ] acceleration  
+   - [ ] deceleration  
