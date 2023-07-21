@@ -132,3 +132,21 @@ OpenSiv3Dのリポジトリからコピーし`./use_sdk/ThirdParty/tinyxml2/tiny
    - [ ] bezier  
    - [ ] acceleration  
    - [ ] deceleration  
+   - [ ] ease_in  
+   - [ ] ease_out  
+   - [ ] ease_in_out  
+   - [ ] ease_exponential_in  
+   - [ ] ease_exponential_out  
+   - [ ] ease_exponential_in_out  
+   - [ ] ease_sine_in  
+   - [ ] ease_sine_out  
+   - [ ] ease_sine_in_out  
+   - [ ] ease_elastic_in  
+   - [ ] ease_elastic_out  
+   - [ ] ease_elastic_in_out  
+   - [ ] ease_bounce_in  
+   - [ ] ease_bounce_out  
+   - [ ] ease_bounce_in_out  
+   - [ ] ease_back_in  
+   - [ ] ease_back_out  
+   - [ ] ease_back_in_out  
