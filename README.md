@@ -73,7 +73,7 @@ OpenSiv3Dのリポジトリからコピーし`./use_sdk/ThirdParty/tinyxml2/tiny
    - [ ] camera  
    - [ ] audio  
  - Attribute
-   - [ ] cell  
+   - [x] cell  
    - [ ] pos_x  
    - [ ] pos_y  
    - [ ] pos_z  
