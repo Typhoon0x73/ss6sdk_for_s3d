@@ -43,6 +43,18 @@ namespace sssdk
 	{
 	}
 
+	void SSDrawCellPart::update(int32 frame)
+	{
+		SSDrawPart::update(frame);
+
+		const auto* cellmap = m_pCellmaps->getCellmap(m_packName, m_cell.mapId);
+		if (not cellmap)
+		{
+			return;
+		}
+		m_pCell = cellmap->getCell(m_cell.name);
+	}
+
 	void SSDrawCellPart::draw(const Vec2& canvasOffset) const
 	{
 		if (not m_pCellmaps or not m_pCell)

@@ -15,6 +15,7 @@ namespace sssdk
 		explicit SSDrawCellPart(StringView ssae, const SSAnimationPart* anim, ISSCellmaps* cellmaps);
 		virtual ~SSDrawCellPart();
 
+		virtual void update(int32 frame) override;
 		virtual void draw(const Vec2& canvasOffset) const override;
 
 		void setCellmaps(ISSCellmaps* cellmaps);
