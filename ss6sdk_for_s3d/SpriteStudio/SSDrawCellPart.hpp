@@ -7,6 +7,7 @@
 namespace sssdk
 {
 	class SSCell;
+	class SSCellmap;
 	class ISSCellmaps;
 	class SSDrawCellPart : public SSDrawPart
 	{
@@ -23,6 +24,7 @@ namespace sssdk
 	protected:
 
 		String m_packName;
+		const SSCellmap* m_pCellmap;
 		ISSCellmaps* m_pCellmaps;
 		const SSCell* m_pCell;
 		Texture m_texture;

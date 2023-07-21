@@ -7,6 +7,7 @@ namespace sssdk
 	SSDrawCellPart::SSDrawCellPart(StringView ssae, const SSAnimationPart* anim, ISSCellmaps* cellmaps)
 		: SSDrawPart{ anim }
 		, m_packName{ ssae }
+		, m_pCellmap{ nullptr }
 		, m_pCellmaps{ nullptr }
 		, m_pCell{ nullptr }
 		, m_texture{}
@@ -33,10 +34,12 @@ namespace sssdk
 				}
 			}
 		}
-		if (auto cellmap = m_pCellmaps->getCellmap(ssae, m_cell.mapId))
+		m_pCellmap = m_pCellmaps->getCellmap(ssae, m_cell.mapId);
+		if (not m_pCellmap)
 		{
-			m_pCell = cellmap->getCell(m_cell.name);
+			return;
 		}
+		m_pCell = m_pCellmap->getCell(m_cell.name);
 	}
 
 	SSDrawCellPart::~SSDrawCellPart()
@@ -47,12 +50,12 @@ namespace sssdk
 	{
 		SSDrawPart::update(frame);
 
-		const auto* cellmap = m_pCellmaps->getCellmap(m_packName, m_cell.mapId);
-		if (not cellmap)
+		m_pCellmap = m_pCellmaps->getCellmap(m_packName, m_cell.mapId);
+		if (not m_pCellmap)
 		{
 			return;
 		}
-		m_pCell = cellmap->getCell(m_cell.name);
+		m_pCell = m_pCellmap->getCell(m_cell.name);
 	}
 
 	void SSDrawCellPart::draw(const Vec2& canvasOffset) const
@@ -61,8 +64,7 @@ namespace sssdk
 		{
 			return;
 		}
-		const auto* cellmap = m_pCellmaps->getCellmap(m_packName, m_cell.mapId);
-		if (not cellmap)
+		if (not m_pCellmap)
 		{
 			return;
 		}
@@ -94,8 +96,8 @@ namespace sssdk
 		m_worldMatrix.decompose(scale, rotate, trans);
 		const auto& drawAtPos = canvasOffset + cellOffset + Vec2{ trans.x, -trans.y };
 		{
-			const ScopedRenderStates2D renderState{ blend, SamplerState(cellmap->getWrapMode(), cellmap->getFilterMode()) };
-			const Texture drawTexture = TextureAsset(cellmap->getTextureKey());
+			const ScopedRenderStates2D renderState{ blend, SamplerState(m_pCellmap->getWrapMode(), m_pCellmap->getFilterMode()) };
+			const Texture drawTexture = TextureAsset(m_pCellmap->getTextureKey());
 			drawTexture(srcRect)
 				.flipped(m_isImageFlipV)
 				.mirrored(m_isImageFlipH)
