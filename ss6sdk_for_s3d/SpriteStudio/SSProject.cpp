@@ -198,13 +198,20 @@ namespace sssdk
 		return nullptr;
 	}
 
-	const SSCellmap* const SSProject::getCellmap(uint64 index) const
+	const SSCellmap* const SSProject::getCellmap(StringView ssae, uint64 index) const
 	{
-		if (index < 0 or index >= m_cellmaps.size())
+		const auto* animPack = getAnimPack(ssae);
+		if (animPack == nullptr)
 		{
 			return nullptr;
 		}
-		return &m_cellmaps[index];
+		const auto& cellmapNames = animPack->getCellmapNames();
+		if (index < 0 or index >= cellmapNames.size())
+		{
+			return nullptr;
+		}
+		const auto& cellmapName = FileSystem::BaseName(cellmapNames[index]);
+		return getCellmap(cellmapName);
 	}
 
 	const SSAnimationPack* const SSProject::getAnimPack(StringView ssae) const

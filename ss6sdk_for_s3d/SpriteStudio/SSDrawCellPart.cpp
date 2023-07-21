@@ -4,8 +4,9 @@
 
 namespace sssdk
 {
-	SSDrawCellPart::SSDrawCellPart(const SSAnimationPart* setup, ISSCellmaps* cellmaps)
-		: SSDrawPart{ setup }
+	SSDrawCellPart::SSDrawCellPart(StringView ssae, const SSAnimationPart* anim, ISSCellmaps* cellmaps)
+		: SSDrawPart{ anim }
+		, m_packName{ ssae }
 		, m_pCellmaps{ nullptr }
 		, m_pCell{ nullptr }
 		, m_texture{}
@@ -15,7 +16,7 @@ namespace sssdk
 		{
 			return;
 		}
-		const auto& attributes = setup->getAttributes();
+		const auto& attributes = anim->getAttributes();
 		for (const auto& attribute : attributes)
 		{
 			if (attribute.getAttributeKind() == ATTRIBUTE_KIND_CELL)
@@ -32,7 +33,7 @@ namespace sssdk
 				}
 			}
 		}
-		if(auto cellmap = m_pCellmaps->getCellmap(m_cell.mapId))
+		if (auto cellmap = m_pCellmaps->getCellmap(ssae, m_cell.mapId))
 		{
 			m_pCell = cellmap->getCell(m_cell.name);
 		}
@@ -48,7 +49,7 @@ namespace sssdk
 		{
 			return;
 		}
-		const auto* cellmap = m_pCellmaps->getCellmap(m_cell.mapId);
+		const auto* cellmap = m_pCellmaps->getCellmap(m_packName, m_cell.mapId);
 		if (not cellmap)
 		{
 			return;

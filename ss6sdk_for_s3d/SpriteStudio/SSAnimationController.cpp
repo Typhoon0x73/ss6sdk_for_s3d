@@ -58,7 +58,7 @@ namespace sssdk
 			switch (modelPart->getType())
 			{
 			case ModelPartType::normal:
-				drawPart.reset(new SSDrawCellPart(&part, proj));
+				drawPart.reset(new SSDrawCellPart(pack, &part, proj));
 				break;
 			case ModelPartType::mesh:
 				//break;

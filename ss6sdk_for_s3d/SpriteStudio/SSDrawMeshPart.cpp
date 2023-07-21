@@ -3,8 +3,8 @@
 
 namespace sssdk
 {
-	SSDrawMeshPart::SSDrawMeshPart(const SSAnimationPart* setup, ISSCellmaps* cellmaps)
-		: SSDrawCellPart{ setup, cellmaps }
+	SSDrawMeshPart::SSDrawMeshPart(StringView ssae, const SSAnimationPart* anim, ISSCellmaps* cellmaps)
+		: SSDrawCellPart{ ssae, anim, cellmaps }
 		, m_pTargetTexture{ nullptr }
 		, m_pMesh2D{ nullptr }
 	{

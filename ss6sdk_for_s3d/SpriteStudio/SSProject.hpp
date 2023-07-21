@@ -14,7 +14,7 @@ namespace sssdk
 	{
 	public:
 		SIV3D_NODISCARD_CXX20 virtual const SSCellmap* const getCellmap(StringView) const = 0;
-		SIV3D_NODISCARD_CXX20 virtual const SSCellmap* const getCellmap(uint64) const = 0;
+		SIV3D_NODISCARD_CXX20 virtual const SSCellmap* const getCellmap(StringView, uint64) const = 0;
 	};
 
 	class SSProject : public ISSCellmaps
@@ -47,7 +47,7 @@ namespace sssdk
 		SIV3D_NODISCARD_CXX20 const Array<String>& getEffectFileNames() const;
 
 		SIV3D_NODISCARD_CXX20 virtual const SSCellmap* const getCellmap(StringView ssce) const override;
-		SIV3D_NODISCARD_CXX20 virtual const SSCellmap* const getCellmap(uint64 index) const override;
+		SIV3D_NODISCARD_CXX20 virtual const SSCellmap* const getCellmap(StringView ssae, uint64 index) const override;
 		SIV3D_NODISCARD_CXX20 const SSAnimationPack* const getAnimPack(StringView ssae) const;
 		SIV3D_NODISCARD_CXX20 const SSAnimation* const getAnimation(StringView ssae, StringView anim) const;
 

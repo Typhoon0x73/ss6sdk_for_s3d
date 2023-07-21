@@ -12,7 +12,7 @@ namespace sssdk
 	{
 	public:
 
-		explicit SSDrawCellPart(const SSAnimationPart* setup, ISSCellmaps* cellmaps);
+		explicit SSDrawCellPart(StringView ssae, const SSAnimationPart* anim, ISSCellmaps* cellmaps);
 		virtual ~SSDrawCellPart();
 
 		virtual void draw(const Vec2& canvasOffset) const override;
@@ -21,6 +21,7 @@ namespace sssdk
 
 	protected:
 
+		String m_packName;
 		ISSCellmaps* m_pCellmaps;
 		const SSCell* m_pCell;
 		Texture m_texture;
