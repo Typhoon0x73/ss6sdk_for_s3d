@@ -94,7 +94,7 @@ namespace sssdk
 		Float3 trans, scale;
 		Quaternion rotate;
 		m_worldMatrix.decompose(scale, rotate, trans);
-		const auto& drawAtPos = canvasOffset + cellOffset + Vec2{ trans.x, -trans.y };
+		const auto& drawAtPos = canvasOffset + cellOffset + Vec2{ trans.x, trans.y };
 		{
 			const ScopedRenderStates2D renderState{ blend, SamplerState(m_pCellmap->getWrapMode(), m_pCellmap->getFilterMode()) };
 			const Texture drawTexture = TextureAsset(m_pCellmap->getTextureKey());

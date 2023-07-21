@@ -74,8 +74,8 @@ OpenSiv3Dのリポジトリからコピーし`./use_sdk/ThirdParty/tinyxml2/tiny
    - [ ] audio  
  - Attribute
    - [x] cell  
-   - [ ] pos_x  
-   - [ ] pos_y  
+   - [x] pos_x  
+   - [x] pos_y  
    - [ ] pos_z  
    - [ ] rot_x  
    - [ ] rot_y  
