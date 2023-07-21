@@ -79,7 +79,7 @@ OpenSiv3Dのリポジトリからコピーし`./use_sdk/ThirdParty/tinyxml2/tiny
    - [ ] pos_z  
    - [ ] rot_x  
    - [ ] rot_y  
-   - [ ] rot_z  
+   - [x] rot_z  
    - [ ] scale_x  
    - [ ] scale_y  
    - [ ] local_scale_x  

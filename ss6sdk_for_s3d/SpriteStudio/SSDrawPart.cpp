@@ -340,7 +340,7 @@ namespace sssdk
 
 	void SSDrawPart::updateMatrix()
 	{
-		Mat4x4 rot = Mat4x4::RollPitchYaw(Math::ToRadians(m_rotation.x), Math::ToRadians(m_rotation.y), Math::ToRadians(m_rotation.z));
+		Mat4x4 rot = Mat4x4::RollPitchYaw(Math::ToRadians(m_rotation.x), Math::ToRadians(m_rotation.y), Math::ToRadians(-m_rotation.z));
 		Mat4x4 scale = Mat4x4::Scale(Float3{ m_scale, 1.0f });
 		Mat4x4 trans = Mat4x4::Translate(m_position.x, -m_position.y, m_position.z);
 
