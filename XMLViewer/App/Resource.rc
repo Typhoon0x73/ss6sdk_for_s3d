@@ -85,21 +85,21 @@ Resource(engine/texture/box-shadow/8.png)
 //
 //	Fonts
 //
-//Resource(engine/font/mplus/mplus-1p-thin.ttf.zstdcmp)
-//Resource(engine/font/mplus/mplus-1p-light.ttf.zstdcmp)
+Resource(engine/font/mplus/mplus-1p-thin.ttf.zstdcmp)
+Resource(engine/font/mplus/mplus-1p-light.ttf.zstdcmp)
 Resource(engine/font/mplus/mplus-1p-regular.ttf.zstdcmp)
-//Resource(engine/font/mplus/mplus-1p-medium.ttf.zstdcmp)
-//Resource(engine/font/mplus/mplus-1p-bold.ttf.zstdcmp)
-//Resource(engine/font/mplus/mplus-1p-heavy.ttf.zstdcmp)
-//Resource(engine/font/mplus/mplus-1p-black.ttf.zstdcmp)
+Resource(engine/font/mplus/mplus-1p-medium.ttf.zstdcmp)
+Resource(engine/font/mplus/mplus-1p-bold.ttf.zstdcmp)
+Resource(engine/font/mplus/mplus-1p-heavy.ttf.zstdcmp)
+Resource(engine/font/mplus/mplus-1p-black.ttf.zstdcmp)
 Resource(engine/font/noto-cjk/NotoSansCJK-Regular.ttc.zstdcmp)
 //Resource(engine/font/noto-cjk/NotoSansJP-Regular.otf.zstdcmp)
 
 //
 //	Emoji Fonts
 //
-//Resource(engine/font/noto-emoji/NotoColorEmoji.ttf.zstdcmp)
-//Resource(engine/font/noto-emoji/NotoEmoji-Regular.ttf.zstdcmp)
+Resource(engine/font/noto-emoji/NotoColorEmoji.ttf.zstdcmp)
+Resource(engine/font/noto-emoji/NotoEmoji-Regular.ttf.zstdcmp)
 
 //
 //	Icons
@@ -111,7 +111,7 @@ Resource(engine/font/materialdesignicons/materialdesignicons-webfont.ttf.zstdcmp
 //
 //	Sound Font
 //
-//Resource(engine/soundfont/GMGSx.sf2.zstdcmp)
+Resource(engine/soundfont/GMGSx.sf2.zstdcmp)
 
 //////////////////////////////////////////////////////
 //

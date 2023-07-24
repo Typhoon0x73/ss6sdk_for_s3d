@@ -3,8 +3,8 @@
 
 # 開発環境
 OS  : Windows 10 pro  
-Lib : [OpenSiv3D v0.6.6](https://github.com/Siv3D/OpenSiv3D)  
-IDE : Microsoft Visual Studio Community 2022 (64 ビット) Version 17.4.2  
+Lib : [OpenSiv3D v0.6.10](https://github.com/Siv3D/OpenSiv3D)  
+IDE : Microsoft Visual Studio Community 2022 (64 ビット) Version 17.6.2  
 
 # ThirdParty
 ### SpriteStudio6-SDK
@@ -22,14 +22,17 @@ OpenSiv3DのLibに含まれてますが、ヘッダを外に置いてないの�
 OpenSiv3Dのリポジトリからコピーし`./use_sdk/ThirdParty/tinyxml2/tinyxml2.h`へ配置しています。  
   
 ### スプライトスタジオのサンプルデータ
-`./ss6sdk_for_s3d/App/ss6sample/*`に配置してあります。  
+`./sssdk_for_s3d/App/ss6sample/*`に配置してあります。  
 
 データごとにライセンスがあります。  
 各フォルダ内のreadmeを必ず参照してください。  
   
 ほかにも追加で必要な場合  
 [こちら](https://www.webtech.co.jp/help/ja/spritestudio/download/sample/)のサイトから必要なものをダウンロードし利用してください。  
-
+テストデータとして  
+https://github.com/SpriteStudio/SpriteStudio6-SDK  
+こちらの`Build/TestData/*`のデータを使用して実装確認しています。  
+  
 # use_sdkプロジェクト
 
 ## 各テストの実行方法

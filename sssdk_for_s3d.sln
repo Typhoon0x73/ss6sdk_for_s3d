@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sssdk_for_s3d", "sssdk_for_s3d\sssdk_for_s3d.vcxproj", "{B0CD5747-20CE-4622-B207-D3FCC350BB1F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "use_sdk", "use_sdk\use_sdk.vcxproj", "{0BCF90E8-E7E0-4EFB-B9A0-C1104C900BF5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XMLViewer", "XMLViewer\XMLViewer.vcxproj", "{58A26BE1-969F-4B96-A043-51E3B43AA996}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+		USE_SAMPLE_MAIN|x64 = USE_SAMPLE_MAIN|x64
+		USE_TEST_MAIN|x64 = USE_TEST_MAIN|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0CD5747-20CE-4622-B207-D3FCC350BB1F}.Debug|x64.ActiveCfg = Debug|x64
+		{B0CD5747-20CE-4622-B207-D3FCC350BB1F}.Debug|x64.Build.0 = Debug|x64
+		{B0CD5747-20CE-4622-B207-D3FCC350BB1F}.Release|x64.ActiveCfg = Release|x64
+		{B0CD5747-20CE-4622-B207-D3FCC350BB1F}.Release|x64.Build.0 = Release|x64
+		{B0CD5747-20CE-4622-B207-D3FCC350BB1F}.USE_SAMPLE_MAIN|x64.ActiveCfg = Debug|x64
+		{B0CD5747-20CE-4622-B207-D3FCC350BB1F}.USE_SAMPLE_MAIN|x64.Build.0 = Debug|x64
+		{B0CD5747-20CE-4622-B207-D3FCC350BB1F}.USE_TEST_MAIN|x64.ActiveCfg = Debug|x64
+		{B0CD5747-20CE-4622-B207-D3FCC350BB1F}.USE_TEST_MAIN|x64.Build.0 = Debug|x64
+		{0BCF90E8-E7E0-4EFB-B9A0-C1104C900BF5}.Debug|x64.ActiveCfg = Debug|x64
+		{0BCF90E8-E7E0-4EFB-B9A0-C1104C900BF5}.Debug|x64.Build.0 = Debug|x64
+		{0BCF90E8-E7E0-4EFB-B9A0-C1104C900BF5}.Release|x64.ActiveCfg = Release|x64
+		{0BCF90E8-E7E0-4EFB-B9A0-C1104C900BF5}.Release|x64.Build.0 = Release|x64
+		{0BCF90E8-E7E0-4EFB-B9A0-C1104C900BF5}.USE_SAMPLE_MAIN|x64.ActiveCfg = USE_SAMPLE_MAIN|x64
+		{0BCF90E8-E7E0-4EFB-B9A0-C1104C900BF5}.USE_SAMPLE_MAIN|x64.Build.0 = USE_SAMPLE_MAIN|x64
+		{0BCF90E8-E7E0-4EFB-B9A0-C1104C900BF5}.USE_TEST_MAIN|x64.ActiveCfg = USE_TEST_MAIN|x64
+		{0BCF90E8-E7E0-4EFB-B9A0-C1104C900BF5}.USE_TEST_MAIN|x64.Build.0 = USE_TEST_MAIN|x64
+		{58A26BE1-969F-4B96-A043-51E3B43AA996}.Debug|x64.ActiveCfg = Debug|x64
+		{58A26BE1-969F-4B96-A043-51E3B43AA996}.Debug|x64.Build.0 = Debug|x64
+		{58A26BE1-969F-4B96-A043-51E3B43AA996}.Release|x64.ActiveCfg = Release|x64
+		{58A26BE1-969F-4B96-A043-51E3B43AA996}.Release|x64.Build.0 = Release|x64
+		{58A26BE1-969F-4B96-A043-51E3B43AA996}.USE_SAMPLE_MAIN|x64.ActiveCfg = Debug|x64
+		{58A26BE1-969F-4B96-A043-51E3B43AA996}.USE_SAMPLE_MAIN|x64.Build.0 = Debug|x64
+		{58A26BE1-969F-4B96-A043-51E3B43AA996}.USE_TEST_MAIN|x64.ActiveCfg = Debug|x64
+		{58A26BE1-969F-4B96-A043-51E3B43AA996}.USE_TEST_MAIN|x64.Build.0 = Debug|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {76B8C07E-44B2-4851-BC3A-D2CF6A2D9F7F}
+	EndGlobalSection
+EndGlobal

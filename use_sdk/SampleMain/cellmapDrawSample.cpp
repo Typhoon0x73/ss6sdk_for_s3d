@@ -15,8 +15,8 @@
 
 # if defined (CELLMAP_DRAW_SAMPLE_CPP)
 
-# include <Siv3D.hpp> // OpenSiv3D v0.6.6
-# include "../ThirdParty/ss6sdk/Common/Loader/ssloader_sspj.h"
+# include <Siv3D.hpp> // OpenSiv3D v0.6.10
+# include "../ThirdParty/sssdk/Common/Loader/ssloader_sspj.h"
 
 using namespace spritestudio6;
 

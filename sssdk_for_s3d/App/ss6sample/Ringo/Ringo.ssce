@@ -1,0 +1,2629 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<SpriteStudioCellMap version="2.00.00" edition="Professional" editorVersion="6.6.3">
+	<name>Ringo</name>
+	<exportPath></exportPath>
+	<generator>SpriteStudio</generator>
+	<packed>0</packed>
+	<imagePath>Ringo.png</imagePath>
+	<pixelSize>1024 512</pixelSize>
+	<overrideTexSettings>0</overrideTexSettings>
+	<wrapMode>clamp</wrapMode>
+	<filterMode>linear</filterMode>
+	<imagePathAtImport></imagePathAtImport>
+	<packInfoFilePath></packInfoFilePath>
+	<texPackSettings>
+		<maxSize>4096 4096</maxSize>
+		<forcePo2>1</forcePo2>
+		<forceSquare>0</forceSquare>
+		<margin>0</margin>
+		<padding>1</padding>
+	</texPackSettings>
+	<cells>
+		<cell>
+			<name>effect5</name>
+			<pos>792 4</pos>
+			<size>129 120</size>
+			<pivot>0 0</pivot>
+			<rotated>0</rotated>
+			<orgImageName></orgImageName>
+			<posStable>0</posStable>
+			<ismesh>0</ismesh>
+			<divtype>invalid</divtype>
+			<innerPoint />
+			<outerPoint />
+			<meshPointList />
+			<meshTriList />
+		</cell>
+		<cell>
+			<name>effect3</name>
+			<pos>750 234</pos>
+			<size>75 71</size>
+			<pivot>0 0</pivot>
+			<rotated>0</rotated>
+			<orgImageName></orgImageName>
+			<posStable>0</posStable>
+			<ismesh>0</ismesh>
+			<divtype>invalid</divtype>
+			<innerPoint />
+			<outerPoint />
+			<meshPointList />
+			<meshTriList />
+		</cell>
+		<cell>
+			<name>effect2</name>
+			<pos>652 4</pos>
+			<size>138 135</size>
+			<pivot>0 0</pivot>
+			<rotated>0</rotated>
+			<orgImageName></orgImageName>
+			<posStable>0</posStable>
+			<ismesh>0</ismesh>
+			<divtype>unknown</divtype>
+			<innerPoint />
+			<outerPoint />
+			<meshPointList />
+			<meshTriList />
+		</cell>
+		<cell>
+			<name>effect1</name>
+			<pos>512 4</pos>
+			<size>138 138</size>
+			<pivot>0 0</pivot>
+			<rotated>0</rotated>
+			<orgImageName></orgImageName>
+			<posStable>0</posStable>
+			<ismesh>0</ismesh>
+			<divtype>unknown</divtype>
+			<innerPoint />
+			<outerPoint />
+			<meshPointList />
+			<meshTriList />
+		</cell>
+		<cell>
+			<name>heta</name>
+			<pos>992 4</pos>
+			<size>22 34</size>
+			<pivot>-0.227273002266884 -0.441175997257233</pivot>
+			<rotated>0</rotated>
+			<orgImageName></orgImageName>
+			<posStable>0</posStable>
+			<ismesh>0</ismesh>
+			<divtype>invalid</divtype>
+			<innerPoint />
+			<outerPoint />
+			<meshPointList />
+			<meshTriList />
+		</cell>
+		<cell>
+			<name>apple</name>
+			<pos>792 126</pos>
+			<size>118 106</size>
+			<pivot>0 0</pivot>
+			<rotated>0</rotated>
+			<orgImageName></orgImageName>
+			<posStable>0</posStable>
+			<ismesh>0</ismesh>
+			<divtype>invalid</divtype>
+			<innerPoint />
+			<outerPoint />
+			<meshPointList />
+			<meshTriList />
+		</cell>
+		<cell>
+			<name>mouth_3b</name>
+			<pos>204 244</pos>
+			<size>46 43</size>
+			<pivot>-0.04347800090909 0.476743996143341</pivot>
+			<rotated>0</rotated>
+			<orgImageName></orgImageName>
+			<posStable>0</posStable>
+			<ismesh>0</ismesh>
+			<divtype>unknown</divtype>
+			<innerPoint />
+			<outerPoint />
+			<meshPointList />
+			<meshTriList />
+		</cell>
+		<cell>
+			<name>mouth_2</name>
+			<pos>632 264</pos>
+			<size>77 15</size>
+			<pivot>0 0</pivot>
+			<rotated>0</rotated>
+			<orgImageName></orgImageName>
+			<posStable>0</posStable>
+			<ismesh>0</ismesh>
+			<divtype>unknown</divtype>
+			<innerPoint />
+			<outerPoint />
+			<meshPointList />
+			<meshTriList />
+		</cell>
+		<cell>
+			<name>mouth_1a</name>
+			<pos>122 244</pos>
+			<size>80 27</size>
+			<pivot>0 0</pivot>
+			<rotated>0</rotated>
+			<orgImageName></orgImageName>
+			<posStable>0</posStable>
+			<ismesh>1</ismesh>
+			<divtype>polyline</divtype>
+			<innerPoint>
+				<value>40 11</value>
+				<value>51 10</value>
+				<value>66 10</value>
+				<value>29 11</value>
+				<value>19 11</value>
+				<value>58 10</value>
+				<value>12 11</value>
+			</innerPoint>
+			<outerPoint>
+				<value>0 0</value>
+				<value>0 3</value>
+				<value>5 12</value>
+				<value>5 18</value>
+				<value>12 24</value>
+				<value>19 27</value>
+				<value>29 27</value>
+				<value>40 21</value>
+				<value>51 27</value>
+				<value>58 28</value>
+				<value>65 25</value>
+				<value>75 18</value>
+				<value>75 12</value>
+				<value>79 6</value>
+				<value>80 0</value>
+				<value>67 0</value>
+				<value>58 0</value>
+				<value>51 0</value>
+				<value>41 0</value>
+				<value>29 0</value>
+				<value>19 0</value>
+				<value>11 0</value>
+			</outerPoint>
+			<meshPointList>
+				<value>5 12</value>
+				<value>0 3</value>
+				<value>11 0</value>
+				<value>12 11</value>
+				<value>5 18</value>
+				<value>12 24</value>
+				<value>19 11</value>
+				<value>19 27</value>
+				<value>29 11</value>
+				<value>29 27</value>
+				<value>40 21</value>
+				<value>40 11</value>
+				<value>29 0</value>
+				<value>41 0</value>
+				<value>51 10</value>
+				<value>51 27</value>
+				<value>58 10</value>
+				<value>58 28</value>
+				<value>65 25</value>
+				<value>66 10</value>
+				<value>75 18</value>
+				<value>75 12</value>
+				<value>67 0</value>
+				<value>79 6</value>
+				<value>80 0</value>
+				<value>58 0</value>
+				<value>51 0</value>
+				<value>19 0</value>
+				<value>0 0</value>
+			</meshPointList>
+			<meshTriList>
+				<value>0 1 2</value>
+				<value>3 0 2</value>
+				<value>4 0 3</value>
+				<value>4 3 5</value>
+				<value>5 3 6</value>
+				<value>5 6 7</value>
+				<value>7 6 8</value>
+				<value>9 7 8</value>
+				<value>10 9 8</value>
+				<value>8 11 10</value>
+				<value>11 8 12</value>
+				<value>13 11 12</value>
+				<value>11 13 14</value>
+				<value>10 11 14</value>
+				<value>15 10 14</value>
+				<value>15 14 16</value>
+				<value>15 16 17</value>
+				<value>18 17 16</value>
+				<value>18 16 19</value>
+				<value>18 19 20</value>
+				<value>19 21 20</value>
+				<value>21 19 22</value>
+				<value>23 21 22</value>
+				<value>23 22 24</value>
+				<value>22 19 25</value>
+				<value>19 16 25</value>
+				<value>14 25 16</value>
+				<value>14 26 25</value>
+				<value>13 26 14</value>
+				<value>6 12 8</value>
+				<value>6 27 12</value>
+				<value>3 27 6</value>
+				<value>3 2 27</value>
+				<value>1 28 2</value>
+			</meshTriList>
+		</cell>
+		<cell>
+			<name>mpouth_1b</name>
+			<pos>252 244</pos>
+			<size>42 43</size>
+			<pivot>0 0.383720993995667</pivot>
+			<rotated>0</rotated>
+			<orgImageName></orgImageName>
+			<posStable>0</posStable>
+			<ismesh>0</ismesh>
+			<divtype>invalid</divtype>
+			<innerPoint />
+			<outerPoint />
+			<meshPointList />
+			<meshTriList />
+		</cell>
+		<cell>
+			<name>ho</name>
+			<pos>924 100</pos>
+			<size>66 24</size>
+			<pivot>-0.0454550012946129 0</pivot>
+			<rotated>0</rotated>
+			<orgImageName></orgImageName>
+			<posStable>0</posStable>
+			<ismesh>0</ismesh>
+			<divtype>invalid</divtype>
+			<innerPoint />
+			<outerPoint />
+			<meshPointList />
+			<meshTriList />
+		</cell>
+		<cell>
+			<name>brow</name>
+			<pos>712 264</pos>
+			<size>36 14</size>
+			<pivot>0 0.285714000463486</pivot>
+			<rotated>0</rotated>
+			<orgImageName></orgImageName>
+			<posStable>0</posStable>
+			<ismesh>0</ismesh>
+			<divtype>invalid</divtype>
+			<innerPoint />
+			<outerPoint />
+			<meshPointList />
+			<meshTriList />
+		</cell>
+		<cell>
+			<name>nose</name>
+			<pos>992 76</pos>
+			<size>18 14</size>
+			<pivot>0 0</pivot>
+			<rotated>0</rotated>
+			<orgImageName></orgImageName>
+			<posStable>0</posStable>
+			<ismesh>0</ismesh>
+			<divtype>invalid</divtype>
+			<innerPoint />
+			<outerPoint />
+			<meshPointList />
+			<meshTriList />
+		</cell>
+		<cell>
+			<name>highlight</name>
+			<pos>1006 40</pos>
+			<size>6 16</size>
+			<pivot>0 0</pivot>
+			<rotated>0</rotated>
+			<orgImageName></orgImageName>
+			<posStable>0</posStable>
+			<ismesh>0</ismesh>
+			<divtype>invalid</divtype>
+			<innerPoint />
+			<outerPoint />
+			<meshPointList />
+			<meshTriList />
+		</cell>
+		<cell>
+			<name>eye5</name>
+			<pos>750 190</pos>
+			<size>32 34</size>
+			<pivot>-0.03125 0</pivot>
+			<rotated>0</rotated>
+			<orgImageName></orgImageName>
+			<posStable>0</posStable>
+			<ismesh>0</ismesh>
+			<divtype>unknown</divtype>
+			<innerPoint />
+			<outerPoint />
+			<meshPointList />
+			<meshTriList />
+		</cell>
+		<cell>
+			<name>eye4</name>
+			<pos>750 142</pos>
+			<size>37 45</size>
+			<pivot>0 0</pivot>
+			<rotated>0</rotated>
+			<orgImageName></orgImageName>
+			<posStable>0</posStable>
+			<ismesh>0</ismesh>
+			<divtype>unknown</divtype>
+			<innerPoint />
+			<outerPoint />
+			<meshPointList />
+			<meshTriList />
+		</cell>
+		<cell>
+			<name>eye3</name>
+			<pos>954 248</pos>
+			<size>56 28</size>
+			<pivot>0 0</pivot>
+			<rotated>0</rotated>
+			<orgImageName></orgImageName>
+			<posStable>0</posStable>
+			<ismesh>0</ismesh>
+			<divtype>unknown</divtype>
+			<innerPoint />
+			<outerPoint />
+			<meshPointList />
+			<meshTriList />
+		</cell>
+		<cell>
+			<name>eye2</name>
+			<pos>828 234</pos>
+			<size>56 41</size>
+			<pivot>0 0</pivot>
+			<rotated>0</rotated>
+			<orgImageName></orgImageName>
+			<posStable>0</posStable>
+			<ismesh>0</ismesh>
+			<divtype>unknown</divtype>
+			<innerPoint />
+			<outerPoint />
+			<meshPointList />
+			<meshTriList />
+		</cell>
+		<cell>
+			<name>eye</name>
+			<pos>992 40</pos>
+			<size>12 34</size>
+			<pivot>0 0</pivot>
+			<rotated>0</rotated>
+			<orgImageName></orgImageName>
+			<posStable>0</posStable>
+			<ismesh>0</ismesh>
+			<divtype>invalid</divtype>
+			<innerPoint />
+			<outerPoint />
+			<meshPointList />
+			<meshTriList />
+		</cell>
+		<cell>
+			<name>hige_u</name>
+			<pos>510 274</pos>
+			<size>83 13</size>
+			<pivot>-0.463854998350143 -0.269230991601944</pivot>
+			<rotated>0</rotated>
+			<orgImageName></orgImageName>
+			<posStable>0</posStable>
+			<ismesh>0</ismesh>
+			<divtype>invalid</divtype>
+			<innerPoint />
+			<outerPoint />
+			<meshPointList />
+			<meshTriList />
+		</cell>
+		<cell>
+			<name>hige_d</name>
+			<pos>886 248</pos>
+			<size>66 23</size>
+			<pivot>-0.454544991254807 0.369565010070801</pivot>
+			<rotated>0</rotated>
+			<orgImageName></orgImageName>
+			<posStable>0</posStable>
+			<ismesh>0</ismesh>
+			<divtype>invalid</divtype>
+			<innerPoint />
+			<outerPoint />
+			<meshPointList />
+			<meshTriList />
+		</cell>
+		<cell>
+			<name>ear_r</name>
+			<pos>652 142</pos>
+			<size>96 119</size>
+			<pivot>0.0625 -0.357143014669418</pivot>
+			<rotated>0</rotated>
+			<orgImageName></orgImageName>
+			<posStable>0</posStable>
+			<ismesh>1</ismesh>
+			<divtype>polyline</divtype>
+			<innerPoint>
+				<value>9 113</value>
+				<value>26 107</value>
+				<value>42 101</value>
+				<value>58 95</value>
+				<value>72 90</value>
+				<value>89 84</value>
+				<value>80 14</value>
+				<value>74 27</value>
+				<value>70 41</value>
+				<value>67 51</value>
+				<value>64 61</value>
+				<value>62 71</value>
+				<value>60 82</value>
+				<value>66 28</value>
+				<value>55 42</value>
+				<value>41 60</value>
+				<value>31 75</value>
+				<value>22 89</value>
+				<value>14 104</value>
+				<value>82 14</value>
+				<value>78 15</value>
+				<value>83 27</value>
+				<value>84 39</value>
+				<value>84 49</value>
+				<value>85 59</value>
+				<value>86 67</value>
+				<value>87 76</value>
+				<value>14 111</value>
+			</innerPoint>
+			<outerPoint>
+				<value>85 0</value>
+				<value>82 -1</value>
+				<value>69 14</value>
+				<value>57 28</value>
+				<value>45 43</value>
+				<value>33 60</value>
+				<value>23 74</value>
+				<value>14 87</value>
+				<value>6 103</value>
+				<value>0 115</value>
+				<value>0 120</value>
+				<value>16 120</value>
+				<value>33 120</value>
+				<value>50 120</value>
+				<value>67 120</value>
+				<value>82 113</value>
+				<value>90 105</value>
+				<value>95 95</value>
+				<value>96 81</value>
+				<value>95 72</value>
+				<value>94 65</value>
+				<value>94 57</value>
+				<value>93 49</value>
+				<value>92 39</value>
+				<value>91 28</value>
+				<value>90 15</value>
+				<value>89 0</value>
+			</outerPoint>
+			<meshPointList>
+				<value>16 120</value>
+				<value>0 120</value>
+				<value>9.54762077331543 113.428573608398</value>
+				<value>14.9166669845581 111.75</value>
+				<value>14.0714302062988 104.619049072266</value>
+				<value>6.5625 103</value>
+				<value>0.71875 115.15625</value>
+				<value>14.8526802062988 87.8705368041992</value>
+				<value>22.642858505249 89.3809585571289</value>
+				<value>26.9285736083984 107.714286804199</value>
+				<value>33 120</value>
+				<value>42.4047622680664 101.285713195801</value>
+				<value>50 120</value>
+				<value>58.3571434020996 95.3333358764648</value>
+				<value>67 120</value>
+				<value>82 113</value>
+				<value>72.4047622680664 90.8095245361328</value>
+				<value>90 105</value>
+				<value>95 95</value>
+				<value>89.3095245361328 84.8571395874023</value>
+				<value>96.7435913085938 81.6923065185547</value>
+				<value>87.935905456543 76.1941452026367</value>
+				<value>62.5952377319336 71.2857131958008</value>
+				<value>60.8571434020996 82.1666641235352</value>
+				<value>41.6904792785645 60.3333320617676</value>
+				<value>31.2142887115479 75.3333358764648</value>
+				<value>33.25 60.2648811340332</value>
+				<value>23.4613094329834 74.1696395874023</value>
+				<value>45.5625 43.4494018554688</value>
+				<value>55.023811340332 42.476188659668</value>
+				<value>64.8095245361328 61.4523849487305</value>
+				<value>86.7698516845703 67.2645492553711</value>
+				<value>95.5549468994141 72.6410293579102</value>
+				<value>94.987190246582 65.1318664550781</value>
+				<value>85.7380981445313 59.1428565979004</value>
+				<value>67.1666717529297 51.761905670166</value>
+				<value>84.7857208251953 49.8571434020996</value>
+				<value>94.2728958129883 57.9706993103027</value>
+				<value>93.5586166381836 49.1428527832031</value>
+				<value>92.5164794921875 39.3956031799316</value>
+				<value>84.0714340209961 39.8571434020996</value>
+				<value>70.7380981445313 41.2857131958008</value>
+				<value>74.5476226806641 27.9523792266846</value>
+				<value>66.2142868041992 28.1904754638672</value>
+				<value>57.5 28.6875</value>
+				<value>69.5625 14.15625</value>
+				<value>78.2901840209961 15.0208320617676</value>
+				<value>83.998176574707 27.91575050354</value>
+				<value>91.9377212524414 28.0219745635986</value>
+				<value>90.9084243774414 15.1465196609497</value>
+				<value>82.4047698974609 14.857141494751</value>
+				<value>80.5818481445313 14.9315462112427</value>
+				<value>82 -1</value>
+				<value>85.7343826293945 -0.734376907348633</value>
+				<value>89 0</value>
+			</meshPointList>
+			<meshTriList>
+				<value>0 1 2</value>
+				<value>2 3 0</value>
+				<value>2 4 3</value>
+				<value>2 5 4</value>
+				<value>6 5 2</value>
+				<value>1 6 2</value>
+				<value>4 5 7</value>
+				<value>4 7 8</value>
+				<value>9 4 8</value>
+				<value>3 4 9</value>
+				<value>0 3 9</value>
+				<value>0 9 10</value>
+				<value>10 9 11</value>
+				<value>10 11 12</value>
+				<value>12 11 13</value>
+				<value>13 14 12</value>
+				<value>15 14 13</value>
+				<value>15 13 16</value>
+				<value>15 16 17</value>
+				<value>17 16 18</value>
+				<value>18 16 19</value>
+				<value>18 19 20</value>
+				<value>19 21 20</value>
+				<value>16 21 19</value>
+				<value>16 22 21</value>
+				<value>23 22 16</value>
+				<value>23 24 22</value>
+				<value>25 24 23</value>
+				<value>25 26 24</value>
+				<value>25 27 26</value>
+				<value>8 27 25</value>
+				<value>8 7 27</value>
+				<value>11 8 25</value>
+				<value>11 9 8</value>
+				<value>23 11 25</value>
+				<value>23 13 11</value>
+				<value>13 23 16</value>
+				<value>24 26 28</value>
+				<value>24 28 29</value>
+				<value>30 24 29</value>
+				<value>22 24 30</value>
+				<value>31 22 30</value>
+				<value>22 31 21</value>
+				<value>21 31 32</value>
+				<value>21 32 20</value>
+				<value>31 33 32</value>
+				<value>31 34 33</value>
+				<value>31 30 34</value>
+				<value>34 30 35</value>
+				<value>34 35 36</value>
+				<value>34 36 37</value>
+				<value>34 37 33</value>
+				<value>36 38 37</value>
+				<value>36 39 38</value>
+				<value>36 40 39</value>
+				<value>41 40 36</value>
+				<value>41 42 40</value>
+				<value>41 43 42</value>
+				<value>29 43 41</value>
+				<value>29 44 43</value>
+				<value>29 28 44</value>
+				<value>43 44 45</value>
+				<value>43 45 42</value>
+				<value>42 45 46</value>
+				<value>42 46 47</value>
+				<value>40 42 47</value>
+				<value>40 47 48</value>
+				<value>40 48 39</value>
+				<value>47 49 48</value>
+				<value>47 50 49</value>
+				<value>51 50 47</value>
+				<value>50 51 52</value>
+				<value>50 52 53</value>
+				<value>50 53 54</value>
+				<value>50 54 49</value>
+				<value>51 46 52</value>
+				<value>46 51 47</value>
+				<value>52 46 45</value>
+				<value>35 29 41</value>
+				<value>35 30 29</value>
+				<value>35 41 36</value>
+			</meshTriList>
+		</cell>
+		<cell>
+			<name>ear_l</name>
+			<pos>912 126</pos>
+			<size>102 119</size>
+			<pivot>-0.0686269998550415 -0.323529005050659</pivot>
+			<rotated>0</rotated>
+			<orgImageName></orgImageName>
+			<posStable>0</posStable>
+			<ismesh>1</ismesh>
+			<divtype>polyline</divtype>
+			<innerPoint>
+				<value>13 105</value>
+				<value>20 9</value>
+				<value>25 24</value>
+				<value>29 39</value>
+				<value>33 50</value>
+				<value>35 60</value>
+				<value>37 68</value>
+				<value>39 76</value>
+				<value>42 85</value>
+				<value>46 99</value>
+				<value>66 104</value>
+				<value>84 109</value>
+				<value>94 114</value>
+				<value>25 91</value>
+				<value>6 84</value>
+				<value>8 78</value>
+				<value>9 71</value>
+				<value>12 62</value>
+				<value>13 53</value>
+				<value>15 40</value>
+				<value>18 26</value>
+				<value>32 22</value>
+				<value>27 16</value>
+				<value>23 17</value>
+				<value>42 35</value>
+				<value>51 47</value>
+				<value>56 54</value>
+				<value>61 61</value>
+				<value>70 75</value>
+				<value>81 93</value>
+				<value>89 106</value>
+			</innerPoint>
+			<outerPoint>
+				<value>14 0</value>
+				<value>13 11</value>
+				<value>10 29</value>
+				<value>8 41</value>
+				<value>6 54</value>
+				<value>4 63</value>
+				<value>2 71</value>
+				<value>0 77</value>
+				<value>-1 83</value>
+				<value>2 96</value>
+				<value>10 108</value>
+				<value>32 118</value>
+				<value>50 120</value>
+				<value>68 120</value>
+				<value>85 120</value>
+				<value>103 120</value>
+				<value>100 111</value>
+				<value>87 89</value>
+				<value>77 72</value>
+				<value>67 58</value>
+				<value>57 44</value>
+				<value>49 33</value>
+				<value>39 21</value>
+				<value>29 8</value>
+				<value>21 -1</value>
+			</outerPoint>
+			<meshPointList>
+				<value>2.89189195632935 96.3783798217773</value>
+				<value>-1.06306290626526 83.315315246582</value>
+				<value>6.16777181625366 84.7965927124023</value>
+				<value>25.1071662902832 91.3117446899414</value>
+				<value>13 105</value>
+				<value>10 108.378379821777</value>
+				<value>32.7297286987305 118.378379821777</value>
+				<value>46.4708023071289 99.4935607910156</value>
+				<value>50 120</value>
+				<value>66.9253540039063 104.645080566406</value>
+				<value>68 120</value>
+				<value>84.501106262207 109.645072937012</value>
+				<value>85 120</value>
+				<value>94.0465621948242 114.948104858398</value>
+				<value>103 120</value>
+				<value>100.424247741699 111.409088134766</value>
+				<value>89.3495864868164 106.311744689941</value>
+				<value>81.1677703857422 93.2814407348633</value>
+				<value>87.7289123535156 89.2682189941406</value>
+				<value>77.5723648071289 72.5934753417969</value>
+				<value>70.4101943969727 75.8572006225586</value>
+				<value>67.9152374267578 58.9045867919922</value>
+				<value>61.7738342285156 61.6147727966309</value>
+				<value>56.3192901611328 54.7965927124023</value>
+				<value>37.6829223632813 68.4329528808594</value>
+				<value>39.1980743408203 76.0087127685547</value>
+				<value>42.3798942565918 85.4026489257813</value>
+				<value>9.65262031555176 71.1602249145508</value>
+				<value>12.3798933029175 62.9784088134766</value>
+				<value>35.7132263183594 60.5541648864746</value>
+				<value>51.4708023071289 47.0693168640137</value>
+				<value>33.5920143127441 50.705680847168</value>
+				<value>13.7435293197632 53.1299247741699</value>
+				<value>6.54451036453247 54.3297576904297</value>
+				<value>4.16666698455811 63.8333320617676</value>
+				<value>2.42493653297424 71.4919204711914</value>
+				<value>8.13746929168701 78.58447265625</value>
+				<value>0.533044517040253 77.8432693481445</value>
+				<value>8.72305297851563 41.3895416259766</value>
+				<value>15.8647422790527 40.705680847168</value>
+				<value>29.9556503295898 39.0390129089355</value>
+				<value>42.3798942565918 35.4026527404785</value>
+				<value>49.7140464782715 33.4820899963379</value>
+				<value>39.4906768798828 21.1386947631836</value>
+				<value>32.3798942565918 22.6753787994385</value>
+				<value>27.3798923492432 16.4632568359375</value>
+				<value>25.2586803436279 24.9481048583984</value>
+				<value>23.7435302734375 17.220832824707</value>
+				<value>18.1374683380127 26.6147727966309</value>
+				<value>13.6666669845581 11.7878789901733</value>
+				<value>20.8647422790527 9.94810485839844</value>
+				<value>29.4114246368408 8.78321743011475</value>
+				<value>21 -1.33333325386047</value>
+				<value>14.8717947006226 0.179487228393555</value>
+				<value>10.8974361419678 29.0128192901611</value>
+				<value>57.8030319213867 44.7272720336914</value>
+			</meshPointList>
+			<meshTriList>
+				<value>0 1 2</value>
+				<value>0 2 3</value>
+				<value>4 0 3</value>
+				<value>5 0 4</value>
+				<value>5 4 6</value>
+				<value>4 3 6</value>
+				<value>6 3 7</value>
+				<value>6 7 8</value>
+				<value>8 7 9</value>
+				<value>8 9 10</value>
+				<value>10 9 11</value>
+				<value>10 11 12</value>
+				<value>12 11 13</value>
+				<value>12 13 14</value>
+				<value>13 15 14</value>
+				<value>13 16 15</value>
+				<value>11 16 13</value>
+				<value>16 11 17</value>
+				<value>17 18 16</value>
+				<value>17 19 18</value>
+				<value>20 19 17</value>
+				<value>20 21 19</value>
+				<value>22 21 20</value>
+				<value>22 23 21</value>
+				<value>22 24 23</value>
+				<value>22 25 24</value>
+				<value>25 22 20</value>
+				<value>26 25 20</value>
+				<value>3 25 26</value>
+				<value>25 3 27</value>
+				<value>25 27 24</value>
+				<value>28 24 27</value>
+				<value>24 28 29</value>
+				<value>24 29 23</value>
+				<value>29 30 23</value>
+				<value>29 31 30</value>
+				<value>29 32 31</value>
+				<value>29 28 32</value>
+				<value>28 33 32</value>
+				<value>34 33 28</value>
+				<value>27 34 28</value>
+				<value>35 34 27</value>
+				<value>36 35 27</value>
+				<value>37 35 36</value>
+				<value>2 37 36</value>
+				<value>1 37 2</value>
+				<value>2 36 3</value>
+				<value>36 27 3</value>
+				<value>33 38 32</value>
+				<value>32 38 39</value>
+				<value>31 32 39</value>
+				<value>31 39 40</value>
+				<value>31 40 41</value>
+				<value>31 41 30</value>
+				<value>41 42 30</value>
+				<value>41 43 42</value>
+				<value>44 43 41</value>
+				<value>44 45 43</value>
+				<value>46 45 44</value>
+				<value>46 47 45</value>
+				<value>48 47 46</value>
+				<value>47 48 49</value>
+				<value>47 49 50</value>
+				<value>47 50 45</value>
+				<value>45 50 51</value>
+				<value>45 51 43</value>
+				<value>50 52 51</value>
+				<value>50 53 52</value>
+				<value>49 53 50</value>
+				<value>54 49 48</value>
+				<value>39 54 48</value>
+				<value>38 54 39</value>
+				<value>40 39 48</value>
+				<value>40 48 46</value>
+				<value>40 46 44</value>
+				<value>40 44 41</value>
+				<value>30 42 55</value>
+				<value>23 30 55</value>
+				<value>23 55 21</value>
+				<value>3 26 7</value>
+				<value>7 26 20</value>
+				<value>9 7 20</value>
+				<value>17 9 20</value>
+				<value>11 9 17</value>
+				<value>15 16 18</value>
+			</meshTriList>
+		</cell>
+		<cell>
+			<name>head</name>
+			<pos>4 4</pos>
+			<size>318 238</size>
+			<pivot>-0.00628900015726686 -0.41176500916481</pivot>
+			<rotated>0</rotated>
+			<orgImageName></orgImageName>
+			<posStable>0</posStable>
+			<ismesh>1</ismesh>
+			<divtype>polyline</divtype>
+			<innerPoint>
+				<value>140 16</value>
+				<value>136 32</value>
+				<value>133 46</value>
+				<value>132 62</value>
+				<value>132 79</value>
+				<value>134 97</value>
+				<value>138 113</value>
+				<value>147 129</value>
+				<value>157 141</value>
+				<value>174 152</value>
+				<value>191 157</value>
+				<value>209 157</value>
+				<value>227 155</value>
+				<value>245 150</value>
+				<value>261 144</value>
+				<value>276 137</value>
+				<value>289 131</value>
+				<value>302 124</value>
+				<value>312 117</value>
+				<value>217 102</value>
+				<value>172 53</value>
+				<value>268 90</value>
+				<value>142 12</value>
+				<value>116 16</value>
+				<value>129 13</value>
+				<value>160 11</value>
+				<value>193 17</value>
+				<value>312 134</value>
+				<value>304 93</value>
+				<value>295 63</value>
+				<value>281 36</value>
+				<value>308 158</value>
+				<value>295 183</value>
+				<value>166 30</value>
+				<value>183 82</value>
+				<value>63 8</value>
+				<value>39 28</value>
+				<value>21 65</value>
+				<value>11 100</value>
+				<value>7 130</value>
+				<value>12 158</value>
+				<value>25 185</value>
+				<value>46 205</value>
+				<value>106 224</value>
+				<value>158 227</value>
+				<value>211 223</value>
+				<value>271 203</value>
+				<value>256 11</value>
+				<value>228 10</value>
+			</innerPoint>
+			<outerPoint>
+				<value>89 -3</value>
+				<value>56 -2</value>
+				<value>30 25</value>
+				<value>12 64</value>
+				<value>0 100</value>
+				<value>-2 131</value>
+				<value>2 162</value>
+				<value>15 192</value>
+				<value>39 217</value>
+				<value>100 239</value>
+				<value>156 239</value>
+				<value>212 239</value>
+				<value>280 215</value>
+				<value>303 191</value>
+				<value>316 165</value>
+				<value>319 132</value>
+				<value>319 117</value>
+				<value>319 111</value>
+				<value>313 90</value>
+				<value>305 63</value>
+				<value>289 29</value>
+				<value>263 -2</value>
+				<value>228 0</value>
+				<value>193 3</value>
+				<value>157 2</value>
+				<value>143 2</value>
+				<value>125 2</value>
+			</outerPoint>
+			<meshPointList>
+				<value>12 158</value>
+				<value>2 162</value>
+				<value>-2 131</value>
+				<value>25 185</value>
+				<value>15 192</value>
+				<value>46 205</value>
+				<value>39 217</value>
+				<value>100 239</value>
+				<value>106 224</value>
+				<value>156 239</value>
+				<value>158 227</value>
+				<value>212 239</value>
+				<value>211 223</value>
+				<value>191 157</value>
+				<value>209 157</value>
+				<value>227 155</value>
+				<value>271 203</value>
+				<value>280 215</value>
+				<value>303 191</value>
+				<value>295 183</value>
+				<value>316 165</value>
+				<value>308 158</value>
+				<value>276 137</value>
+				<value>261 144</value>
+				<value>268 90</value>
+				<value>289 131</value>
+				<value>312 134</value>
+				<value>319 132</value>
+				<value>312 117</value>
+				<value>319 117</value>
+				<value>319 111</value>
+				<value>304 93</value>
+				<value>302 124</value>
+				<value>295 63</value>
+				<value>305 63</value>
+				<value>313 90</value>
+				<value>289 29</value>
+				<value>281 36</value>
+				<value>256 11</value>
+				<value>228 10</value>
+				<value>217 102</value>
+				<value>245 150</value>
+				<value>174 152</value>
+				<value>183 82</value>
+				<value>193 17</value>
+				<value>193 3</value>
+				<value>160 11</value>
+				<value>157 2</value>
+				<value>142 12</value>
+				<value>143 2</value>
+				<value>129 13</value>
+				<value>140 16</value>
+				<value>136 32</value>
+				<value>116 16</value>
+				<value>133 46</value>
+				<value>132 62</value>
+				<value>63 8</value>
+				<value>39 28</value>
+				<value>21 65</value>
+				<value>132 79</value>
+				<value>172 53</value>
+				<value>134 97</value>
+				<value>138 113</value>
+				<value>147 129</value>
+				<value>157 141</value>
+				<value>7 130</value>
+				<value>0 100</value>
+				<value>11 100</value>
+				<value>12 64</value>
+				<value>30 25</value>
+				<value>56 -2</value>
+				<value>89 -3</value>
+				<value>125 2</value>
+				<value>166 30</value>
+				<value>228 0</value>
+				<value>263 -2</value>
+			</meshPointList>
+			<meshTriList>
+				<value>0 1 2</value>
+				<value>3 1 0</value>
+				<value>4 1 3</value>
+				<value>5 4 3</value>
+				<value>6 4 5</value>
+				<value>6 5 7</value>
+				<value>7 5 8</value>
+				<value>7 8 9</value>
+				<value>9 8 10</value>
+				<value>9 10 11</value>
+				<value>10 12 11</value>
+				<value>12 10 13</value>
+				<value>12 13 14</value>
+				<value>12 14 15</value>
+				<value>16 12 15</value>
+				<value>11 12 16</value>
+				<value>11 16 17</value>
+				<value>18 17 16</value>
+				<value>18 16 19</value>
+				<value>18 19 20</value>
+				<value>19 21 20</value>
+				<value>19 22 21</value>
+				<value>23 22 19</value>
+				<value>22 23 24</value>
+				<value>22 24 25</value>
+				<value>21 22 25</value>
+				<value>21 25 26</value>
+				<value>27 21 26</value>
+				<value>20 21 27</value>
+				<value>27 26 28</value>
+				<value>28 29 27</value>
+				<value>28 30 29</value>
+				<value>28 31 30</value>
+				<value>32 31 28</value>
+				<value>32 24 31</value>
+				<value>25 24 32</value>
+				<value>26 25 32</value>
+				<value>26 32 28</value>
+				<value>31 24 33</value>
+				<value>31 33 34</value>
+				<value>34 35 31</value>
+				<value>31 35 30</value>
+				<value>34 33 36</value>
+				<value>37 36 33</value>
+				<value>37 38 36</value>
+				<value>37 39 38</value>
+				<value>37 24 39</value>
+				<value>24 37 33</value>
+				<value>24 40 39</value>
+				<value>23 40 24</value>
+				<value>41 40 23</value>
+				<value>41 15 40</value>
+				<value>16 15 41</value>
+				<value>41 23 16</value>
+				<value>16 23 19</value>
+				<value>15 14 40</value>
+				<value>40 14 13</value>
+				<value>42 40 13</value>
+				<value>40 42 43</value>
+				<value>40 43 39</value>
+				<value>39 43 44</value>
+				<value>44 45 39</value>
+				<value>46 45 44</value>
+				<value>46 47 45</value>
+				<value>48 47 46</value>
+				<value>48 49 47</value>
+				<value>48 50 49</value>
+				<value>51 50 48</value>
+				<value>52 50 51</value>
+				<value>52 53 50</value>
+				<value>54 53 52</value>
+				<value>55 53 54</value>
+				<value>55 56 53</value>
+				<value>55 57 56</value>
+				<value>55 58 57</value>
+				<value>55 59 58</value>
+				<value>60 59 55</value>
+				<value>43 59 60</value>
+				<value>43 61 59</value>
+				<value>62 61 43</value>
+				<value>62 3 61</value>
+				<value>62 5 3</value>
+				<value>5 62 63</value>
+				<value>8 5 63</value>
+				<value>8 63 64</value>
+				<value>10 8 64</value>
+				<value>42 10 64</value>
+				<value>10 42 13</value>
+				<value>42 64 43</value>
+				<value>64 63 43</value>
+				<value>63 62 43</value>
+				<value>61 3 0</value>
+				<value>0 65 61</value>
+				<value>0 2 65</value>
+				<value>2 66 65</value>
+				<value>65 66 67</value>
+				<value>65 67 61</value>
+				<value>58 61 67</value>
+				<value>61 58 59</value>
+				<value>67 68 58</value>
+				<value>67 66 68</value>
+				<value>58 68 69</value>
+				<value>58 69 57</value>
+				<value>57 69 70</value>
+				<value>56 57 70</value>
+				<value>56 70 71</value>
+				<value>56 71 53</value>
+				<value>53 71 72</value>
+				<value>53 72 50</value>
+				<value>49 50 72</value>
+				<value>43 60 44</value>
+				<value>60 73 44</value>
+				<value>60 54 73</value>
+				<value>60 55 54</value>
+				<value>73 54 52</value>
+				<value>52 51 73</value>
+				<value>73 51 46</value>
+				<value>73 46 44</value>
+				<value>51 48 46</value>
+				<value>45 74 39</value>
+				<value>38 39 74</value>
+				<value>75 38 74</value>
+				<value>38 75 36</value>
+			</meshTriList>
+		</cell>
+		<cell>
+			<name>hand_r2</name>
+			<pos>512 144</pos>
+			<size>133 64</size>
+			<pivot>0.439850002527237 -0.015625</pivot>
+			<rotated>0</rotated>
+			<orgImageName></orgImageName>
+			<posStable>0</posStable>
+			<ismesh>0</ismesh>
+			<divtype>unknown</divtype>
+			<innerPoint />
+			<outerPoint />
+			<meshPointList />
+			<meshTriList />
+		</cell>
+		<cell>
+			<name>hand_l</name>
+			<pos>324 224</pos>
+			<size>115 62</size>
+			<pivot>-0.291303992271423 0.0161290001124144</pivot>
+			<rotated>0</rotated>
+			<orgImageName></orgImageName>
+			<posStable>0</posStable>
+			<ismesh>1</ismesh>
+			<divtype>polyline</divtype>
+			<innerPoint>
+				<value>6 35</value>
+				<value>13 23</value>
+				<value>18 39</value>
+				<value>24 20</value>
+				<value>32 18</value>
+				<value>35 40</value>
+				<value>45 41</value>
+				<value>54 40</value>
+				<value>65 38</value>
+				<value>62 18</value>
+				<value>73 20</value>
+				<value>84 23</value>
+				<value>90 39</value>
+				<value>98 25</value>
+				<value>101 38</value>
+				<value>108 28</value>
+				<value>111 35</value>
+				<value>11 47</value>
+				<value>24 45</value>
+				<value>28 53</value>
+				<value>35 55</value>
+				<value>40 48</value>
+				<value>45 55</value>
+				<value>50 48</value>
+				<value>57 54</value>
+				<value>62 46</value>
+				<value>60 32</value>
+				<value>66 25</value>
+				<value>74 27</value>
+				<value>80 33</value>
+				<value>79 45</value>
+				<value>71 51</value>
+				<value>91 29</value>
+				<value>92 19</value>
+				<value>85 12</value>
+				<value>78 15</value>
+				<value>70 14</value>
+				<value>66 7</value>
+				<value>55 5</value>
+				<value>46 12</value>
+				<value>35 5</value>
+				<value>27 7</value>
+				<value>17 11</value>
+				<value>6 19</value>
+				<value>6 27</value>
+				<value>18 27</value>
+				<value>25 33</value>
+				<value>30 26</value>
+				<value>37 33</value>
+				<value>46 26</value>
+				<value>54 33</value>
+				<value>99 16</value>
+				<value>41 19</value>
+				<value>51 19</value>
+			</innerPoint>
+			<outerPoint>
+				<value>30 -1</value>
+				<value>25 0</value>
+				<value>21 4</value>
+				<value>7 11</value>
+				<value>-1 23</value>
+				<value>-1 39</value>
+				<value>3 47</value>
+				<value>13 55</value>
+				<value>21 58</value>
+				<value>22 61</value>
+				<value>30 63</value>
+				<value>40 63</value>
+				<value>51 63</value>
+				<value>67 60</value>
+				<value>83 57</value>
+				<value>94 53</value>
+				<value>105 48</value>
+				<value>116 36</value>
+				<value>116 26</value>
+				<value>114 22</value>
+				<value>106 15</value>
+				<value>94 9</value>
+				<value>77 4</value>
+				<value>59 0</value>
+				<value>45 -1</value>
+			</outerPoint>
+			<meshPointList>
+				<value>3 47</value>
+				<value>-1 39</value>
+				<value>6 35</value>
+				<value>11 47</value>
+				<value>13 55</value>
+				<value>24 45</value>
+				<value>21 58</value>
+				<value>28 53</value>
+				<value>22 61</value>
+				<value>30 63</value>
+				<value>35 55</value>
+				<value>40 63</value>
+				<value>45 55</value>
+				<value>51 63</value>
+				<value>57 54</value>
+				<value>67 60</value>
+				<value>71 51</value>
+				<value>83 57</value>
+				<value>79 45</value>
+				<value>65 38</value>
+				<value>80 33</value>
+				<value>90 39</value>
+				<value>94 53</value>
+				<value>101 38</value>
+				<value>105 48</value>
+				<value>111 35</value>
+				<value>116 36</value>
+				<value>116 26</value>
+				<value>108 28</value>
+				<value>98 25</value>
+				<value>91 29</value>
+				<value>92 19</value>
+				<value>84 23</value>
+				<value>74 27</value>
+				<value>66 25</value>
+				<value>60 32</value>
+				<value>54 40</value>
+				<value>54 33</value>
+				<value>45 41</value>
+				<value>46 26</value>
+				<value>51 19</value>
+				<value>62 18</value>
+				<value>73 20</value>
+				<value>78 15</value>
+				<value>70 14</value>
+				<value>66 7</value>
+				<value>55 5</value>
+				<value>46 12</value>
+				<value>41 19</value>
+				<value>35 5</value>
+				<value>45 -1</value>
+				<value>30 -1</value>
+				<value>27 7</value>
+				<value>25 0</value>
+				<value>21 4</value>
+				<value>17 11</value>
+				<value>24 20</value>
+				<value>13 23</value>
+				<value>6 19</value>
+				<value>6 27</value>
+				<value>-1 23</value>
+				<value>7 11</value>
+				<value>18 27</value>
+				<value>18 39</value>
+				<value>25 33</value>
+				<value>35 40</value>
+				<value>40 48</value>
+				<value>50 48</value>
+				<value>62 46</value>
+				<value>37 33</value>
+				<value>30 26</value>
+				<value>32 18</value>
+				<value>59 0</value>
+				<value>77 4</value>
+				<value>85 12</value>
+				<value>94 9</value>
+				<value>99 16</value>
+				<value>106 15</value>
+				<value>114 22</value>
+			</meshPointList>
+			<meshTriList>
+				<value>0 1 2</value>
+				<value>3 0 2</value>
+				<value>0 3 4</value>
+				<value>4 3 5</value>
+				<value>6 4 5</value>
+				<value>7 6 5</value>
+				<value>8 6 7</value>
+				<value>8 7 9</value>
+				<value>9 7 10</value>
+				<value>9 10 11</value>
+				<value>11 10 12</value>
+				<value>11 12 13</value>
+				<value>13 12 14</value>
+				<value>13 14 15</value>
+				<value>15 14 16</value>
+				<value>15 16 17</value>
+				<value>16 18 17</value>
+				<value>18 16 19</value>
+				<value>18 19 20</value>
+				<value>18 20 21</value>
+				<value>18 21 22</value>
+				<value>17 18 22</value>
+				<value>22 21 23</value>
+				<value>22 23 24</value>
+				<value>24 23 25</value>
+				<value>24 25 26</value>
+				<value>25 27 26</value>
+				<value>25 28 27</value>
+				<value>23 28 25</value>
+				<value>23 29 28</value>
+				<value>30 29 23</value>
+				<value>30 31 29</value>
+				<value>30 32 31</value>
+				<value>20 32 30</value>
+				<value>20 33 32</value>
+				<value>19 33 20</value>
+				<value>19 34 33</value>
+				<value>19 35 34</value>
+				<value>36 35 19</value>
+				<value>36 37 35</value>
+				<value>37 36 38</value>
+				<value>39 37 38</value>
+				<value>37 39 40</value>
+				<value>35 37 40</value>
+				<value>35 40 41</value>
+				<value>35 41 34</value>
+				<value>34 41 42</value>
+				<value>34 42 33</value>
+				<value>33 42 32</value>
+				<value>42 43 32</value>
+				<value>42 44 43</value>
+				<value>41 44 42</value>
+				<value>41 45 44</value>
+				<value>41 46 45</value>
+				<value>41 40 46</value>
+				<value>40 47 46</value>
+				<value>48 47 40</value>
+				<value>47 48 49</value>
+				<value>49 50 47</value>
+				<value>49 51 50</value>
+				<value>52 51 49</value>
+				<value>52 53 51</value>
+				<value>54 53 52</value>
+				<value>52 55 54</value>
+				<value>56 55 52</value>
+				<value>57 55 56</value>
+				<value>57 58 55</value>
+				<value>59 58 57</value>
+				<value>60 58 59</value>
+				<value>58 60 61</value>
+				<value>55 58 61</value>
+				<value>55 61 54</value>
+				<value>60 59 2</value>
+				<value>1 60 2</value>
+				<value>62 2 59</value>
+				<value>2 62 63</value>
+				<value>63 3 2</value>
+				<value>3 63 5</value>
+				<value>5 63 64</value>
+				<value>5 64 65</value>
+				<value>7 5 65</value>
+				<value>7 65 66</value>
+				<value>10 7 66</value>
+				<value>10 66 12</value>
+				<value>12 66 67</value>
+				<value>12 67 14</value>
+				<value>14 67 68</value>
+				<value>16 14 68</value>
+				<value>16 68 19</value>
+				<value>68 36 19</value>
+				<value>67 36 68</value>
+				<value>67 38 36</value>
+				<value>66 38 67</value>
+				<value>66 65 38</value>
+				<value>38 65 69</value>
+				<value>38 69 39</value>
+				<value>69 48 39</value>
+				<value>69 70 48</value>
+				<value>64 70 69</value>
+				<value>64 62 70</value>
+				<value>63 62 64</value>
+				<value>62 56 70</value>
+				<value>62 57 56</value>
+				<value>62 59 57</value>
+				<value>70 56 71</value>
+				<value>48 70 71</value>
+				<value>48 71 49</value>
+				<value>71 52 49</value>
+				<value>56 52 71</value>
+				<value>65 64 69</value>
+				<value>39 48 40</value>
+				<value>47 50 46</value>
+				<value>46 50 72</value>
+				<value>46 72 45</value>
+				<value>45 72 73</value>
+				<value>44 45 73</value>
+				<value>43 44 73</value>
+				<value>74 43 73</value>
+				<value>32 43 74</value>
+				<value>32 74 31</value>
+				<value>31 74 75</value>
+				<value>31 75 76</value>
+				<value>29 31 76</value>
+				<value>29 76 77</value>
+				<value>28 29 77</value>
+				<value>78 28 77</value>
+				<value>28 78 27</value>
+				<value>76 75 77</value>
+				<value>74 73 75</value>
+				<value>21 20 30</value>
+				<value>21 30 23</value>
+			</meshTriList>
+		</cell>
+		<cell>
+			<name>leg_l</name>
+			<pos>442 224</pos>
+			<size>66 91</size>
+			<pivot>0.0151519998908043 0.302197992801666</pivot>
+			<rotated>0</rotated>
+			<orgImageName></orgImageName>
+			<posStable>0</posStable>
+			<ismesh>1</ismesh>
+			<divtype>polyline</divtype>
+			<innerPoint>
+				<value>22 50</value>
+				<value>25 58</value>
+				<value>30 67</value>
+				<value>50 58</value>
+				<value>49 67</value>
+				<value>47 75</value>
+				<value>41 83</value>
+				<value>21 42</value>
+				<value>23 33</value>
+				<value>41 22</value>
+				<value>33 9</value>
+				<value>23 7</value>
+				<value>7 54</value>
+				<value>16 56</value>
+				<value>11 65</value>
+				<value>21 66</value>
+				<value>18 76</value>
+				<value>25 82</value>
+				<value>33 80</value>
+				<value>35 61</value>
+				<value>32 55</value>
+				<value>31 50</value>
+				<value>37 40</value>
+				<value>53 39</value>
+				<value>58 28</value>
+				<value>57 21</value>
+				<value>53 14</value>
+				<value>42 12</value>
+				<value>33 2</value>
+				<value>26 16</value>
+				<value>16 21</value>
+				<value>8 31</value>
+				<value>14 37</value>
+				<value>6 43</value>
+				<value>32 21</value>
+				<value>11 12</value>
+				<value>36 74</value>
+				<value>40 51</value>
+				<value>47 46</value>
+				<value>56 49</value>
+				<value>50 30</value>
+				<value>31 31</value>
+				<value>44 34</value>
+			</innerPoint>
+			<outerPoint>
+				<value>23 -1</value>
+				<value>9 8</value>
+				<value>3 23</value>
+				<value>-1 26</value>
+				<value>-1 38</value>
+				<value>-1 50</value>
+				<value>2 62</value>
+				<value>7 75</value>
+				<value>18 88</value>
+				<value>27 92</value>
+				<value>39 92</value>
+				<value>48 88</value>
+				<value>59 75</value>
+				<value>64 63</value>
+				<value>67 50</value>
+				<value>67 38</value>
+				<value>67 26</value>
+				<value>64 15</value>
+				<value>58 5</value>
+				<value>54 5</value>
+				<value>43 -1</value>
+			</outerPoint>
+			<meshPointList>
+				<value>2 62</value>
+				<value>-1 50</value>
+				<value>7 54</value>
+				<value>11 65</value>
+				<value>7 75</value>
+				<value>18 76</value>
+				<value>18 88</value>
+				<value>25 82</value>
+				<value>27 92</value>
+				<value>33 80</value>
+				<value>39 92</value>
+				<value>41 83</value>
+				<value>48 88</value>
+				<value>47 75</value>
+				<value>36 74</value>
+				<value>30 67</value>
+				<value>21 66</value>
+				<value>16 56</value>
+				<value>6 43</value>
+				<value>-1 38</value>
+				<value>8 31</value>
+				<value>14 37</value>
+				<value>21 42</value>
+				<value>22 50</value>
+				<value>25 58</value>
+				<value>35 61</value>
+				<value>49 67</value>
+				<value>59 75</value>
+				<value>64 63</value>
+				<value>50 58</value>
+				<value>40 51</value>
+				<value>32 55</value>
+				<value>31 50</value>
+				<value>37 40</value>
+				<value>47 46</value>
+				<value>56 49</value>
+				<value>67 50</value>
+				<value>67 38</value>
+				<value>53 39</value>
+				<value>44 34</value>
+				<value>31 31</value>
+				<value>23 33</value>
+				<value>16 21</value>
+				<value>3 23</value>
+				<value>-1 26</value>
+				<value>11 12</value>
+				<value>9 8</value>
+				<value>23 7</value>
+				<value>26 16</value>
+				<value>32 21</value>
+				<value>33 9</value>
+				<value>42 12</value>
+				<value>41 22</value>
+				<value>50 30</value>
+				<value>58 28</value>
+				<value>67 26</value>
+				<value>57 21</value>
+				<value>53 14</value>
+				<value>54 5</value>
+				<value>58 5</value>
+				<value>64 15</value>
+				<value>43 -1</value>
+				<value>33 2</value>
+				<value>23 -1</value>
+			</meshPointList>
+			<meshTriList>
+				<value>0 1 2</value>
+				<value>0 2 3</value>
+				<value>4 0 3</value>
+				<value>4 3 5</value>
+				<value>4 5 6</value>
+				<value>6 5 7</value>
+				<value>6 7 8</value>
+				<value>8 7 9</value>
+				<value>10 8 9</value>
+				<value>11 10 9</value>
+				<value>10 11 12</value>
+				<value>11 13 12</value>
+				<value>11 14 13</value>
+				<value>9 14 11</value>
+				<value>9 15 14</value>
+				<value>9 7 15</value>
+				<value>7 5 15</value>
+				<value>5 16 15</value>
+				<value>5 3 16</value>
+				<value>3 17 16</value>
+				<value>3 2 17</value>
+				<value>2 18 17</value>
+				<value>1 18 2</value>
+				<value>1 19 18</value>
+				<value>18 19 20</value>
+				<value>18 20 21</value>
+				<value>22 18 21</value>
+				<value>23 18 22</value>
+				<value>23 17 18</value>
+				<value>17 23 24</value>
+				<value>16 17 24</value>
+				<value>16 24 15</value>
+				<value>25 15 24</value>
+				<value>15 25 14</value>
+				<value>14 25 26</value>
+				<value>13 14 26</value>
+				<value>13 26 27</value>
+				<value>12 13 27</value>
+				<value>27 26 28</value>
+				<value>26 29 28</value>
+				<value>26 25 29</value>
+				<value>25 30 29</value>
+				<value>25 31 30</value>
+				<value>25 24 31</value>
+				<value>24 32 31</value>
+				<value>24 23 32</value>
+				<value>32 23 22</value>
+				<value>33 32 22</value>
+				<value>30 32 33</value>
+				<value>31 32 30</value>
+				<value>34 30 33</value>
+				<value>30 34 29</value>
+				<value>29 34 35</value>
+				<value>29 35 28</value>
+				<value>28 35 36</value>
+				<value>35 37 36</value>
+				<value>35 38 37</value>
+				<value>34 38 35</value>
+				<value>34 39 38</value>
+				<value>33 39 34</value>
+				<value>33 40 39</value>
+				<value>22 40 33</value>
+				<value>22 41 40</value>
+				<value>22 21 41</value>
+				<value>21 20 41</value>
+				<value>20 42 41</value>
+				<value>20 43 42</value>
+				<value>44 43 20</value>
+				<value>19 44 20</value>
+				<value>43 45 42</value>
+				<value>43 46 45</value>
+				<value>45 46 47</value>
+				<value>45 47 48</value>
+				<value>42 45 48</value>
+				<value>48 41 42</value>
+				<value>48 49 41</value>
+				<value>49 48 50</value>
+				<value>49 50 51</value>
+				<value>52 49 51</value>
+				<value>40 49 52</value>
+				<value>40 41 49</value>
+				<value>40 52 39</value>
+				<value>39 52 53</value>
+				<value>39 53 38</value>
+				<value>38 53 54</value>
+				<value>38 54 37</value>
+				<value>54 55 37</value>
+				<value>54 56 55</value>
+				<value>53 56 54</value>
+				<value>53 52 56</value>
+				<value>52 57 56</value>
+				<value>52 51 57</value>
+				<value>57 51 58</value>
+				<value>57 58 59</value>
+				<value>60 57 59</value>
+				<value>56 57 60</value>
+				<value>56 60 55</value>
+				<value>51 61 58</value>
+				<value>61 51 62</value>
+				<value>62 63 61</value>
+				<value>47 63 62</value>
+				<value>47 46 63</value>
+				<value>47 62 50</value>
+				<value>48 47 50</value>
+				<value>51 50 62</value>
+			</meshTriList>
+		</cell>
+		<cell>
+			<name>body</name>
+			<pos>324 4</pos>
+			<size>186 217</size>
+			<pivot>-0.00537599995732307 -0.366358995437622</pivot>
+			<rotated>0</rotated>
+			<orgImageName></orgImageName>
+			<posStable>0</posStable>
+			<ismesh>0</ismesh>
+			<divtype>invalid</divtype>
+			<innerPoint />
+			<outerPoint />
+			<meshPointList />
+			<meshTriList />
+		</cell>
+		<cell>
+			<name>leg_r</name>
+			<pos>924 4</pos>
+			<size>66 94</size>
+			<pivot>-0.0151519998908043 0.265956997871399</pivot>
+			<rotated>0</rotated>
+			<orgImageName></orgImageName>
+			<posStable>0</posStable>
+			<ismesh>1</ismesh>
+			<divtype>polyline</divtype>
+			<innerPoint>
+				<value>8 39</value>
+				<value>31 35</value>
+				<value>53 23</value>
+				<value>44 9</value>
+				<value>56 13</value>
+				<value>25 61</value>
+				<value>47 57</value>
+				<value>46 65</value>
+				<value>43 74</value>
+				<value>28 82</value>
+				<value>41 86</value>
+				<value>11 19</value>
+				<value>8 59</value>
+				<value>11 68</value>
+				<value>20 73</value>
+				<value>17 83</value>
+				<value>48 79</value>
+				<value>32 72</value>
+				<value>56 69</value>
+				<value>34 51</value>
+				<value>21 45</value>
+				<value>11 51</value>
+				<value>6 29</value>
+				<value>17 31</value>
+				<value>29 21</value>
+				<value>42 22</value>
+				<value>43 38</value>
+				<value>55 40</value>
+				<value>60 21</value>
+				<value>26 9</value>
+				<value>15 8</value>
+				<value>60 50</value>
+				<value>59 58</value>
+				<value>48 45</value>
+				<value>50 33</value>
+				<value>39 31</value>
+				<value>19 23</value>
+				<value>34 66</value>
+				<value>35 59</value>
+				<value>19 52</value>
+				<value>41 49</value>
+				<value>22 16</value>
+				<value>33 13</value>
+				<value>58 30</value>
+			</innerPoint>
+			<outerPoint>
+				<value>25 -1</value>
+				<value>10 6</value>
+				<value>2 18</value>
+				<value>-1 29</value>
+				<value>-1 41</value>
+				<value>-1 53</value>
+				<value>2 65</value>
+				<value>7 78</value>
+				<value>18 91</value>
+				<value>27 95</value>
+				<value>39 95</value>
+				<value>48 91</value>
+				<value>59 78</value>
+				<value>64 66</value>
+				<value>67 53</value>
+				<value>67 41</value>
+				<value>67 29</value>
+				<value>61 12</value>
+				<value>52 3</value>
+				<value>41 -1</value>
+			</outerPoint>
+			<meshPointList>
+				<value>2 65</value>
+				<value>-1 53</value>
+				<value>8 59</value>
+				<value>11 68</value>
+				<value>7 78</value>
+				<value>20 73</value>
+				<value>17 83</value>
+				<value>18 91</value>
+				<value>28 82</value>
+				<value>27 95</value>
+				<value>41 86</value>
+				<value>39 95</value>
+				<value>48 91</value>
+				<value>48 79</value>
+				<value>43 74</value>
+				<value>32 72</value>
+				<value>34 66</value>
+				<value>25 61</value>
+				<value>19 52</value>
+				<value>34 51</value>
+				<value>35 59</value>
+				<value>46 65</value>
+				<value>56 69</value>
+				<value>59 78</value>
+				<value>64 66</value>
+				<value>59 58</value>
+				<value>47 57</value>
+				<value>60 50</value>
+				<value>67 53</value>
+				<value>67 41</value>
+				<value>55 40</value>
+				<value>48 45</value>
+				<value>43 38</value>
+				<value>41 49</value>
+				<value>31 35</value>
+				<value>21 45</value>
+				<value>11 51</value>
+				<value>-1 41</value>
+				<value>8 39</value>
+				<value>17 31</value>
+				<value>6 29</value>
+				<value>-1 29</value>
+				<value>2 18</value>
+				<value>11 19</value>
+				<value>19 23</value>
+				<value>29 21</value>
+				<value>22 16</value>
+				<value>15 8</value>
+				<value>10 6</value>
+				<value>25 -1</value>
+				<value>26 9</value>
+				<value>33 13</value>
+				<value>42 22</value>
+				<value>39 31</value>
+				<value>50 33</value>
+				<value>58 30</value>
+				<value>67 29</value>
+				<value>60 21</value>
+				<value>53 23</value>
+				<value>44 9</value>
+				<value>56 13</value>
+				<value>61 12</value>
+				<value>52 3</value>
+				<value>41 -1</value>
+			</meshPointList>
+			<meshTriList>
+				<value>0 1 2</value>
+				<value>0 2 3</value>
+				<value>4 0 3</value>
+				<value>4 3 5</value>
+				<value>6 4 5</value>
+				<value>4 6 7</value>
+				<value>7 6 8</value>
+				<value>9 7 8</value>
+				<value>9 8 10</value>
+				<value>11 9 10</value>
+				<value>11 10 12</value>
+				<value>10 13 12</value>
+				<value>10 14 13</value>
+				<value>14 10 15</value>
+				<value>15 16 14</value>
+				<value>15 17 16</value>
+				<value>5 17 15</value>
+				<value>5 3 17</value>
+				<value>17 3 2</value>
+				<value>17 2 18</value>
+				<value>17 18 19</value>
+				<value>17 19 20</value>
+				<value>16 17 20</value>
+				<value>16 20 21</value>
+				<value>14 16 21</value>
+				<value>14 21 22</value>
+				<value>13 14 22</value>
+				<value>23 13 22</value>
+				<value>12 13 23</value>
+				<value>23 22 24</value>
+				<value>22 25 24</value>
+				<value>22 21 25</value>
+				<value>25 21 26</value>
+				<value>25 26 27</value>
+				<value>25 27 28</value>
+				<value>24 25 28</value>
+				<value>27 29 28</value>
+				<value>27 30 29</value>
+				<value>31 30 27</value>
+				<value>31 32 30</value>
+				<value>33 32 31</value>
+				<value>33 34 32</value>
+				<value>33 19 34</value>
+				<value>20 19 33</value>
+				<value>20 33 26</value>
+				<value>21 20 26</value>
+				<value>26 33 31</value>
+				<value>26 31 27</value>
+				<value>19 35 34</value>
+				<value>18 35 19</value>
+				<value>18 36 35</value>
+				<value>18 2 36</value>
+				<value>2 1 36</value>
+				<value>36 1 37</value>
+				<value>36 37 38</value>
+				<value>36 38 35</value>
+				<value>38 39 35</value>
+				<value>38 40 39</value>
+				<value>38 41 40</value>
+				<value>38 37 41</value>
+				<value>40 41 42</value>
+				<value>43 40 42</value>
+				<value>39 40 43</value>
+				<value>44 39 43</value>
+				<value>39 44 34</value>
+				<value>35 39 34</value>
+				<value>44 45 34</value>
+				<value>44 46 45</value>
+				<value>44 43 46</value>
+				<value>43 47 46</value>
+				<value>47 43 48</value>
+				<value>47 48 49</value>
+				<value>47 49 50</value>
+				<value>46 47 50</value>
+				<value>46 50 51</value>
+				<value>45 46 51</value>
+				<value>45 51 52</value>
+				<value>53 45 52</value>
+				<value>34 45 53</value>
+				<value>32 34 53</value>
+				<value>32 53 54</value>
+				<value>32 54 30</value>
+				<value>30 54 55</value>
+				<value>30 55 29</value>
+				<value>55 56 29</value>
+				<value>55 57 56</value>
+				<value>55 58 57</value>
+				<value>54 58 55</value>
+				<value>58 54 52</value>
+				<value>58 52 59</value>
+				<value>60 58 59</value>
+				<value>57 58 60</value>
+				<value>57 60 61</value>
+				<value>57 61 56</value>
+				<value>60 62 61</value>
+				<value>59 62 60</value>
+				<value>59 63 62</value>
+				<value>59 51 63</value>
+				<value>52 51 59</value>
+				<value>51 50 63</value>
+				<value>50 49 63</value>
+				<value>54 53 52</value>
+				<value>43 42 48</value>
+				<value>8 5 15</value>
+				<value>6 5 8</value>
+				<value>10 8 15</value>
+			</meshTriList>
+		</cell>
+		<cell>
+			<name>hand_r</name>
+			<pos>512 210</pos>
+			<size>118 62</size>
+			<pivot>0.279660999774933 0.0161290001124144</pivot>
+			<rotated>0</rotated>
+			<orgImageName></orgImageName>
+			<posStable>0</posStable>
+			<ismesh>1</ismesh>
+			<divtype>polyline</divtype>
+			<innerPoint>
+				<value>5 33</value>
+				<value>12 24</value>
+				<value>17 36</value>
+				<value>24 22</value>
+				<value>28 38</value>
+				<value>34 22</value>
+				<value>40 40</value>
+				<value>46 21</value>
+				<value>54 41</value>
+				<value>60 21</value>
+				<value>67 41</value>
+				<value>72 20</value>
+				<value>79 41</value>
+				<value>84 20</value>
+				<value>92 40</value>
+				<value>99 21</value>
+				<value>108 34</value>
+				<value>27 49</value>
+				<value>33 45</value>
+				<value>40 52</value>
+				<value>47 47</value>
+				<value>55 54</value>
+				<value>62 48</value>
+				<value>68 55</value>
+				<value>73 48</value>
+				<value>79 55</value>
+				<value>85 48</value>
+				<value>92 54</value>
+				<value>101 49</value>
+				<value>104 41</value>
+				<value>99 32</value>
+				<value>91 27</value>
+				<value>85 34</value>
+				<value>78 27</value>
+				<value>78 13</value>
+				<value>71 6</value>
+				<value>65 13</value>
+				<value>58 7</value>
+				<value>52 14</value>
+				<value>46 8</value>
+				<value>40 15</value>
+				<value>34 33</value>
+				<value>40 27</value>
+				<value>47 34</value>
+				<value>53 27</value>
+				<value>60 34</value>
+				<value>66 27</value>
+				<value>72 34</value>
+				<value>84 6</value>
+				<value>91 14</value>
+				<value>98 9</value>
+				<value>107 15</value>
+				<value>108 24</value>
+			</innerPoint>
+			<outerPoint>
+				<value>64 -1</value>
+				<value>52 1</value>
+				<value>40 3</value>
+				<value>31 6</value>
+				<value>21 9</value>
+				<value>6 17</value>
+				<value>-1 26</value>
+				<value>-1 36</value>
+				<value>10 48</value>
+				<value>21 53</value>
+				<value>32 57</value>
+				<value>48 60</value>
+				<value>64 63</value>
+				<value>74 63</value>
+				<value>85 63</value>
+				<value>100 59</value>
+				<value>113 50</value>
+				<value>119 37</value>
+				<value>119 24</value>
+				<value>117 18</value>
+				<value>106 6</value>
+				<value>91 0</value>
+				<value>78 -1</value>
+			</outerPoint>
+			<meshPointList>
+				<value>-1 36</value>
+				<value>5 33</value>
+				<value>10 48</value>
+				<value>-1 26</value>
+				<value>12 24</value>
+				<value>17 36</value>
+				<value>21 53</value>
+				<value>27 49</value>
+				<value>32 57</value>
+				<value>33 45</value>
+				<value>40 52</value>
+				<value>48 60</value>
+				<value>47 47</value>
+				<value>40 40</value>
+				<value>34 33</value>
+				<value>28 38</value>
+				<value>24 22</value>
+				<value>34 22</value>
+				<value>31 6</value>
+				<value>40 15</value>
+				<value>40 27</value>
+				<value>47 34</value>
+				<value>54 41</value>
+				<value>55 54</value>
+				<value>64 63</value>
+				<value>68 55</value>
+				<value>74 63</value>
+				<value>79 55</value>
+				<value>85 63</value>
+				<value>92 54</value>
+				<value>100 59</value>
+				<value>101 49</value>
+				<value>113 50</value>
+				<value>104 41</value>
+				<value>92 40</value>
+				<value>85 48</value>
+				<value>73 48</value>
+				<value>62 48</value>
+				<value>67 41</value>
+				<value>79 41</value>
+				<value>85 34</value>
+				<value>72 34</value>
+				<value>60 34</value>
+				<value>53 27</value>
+				<value>46 21</value>
+				<value>52 14</value>
+				<value>60 21</value>
+				<value>66 27</value>
+				<value>78 27</value>
+				<value>91 27</value>
+				<value>99 32</value>
+				<value>108 34</value>
+				<value>119 37</value>
+				<value>119 24</value>
+				<value>108 24</value>
+				<value>99 21</value>
+				<value>91 14</value>
+				<value>84 20</value>
+				<value>78 13</value>
+				<value>72 20</value>
+				<value>65 13</value>
+				<value>58 7</value>
+				<value>46 8</value>
+				<value>40 3</value>
+				<value>52 1</value>
+				<value>64 -1</value>
+				<value>71 6</value>
+				<value>84 6</value>
+				<value>91 0</value>
+				<value>98 9</value>
+				<value>107 15</value>
+				<value>117 18</value>
+				<value>106 6</value>
+				<value>78 -1</value>
+				<value>21 9</value>
+				<value>6 17</value>
+			</meshPointList>
+			<meshTriList>
+				<value>0 1 2</value>
+				<value>0 3 1</value>
+				<value>1 3 4</value>
+				<value>1 4 5</value>
+				<value>2 1 5</value>
+				<value>6 2 5</value>
+				<value>7 6 5</value>
+				<value>6 7 8</value>
+				<value>8 7 9</value>
+				<value>8 9 10</value>
+				<value>8 10 11</value>
+				<value>10 12 11</value>
+				<value>10 13 12</value>
+				<value>9 13 10</value>
+				<value>9 14 13</value>
+				<value>9 15 14</value>
+				<value>7 15 9</value>
+				<value>7 5 15</value>
+				<value>15 5 16</value>
+				<value>14 15 16</value>
+				<value>16 17 14</value>
+				<value>17 16 18</value>
+				<value>19 17 18</value>
+				<value>20 17 19</value>
+				<value>14 17 20</value>
+				<value>14 20 21</value>
+				<value>13 14 21</value>
+				<value>13 21 12</value>
+				<value>12 21 22</value>
+				<value>12 22 23</value>
+				<value>11 12 23</value>
+				<value>11 23 24</value>
+				<value>24 23 25</value>
+				<value>24 25 26</value>
+				<value>26 25 27</value>
+				<value>26 27 28</value>
+				<value>28 27 29</value>
+				<value>28 29 30</value>
+				<value>30 29 31</value>
+				<value>30 31 32</value>
+				<value>31 33 32</value>
+				<value>31 34 33</value>
+				<value>31 29 34</value>
+				<value>29 35 34</value>
+				<value>27 35 29</value>
+				<value>27 36 35</value>
+				<value>25 36 27</value>
+				<value>25 37 36</value>
+				<value>23 37 25</value>
+				<value>23 22 37</value>
+				<value>37 22 38</value>
+				<value>37 38 36</value>
+				<value>36 38 39</value>
+				<value>36 39 35</value>
+				<value>35 39 34</value>
+				<value>39 40 34</value>
+				<value>39 41 40</value>
+				<value>38 41 39</value>
+				<value>38 42 41</value>
+				<value>22 42 38</value>
+				<value>22 21 42</value>
+				<value>21 43 42</value>
+				<value>21 44 43</value>
+				<value>20 44 21</value>
+				<value>44 20 19</value>
+				<value>44 19 45</value>
+				<value>43 44 45</value>
+				<value>46 43 45</value>
+				<value>43 46 42</value>
+				<value>42 46 47</value>
+				<value>42 47 41</value>
+				<value>41 47 48</value>
+				<value>41 48 40</value>
+				<value>40 48 49</value>
+				<value>40 49 34</value>
+				<value>34 49 50</value>
+				<value>34 50 33</value>
+				<value>33 50 51</value>
+				<value>52 33 51</value>
+				<value>32 33 52</value>
+				<value>51 53 52</value>
+				<value>51 54 53</value>
+				<value>50 54 51</value>
+				<value>50 55 54</value>
+				<value>49 55 50</value>
+				<value>49 56 55</value>
+				<value>57 56 49</value>
+				<value>57 58 56</value>
+				<value>59 58 57</value>
+				<value>59 60 58</value>
+				<value>46 60 59</value>
+				<value>46 45 60</value>
+				<value>45 61 60</value>
+				<value>45 62 61</value>
+				<value>19 62 45</value>
+				<value>19 63 62</value>
+				<value>18 63 19</value>
+				<value>62 63 64</value>
+				<value>62 64 61</value>
+				<value>61 64 65</value>
+				<value>61 65 66</value>
+				<value>60 61 66</value>
+				<value>60 66 58</value>
+				<value>58 66 67</value>
+				<value>58 67 56</value>
+				<value>56 67 68</value>
+				<value>69 56 68</value>
+				<value>56 69 55</value>
+				<value>55 69 70</value>
+				<value>55 70 54</value>
+				<value>54 70 71</value>
+				<value>54 71 53</value>
+				<value>71 70 72</value>
+				<value>69 72 70</value>
+				<value>69 68 72</value>
+				<value>67 73 68</value>
+				<value>66 73 67</value>
+				<value>66 65 73</value>
+				<value>47 46 59</value>
+				<value>47 59 48</value>
+				<value>48 59 57</value>
+				<value>48 57 49</value>
+				<value>16 74 18</value>
+				<value>16 4 74</value>
+				<value>5 4 16</value>
+				<value>4 75 74</value>
+				<value>3 75 4</value>
+			</meshTriList>
+		</cell>
+		<cell>
+			<name>tail</name>
+			<pos>4 244</pos>
+			<size>115 30</size>
+			<pivot>-0.456521987915039 0.0333329997956753</pivot>
+			<rotated>0</rotated>
+			<orgImageName></orgImageName>
+			<posStable>0</posStable>
+			<ismesh>1</ismesh>
+			<divtype>polyline</divtype>
+			<innerPoint>
+				<value>10 15</value>
+				<value>18 20</value>
+				<value>23 10</value>
+				<value>31 20</value>
+				<value>36 10</value>
+				<value>44 20</value>
+				<value>48 10</value>
+				<value>56 20</value>
+				<value>61 10</value>
+				<value>69 20</value>
+				<value>74 10</value>
+				<value>82 20</value>
+				<value>87 10</value>
+				<value>95 20</value>
+				<value>100 10</value>
+				<value>107 16</value>
+				<value>111 9</value>
+				<value>9 7</value>
+				<value>16 8</value>
+				<value>22 3</value>
+				<value>29 6</value>
+				<value>30 13</value>
+				<value>24 16</value>
+				<value>8 22</value>
+				<value>19 26</value>
+				<value>25 23</value>
+				<value>32 26</value>
+				<value>38 23</value>
+				<value>45 26</value>
+				<value>50 23</value>
+				<value>57 26</value>
+				<value>63 23</value>
+				<value>70 26</value>
+				<value>76 23</value>
+				<value>83 26</value>
+				<value>89 23</value>
+				<value>96 26</value>
+				<value>102 22</value>
+				<value>94 13</value>
+				<value>88 16</value>
+				<value>81 13</value>
+				<value>75 16</value>
+				<value>68 13</value>
+				<value>62 16</value>
+				<value>55 13</value>
+				<value>49 16</value>
+				<value>42 13</value>
+				<value>37 16</value>
+				<value>41 6</value>
+				<value>35 3</value>
+				<value>47 3</value>
+				<value>54 6</value>
+				<value>60 3</value>
+				<value>67 6</value>
+				<value>73 3</value>
+				<value>80 6</value>
+				<value>86 3</value>
+				<value>93 6</value>
+				<value>98 3</value>
+			</innerPoint>
+			<outerPoint>
+				<value>1 0</value>
+				<value>0 6</value>
+				<value>3 7</value>
+				<value>3 15</value>
+				<value>3 23</value>
+				<value>1 24</value>
+				<value>1 30</value>
+				<value>13 30</value>
+				<value>26 30</value>
+				<value>39 30</value>
+				<value>52 30</value>
+				<value>65 30</value>
+				<value>78 30</value>
+				<value>91 30</value>
+				<value>104 30</value>
+				<value>109 28</value>
+				<value>115 20</value>
+				<value>114 7</value>
+				<value>112 4</value>
+				<value>104 0</value>
+				<value>92 0</value>
+				<value>79 0</value>
+				<value>66 0</value>
+				<value>53 0</value>
+				<value>41 0</value>
+				<value>28 0</value>
+				<value>15 0</value>
+			</outerPoint>
+			<meshPointList>
+				<value>0 6</value>
+				<value>1 0</value>
+				<value>3 7</value>
+				<value>9 7</value>
+				<value>3 15</value>
+				<value>10 15</value>
+				<value>8 22</value>
+				<value>3 23</value>
+				<value>1 30</value>
+				<value>1 24</value>
+				<value>13 30</value>
+				<value>19 26</value>
+				<value>26 30</value>
+				<value>25 23</value>
+				<value>18 20</value>
+				<value>16 8</value>
+				<value>23 10</value>
+				<value>24 16</value>
+				<value>30 13</value>
+				<value>31 20</value>
+				<value>32 26</value>
+				<value>39 30</value>
+				<value>38 23</value>
+				<value>37 16</value>
+				<value>36 10</value>
+				<value>29 6</value>
+				<value>22 3</value>
+				<value>15 0</value>
+				<value>28 0</value>
+				<value>35 3</value>
+				<value>41 6</value>
+				<value>42 13</value>
+				<value>44 20</value>
+				<value>45 26</value>
+				<value>52 30</value>
+				<value>50 23</value>
+				<value>49 16</value>
+				<value>48 10</value>
+				<value>47 3</value>
+				<value>41 0</value>
+				<value>53 0</value>
+				<value>54 6</value>
+				<value>55 13</value>
+				<value>56 20</value>
+				<value>57 26</value>
+				<value>65 30</value>
+				<value>63 23</value>
+				<value>62 16</value>
+				<value>61 10</value>
+				<value>60 3</value>
+				<value>66 0</value>
+				<value>67 6</value>
+				<value>68 13</value>
+				<value>69 20</value>
+				<value>70 26</value>
+				<value>78 30</value>
+				<value>76 23</value>
+				<value>75 16</value>
+				<value>74 10</value>
+				<value>73 3</value>
+				<value>79 0</value>
+				<value>80 6</value>
+				<value>81 13</value>
+				<value>82 20</value>
+				<value>83 26</value>
+				<value>91 30</value>
+				<value>89 23</value>
+				<value>88 16</value>
+				<value>87 10</value>
+				<value>86 3</value>
+				<value>92 0</value>
+				<value>93 6</value>
+				<value>94 13</value>
+				<value>95 20</value>
+				<value>96 26</value>
+				<value>104 30</value>
+				<value>102 22</value>
+				<value>100 10</value>
+				<value>107 16</value>
+				<value>109 28</value>
+				<value>115 20</value>
+				<value>111 9</value>
+				<value>104 0</value>
+				<value>98 3</value>
+				<value>112 4</value>
+				<value>114 7</value>
+			</meshPointList>
+			<meshTriList>
+				<value>0 1 2</value>
+				<value>3 2 1</value>
+				<value>4 2 3</value>
+				<value>4 3 5</value>
+				<value>6 4 5</value>
+				<value>7 4 6</value>
+				<value>8 7 6</value>
+				<value>8 9 7</value>
+				<value>10 8 6</value>
+				<value>10 6 11</value>
+				<value>10 11 12</value>
+				<value>11 13 12</value>
+				<value>11 14 13</value>
+				<value>6 14 11</value>
+				<value>6 5 14</value>
+				<value>14 5 15</value>
+				<value>14 15 16</value>
+				<value>16 17 14</value>
+				<value>17 16 18</value>
+				<value>17 18 19</value>
+				<value>13 17 19</value>
+				<value>14 17 13</value>
+				<value>13 19 20</value>
+				<value>12 13 20</value>
+				<value>12 20 21</value>
+				<value>20 22 21</value>
+				<value>20 19 22</value>
+				<value>19 23 22</value>
+				<value>19 18 23</value>
+				<value>18 24 23</value>
+				<value>18 25 24</value>
+				<value>16 25 18</value>
+				<value>16 26 25</value>
+				<value>15 26 16</value>
+				<value>15 27 26</value>
+				<value>3 27 15</value>
+				<value>27 3 1</value>
+				<value>5 3 15</value>
+				<value>26 27 28</value>
+				<value>26 28 25</value>
+				<value>25 28 29</value>
+				<value>25 29 24</value>
+				<value>24 29 30</value>
+				<value>24 30 31</value>
+				<value>23 24 31</value>
+				<value>23 31 32</value>
+				<value>22 23 32</value>
+				<value>22 32 33</value>
+				<value>21 22 33</value>
+				<value>21 33 34</value>
+				<value>33 35 34</value>
+				<value>33 32 35</value>
+				<value>32 36 35</value>
+				<value>32 31 36</value>
+				<value>31 37 36</value>
+				<value>31 30 37</value>
+				<value>30 38 37</value>
+				<value>30 39 38</value>
+				<value>29 39 30</value>
+				<value>29 28 39</value>
+				<value>38 39 40</value>
+				<value>38 40 41</value>
+				<value>37 38 41</value>
+				<value>37 41 42</value>
+				<value>36 37 42</value>
+				<value>36 42 43</value>
+				<value>35 36 43</value>
+				<value>35 43 44</value>
+				<value>34 35 44</value>
+				<value>34 44 45</value>
+				<value>44 46 45</value>
+				<value>44 43 46</value>
+				<value>43 47 46</value>
+				<value>43 42 47</value>
+				<value>42 48 47</value>
+				<value>42 41 48</value>
+				<value>41 49 48</value>
+				<value>41 40 49</value>
+				<value>49 40 50</value>
+				<value>49 50 51</value>
+				<value>48 49 51</value>
+				<value>48 51 52</value>
+				<value>47 48 52</value>
+				<value>47 52 53</value>
+				<value>46 47 53</value>
+				<value>46 53 54</value>
+				<value>45 46 54</value>
+				<value>45 54 55</value>
+				<value>54 56 55</value>
+				<value>54 53 56</value>
+				<value>53 57 56</value>
+				<value>53 52 57</value>
+				<value>52 58 57</value>
+				<value>52 51 58</value>
+				<value>51 59 58</value>
+				<value>51 50 59</value>
+				<value>59 50 60</value>
+				<value>59 60 61</value>
+				<value>58 59 61</value>
+				<value>58 61 62</value>
+				<value>57 58 62</value>
+				<value>57 62 63</value>
+				<value>56 57 63</value>
+				<value>56 63 64</value>
+				<value>55 56 64</value>
+				<value>55 64 65</value>
+				<value>64 66 65</value>
+				<value>64 63 66</value>
+				<value>63 67 66</value>
+				<value>63 62 67</value>
+				<value>62 68 67</value>
+				<value>62 61 68</value>
+				<value>61 69 68</value>
+				<value>61 60 69</value>
+				<value>69 60 70</value>
+				<value>69 70 71</value>
+				<value>68 69 71</value>
+				<value>68 71 72</value>
+				<value>67 68 72</value>
+				<value>67 72 73</value>
+				<value>66 67 73</value>
+				<value>66 73 74</value>
+				<value>65 66 74</value>
+				<value>65 74 75</value>
+				<value>74 76 75</value>
+				<value>74 73 76</value>
+				<value>76 73 77</value>
+				<value>78 76 77</value>
+				<value>76 78 79</value>
+				<value>75 76 79</value>
+				<value>79 78 80</value>
+				<value>78 81 80</value>
+				<value>78 77 81</value>
+				<value>77 82 81</value>
+				<value>77 83 82</value>
+				<value>71 83 77</value>
+				<value>71 70 83</value>
+				<value>83 70 82</value>
+				<value>72 71 77</value>
+				<value>73 72 77</value>
+				<value>81 82 84</value>
+				<value>81 84 85</value>
+				<value>81 85 80</value>
+			</meshTriList>
+		</cell>
+	</cells>
+</SpriteStudioCellMap>
