@@ -15,6 +15,9 @@ namespace sssdk
 	{
 	public:
 
+		static bool CompareSortFuncByPrio(const std::unique_ptr<SSDrawPart>& v1, const std::unique_ptr<SSDrawPart>& v2);
+		static bool CompareSortFuncByZ(const std::unique_ptr<SSDrawPart>& v1, const std::unique_ptr<SSDrawPart>& v2);
+
 		explicit SSDrawPart(const SSAnimationPart* setup);
 		virtual ~SSDrawPart();
 

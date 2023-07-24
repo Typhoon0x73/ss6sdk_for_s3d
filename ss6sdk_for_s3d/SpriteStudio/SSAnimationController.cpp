@@ -135,6 +135,18 @@ namespace sssdk
 	void SSAnimationController::update(double deltaTime)
 	{
 		setTime(m_tick + deltaTime);
+
+		switch (m_pAnimeSettings->getSortMode())
+		{
+		case SortMode::prio:
+			m_drawParts.sort_by(SSDrawPart::CompareSortFuncByPrio);
+			break;
+		case SortMode::z:
+			m_drawParts.sort_by(SSDrawPart::CompareSortFuncByZ);
+			break;
+		default:
+			break;
+		}
 	}
 
 	void SSAnimationController::draw(const Vec2& pos) const

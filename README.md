@@ -76,7 +76,7 @@ OpenSiv3Dのリポジトリからコピーし`./use_sdk/ThirdParty/tinyxml2/tiny
    - [x] cell  
    - [x] pos_x  
    - [x] pos_y  
-   - [ ] pos_z  
+   - [x] pos_z  
    - [ ] rot_x  
    - [ ] rot_y  
    - [x] rot_z  
@@ -86,7 +86,7 @@ OpenSiv3Dのリポジトリからコピーし`./use_sdk/ThirdParty/tinyxml2/tiny
    - [ ] local_scale_y  
    - [x] alpha  
    - [x] local_alpha  
-   - [ ] prio  
+   - [x] prio  
    - [ ] flip_h  
    - [ ] flip_v  
    - [ ] hide  

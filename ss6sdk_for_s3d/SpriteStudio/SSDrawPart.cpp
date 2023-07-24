@@ -236,6 +236,16 @@ namespace sssdk
 
 namespace sssdk
 {
+	bool SSDrawPart::CompareSortFuncByPrio(const std::unique_ptr<SSDrawPart>& v1, const std::unique_ptr<SSDrawPart>& v2)
+	{
+		return v1->m_priority < v2->m_priority;
+	}
+
+	bool SSDrawPart::CompareSortFuncByZ(const std::unique_ptr<SSDrawPart>& v1, const std::unique_ptr<SSDrawPart>& v2)
+	{
+		return v1->m_position.z < v2->m_position.z;
+	}
+
 	SSDrawPart::SSDrawPart(const SSAnimationPart* anim)
 		: m_pParentPart{ nullptr }
 		, m_pModelPart{ nullptr }
