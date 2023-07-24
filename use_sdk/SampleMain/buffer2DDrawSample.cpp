@@ -21,7 +21,7 @@
 # if defined (BUFFER2D_DRAW_SAMPLE_CPP)
 
 # include <Siv3D.hpp> // OpenSiv3D v0.6.6
-# include "../ThirdParty/ss6sdk/common/loader/ssloader_sspj.h"
+# include "../ThirdParty/ss6sdk/Common/Loader/ssloader_sspj.h"
 
 using namespace spritestudio6;
 

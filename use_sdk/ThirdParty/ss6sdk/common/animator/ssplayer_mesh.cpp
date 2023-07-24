@@ -1,7 +1,7 @@
 ﻿#include <stdio.h>
 #include <cstdlib>
 
-#include "../loader/ssloader.h"
+#include "../Loader/ssloader.h"
 
 #include "ssplayer_animedecode.h"
 #include "ssplayer_mesh.h"

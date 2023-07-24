@@ -1,7 +1,7 @@
 ﻿#ifndef __SSPLAYER_EFFECT__
 #define __SSPLAYER_EFFECT__
 
-#include "../loader/ssloader.h"
+#include "../Loader/ssloader.h"
 #include "MersenneTwister.h"
 #include "ssplayer_cellmap.h"
 #include "ssplayer_effect.h"

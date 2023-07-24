@@ -14,7 +14,8 @@ IDE : Microsoft Visual Studio Community 2022 (64 ビット) Version 17.4.2
 | ライセンスの場所               | ./use_sdk/ThirdParty/ss6sdk/LICENSE        |
 | おいてあるパス                 | ./use_sdk/ThirdParty/ss6sdk/*              |
 | リポジトリのURL                | https://github.com/SpriteStudio/SpriteStudio6-SDK |
-| 利用しているファイルのコミット | f6eaa3fbfc8298d8445b229840592226110c0c8c          |
+| 利用しているブランチ           | develop                                           |
+| 利用しているファイルのコミット | da5035866805eb48576b8464cbe49fc2d27684a0          |
   
 ### tinyxml2
 OpenSiv3DのLibに含まれてますが、ヘッダを外に置いてないので、  

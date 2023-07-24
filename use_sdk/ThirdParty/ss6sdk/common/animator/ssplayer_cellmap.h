@@ -2,7 +2,7 @@
 #define __SSPLAYER_CELLMAP__
 
 #include <Siv3D.hpp>
-#include "../loader/sstypes.h"
+#include "../Loader/sstypes.h"
 
 #include <memory>
 

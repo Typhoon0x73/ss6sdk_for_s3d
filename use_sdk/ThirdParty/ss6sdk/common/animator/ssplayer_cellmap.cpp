@@ -3,12 +3,12 @@
 #include <stdio.h>
 #include <cstdlib>
 
-#include "../loader/ssloader.h"
+#include "../Loader/ssloader.h"
 
 #include "ssplayer_animedecode.h"
 #include "ssplayer_matrix.h"
 #include "ssplayer_render.h"
-#include "../loader/sscharconverter.h"
+#include "../Loader/sscharconverter.h"
 
 
 #include <memory>
