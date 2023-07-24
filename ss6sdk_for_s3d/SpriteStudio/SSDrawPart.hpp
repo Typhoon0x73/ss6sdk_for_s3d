@@ -34,6 +34,7 @@ namespace sssdk
 		virtual void updateMatrix();
 
 		Float3 getRotation() const;
+		float getAlpha() const;
 
 	private:
 

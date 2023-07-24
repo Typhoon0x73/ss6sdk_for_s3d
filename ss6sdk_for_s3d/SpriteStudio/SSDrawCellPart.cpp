@@ -95,6 +95,7 @@ namespace sssdk
 		Quaternion rotate;
 		m_worldMatrix.decompose(scale, rotate, trans);
 		const auto& drawAtPos = canvasOffset + cellOffset + Vec2{ trans.x, trans.y };
+		float alpha = getAlpha() * m_localAlpha;
 		{
 			const ScopedRenderStates2D renderState{ blend, SamplerState(m_pCellmap->getWrapMode(), m_pCellmap->getFilterMode()) };
 			const Texture drawTexture = TextureAsset(m_pCellmap->getTextureKey());
@@ -102,7 +103,7 @@ namespace sssdk
 				.flipped(m_isImageFlipV)
 				.mirrored(m_isImageFlipH)
 				.rotated(Math::ToRadians(-getRotation().z))
-				.drawAt(drawAtPos);
+				.drawAt(drawAtPos, ColorF{ 1.0, 1.0, 1.0, alpha });
 		}
 	}
 

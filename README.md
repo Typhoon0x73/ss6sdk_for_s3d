@@ -84,8 +84,8 @@ OpenSiv3Dのリポジトリからコピーし`./use_sdk/ThirdParty/tinyxml2/tiny
    - [ ] scale_y  
    - [ ] local_scale_x  
    - [ ] local_scale_y  
-   - [ ] alpha  
-   - [ ] local_alpha  
+   - [x] alpha  
+   - [x] local_alpha  
    - [ ] prio  
    - [ ] flip_h  
    - [ ] flip_v  

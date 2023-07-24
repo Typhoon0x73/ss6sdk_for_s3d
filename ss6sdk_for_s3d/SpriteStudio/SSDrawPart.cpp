@@ -246,8 +246,8 @@ namespace sssdk
 		, m_rotation{ Float3::Zero() }
 		, m_scale{ 1.0f, 1.0f }
 		, m_localScale{ 1.0f, 1.0f }
-		, m_alpha{ 0.0f }
-		, m_localAlpha{ 0.0f }
+		, m_alpha{ 1.0f }
+		, m_localAlpha{ 1.0f }
 		, m_priority{ 0 }
 		, m_isFlipH{ false }
 		, m_isFlipV{ false }
@@ -361,6 +361,15 @@ namespace sssdk
 			return m_pParentPart->getRotation() + m_rotation;
 		}
 		return m_rotation;
+	}
+
+	float SSDrawPart::getAlpha() const
+	{
+		if (m_pParentPart)
+		{
+			return m_pParentPart->getAlpha() * m_alpha;
+		}
+		return m_alpha;
 	}
 
 	void SSDrawPart::setValue(int32 frame, ATTRIBUTE_KIND kind, const SSAttributeKeyValue* left, const SSAttributeKeyValue* right)
