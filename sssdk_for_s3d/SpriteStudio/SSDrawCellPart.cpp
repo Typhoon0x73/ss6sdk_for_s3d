@@ -102,6 +102,7 @@ namespace sssdk
 			drawTexture(srcRect)
 				.flipped(m_isImageFlipV)
 				.mirrored(m_isImageFlipH)
+				.scaled(scale.x, scale.y)
 				.rotated(Math::ToRadians(-getRotation().z))
 				.drawAt(drawAtPos, ColorF{ 1.0, 1.0, 1.0, alpha });
 		}
