@@ -93,7 +93,7 @@ https://github.com/SpriteStudio/SpriteStudio6-SDK
    - [x] prio  
    - [ ] flip_h  
    - [ ] flip_v  
-   - [ ] hide  
+   - [x] hide  
    - [ ] parts_color  
    - [ ] vertex_color  
    - [ ] shader  
