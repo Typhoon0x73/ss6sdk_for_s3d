@@ -28,6 +28,7 @@ namespace sssdk
 		void setModelPart(const SSModelPart* const model);
 		void setAnimPart(const SSAnimationPart* part);
 		void setSetupPart(const SSAnimationPart* setup);
+		void setHideParam();
 		SIV3D_NODISCARD_CXX20 SSDrawPart* getParent() const;
 		SIV3D_NODISCARD_CXX20 const SSAnimationPart* getSetupPart() const;
 		SIV3D_NODISCARD_CXX20 const SSAnimationPart* getAnimPart() const;
@@ -84,6 +85,8 @@ namespace sssdk
 		SSTextureChangeValue m_textureChange; // TCHG
 
 		Mat4x4 m_worldMatrix; // 描画用マトリクス
+
+		bool m_isSetupHideKeyFind; // setupにHIDEのキーがあるか
 	};
 }
 

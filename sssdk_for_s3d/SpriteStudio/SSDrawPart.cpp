@@ -250,7 +250,7 @@ namespace sssdk
 		: m_pParentPart{ nullptr }
 		, m_pModelPart{ nullptr }
 		, m_pSetupPart{ nullptr }
-		, m_pAnimPart{ anim }
+		, m_pAnimPart{ nullptr }
 		, m_cell{}
 		, m_position{ Float3::Zero() }
 		, m_rotation{ Float3::Zero() }
@@ -261,7 +261,7 @@ namespace sssdk
 		, m_priority{ 0 }
 		, m_isFlipH{ false }
 		, m_isFlipV{ false }
-		, m_isHide{ true }
+		, m_isHide{ false }
 		, m_partColor{}
 		, m_vertex{}
 		, m_pivot{ Float2::Zero() }
@@ -279,7 +279,9 @@ namespace sssdk
 		, m_audio{}
 		, m_textureChange{}
 		, m_worldMatrix{ Mat4x4::Identity() }
+		, m_isSetupHideKeyFind{ false }
 	{
+		setAnimPart(anim);
 	}
 
 	SSDrawPart::~SSDrawPart()
@@ -326,11 +328,41 @@ namespace sssdk
 	void SSDrawPart::setAnimPart(const SSAnimationPart* part)
 	{
 		m_pAnimPart = part;
+		setHideParam();
 	}
 
 	void SSDrawPart::setSetupPart(const SSAnimationPart* setup)
 	{
 		m_pSetupPart = setup;
+		setHideParam();
+	}
+
+	void SSDrawPart::setHideParam()
+	{
+		m_isSetupHideKeyFind = false;
+		if (m_pSetupPart)
+		{
+			for (const auto& attribute : m_pSetupPart->getAttributes())
+			{
+				if (attribute.getAttributeKind() == ATTRIBUTE_KIND_HIDE)
+				{
+					m_isSetupHideKeyFind = true;
+					return;
+				}
+			}
+		}
+		if (m_pAnimPart)
+		{
+			for (const auto& attribute : m_pAnimPart->getAttributes())
+			{
+				if (attribute.getAttributeKind() == ATTRIBUTE_KIND_HIDE)
+				{
+					return;
+				}
+			}
+			// 非表示キーが見つからない場合は常に非表示。
+			m_isHide = true;
+		}
 	}
 
 	SSDrawPart* SSDrawPart::getParent() const
@@ -386,6 +418,16 @@ namespace sssdk
 	{
 		if (not left)
 		{
+			if (kind == ATTRIBUTE_KIND_HIDE and right)
+			{
+				// 左がなく、右がある場合、先頭データがまだ後ろ。
+				// 先頭の非表示キーより手前の場合は常に非表示にする。
+				// セットアップによってm_isSetupHideKeyFindがあった場合は強制非表示にしない。
+				if (not m_isSetupHideKeyFind)
+				{
+					m_isHide = true;
+				}
+			}
 			return;
 		}
 		switch (kind)

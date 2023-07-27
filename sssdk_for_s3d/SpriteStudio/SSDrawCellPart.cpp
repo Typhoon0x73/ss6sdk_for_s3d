@@ -60,6 +60,10 @@ namespace sssdk
 
 	void SSDrawCellPart::draw(const Vec2& canvasOffset) const
 	{
+		if (m_isHide)
+		{
+			return;
+		}
 		if (not m_pCellmaps or not m_pCell)
 		{
 			return;
