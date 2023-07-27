@@ -86,8 +86,8 @@ https://github.com/SpriteStudio/SpriteStudio6-SDK
    - [x] rot_z  
    - [x] scale_x  
    - [x] scale_y  
-   - [ ] local_scale_x  
-   - [ ] local_scale_y  
+   - [x] local_scale_x  
+   - [x] local_scale_y  
    - [x] alpha  
    - [x] local_alpha  
    - [x] prio  
