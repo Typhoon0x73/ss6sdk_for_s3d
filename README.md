@@ -106,8 +106,8 @@ https://github.com/SpriteStudio/SpriteStudio6-SDK
    - [ ] size_y  
    - [x] image_flip_h  
    - [x] image_flip_v  
-   - [ ] uv_trans_x  
-   - [ ] uv_trans_y  
+   - [x] uv_trans_x  
+   - [x] uv_trans_y  
    - [ ] uv_rotate_z  
    - [ ] uv_scale_x  
    - [ ] uv_scale_y  

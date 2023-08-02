@@ -103,6 +103,7 @@ namespace sssdk
 		{
 			const ScopedRenderStates2D renderState{ blend, SamplerState(m_pCellmap->getWrapMode(), m_pCellmap->getFilterMode()) };
 			const Texture drawTexture = TextureAsset(m_pCellmap->getTextureKey());
+			srcRect.moveBy(m_uvTranslate * drawTexture.size());
 			drawTexture(srcRect)
 				.flipped(m_isImageFlipV)
 				.mirrored(m_isImageFlipH)
