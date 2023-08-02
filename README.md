@@ -109,8 +109,8 @@ https://github.com/SpriteStudio/SpriteStudio6-SDK
    - [x] uv_trans_x  
    - [x] uv_trans_y  
    - [ ] uv_rotate_z  
-   - [ ] uv_scale_x  
-   - [ ] uv_scale_y  
+   - [x] uv_scale_x  
+   - [x] uv_scale_y  
    - [ ] bounds_r  
    - [ ] mask  
    - [ ] user  

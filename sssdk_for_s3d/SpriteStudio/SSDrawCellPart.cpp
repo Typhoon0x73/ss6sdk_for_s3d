@@ -72,6 +72,10 @@ namespace sssdk
 		{
 			return;
 		}
+		if (m_uvScale.x == 0.0f or m_uvScale.y == 0.0f)
+		{
+			return;
+		}
 
 		BlendState blend = BlendState::Default2D;
 		switch (m_pModelPart->getAlphaBlendType())
@@ -91,6 +95,7 @@ namespace sssdk
 		RectF srcRect{ RectF::Empty() };
 		srcRect.setPos(m_pCell->getPos());
 		srcRect.setSize(m_pCell->getSize());
+		srcRect = srcRect.scaled(m_uvScale.x, m_uvScale.y);
 
 		Vec2 cellPivot = m_pCell->getPivot(); // セルの原点
 		cellPivot.y *= -1;
@@ -105,6 +110,7 @@ namespace sssdk
 			const Texture drawTexture = TextureAsset(m_pCellmap->getTextureKey());
 			srcRect.moveBy(m_uvTranslate * drawTexture.size());
 			drawTexture(srcRect)
+				.scaled(1.0 / m_uvScale.x, 1.0 / m_uvScale.y)
 				.flipped(m_isImageFlipV)
 				.mirrored(m_isImageFlipH)
 				.scaled(scale.x * m_localScale.x, scale.y * m_localScale.y)

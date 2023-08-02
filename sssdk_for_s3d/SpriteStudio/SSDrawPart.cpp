@@ -270,7 +270,7 @@ namespace sssdk
 		, m_isImageFlipV{ false }
 		, m_uvTranslate{ Float2::Zero() }
 		, m_uvRotation{ 0.0f }
-		, m_uvScale{ Float2::Zero() }
+		, m_uvScale{ 1.0f, 1.0f }
 		, m_boundsRadius{ 0.0f }
 		, m_mask{ 0 }
 		, m_instanceParam{}
