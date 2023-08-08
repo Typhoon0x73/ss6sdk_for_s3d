@@ -166,6 +166,10 @@ namespace sssdk
 		U"mul",
 		U"add",
 		U"sub",
+		U"mulalpha",
+		U"screen",
+		U"exclusion",
+		U"invert",
 	};
 
 	enum class InterpolationType

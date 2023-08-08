@@ -121,14 +121,14 @@ https://github.com/SpriteStudio/SpriteStudio6-SDK
    - [ ] audio_param  
    - [ ] texture_change  
  - DrawMode
-   - [ ] mix  
-   - [ ] mul  
-   - [ ] add  
-   - [ ] sub  
-   - [ ] mul_alpha  
-   - [ ] screen  
-   - [ ] exclusion  
-   - [ ] invert  
+   - [x] mix  
+   - [x] mul  
+   - [x] add  
+   - [x] sub  
+   - [x] mul_alpha  
+   - [x] screen  
+   - [x] exclusion  
+   - [x] invert  
  - InterpolationType
    - [ ] none  
    - [ ] linear  

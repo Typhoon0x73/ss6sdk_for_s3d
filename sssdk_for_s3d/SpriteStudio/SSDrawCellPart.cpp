@@ -77,21 +77,6 @@ namespace sssdk
 			return;
 		}
 
-		BlendState blend = BlendState::Default2D;
-		switch (m_pModelPart->getAlphaBlendType())
-		{
-		case DRAW_MODE_MUL: blend = BlendState::Multiplicative; break;
-		case DRAW_MODE_ADD: blend = BlendState::Additive; break;
-		case DRAW_MODE_SUB: blend = BlendState::Subtractive; break;
-		case DRAW_MODE_MUL_ALPHA: blend = BlendState::Premultiplied; break;
-		case DRAW_MODE_MIX:
-		case DRAW_MODE_SCREEN:
-		case DRAW_MODE_EXCLUSION:
-		case DRAW_MODE_INVERT:
-		default:
-			break;
-		}
-
 		RectF srcRect{ RectF::Empty() };
 		srcRect.setPos(m_pCell->getPos());
 		srcRect.setSize(m_pCell->getSize());
@@ -106,7 +91,9 @@ namespace sssdk
 		const auto& drawAtPos = canvasOffset + cellOffset + Vec2{ trans.x, trans.y };
 		float alpha = getAlpha() * m_localAlpha;
 		{
-			const ScopedRenderStates2D renderState{ blend, SamplerState(m_pCellmap->getWrapMode(), m_pCellmap->getFilterMode()) };
+			const BlendState blend = getBlendState(m_pModelPart->getAlphaBlendType());
+			const SamplerState sampler{ m_pCellmap->getWrapMode(), m_pCellmap->getFilterMode() };
+			const ScopedRenderStates2D renderState{ blend, sampler };
 			const Texture drawTexture = TextureAsset(m_pCellmap->getTextureKey());
 			srcRect.moveBy(m_uvTranslate * drawTexture.size());
 			drawTexture(srcRect)
@@ -122,5 +109,56 @@ namespace sssdk
 	void SSDrawCellPart::setCellmaps(ISSCellmaps* cellmaps)
 	{
 		m_pCellmaps = cellmaps;
+	}
+
+	BlendState SSDrawCellPart::getBlendState(DRAW_MODE mode) const
+	{
+		BlendState blend{ BlendState::Default2D };
+		switch (mode)
+		{
+		case DRAW_MODE_MIX:
+		{
+			blend = BlendState{ true, Blend::SrcAlpha, Blend::InvSrcAlpha, BlendOp::Add };
+			break;
+		}
+		case DRAW_MODE_MUL:
+		{
+			blend = BlendState{ true, Blend::Zero, Blend::SrcColor, BlendOp::Add };
+			break;
+		}
+		case DRAW_MODE_ADD:
+		{
+			blend = BlendState{ true, Blend::SrcAlpha, Blend::One, BlendOp::Add };
+			break;
+		}
+		case DRAW_MODE_SUB:
+		{
+			blend = BlendState{ true, Blend::SrcAlpha, Blend::One, BlendOp::RevSubtract, Blend::Zero, Blend::DestAlpha };
+			break;
+		}
+		case DRAW_MODE_MUL_ALPHA:
+		{
+			blend = BlendState{ true, Blend::DestColor, Blend::InvSrcAlpha, BlendOp::Add };
+			break;
+		}
+		case DRAW_MODE_SCREEN:
+		{
+			blend = BlendState{ true, Blend::InvDestColor, Blend::One, BlendOp::Add };
+			break;
+		}
+		case DRAW_MODE_EXCLUSION:
+		{
+			blend = BlendState{ true, Blend::InvDestColor, Blend::InvDestColor, BlendOp::Add };
+			break;
+		}
+		case DRAW_MODE_INVERT:
+		{
+			blend = BlendState{ true, Blend::InvDestColor, Blend::Zero, BlendOp::Add };
+			break;
+		}
+		default:
+			break;
+		}
+		return blend;
 	}
 }
