@@ -91,7 +91,7 @@ namespace sssdk
 		const auto& drawAtPos = canvasOffset + cellOffset + Vec2{ trans.x, trans.y };
 		float alpha = getAlpha() * m_localAlpha;
 		{
-			const BlendState blend = getBlendState(m_pModelPart->getAlphaBlendType());
+			const BlendState blend = GetBlendState(m_pModelPart->getAlphaBlendType());
 			const SamplerState sampler{ m_pCellmap->getWrapMode(), m_pCellmap->getFilterMode() };
 			const ScopedRenderStates2D renderState{ blend, sampler };
 			const Texture drawTexture = TextureAsset(m_pCellmap->getTextureKey());
@@ -111,54 +111,21 @@ namespace sssdk
 		m_pCellmaps = cellmaps;
 	}
 
-	BlendState SSDrawCellPart::getBlendState(DRAW_MODE mode) const
+	BlendState SSDrawCellPart::GetBlendState(DRAW_MODE mode)
 	{
-		BlendState blend{ BlendState::Default2D };
 		switch (mode)
 		{
-		case DRAW_MODE_MIX:
-		{
-			blend = BlendState{ true, Blend::SrcAlpha, Blend::InvSrcAlpha, BlendOp::Add };
-			break;
+		case DRAW_MODE_MIX:       return BlendState{ true, Blend::SrcAlpha    , Blend::InvSrcAlpha , BlendOp::Add };
+		case DRAW_MODE_MUL:       return BlendState{ true, Blend::Zero        , Blend::SrcColor    , BlendOp::Add };
+		case DRAW_MODE_ADD:       return BlendState{ true, Blend::SrcAlpha    , Blend::One         , BlendOp::Add };
+		case DRAW_MODE_SUB:       return BlendState{ true, Blend::SrcAlpha    , Blend::One         , BlendOp::RevSubtract, Blend::Zero, Blend::DestAlpha };
+		case DRAW_MODE_MUL_ALPHA: return BlendState{ true, Blend::DestColor   , Blend::InvSrcAlpha , BlendOp::Add };
+		case DRAW_MODE_SCREEN:    return BlendState{ true, Blend::InvDestColor, Blend::One         , BlendOp::Add };
+		case DRAW_MODE_EXCLUSION: return BlendState{ true, Blend::InvDestColor, Blend::InvDestColor, BlendOp::Add };
+		case DRAW_MODE_INVERT:    return BlendState{ true, Blend::InvDestColor, Blend::Zero        , BlendOp::Add };
+
+		default: break;
 		}
-		case DRAW_MODE_MUL:
-		{
-			blend = BlendState{ true, Blend::Zero, Blend::SrcColor, BlendOp::Add };
-			break;
-		}
-		case DRAW_MODE_ADD:
-		{
-			blend = BlendState{ true, Blend::SrcAlpha, Blend::One, BlendOp::Add };
-			break;
-		}
-		case DRAW_MODE_SUB:
-		{
-			blend = BlendState{ true, Blend::SrcAlpha, Blend::One, BlendOp::RevSubtract, Blend::Zero, Blend::DestAlpha };
-			break;
-		}
-		case DRAW_MODE_MUL_ALPHA:
-		{
-			blend = BlendState{ true, Blend::DestColor, Blend::InvSrcAlpha, BlendOp::Add };
-			break;
-		}
-		case DRAW_MODE_SCREEN:
-		{
-			blend = BlendState{ true, Blend::InvDestColor, Blend::One, BlendOp::Add };
-			break;
-		}
-		case DRAW_MODE_EXCLUSION:
-		{
-			blend = BlendState{ true, Blend::InvDestColor, Blend::InvDestColor, BlendOp::Add };
-			break;
-		}
-		case DRAW_MODE_INVERT:
-		{
-			blend = BlendState{ true, Blend::InvDestColor, Blend::Zero, BlendOp::Add };
-			break;
-		}
-		default:
-			break;
-		}
-		return blend;
+		return BlendState{ BlendState::Default2D };
 	}
 }

@@ -23,7 +23,7 @@ namespace sssdk
 
 	protected:
 
-		BlendState getBlendState(DRAW_MODE mode) const;
+		static BlendState GetBlendState(DRAW_MODE mode);
 
 		String m_packName;
 		const SSCellmap* m_pCellmap;
