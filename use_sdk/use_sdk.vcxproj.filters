@@ -157,18 +157,6 @@
     <Filter Include="Source Files\ThirdParty">
       <UniqueIdentifier>{1f4cb4f4-4d99-4161-8750-342850892360}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\ThirdParty\sssdk">
-      <UniqueIdentifier>{578df7e3-479a-4c2a-a918-949012ef2187}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\ThirdParty\sssdk\Common">
-      <UniqueIdentifier>{a11fa01a-3a0b-4eee-9c81-3eb813c1e9e3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\ThirdParty\sssdk\Common\Loader">
-      <UniqueIdentifier>{121211f9-a8ad-4567-b6f9-7eca9c491ce9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\ThirdParty\sssdk\Common\Animator">
-      <UniqueIdentifier>{18e2535f-9e30-4984-a2f3-6704b16f3764}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\ThirdParty\sssdk">
       <UniqueIdentifier>{33e081a5-8eda-4d7a-adeb-da85e7b78152}</UniqueIdentifier>
     </Filter>
@@ -912,91 +900,91 @@
       <Filter>Header Files\ThirdParty\tinyxml2</Filter>
     </ClInclude>
     <ClInclude Include="ThirdParty\sssdk\Common\Loader\ssarchiver.h">
-      <Filter>Header Files\ThirdParty\sssdk\Common\Loader</Filter>
+      <Filter>Source Files\ThirdParty\sssdk\Common\Loader</Filter>
     </ClInclude>
     <ClInclude Include="ThirdParty\sssdk\Common\Loader\ssattribute.h">
-      <Filter>Header Files\ThirdParty\sssdk\Common\Loader</Filter>
+      <Filter>Source Files\ThirdParty\sssdk\Common\Loader</Filter>
     </ClInclude>
     <ClInclude Include="ThirdParty\sssdk\Common\Loader\sscharconverter.h">
-      <Filter>Header Files\ThirdParty\sssdk\Common\Loader</Filter>
+      <Filter>Source Files\ThirdParty\sssdk\Common\Loader</Filter>
     </ClInclude>
     <ClInclude Include="ThirdParty\sssdk\Common\Loader\SsEffectBehavior.h">
-      <Filter>Header Files\ThirdParty\sssdk\Common\Loader</Filter>
+      <Filter>Source Files\ThirdParty\sssdk\Common\Loader</Filter>
     </ClInclude>
     <ClInclude Include="ThirdParty\sssdk\Common\Loader\SsEffectElement.h">
-      <Filter>Header Files\ThirdParty\sssdk\Common\Loader</Filter>
+      <Filter>Source Files\ThirdParty\sssdk\Common\Loader</Filter>
     </ClInclude>
     <ClInclude Include="ThirdParty\sssdk\Common\Loader\ssInterpolation.h">
-      <Filter>Header Files\ThirdParty\sssdk\Common\Loader</Filter>
+      <Filter>Source Files\ThirdParty\sssdk\Common\Loader</Filter>
     </ClInclude>
     <ClInclude Include="ThirdParty\sssdk\Common\Loader\ssloader.h">
-      <Filter>Header Files\ThirdParty\sssdk\Common\Loader</Filter>
+      <Filter>Source Files\ThirdParty\sssdk\Common\Loader</Filter>
     </ClInclude>
     <ClInclude Include="ThirdParty\sssdk\Common\Loader\ssloader_ssae.h">
-      <Filter>Header Files\ThirdParty\sssdk\Common\Loader</Filter>
+      <Filter>Source Files\ThirdParty\sssdk\Common\Loader</Filter>
     </ClInclude>
     <ClInclude Include="ThirdParty\sssdk\Common\Loader\ssloader_ssce.h">
-      <Filter>Header Files\ThirdParty\sssdk\Common\Loader</Filter>
+      <Filter>Source Files\ThirdParty\sssdk\Common\Loader</Filter>
     </ClInclude>
     <ClInclude Include="ThirdParty\sssdk\Common\Loader\ssloader_ssee.h">
-      <Filter>Header Files\ThirdParty\sssdk\Common\Loader</Filter>
+      <Filter>Source Files\ThirdParty\sssdk\Common\Loader</Filter>
     </ClInclude>
     <ClInclude Include="ThirdParty\sssdk\Common\Loader\ssloader_sspj.h">
-      <Filter>Header Files\ThirdParty\sssdk\Common\Loader</Filter>
+      <Filter>Source Files\ThirdParty\sssdk\Common\Loader</Filter>
     </ClInclude>
     <ClInclude Include="ThirdParty\sssdk\Common\Loader\ssloader_ssqe.h">
-      <Filter>Header Files\ThirdParty\sssdk\Common\Loader</Filter>
+      <Filter>Source Files\ThirdParty\sssdk\Common\Loader</Filter>
     </ClInclude>
     <ClInclude Include="ThirdParty\sssdk\Common\Loader\ssstring_uty.h">
-      <Filter>Header Files\ThirdParty\sssdk\Common\Loader</Filter>
+      <Filter>Source Files\ThirdParty\sssdk\Common\Loader</Filter>
     </ClInclude>
     <ClInclude Include="ThirdParty\sssdk\Common\Loader\sstypes.h">
-      <Filter>Header Files\ThirdParty\sssdk\Common\Loader</Filter>
+      <Filter>Source Files\ThirdParty\sssdk\Common\Loader</Filter>
     </ClInclude>
     <ClInclude Include="ThirdParty\sssdk\Common\Loader\ssvalue.h">
-      <Filter>Header Files\ThirdParty\sssdk\Common\Loader</Filter>
+      <Filter>Source Files\ThirdParty\sssdk\Common\Loader</Filter>
     </ClInclude>
     <ClInclude Include="ThirdParty\sssdk\Common\Animator\ISsEffectRender.h">
-      <Filter>Header Files\ThirdParty\sssdk\Common\Animator</Filter>
+      <Filter>Source Files\ThirdParty\sssdk\Common\Animator</Filter>
     </ClInclude>
     <ClInclude Include="ThirdParty\sssdk\Common\Animator\MersenneTwister.h">
-      <Filter>Header Files\ThirdParty\sssdk\Common\Animator</Filter>
+      <Filter>Source Files\ThirdParty\sssdk\Common\Animator</Filter>
     </ClInclude>
     <ClInclude Include="ThirdParty\sssdk\Common\Animator\ssplayer_animedecode.h">
-      <Filter>Header Files\ThirdParty\sssdk\Common\Animator</Filter>
+      <Filter>Source Files\ThirdParty\sssdk\Common\Animator</Filter>
     </ClInclude>
     <ClInclude Include="ThirdParty\sssdk\Common\Animator\ssplayer_cellmap.h">
-      <Filter>Header Files\ThirdParty\sssdk\Common\Animator</Filter>
+      <Filter>Source Files\ThirdParty\sssdk\Common\Animator</Filter>
     </ClInclude>
     <ClInclude Include="ThirdParty\sssdk\Common\Animator\ssplayer_effect.h">
-      <Filter>Header Files\ThirdParty\sssdk\Common\Animator</Filter>
+      <Filter>Source Files\ThirdParty\sssdk\Common\Animator</Filter>
     </ClInclude>
     <ClInclude Include="ThirdParty\sssdk\Common\Animator\ssplayer_effect2.h">
-      <Filter>Header Files\ThirdParty\sssdk\Common\Animator</Filter>
+      <Filter>Source Files\ThirdParty\sssdk\Common\Animator</Filter>
     </ClInclude>
     <ClInclude Include="ThirdParty\sssdk\Common\Animator\ssplayer_effectfunction.h">
-      <Filter>Header Files\ThirdParty\sssdk\Common\Animator</Filter>
+      <Filter>Source Files\ThirdParty\sssdk\Common\Animator</Filter>
     </ClInclude>
     <ClInclude Include="ThirdParty\sssdk\Common\Animator\ssplayer_macro.h">
-      <Filter>Header Files\ThirdParty\sssdk\Common\Animator</Filter>
+      <Filter>Source Files\ThirdParty\sssdk\Common\Animator</Filter>
     </ClInclude>
     <ClInclude Include="ThirdParty\sssdk\Common\Animator\ssplayer_matrix.h">
-      <Filter>Header Files\ThirdParty\sssdk\Common\Animator</Filter>
+      <Filter>Source Files\ThirdParty\sssdk\Common\Animator</Filter>
     </ClInclude>
     <ClInclude Include="ThirdParty\sssdk\Common\Animator\ssplayer_mesh.h">
-      <Filter>Header Files\ThirdParty\sssdk\Common\Animator</Filter>
+      <Filter>Source Files\ThirdParty\sssdk\Common\Animator</Filter>
     </ClInclude>
     <ClInclude Include="ThirdParty\sssdk\Common\Animator\ssplayer_PartState.h">
-      <Filter>Header Files\ThirdParty\sssdk\Common\Animator</Filter>
+      <Filter>Source Files\ThirdParty\sssdk\Common\Animator</Filter>
     </ClInclude>
     <ClInclude Include="ThirdParty\sssdk\Common\Animator\ssplayer_render.h">
-      <Filter>Header Files\ThirdParty\sssdk\Common\Animator</Filter>
+      <Filter>Source Files\ThirdParty\sssdk\Common\Animator</Filter>
     </ClInclude>
     <ClInclude Include="ThirdParty\sssdk\Common\Animator\ssplayer_types.h">
-      <Filter>Header Files\ThirdParty\sssdk\Common\Animator</Filter>
+      <Filter>Source Files\ThirdParty\sssdk\Common\Animator</Filter>
     </ClInclude>
     <ClInclude Include="ThirdParty\sssdk\Common\Animator\xorshift32.h">
-      <Filter>Header Files\ThirdParty\sssdk\Common\Animator</Filter>
+      <Filter>Source Files\ThirdParty\sssdk\Common\Animator</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
