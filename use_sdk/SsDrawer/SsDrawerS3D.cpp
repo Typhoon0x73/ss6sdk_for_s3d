@@ -113,10 +113,11 @@ namespace s3d
 			srcRect.setPos(static_cast<double>(cell->pos.x), static_cast<double>(cell->pos.y));
 			srcRect.setSize(static_cast<double>(cell->size.x), static_cast<double>(cell->size.y));
 			srcRect = srcRect.scaled(static_cast<double>(state->uvScale.x), static_cast<double>(state->uvScale.y));
-			float dx = state->matrix[4 * 0 + 3];
-			float dy = state->matrix[4 * 1 + 3];
+			float dx = state->matrix[4 * 3 + 0];
+			float dy = state->matrix[4 * 3 + 1];
 			float sx = state->matrix[4 * 0 + 0];
 			float sy = state->matrix[4 * 1 + 1];
+			srcRect.moveBy(Vec2{ state->uvTranslate.x * texture.width(), state->uvTranslate.y * texture.height() });
 			texture(srcRect)
 				.scaled(1.0 / state->uvScale.x, 1.0 / state->uvScale.y)
 				.flipped(state->imageFlipV)
