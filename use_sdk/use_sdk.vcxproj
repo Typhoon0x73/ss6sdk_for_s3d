@@ -212,6 +212,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="SampleMain\buffer2DDrawSample.cpp" />
     <ClCompile Include="SampleMain\cellmapDrawSample.cpp" />
+    <ClCompile Include="SsDrawer\SsDrawerS3D.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='USE_SAMPLE_MAIN|x64'">Create</PrecompiledHeader>
@@ -438,6 +439,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SampleMain\__SampleDefine.h" />
+    <ClInclude Include="SsDrawer\SsDrawerS3D.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="TestMain\__TestDefine.h" />
     <ClInclude Include="ThirdParty\ss6sdk\common\animator\xorshift32.h" />

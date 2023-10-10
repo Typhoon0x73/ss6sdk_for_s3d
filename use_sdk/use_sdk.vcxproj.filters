@@ -169,6 +169,9 @@
     <Filter Include="Source Files\ThirdParty\sssdk\Common\Loader">
       <UniqueIdentifier>{811c48dd-416a-4127-b2bf-1dd65f00fb6d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Drawer">
+      <UniqueIdentifier>{a19bbf95-d2d1-43ea-a40d-deffc6c9c5b6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -254,6 +257,9 @@
     </ClCompile>
     <ClCompile Include="ThirdParty\sssdk\Common\Loader\ssvalue.cpp">
       <Filter>Source Files\ThirdParty\sssdk\Common\Loader</Filter>
+    </ClCompile>
+    <ClCompile Include="SsDrawer\SsDrawerS3D.cpp">
+      <Filter>Source Files\Drawer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -985,6 +991,9 @@
     </ClInclude>
     <ClInclude Include="ThirdParty\sssdk\Common\Animator\xorshift32.h">
       <Filter>Source Files\ThirdParty\sssdk\Common\Animator</Filter>
+    </ClInclude>
+    <ClInclude Include="SsDrawer\SsDrawerS3D.h">
+      <Filter>Source Files\Drawer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
