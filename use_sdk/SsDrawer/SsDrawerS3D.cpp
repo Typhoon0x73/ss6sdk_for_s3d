@@ -1,4 +1,8 @@
 ﻿#include "SsDrawerS3D.h"
+#include "../ThirdParty/sssdk/Common/Loader/ssloader_ssae.h"
+#include "../ThirdParty/sssdk/Common/Loader/ssloader_ssce.h"
+#include "../ThirdParty/sssdk/Common/Loader/ssloader_ssee.h"
+#include "../ThirdParty/sssdk/Common/Animator/ssplayer_cellmap.h"
 #include "../ThirdParty/sssdk/Common/Animator/ssplayer_PartState.h"
 
 namespace
@@ -68,7 +72,7 @@ namespace s3d
 
 	void SsDrawerS3D::SetAlphaBlendMode(spritestudio6::SsBlendType::_enum type)
 	{
-		m_renderState = ScopedRenderStates2D(GetBlendState(type));
+		m_renderState.emplace(GetBlendState(type));
 	}
 
 	void SsDrawerS3D::SetTexture(spritestudio6::SsCellValue* cell)
