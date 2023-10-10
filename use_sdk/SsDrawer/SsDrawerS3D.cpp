@@ -114,7 +114,7 @@ namespace s3d
 			srcRect.setSize(static_cast<double>(cell->size.x), static_cast<double>(cell->size.y));
 			srcRect = srcRect.scaled(static_cast<double>(state->uvScale.x), static_cast<double>(state->uvScale.y));
 			float dx = state->matrix[4 * 3 + 0];
-			float dy = state->matrix[4 * 3 + 1];
+			float dy = state->matrix[4 * 3 + 1] - cell->pivot.y * srcRect.h;
 			float sx = state->matrix[4 * 0 + 0];
 			float sy = state->matrix[4 * 1 + 1];
 			srcRect.moveBy(Vec2{ state->uvTranslate.x * texture.width(), state->uvTranslate.y * texture.height() });
@@ -123,7 +123,7 @@ namespace s3d
 				.flipped(state->imageFlipV)
 				.mirrored(state->imageFlipH)
 				.scaled(static_cast<double>(sx), static_cast<double>(sy))
-				.draw(static_cast<double>(dx), static_cast<double>(dy));
+				.drawAt(static_cast<double>(dx), static_cast<double>(-dy));
 		}
 	}
 
