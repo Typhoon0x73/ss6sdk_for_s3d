@@ -55,7 +55,75 @@ namespace s3d
 		{
 			return;
 		}
+
 		auto* cell = state->cellValue.cell;
+		if (cell == nullptr)
+		{
+			return;
+		}
+
+		Texture& texture = state->cellValue.texture;
+		if (texture.isEmpty())
+		{
+			return;
+		}
+
+		const Size& texturePixelSize = texture.size();
+
+		this->execMask(state);
+
+		float alpha = state->alpha;
+		if (state->localalpha != 1.0f)
+		{
+			alpha = state->localalpha;
+		}
+
+		TextureFilter filterMode = TextureFilter::Nearest;
+		if (state->cellValue.filterMode == spritestudio6::SsTexFilterMode::linear)
+		{
+			filterMode = TextureFilter::Linear;
+		}
+
+		TextureAddressMode wrapMode = TextureAddressMode::Repeat;
+		if (state->cellValue.wrapMode == spritestudio6::SsTexWrapMode::clamp)
+		{
+			wrapMode = TextureAddressMode::Clamp;
+		}
+		if (state->cellValue.wrapMode == spritestudio6::SsTexWrapMode::mirror)
+		{
+			wrapMode = TextureAddressMode::Mirror;
+		}
+
+		const SamplerState samplerState{ wrapMode, filterMode };
+		const ScopedRenderStates2D renderState{ GetBlendState(state->alphaBlendType), samplerState };
+
+		if (state->partType == spritestudio6::SsPartType::mesh)
+		{
+			this->drawMesh(state, alpha);
+			return;
+		}
+
+		if (state->noCells)
+		{
+			//セルが無いので描画を行わない
+		}
+		else
+		{
+			RectF srcRect{ RectF::Empty() };
+			srcRect.setPos(static_cast<double>(cell->pos.x), static_cast<double>(cell->pos.y));
+			srcRect.setSize(static_cast<double>(cell->size.x), static_cast<double>(cell->size.y));
+			srcRect = srcRect.scaled(static_cast<double>(state->uvScale.x), static_cast<double>(state->uvScale.y));
+			float dx = state->matrix[4 * 0 + 3];
+			float dy = state->matrix[4 * 1 + 3];
+			float sx = state->matrix[4 * 0 + 0];
+			float sy = state->matrix[4 * 1 + 1];
+			texture(srcRect)
+				.scaled(1.0 / state->uvScale.x, 1.0 / state->uvScale.y)
+				.flipped(state->imageFlipV)
+				.mirrored(state->imageFlipH)
+				.scaled(static_cast<double>(sx), static_cast<double>(sy))
+				.draw(static_cast<double>(dx), static_cast<double>(dy));
+		}
 	}
 
 	void SsDrawerS3D::execMask(spritestudio6::SsPartState* state)
@@ -80,6 +148,10 @@ namespace s3d
 	}
 
 	void SsDrawerS3D::enableMask(bool flag)
+	{
+	}
+
+	void SsDrawerS3D::drawMesh(spritestudio6::SsPartState* state, float alpha)
 	{
 	}
 
