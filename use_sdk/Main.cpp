@@ -34,15 +34,24 @@ void Main()
 		return;
 	}
 
+	// デコーダー内でスマートポインタ管理される
+	spritestudio6::SsCellMapList* pCellmapList = new spritestudio6::SsCellMapList();
+	if (not(pCellmapList->preloadTexture(pSsProject.get())))
+	{
+		return;
+	}
+	pCellmapList->set(pSsProject.get(), animPack);
+
 	spritestudio6::SsAnimeDecoder decoder;
-	spritestudio6::SsCellMapList cellmapList;
-	cellmapList.set(pSsProject.get(), animPack);
-	decoder.setAnimation(&animPack->Model, anim, &cellmapList, pSsProject.get());
+	decoder.setAnimation(&animPack->Model, anim, pCellmapList, pSsProject.get());
 
 	while (System::Update())
 	{
-		decoder.update();
-		decoder.draw();
+		{
+			const Transformer2D trans{ Mat3x2::Translate(Float2{ 100, 100 }) };
+			decoder.update();
+			decoder.draw();
+		}
 	}
 }
 
