@@ -27,6 +27,8 @@ namespace s3d
 
 	private:
 
+		virtual void drawMesh(spritestudio6::SsPartState* state, float alpha);
+
 		Optional<ScopedRenderStates2D> m_renderState;
 	};
 }
