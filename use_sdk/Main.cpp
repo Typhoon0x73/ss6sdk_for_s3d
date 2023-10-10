@@ -27,7 +27,7 @@ void Main()
 		return;
 	}
 
-	spritestudio6::SsString animName = "attack1";
+	spritestudio6::SsString animName = "dance";
 	auto* anim = animPack->findAnimation(animName);
 	if (anim == nullptr)
 	{
@@ -48,7 +48,7 @@ void Main()
 	while (System::Update())
 	{
 		{
-			const Transformer2D trans{ Mat3x2::Translate(Float2{ 100, 100 }) };
+			const Transformer2D trans{ Mat3x2::Translate(Float2{ 200, 600 }) };
 			decoder.update();
 			decoder.draw();
 		}
