@@ -1,4 +1,5 @@
 ﻿#pragma once
+#include <Siv3D.hpp>
 #include "../ThirdParty/sssdk/Common/Animator/ssplayer_render.h"
 
 namespace s3d
@@ -23,5 +24,9 @@ namespace s3d
 		virtual void	SetAlphaBlendMode(spritestudio6::SsBlendType::_enum type) override;
 		virtual void	SetTexture(spritestudio6::SsCellValue* cell) override;
 		virtual void	enableMask(bool flag) override;
+
+	private:
+
+		Optional<ScopedRenderStates2D> m_renderState;
 	};
 }
