@@ -159,6 +159,10 @@ namespace s3d
 		{
 			return;
 		}
+		if (alpha == 0.0f)
+		{
+			return;
+		}
 		Buffer2D* pDrawMesh = mesh->buffer2D.get();
 		if (pDrawMesh == nullptr)
 		{
