@@ -221,10 +221,15 @@ void    SsMeshPart::updateTransformMesh()
 			if(myPartState->is_defrom == true )
 			{
 				buffer2D->vertices[i].pos.x = verticesRaw[i * 3 + 0] + getOffsetLocalVertices(i).x;
-				buffer2D->vertices[i].pos.y = -verticesRaw[i * 3 + 1] + getOffsetLocalVertices(i).y;
+				buffer2D->vertices[i].pos.y = verticesRaw[i * 3 + 1] + getOffsetLocalVertices(i).y;
 				//draw_verticesRaw[i * 3 + 0] = verticesRaw[i * 3 + 0] + getOffsetLocalVertices(i).x;
 				//draw_verticesRaw[i * 3 + 1] = verticesRaw[i * 3 + 1] + getOffsetLocalVertices(i).y;
 				//draw_verticesRaw[i * 3 + 2] = 0;
+			}
+			else
+			{
+				buffer2D->vertices[i].pos.x = verticesRaw[i * 3 + 0];
+				buffer2D->vertices[i].pos.y = verticesRaw[i * 3 + 1];
 			}
 		}
 		else 
