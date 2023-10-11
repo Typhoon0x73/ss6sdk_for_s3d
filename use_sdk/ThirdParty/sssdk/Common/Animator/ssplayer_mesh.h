@@ -52,7 +52,7 @@ class SsMeshPart
 public:
 
 	std::unique_ptr<Buffer2D> buffer2D;
-	//std::unique_ptr<std::vector<float>>				vertices;		//[3 * 10];///< 座標
+	std::unique_ptr<std::vector<float>>				vertices;		//[3 * 10];///< 座標
 	//std::unique_ptr<std::vector<float>>				colors;			//[4 * 10];	///< カラー
 	//std::unique_ptr<std::vector<float>>				weightColors;	//[4 * 10];	///< ウェイト色分けカラー
 	//std::unique_ptr<std::vector<float>>				uvs;			//[2 * 10];		///< UV
@@ -60,7 +60,7 @@ public:
 	int				indices_num;
 	int				tri_size;
 	int				ver_size;
-	std::unique_ptr<std::vector<float>>	draw_vertices;	//[3 * 10];///< 座標
+	//std::unique_ptr<std::vector<float>>	draw_vertices;	//[3 * 10];///< 座標
 
 	std::unique_ptr<std::vector<float>>	offset_world_vertices;	// 描画に使われるデフォームアトリビュート
 											
@@ -87,9 +87,9 @@ public:
 		, buffer2D( nullptr )
 		//, weightColors()
 		, vertices_outer()
-		, draw_vertices()
+		//, draw_vertices()
 		, myPartState(0)
-		//, vertices(), colors(), uvs(), indices()
+		, vertices()//, colors(), uvs(), indices()
 		, update_vertices_outer()
 		, offset_world_vertices()
 	{
@@ -102,8 +102,8 @@ public:
 		//, weightColors()
 		, bindBoneInfo()
 		, vertices_outer()
-		, draw_vertices()
-		//, vertices(), colors(), uvs(), indices()
+		//, draw_vertices()
+		, vertices()//, colors(), uvs(), indices()
 		, update_vertices_outer()
 		, offset_world_vertices()
 	{

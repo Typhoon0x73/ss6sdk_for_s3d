@@ -36,25 +36,26 @@ void	SsMeshPart::makeMesh()
 	size_t psize = targetCell->meshPointList.size();
 
 	buffer2D.reset();
-	//vertices.reset();
+	vertices.reset();
 	//colors.reset();
 	//uvs.reset();
 	//indices.reset();
-	draw_vertices.reset();
+	//draw_vertices.reset();
 	update_vertices_outer.reset();
 	vertices_outer.reset();
 	bindBoneInfo.reset();
 	//weightColors.reset();
 	offset_world_vertices.reset();
 
-	draw_vertices.reset( new std::vector<float>(3 * psize) );
+	//draw_vertices.reset( new std::vector<float>(3 * psize) );
 	offset_world_vertices.reset( new std::vector<float>(3 * psize) );
 
 	vertices_outer.reset( new std::vector<SsVector2>(3 * psize) );// //ツール用
 	update_vertices_outer.reset( new std::vector<SsVector2>(3 * psize) );// //ツール用
 
-	// TODO:
-	//vertices.reset( new std::vector<float>(3 * psize) );
+	buffer2D.reset(new Buffer2D());
+	buffer2D->vertices.resize(psize);
+	vertices.reset( new std::vector<float>(3 * psize) );
 	//colors.reset( new std::vector<float>(4 * psize) );
 	//uvs.reset( new std::vector<float>(2 * psize) );
 	//weightColors.reset( new std::vector<float>(4 * psize) );
@@ -88,30 +89,37 @@ void	SsMeshPart::makeMesh()
 		uvpixel_y = 1.0f;
 	}
 
-	// TODO:
-	//std::vector<float>&	verticesRaw = *(vertices.get());
+	std::vector<float>&	verticesRaw = *(vertices.get());
 	//std::vector<float>&	colorsRaw = *(colors.get());
 	//std::vector<float>&	weightColorsRaw = *(weightColors.get());
 	//std::vector<float>&	uvsRaw = *(uvs.get());
-	std::vector<float>&	draw_verticesRaw = *(draw_vertices.get());
+	//std::vector<float>&	draw_verticesRaw = *(draw_vertices.get());
 	std::vector<float>&	offset_world_verticesRaw = *(offset_world_vertices.get());
 	for (size_t i = 0; i < targetCell->meshPointList.size(); i++)
 	{
 		SsVector2& v = targetCell->meshPointList[i];
-		//verticesRaw[i * 3 + 0] = v.x + offs.x;
-		//verticesRaw[i * 3 + 1] = -v.y + offs.y;
-		//verticesRaw[i * 3 + 2] = 0;
+		verticesRaw[i * 3 + 0] = v.x + offs.x;
+		verticesRaw[i * 3 + 1] = -v.y + offs.y;
+		verticesRaw[i * 3 + 2] = 0;
 		offset_world_verticesRaw[i * 3 + 0] = 0;
 		offset_world_verticesRaw[i * 3 + 1] = 0;
 		offset_world_verticesRaw[i * 3 + 2] = 0;
 
+		buffer2D->vertices[i].color.x = 1.0f;
+		buffer2D->vertices[i].color.y = 1.0f;
+		buffer2D->vertices[i].color.z = 1.0f;
+		buffer2D->vertices[i].color.w = 1.0f;
 		//colorsRaw[i * 4 + 0] = 1.0f;
 		//colorsRaw[i * 4 + 1] = 1.0f;
 		//colorsRaw[i * 4 + 2] = 1.0f;
 		//colorsRaw[i * 4 + 3] = 1.0f;
+		buffer2D->vertices[i].tex.x = (targetCell->pos.x + v.x) * uvpixel_x;
+		buffer2D->vertices[i].tex.y = (targetCell->pos.y + v.y) * uvpixel_y;
 		//uvsRaw[i * 2 + 0] = (targetCell->pos.x + v.x) * uvpixel_x;
 		//uvsRaw[i * 2 + 1] = (targetCell->pos.y + v.y) * uvpixel_y;
 
+		buffer2D->vertices[i].pos.x = verticesRaw[i * 3 + 0];
+		buffer2D->vertices[i].pos.y = verticesRaw[i * 3 + 1];
 		//draw_verticesRaw[i * 3 + 0] = verticesRaw[i * 3 + 0];
 		//draw_verticesRaw[i * 3 + 1] = verticesRaw[i * 3 + 1];
 		//draw_verticesRaw[i * 3 + 2] = verticesRaw[i * 3 + 2];
@@ -129,12 +137,15 @@ void	SsMeshPart::makeMesh()
 
 	tri_size = (int)(targetCell->meshTriList.size());
 
-	// TODO:
+	buffer2D->indices.resize((size_t)(tri_size * 3));
 	//indices.reset( new std::vector<unsigned short>((size_t)(tri_size * 3)) );
 	//std::vector<unsigned short>&	indicesRaw = *(indices.get());
 	for (size_t i = 0; i < targetCell->meshTriList.size(); i++)
 	{
 		SsTriangle& t = targetCell->meshTriList[i];
+		buffer2D->indices[i].i0 = static_cast<uint16>(t.idxPo1);
+		buffer2D->indices[i].i1 = static_cast<uint16>(t.idxPo2);
+		buffer2D->indices[i].i2 = static_cast<uint16>(t.idxPo3);
 		//indicesRaw[i * 3 + 0] = static_cast<uint16>(t.idxPo1);
 		//indicesRaw[i * 3 + 1] = static_cast<uint16>(t.idxPo2);
 		//indicesRaw[i * 3 + 2] = static_cast<uint16>(t.idxPo3);
@@ -145,7 +156,7 @@ void	SsMeshPart::makeMesh()
 void	SsMeshPart::Cleanup()
 {
 	buffer2D.reset();
-	//vertices.reset();
+	vertices.reset();
 	//colors.reset();
 	//weightColors.reset();
 	//uvs.reset();
@@ -153,7 +164,7 @@ void	SsMeshPart::Cleanup()
 	//indices.reset();
 	indices_num = 0;
 
-	draw_vertices.reset();
+	//draw_vertices.reset();
 	vertices_outer.reset();
 	update_vertices_outer.reset();
 
@@ -168,9 +179,8 @@ void	SsMeshPart::Cleanup()
 void    SsMeshPart::updateTransformMesh()
 {
 //	float matrix[16];
-	std::vector<float>&	draw_verticesRaw = *(draw_vertices.get());
-	// TODO:
-	//std::vector<float>&	verticesRaw = *(vertices.get());
+	//std::vector<float>&	draw_verticesRaw = *(draw_vertices.get());
+	std::vector<float>&	verticesRaw = *(vertices.get());
 	std::vector<StBoneWeight>&	bindBoneInfoRaw = *(bindBoneInfo.get());
 
 	for (int i = 0; i < ver_size; i++)
@@ -210,10 +220,11 @@ void    SsMeshPart::updateTransformMesh()
 			//デフォームオフセットを加える
 			if(myPartState->is_defrom == true )
 			{
-				// TODO:
+				buffer2D->vertices[i].pos.x = verticesRaw[i * 3 + 0] + getOffsetLocalVertices(i).x;
+				buffer2D->vertices[i].pos.y = verticesRaw[i * 3 + 1] + getOffsetLocalVertices(i).y;
 				//draw_verticesRaw[i * 3 + 0] = verticesRaw[i * 3 + 0] + getOffsetLocalVertices(i).x;
 				//draw_verticesRaw[i * 3 + 1] = verticesRaw[i * 3 + 1] + getOffsetLocalVertices(i).y;
-				draw_verticesRaw[i * 3 + 2] = 0;
+				//draw_verticesRaw[i * 3 + 2] = 0;
 			}
 		}
 		else 
@@ -260,9 +271,11 @@ void    SsMeshPart::updateTransformMesh()
 				outtotal = out;
 			}
 
-			draw_verticesRaw[i * 3 + 0] = outtotal.x * 1.0f;
-			draw_verticesRaw[i * 3 + 1] = outtotal.y * 1.0f;
-			draw_verticesRaw[i * 3 + 2] = 0;
+			buffer2D->vertices[i].pos.x = outtotal.x * 1.0f;
+			buffer2D->vertices[i].pos.y = outtotal.y * 1.0f;
+			//draw_verticesRaw[i * 3 + 0] = outtotal.x * 1.0f;
+			//draw_verticesRaw[i * 3 + 1] = outtotal.y * 1.0f;
+			//draw_verticesRaw[i * 3 + 2] = 0;
 		}
 
 	}
@@ -273,13 +286,12 @@ void    SsMeshPart::updateTransformMesh()
 SsVector3 SsMeshPart::getOffsetWorldVerticesFromKey(int index)
 {
 	SsVector3 out1, out2;
-	// TODO:
-	//std::vector<float>&	verticesRaw = *(vertices.get());
+	std::vector<float>&	verticesRaw = *(vertices.get());
 	{
 		SsOpenGLMatrix mtx;
 		SsVector3   vec;
-		//vec.x = verticesRaw[index * 3 + 0] + myPartState->deformValue.verticeChgList[index].x;
-		//vec.y = verticesRaw[index * 3 + 1] + myPartState->deformValue.verticeChgList[index].y;
+		vec.x = verticesRaw[index * 3 + 0] + myPartState->deformValue.verticeChgList[index].x;
+		vec.y = verticesRaw[index * 3 + 1] + myPartState->deformValue.verticeChgList[index].y;
 		vec.z = 0.0f;
 
 		mtx.pushMatrix(myPartState->matrix);
@@ -289,8 +301,8 @@ SsVector3 SsMeshPart::getOffsetWorldVerticesFromKey(int index)
 	{
 		SsOpenGLMatrix mtx;
 		SsVector3   vec;
-		//vec.x = verticesRaw[index * 3 + 0];
-		//vec.y = verticesRaw[index * 3 + 1];
+		vec.x = verticesRaw[index * 3 + 0];
+		vec.y = verticesRaw[index * 3 + 1];
 		vec.z = 0.0f;
 
 		mtx.pushMatrix(myPartState->matrix);
@@ -322,8 +334,7 @@ void	SsMeshPart::setOffsetWorldVertices(int index, const SsVector3 & v)
 SsVector2 SsMeshPart::getOffsetLocalVertices(int index)
 {
 	SsVector3 out1, out2;
-	// TODO:
-	//std::vector<float>&	verticesRaw = *(vertices.get());
+	std::vector<float>&	verticesRaw = *(vertices.get());
 	std::vector<float>&	offset_world_verticesRaw = *(offset_world_vertices.get());
 
 	{
@@ -351,8 +362,8 @@ SsVector2 SsMeshPart::getOffsetLocalVertices(int index)
 
 	SsVector2 offset;
 
-	//offset.x = out2.x - verticesRaw[index * 3 + 0];
-	//offset.y = out2.y - verticesRaw[index * 3 + 1];
+	offset.x = out2.x - verticesRaw[index * 3 + 0];
+	offset.y = out2.y - verticesRaw[index * 3 + 1];
 
 	return offset;
 }
