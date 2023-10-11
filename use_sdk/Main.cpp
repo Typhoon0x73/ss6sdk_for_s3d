@@ -45,10 +45,14 @@ void Main()
 	spritestudio6::SsAnimeDecoder decoder;
 	decoder.setAnimation(&animPack->Model, anim, pCellmapList, pSsProject.get());
 
+	Float2 transPos{ Float2::Zero() };
+	transPos.x = anim->settings.canvasSize.x * (anim->settings.pivot.x + 0.5f);
+	transPos.y = anim->settings.canvasSize.y * (anim->settings.pivot.y - 0.5f) * -1;
+
 	while (System::Update())
 	{
 		{
-			const Transformer2D trans{ Mat3x2::Translate(Float2{ 200, 600 }) };
+			const Transformer2D trans{ Mat3x2::Translate(transPos) };
 			decoder.update();
 			decoder.draw();
 		}
