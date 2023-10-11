@@ -99,7 +99,7 @@ void	SsMeshPart::makeMesh()
 	{
 		SsVector2& v = targetCell->meshPointList[i];
 		verticesRaw[i * 3 + 0] = v.x + offs.x;
-		verticesRaw[i * 3 + 1] = -v.y + offs.y;
+		verticesRaw[i * 3 + 1] = -(v.y + offs.y);
 		verticesRaw[i * 3 + 2] = 0;
 		offset_world_verticesRaw[i * 3 + 0] = 0;
 		offset_world_verticesRaw[i * 3 + 1] = 0;
@@ -340,8 +340,8 @@ SsVector2 SsMeshPart::getOffsetLocalVertices(int index)
 	{
 		SsOpenGLMatrix mtx;
 		SsVector3   vec;
-		//vec.x = verticesRaw[index * 3 + 0];
-		//vec.y = verticesRaw[index * 3 + 1];
+		vec.x = verticesRaw[index * 3 + 0];
+		vec.y = verticesRaw[index * 3 + 1];
 		vec.z = 0.0f;
 
 		mtx.pushMatrix(myPartState->matrix);
