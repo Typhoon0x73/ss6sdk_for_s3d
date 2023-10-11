@@ -119,7 +119,7 @@ void	SsMeshPart::makeMesh()
 		//uvsRaw[i * 2 + 1] = (targetCell->pos.y + v.y) * uvpixel_y;
 
 		buffer2D->vertices[i].pos.x = verticesRaw[i * 3 + 0];
-		buffer2D->vertices[i].pos.y = -verticesRaw[i * 3 + 1];
+		buffer2D->vertices[i].pos.y = verticesRaw[i * 3 + 1];
 		//draw_verticesRaw[i * 3 + 0] = verticesRaw[i * 3 + 0];
 		//draw_verticesRaw[i * 3 + 1] = verticesRaw[i * 3 + 1];
 		//draw_verticesRaw[i * 3 + 2] = verticesRaw[i * 3 + 2];
@@ -225,11 +225,6 @@ void    SsMeshPart::updateTransformMesh()
 				//draw_verticesRaw[i * 3 + 0] = verticesRaw[i * 3 + 0] + getOffsetLocalVertices(i).x;
 				//draw_verticesRaw[i * 3 + 1] = verticesRaw[i * 3 + 1] + getOffsetLocalVertices(i).y;
 				//draw_verticesRaw[i * 3 + 2] = 0;
-			}
-			else
-			{
-				buffer2D->vertices[i].pos.x = verticesRaw[i * 3 + 0];
-				buffer2D->vertices[i].pos.y = verticesRaw[i * 3 + 1];
 			}
 		}
 		else 
