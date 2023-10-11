@@ -99,7 +99,7 @@ void	SsMeshPart::makeMesh()
 	{
 		SsVector2& v = targetCell->meshPointList[i];
 		verticesRaw[i * 3 + 0] = v.x + offs.x;
-		verticesRaw[i * 3 + 1] = -(v.y + offs.y);
+		verticesRaw[i * 3 + 1] = v.y - offs.y;
 		verticesRaw[i * 3 + 2] = 0;
 		offset_world_verticesRaw[i * 3 + 0] = 0;
 		offset_world_verticesRaw[i * 3 + 1] = 0;
@@ -132,7 +132,7 @@ void	SsMeshPart::makeMesh()
 		SsVector2& v = targetCell->outerPoint[i];
 
 		vertices_outerRaw[i].x = v.x + offs.x;
-		vertices_outerRaw[i].y = -v.y + offs.y;
+		vertices_outerRaw[i].y = v.y - offs.y;
 	}
 
 	tri_size = (int)(targetCell->meshTriList.size());
