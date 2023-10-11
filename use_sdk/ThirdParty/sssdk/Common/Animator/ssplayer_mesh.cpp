@@ -137,7 +137,7 @@ void	SsMeshPart::makeMesh()
 
 	tri_size = (int)(targetCell->meshTriList.size());
 
-	buffer2D->indices.resize((size_t)(tri_size * 3));
+	buffer2D->indices.resize((size_t)(tri_size));
 	//indices.reset( new std::vector<unsigned short>((size_t)(tri_size * 3)) );
 	//std::vector<unsigned short>&	indicesRaw = *(indices.get());
 	for (size_t i = 0; i < targetCell->meshTriList.size(); i++)
