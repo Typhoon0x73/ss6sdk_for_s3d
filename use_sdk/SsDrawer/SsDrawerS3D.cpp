@@ -4,6 +4,7 @@
 #include "../ThirdParty/sssdk/Common/Loader/ssloader_ssee.h"
 #include "../ThirdParty/sssdk/Common/Animator/ssplayer_cellmap.h"
 #include "../ThirdParty/sssdk/Common/Animator/ssplayer_PartState.h"
+#include "../ThirdParty/sssdk/Common/Animator/ssplayer_mesh.h"
 
 namespace
 {
@@ -99,7 +100,7 @@ namespace s3d
 
 		if (state->partType == spritestudio6::SsPartType::mesh)
 		{
-			this->drawMesh(state, alpha);
+			this->drawMesh(state->meshPart.get(), alpha);
 			return;
 		}
 
@@ -113,7 +114,7 @@ namespace s3d
 			srcRect.setPos(static_cast<double>(cell->pos.x), static_cast<double>(cell->pos.y));
 			srcRect.setSize(static_cast<double>(cell->size.x), static_cast<double>(cell->size.y));
 			srcRect = srcRect.scaled(static_cast<double>(state->uvScale.x), static_cast<double>(state->uvScale.y));
-			float dx = state->matrix[4 * 3 + 0];
+			float dx = state->matrix[4 * 3 + 0] + cell->pivot.x * srcRect.w;
 			float dy = state->matrix[4 * 3 + 1] - cell->pivot.y * srcRect.h;
 			float sx = state->matrix[4 * 0 + 0];
 			float sy = state->matrix[4 * 1 + 1];
@@ -152,8 +153,17 @@ namespace s3d
 	{
 	}
 
-	void SsDrawerS3D::drawMesh(spritestudio6::SsPartState* state, float alpha)
+	void SsDrawerS3D::drawMesh(spritestudio6::SsMeshPart* mesh, float alpha)
 	{
+		if (mesh == nullptr)
+		{
+			return;
+		}
+		if (alpha == 0.0f)
+		{
+			return;
+		}
+		spritestudio6::SsPartState* state = mesh->myPartState;
 	}
 
 }

@@ -51,12 +51,12 @@ class SsMeshPart
 {
 public:
 
-
-	std::unique_ptr<std::vector<float>>				vertices;		//[3 * 10];///< 座標
-	std::unique_ptr<std::vector<float>>				colors;			//[4 * 10];	///< カラー
-	std::unique_ptr<std::vector<float>>				weightColors;	//[4 * 10];	///< ウェイト色分けカラー
-	std::unique_ptr<std::vector<float>>				uvs;			//[2 * 10];		///< UV
-	std::unique_ptr<std::vector<unsigned short>>	indices;
+	std::unique_ptr<Buffer2D> buffer2D;
+	//std::unique_ptr<std::vector<float>>				vertices;		//[3 * 10];///< 座標
+	//std::unique_ptr<std::vector<float>>				colors;			//[4 * 10];	///< カラー
+	//std::unique_ptr<std::vector<float>>				weightColors;	//[4 * 10];	///< ウェイト色分けカラー
+	//std::unique_ptr<std::vector<float>>				uvs;			//[2 * 10];		///< UV
+	//std::unique_ptr<std::vector<unsigned short>>	indices;
 	int				indices_num;
 	int				tri_size;
 	int				ver_size;
@@ -84,11 +84,12 @@ public:
 	SsMeshPart() :
 		isBind(false), targetCell(0)
 		, bindBoneInfo()
-		, weightColors()
+		, buffer2D( nullptr )
+		//, weightColors()
 		, vertices_outer()
 		, draw_vertices()
 		, myPartState(0)
-		, vertices(), colors(), uvs(), indices()
+		//, vertices(), colors(), uvs(), indices()
 		, update_vertices_outer()
 		, offset_world_vertices()
 	{
@@ -97,11 +98,12 @@ public:
 
 	SsMeshPart(SsPartState* s) :
 		isBind(false), targetCell(0)
-		, weightColors()
+		, buffer2D( nullptr )
+		//, weightColors()
 		, bindBoneInfo()
 		, vertices_outer()
 		, draw_vertices()
-		, vertices(), colors(), uvs(), indices()
+		//, vertices(), colors(), uvs(), indices()
 		, update_vertices_outer()
 		, offset_world_vertices()
 	{

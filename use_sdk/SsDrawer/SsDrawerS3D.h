@@ -2,6 +2,11 @@
 #include <Siv3D.hpp>
 #include "../ThirdParty/sssdk/Common/Animator/ssplayer_render.h"
 
+namespace spritestudio6
+{
+	class SsMeshPart;
+}
+
 namespace s3d
 {
 	class SsDrawerS3D : public spritestudio6::ISsRenderer
@@ -27,7 +32,7 @@ namespace s3d
 
 	private:
 
-		virtual void drawMesh(spritestudio6::SsPartState* state, float alpha);
+		virtual void drawMesh(spritestudio6::SsMeshPart* mesh, float alpha);
 
 		Optional<ScopedRenderStates2D> m_renderState;
 	};
