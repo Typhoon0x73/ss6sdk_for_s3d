@@ -159,11 +159,12 @@ namespace s3d
 		{
 			return;
 		}
-		if (alpha == 0.0f)
+		Buffer2D* pDrawMesh = mesh->buffer2D.get();
+		if (pDrawMesh == nullptr)
 		{
 			return;
 		}
-		spritestudio6::SsPartState* state = mesh->myPartState;
+		pDrawMesh->draw(mesh->targetTexture);
 	}
 
 }
