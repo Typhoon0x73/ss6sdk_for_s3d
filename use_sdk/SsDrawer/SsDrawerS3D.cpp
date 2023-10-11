@@ -168,6 +168,45 @@ namespace s3d
 		{
 			return;
 		}
+		auto* state = mesh->myPartState;
+		if (state->is_parts_color)
+		{
+			// パーツカラーがある時だけブレンド計算する
+			Float4 col{ Float4::One() };
+			if (state->partsColorValue.target == spritestudio6::SsColorBlendTarget::whole)
+			{
+				// 単色
+				const auto& colorBlendValue = state->partsColorValue.color;
+				// TODO:
+			}
+			else
+			{
+				//4頂点はとりあえず左上のRGBAと Rate
+				const auto& colorBlendValue = state->partsColorValue.colors[0];
+				// TODO:
+				if (state->partsColorValue.blendType == spritestudio6::SsBlendType::mix)
+				{
+					col.w = 1; // ミックス-頂点単位では A に Rate が入っておりアルファは無効なので1にしておく。
+				}
+			}
+			for (size_t i = 0; i < mesh->ver_size; i++)
+			{
+				pDrawMesh->vertices[i].color.x = col.x;
+				pDrawMesh->vertices[i].color.y = col.y;
+				pDrawMesh->vertices[i].color.z = col.z;
+				pDrawMesh->vertices[i].color.w = col.w * alpha; // 不透明度を適用する。
+			}
+		}
+		else
+		{
+			for (size_t i = 0; i < mesh->ver_size; i++)
+			{
+				pDrawMesh->vertices[i].color.x = 1.0f;
+				pDrawMesh->vertices[i].color.y = 1.0f;
+				pDrawMesh->vertices[i].color.z = 1.0f;
+				pDrawMesh->vertices[i].color.w = alpha;
+			}
+		}
 		pDrawMesh->draw(mesh->targetTexture);
 	}
 
