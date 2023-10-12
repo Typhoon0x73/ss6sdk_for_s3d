@@ -114,7 +114,7 @@ namespace s3d
 			srcRect.setPos(static_cast<double>(cell->pos.x), static_cast<double>(cell->pos.y));
 			srcRect.setSize(static_cast<double>(cell->size.x), static_cast<double>(cell->size.y));
 			srcRect = srcRect.scaled(static_cast<double>(state->uvScale.x), static_cast<double>(state->uvScale.y));
-			float dx = state->matrix[4 * 3 + 0] + cell->pivot.x * srcRect.w;
+			float dx = state->matrix[4 * 3 + 0] - cell->pivot.x * srcRect.w;
 			float dy = state->matrix[4 * 3 + 1] - cell->pivot.y * srcRect.h;
 			float sx = state->matrix[4 * 0 + 0];
 			float sy = state->matrix[4 * 1 + 1];
