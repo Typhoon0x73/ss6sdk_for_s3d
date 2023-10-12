@@ -353,3 +353,4 @@ MigrationBackup/
 *[Dd]ebug*
 *[Rr]elease*
 sssdk_for_s3d/App/ss6sample/*
+use_sdk/App/ss6sample/*
