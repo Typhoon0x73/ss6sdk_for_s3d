@@ -100,7 +100,7 @@ namespace s3d
 				state->colors[i * 4 + 2],
 				state->colors[i * 4 + 3]);
 		}
-
+		
 		TextureFilter filterMode = TextureFilter::Nearest;
 		if (state->cellValue.filterMode == spritestudio6::SsTexFilterMode::linear)
 		{
@@ -136,18 +136,19 @@ namespace s3d
 			srcRect.setPos(static_cast<double>(cell->pos.x), static_cast<double>(cell->pos.y));
 			srcRect.setSize(static_cast<double>(cell->size.x), static_cast<double>(cell->size.y));
 			srcRect = srcRect.scaled(static_cast<double>(state->uvScale.x), static_cast<double>(state->uvScale.y));
-			float dx = state->matrix[4 * 3 + 0] - cell->pivot.x * srcRect.w - state->pivotOffset.x * srcRect.w;
-			float dy = state->matrix[4 * 3 + 1] - cell->pivot.y * srcRect.h - state->pivotOffset.y * srcRect.h * -1;
-			float sx = state->matrix[4 * 0 + 0];
-			float sy = state->matrix[4 * 1 + 1];
+			float dx = state->matrixLocal[4 * 3 + 0] - cell->pivot.x * srcRect.w - state->pivotOffset.x * srcRect.w;
+			float dy = state->matrixLocal[4 * 3 + 1] - cell->pivot.y * srcRect.h - state->pivotOffset.y * srcRect.h * -1;
+			float sx = state->scale.x * state->localscale.x;
+			float sy = state->scale.y * state->localscale.y;
 			srcRect.moveBy(Vec2{ state->uvTranslate.x * texture.width(), state->uvTranslate.y * texture.height() });
 			texture(srcRect)
 				.scaled(1.0 / state->uvScale.x, 1.0 / state->uvScale.y)
 				.flipped(state->imageFlipV)
 				.mirrored(state->imageFlipH)
 				.scaled(static_cast<double>(sx), static_cast<double>(sy))
+				.rotated(Math::ToRadians(static_cast<double>(-state->rotation.z)))
 				.drawAt(Vec2{ static_cast<double>(dx), static_cast<double>(-dy) },
-					colors[0], colors[1], colors[2], colors[3]);
+					colors[0]/*, colors[1], colors[2], colors[3]*/);
 		}
 	}
 
