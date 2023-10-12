@@ -7,6 +7,22 @@
 # include "ThirdParty/sssdk/Common/Animator/ssplayer_render.h"
 # include "SsDrawer/SsDrawerS3D.h"
 
+//# define USE_TESTDATA
+# define USE_WINDOWSIZE_CHANGE
+
+namespace
+{
+	#ifdef USE_TESTDATA
+	static const spritestudio6::SsString SSPJ_PATH = "ss6sample/TestData/allAttributeV7/allAttributeV7.sspj";
+	static const spritestudio6::SsString ANIM_PACK = "alpha";
+	static const spritestudio6::SsString ANIM_NAME = "anime_1";
+	#else // USE_TESTDATA
+	static const spritestudio6::SsString SSPJ_PATH = "ss6sample/Ringo/Ringo.sspj";
+	static const spritestudio6::SsString ANIM_PACK = "Ringo";
+	static const spritestudio6::SsString ANIM_NAME = "dance";
+	#endif // USE_TESTDATA 
+}
+
 void Main()
 {
 	Console.open();
@@ -14,25 +30,29 @@ void Main()
 	spritestudio6::SsCurrentRenderer::SetCurrentRender(new SsDrawerS3D());
 
 	std::unique_ptr<spritestudio6::SsProject> pSsProject = nullptr;
-	pSsProject.reset(spritestudio6::ssloader_sspj::Load("ss6sample/Ringo/Ringo.sspj"));
+	pSsProject.reset(spritestudio6::ssloader_sspj::Load(SSPJ_PATH));
 	if (pSsProject == nullptr)
 	{
 		return;
 	}
 
-	spritestudio6::SsString animPackName = "Ringo";
+	spritestudio6::SsString animPackName = ANIM_PACK;
 	auto* animPack = pSsProject->findAnimationPack(animPackName);
 	if (animPack == nullptr)
 	{
 		return;
 	}
 
-	spritestudio6::SsString animName = "dance";
+	spritestudio6::SsString animName = ANIM_NAME;
 	auto* anim = animPack->findAnimation(animName);
 	if (anim == nullptr)
 	{
 		return;
 	}
+
+	#ifdef USE_WINDOWSIZE_CHANGE
+	Window::Resize((int32)anim->settings.canvasSize.x, (int32)anim->settings.canvasSize.y);
+	#endif // USE_WINDOWSIZE_CHANGE
 
 	// デコーダー内でスマートポインタ管理される
 	spritestudio6::SsCellMapList* pCellmapList = new spritestudio6::SsCellMapList();
@@ -59,6 +79,12 @@ void Main()
 			decoder.draw();
 		}
 		camera.draw();
+
+		// センタリングチェック用 十字
+		{
+			Line{ 0.0, Scene::Height() * 0.5, Scene::Width(), Scene::Height() * 0.5 }.draw(ColorF{ Palette::Lightpink, 0.4 });
+			Line{ Scene::Width() * 0.5, 0.0, Scene::Width() * 0.5, Scene::Height() }.draw(ColorF{ Palette::Lightpink, 0.4 });
+		}
 	}
 }
 
