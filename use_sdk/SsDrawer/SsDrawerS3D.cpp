@@ -79,6 +79,28 @@ namespace s3d
 			alpha = state->localalpha;
 		}
 
+		ColorF colors[4];
+		if (state->is_parts_color)
+		{
+
+		}
+		else
+		{
+			// パーツカラー無し
+			for (int i = 0; i < 5; i++)
+			{
+				state->colors[i * 4 + 3] = alpha;
+			}
+		}
+		for (int i = 0; i < 4; i++)
+		{
+			colors[i].set(
+				state->colors[i * 4 + 0],
+				state->colors[i * 4 + 1],
+				state->colors[i * 4 + 2],
+				state->colors[i * 4 + 3]);
+		}
+
 		TextureFilter filterMode = TextureFilter::Nearest;
 		if (state->cellValue.filterMode == spritestudio6::SsTexFilterMode::linear)
 		{
@@ -114,8 +136,8 @@ namespace s3d
 			srcRect.setPos(static_cast<double>(cell->pos.x), static_cast<double>(cell->pos.y));
 			srcRect.setSize(static_cast<double>(cell->size.x), static_cast<double>(cell->size.y));
 			srcRect = srcRect.scaled(static_cast<double>(state->uvScale.x), static_cast<double>(state->uvScale.y));
-			float dx = state->matrix[4 * 3 + 0] - cell->pivot.x * srcRect.w;
-			float dy = state->matrix[4 * 3 + 1] - cell->pivot.y * srcRect.h;
+			float dx = state->matrix[4 * 3 + 0] - cell->pivot.x * srcRect.w - state->pivotOffset.x * srcRect.w;
+			float dy = state->matrix[4 * 3 + 1] - cell->pivot.y * srcRect.h - state->pivotOffset.y * srcRect.h * -1;
 			float sx = state->matrix[4 * 0 + 0];
 			float sy = state->matrix[4 * 1 + 1];
 			srcRect.moveBy(Vec2{ state->uvTranslate.x * texture.width(), state->uvTranslate.y * texture.height() });
@@ -124,7 +146,8 @@ namespace s3d
 				.flipped(state->imageFlipV)
 				.mirrored(state->imageFlipH)
 				.scaled(static_cast<double>(sx), static_cast<double>(sy))
-				.drawAt(static_cast<double>(dx), static_cast<double>(-dy));
+				.drawAt(Vec2{ static_cast<double>(dx), static_cast<double>(-dy) },
+					colors[0], colors[1], colors[2], colors[3]);
 		}
 	}
 
