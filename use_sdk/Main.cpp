@@ -69,13 +69,17 @@ void Main()
 	transPos.x = anim->settings.canvasSize.x * (anim->settings.pivot.x + 0.5f);
 	transPos.y = anim->settings.canvasSize.y * (anim->settings.pivot.y - 0.5f) * -1;
 
+	int32 frameCount = 0;
+
 	Camera2D camera;
 	while (System::Update())
 	{
 		camera.update();
 		{
 			const Transformer2D trans{ Mat3x2::Translate(transPos) * Mat3x2::Translate(Float2{ camera.getCenter().x, camera.getCenter().y })};
-			decoder.update();
+			frameCount++;
+			decoder.setPlayFrame(frameCount);
+			decoder.update(1.0f);
 			decoder.draw();
 		}
 		camera.draw();
