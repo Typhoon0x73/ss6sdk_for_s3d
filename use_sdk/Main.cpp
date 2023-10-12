@@ -12,15 +12,31 @@
 
 namespace
 {
-	#ifdef USE_TESTDATA
+#ifdef USE_TESTDATA
+	// 対応できていないAttribute	優先度
+	// boundr
+	// easing
+	// effect						後回し
+	// instance_flag
+	// mask							やらないかも
+	// partsColor
+	// pivot
+	// rot							頂点カラーと対応する場合ちょっときついか（致命的）
+	// setupdata
+	// size
+	// startend
+	// textureChange
+	// userdata						チェックしていないだけ
+	// uvt							uvrotationだけっぽい？どうしよう？
+	// vertex
 	static const spritestudio6::SsString SSPJ_PATH = "ss6sample/TestData/allAttributeV7/allAttributeV7.sspj";
-	static const spritestudio6::SsString ANIM_PACK = "alpha";
+	static const spritestudio6::SsString ANIM_PACK = "scl";
 	static const spritestudio6::SsString ANIM_NAME = "anime_1";
-	#else // USE_TESTDATA
+#else // USE_TESTDATA
 	static const spritestudio6::SsString SSPJ_PATH = "ss6sample/Ringo/Ringo.sspj";
 	static const spritestudio6::SsString ANIM_PACK = "Ringo";
 	static const spritestudio6::SsString ANIM_NAME = "dance";
-	#endif // USE_TESTDATA 
+#endif // USE_TESTDATA 
 }
 
 void Main()
@@ -50,9 +66,9 @@ void Main()
 		return;
 	}
 
-	#ifdef USE_WINDOWSIZE_CHANGE
+#ifdef USE_WINDOWSIZE_CHANGE
 	Window::Resize((int32)anim->settings.canvasSize.x, (int32)anim->settings.canvasSize.y);
-	#endif // USE_WINDOWSIZE_CHANGE
+#endif // USE_WINDOWSIZE_CHANGE
 
 	// デコーダー内でスマートポインタ管理される
 	spritestudio6::SsCellMapList* pCellmapList = new spritestudio6::SsCellMapList();
@@ -70,14 +86,24 @@ void Main()
 	transPos.y = anim->settings.canvasSize.y * (anim->settings.pivot.y - 0.5f) * -1;
 
 	int32 frameCount = 0;
+	float frameTime = 0.0f;
 
 	Camera2D camera;
 	while (System::Update())
 	{
+		ClearPrint();
+		Print << frameCount;
+		if (frameCount > anim->settings.frameCount)
+		{
+			frameTime = 0.0f;
+			frameCount = 0;
+		}
+
 		camera.update();
 		{
-			const Transformer2D trans{ Mat3x2::Translate(transPos) * Mat3x2::Translate(Float2{ camera.getCenter().x, camera.getCenter().y })};
-			frameCount++;
+			frameTime += Scene::DeltaTime();
+			frameCount = frameTime * anim->settings.fps;
+			const Transformer2D trans{ Mat3x2::Translate(transPos) * Mat3x2::Translate(Float2{ camera.getCenter().x, camera.getCenter().y }) };
 			decoder.setPlayFrame(frameCount);
 			decoder.update(1.0f);
 			decoder.draw();
