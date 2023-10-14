@@ -13,7 +13,7 @@
 namespace
 {
 #ifdef USE_TESTDATA
-	// 対応できていないAttribute	優先度
+	// 対応できていないAttribute	メモ
 	// boundr
 	// easing
 	// effect						後回し
@@ -21,13 +21,13 @@ namespace
 	// mask							やらないかも
 	// partsColor
 	// pivot
-	// rot							頂点カラーと対応する場合ちょっときついか（致命的）
+	// rot							頂点カラーと対応する場合ちょっときついか。シェーダーかくか・・
 	// setupdata
 	// size
 	// startend
 	// textureChange
 	// userdata						チェックしていないだけ
-	// uvt							uvrotationだけっぽい？どうしよう？
+	// uvt							uvrotationだけっぽい？シザーで何とかできそう
 	// vertex
 	static const spritestudio6::SsString SSPJ_PATH = "ss6sample/TestData/allAttributeV7/allAttributeV7.sspj";
 	static const spritestudio6::SsString ANIM_PACK = "scl";
