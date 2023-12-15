@@ -23,7 +23,6 @@ namespace
 	// pivot
 	// rot							頂点カラーと対応する場合ちょっときついか。シェーダーかくか・・
 	// setupdata
-	// size
 	// startend
 	// textureChange
 	// userdata						チェックしていないだけ

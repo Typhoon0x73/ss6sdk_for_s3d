@@ -142,6 +142,7 @@ namespace s3d
 			float sy = state->scale.y * state->localscale.y;
 			srcRect.moveBy(Vec2{ state->uvTranslate.x * texture.width(), state->uvTranslate.y * texture.height() });
 			texture(srcRect)
+				.resized(static_cast<double>(state->size.x), static_cast<double>(state->size.y))
 				.scaled(1.0 / state->uvScale.x, 1.0 / state->uvScale.y)
 				.flipped(state->imageFlipV)
 				.mirrored(state->imageFlipH)
