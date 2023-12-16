@@ -136,12 +136,6 @@
     <Filter Include="Resource Files\engine\font\min">
       <UniqueIdentifier>{1b103960-f11a-4515-b4f1-f59333ce00d9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\SpriteStudio">
-      <UniqueIdentifier>{ff1a5458-262c-4631-a24e-8c5c3c548190}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\SpriteStudio">
-      <UniqueIdentifier>{7d0d2b1c-ce70-4b24-947f-f01060eb7485}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -151,61 +145,61 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SpriteStudio\SSAnimation.cpp">
-      <Filter>Source Files\SpriteStudio</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SpriteStudio\SSAnimationController.cpp">
-      <Filter>Source Files\SpriteStudio</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SpriteStudio\SSAnimationPack.cpp">
-      <Filter>Source Files\SpriteStudio</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SpriteStudio\SSAnimationPart.cpp">
-      <Filter>Source Files\SpriteStudio</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SpriteStudio\SSAnimeSettings.cpp">
-      <Filter>Source Files\SpriteStudio</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SpriteStudio\SSAttribute.cpp">
-      <Filter>Source Files\SpriteStudio</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SpriteStudio\SSAttributeKeyValue.cpp">
-      <Filter>Source Files\SpriteStudio</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SpriteStudio\SSBoneItem.cpp">
-      <Filter>Source Files\SpriteStudio</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SpriteStudio\SSCell.cpp">
-      <Filter>Source Files\SpriteStudio</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SpriteStudio\SSCellMap.cpp">
-      <Filter>Source Files\SpriteStudio</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SpriteStudio\SSDrawCellPart.cpp">
-      <Filter>Source Files\SpriteStudio</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SpriteStudio\SSDrawMeshPart.cpp">
-      <Filter>Source Files\SpriteStudio</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SpriteStudio\SSDrawPart.cpp">
-      <Filter>Source Files\SpriteStudio</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SpriteStudio\SSMeshBind.cpp">
-      <Filter>Source Files\SpriteStudio</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SpriteStudio\SSModel.cpp">
-      <Filter>Source Files\SpriteStudio</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SpriteStudio\SSModelPart.cpp">
-      <Filter>Source Files\SpriteStudio</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SpriteStudio\SSProject.cpp">
-      <Filter>Source Files\SpriteStudio</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SpriteStudio\SSSettings.cpp">
-      <Filter>Source Files\SpriteStudio</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SpriteStudio\SSValue.cpp">
-      <Filter>Source Files\SpriteStudio</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -840,64 +834,64 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SpriteStudio\SSAnimation.hpp">
-      <Filter>Header Files\SpriteStudio</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SpriteStudio\SSAnimationController.hpp">
-      <Filter>Header Files\SpriteStudio</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SpriteStudio\SSAnimationPack.hpp">
-      <Filter>Header Files\SpriteStudio</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SpriteStudio\SSAnimationPart.hpp">
-      <Filter>Header Files\SpriteStudio</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SpriteStudio\SSAnimeSettings.hpp">
-      <Filter>Header Files\SpriteStudio</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SpriteStudio\SSAttribute.hpp">
-      <Filter>Header Files\SpriteStudio</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SpriteStudio\SSAttributeKeyValue.hpp">
-      <Filter>Header Files\SpriteStudio</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SpriteStudio\SSBoneItem.hpp">
-      <Filter>Header Files\SpriteStudio</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SpriteStudio\SSCell.hpp">
-      <Filter>Header Files\SpriteStudio</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SpriteStudio\SSCellMap.hpp">
-      <Filter>Header Files\SpriteStudio</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SpriteStudio\SSDefine.hpp">
-      <Filter>Header Files\SpriteStudio</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SpriteStudio\SSDrawCellPart.hpp">
-      <Filter>Header Files\SpriteStudio</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SpriteStudio\SSDrawMeshPart.hpp">
-      <Filter>Header Files\SpriteStudio</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SpriteStudio\SSDrawPart.hpp">
-      <Filter>Header Files\SpriteStudio</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SpriteStudio\SSMeshBind.hpp">
-      <Filter>Header Files\SpriteStudio</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SpriteStudio\SSModel.hpp">
-      <Filter>Header Files\SpriteStudio</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SpriteStudio\SSModelPart.hpp">
-      <Filter>Header Files\SpriteStudio</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SpriteStudio\SSProject.hpp">
-      <Filter>Header Files\SpriteStudio</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SpriteStudio\SSSettings.hpp">
-      <Filter>Header Files\SpriteStudio</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SpriteStudio\SSValue.hpp">
-      <Filter>Header Files\SpriteStudio</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
