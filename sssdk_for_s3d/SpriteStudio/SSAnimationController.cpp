@@ -217,7 +217,7 @@ namespace sssdk
 			{
 				continue;
 			}
-			if (findPart->get())
+			if (not findPart->get())
 			{
 				continue;
 			}
