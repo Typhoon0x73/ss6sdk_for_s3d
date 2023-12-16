@@ -86,7 +86,9 @@ namespace sssdk
 
 		Mat4x4 m_worldMatrix; // 描画用マトリクス
 
-		bool m_isSetupHideKeyFind; // setupにHIDEのキーがあるか
+		bool m_isFindSetupHideKey; // setupにHIDEのキーがあるか
+		bool m_isFindKeySizeX; // サイズXのキーがあるか
+		bool m_isFindKeySizeY; // サイズYのキーがあるか
 	};
 }
 

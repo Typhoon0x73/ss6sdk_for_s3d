@@ -279,7 +279,9 @@ namespace sssdk
 		, m_audio{}
 		, m_textureChange{}
 		, m_worldMatrix{ Mat4x4::Identity() }
-		, m_isSetupHideKeyFind{ false }
+		, m_isFindSetupHideKey{ false }
+		, m_isFindKeySizeX{ false }
+		, m_isFindKeySizeY{ false }
 	{
 		setAnimPart(anim);
 	}
@@ -290,6 +292,11 @@ namespace sssdk
 
 	void SSDrawPart::update(int32 frame)
 	{
+		{
+			m_isFindKeySizeX = false;
+			m_isFindKeySizeY = false;
+		}
+
 		if (m_pSetupPart)
 		{
 			for (const auto& attribute : m_pSetupPart->getAttributes())
@@ -339,14 +346,14 @@ namespace sssdk
 
 	void SSDrawPart::setHideParam()
 	{
-		m_isSetupHideKeyFind = false;
+		m_isFindSetupHideKey = false;
 		if (m_pSetupPart)
 		{
 			for (const auto& attribute : m_pSetupPart->getAttributes())
 			{
 				if (attribute.getAttributeKind() == ATTRIBUTE_KIND_HIDE)
 				{
-					m_isSetupHideKeyFind = true;
+					m_isFindSetupHideKey = true;
 					return;
 				}
 			}
@@ -423,7 +430,7 @@ namespace sssdk
 				// 左がなく、右がある場合、先頭データがまだ後ろ。
 				// 先頭の非表示キーより手前の場合は常に非表示にする。
 				// セットアップによってm_isSetupHideKeyFindがあった場合は強制非表示にしない。
-				if (not m_isSetupHideKeyFind)
+				if (not m_isFindSetupHideKey)
 				{
 					m_isHide = true;
 				}
@@ -510,9 +517,11 @@ namespace sssdk
 			break;
 		case sssdk::ATTRIBUTE_KIND_SIZX:
 			SSInterpolationValue<float>(frame, left, right, m_size.x);
+			m_isFindKeySizeX = true;
 			break;
 		case sssdk::ATTRIBUTE_KIND_SIZY:
 			SSInterpolationValue<float>(frame, left, right, m_size.y);
+			m_isFindKeySizeY = true;
 			break;
 		case sssdk::ATTRIBUTE_KIND_IFLH:
 			SSInterpolationValue<bool>(frame, left, right, m_isImageFlipH);

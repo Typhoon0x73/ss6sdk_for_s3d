@@ -56,6 +56,17 @@ namespace sssdk
 			return;
 		}
 		m_pCell = m_pCellmap->getCell(m_cell.name);
+		if (m_pCell)
+		{
+			if (not m_isFindKeySizeX)
+			{
+				m_size.x = static_cast<float>(m_pCell->getSize().x);
+			}
+			if (not m_isFindKeySizeY)
+			{
+				m_size.y = static_cast<float>(m_pCell->getSize().y);
+			}
+		}
 	}
 
 	void SSDrawCellPart::draw(const Vec2& canvasOffset) const
@@ -97,6 +108,7 @@ namespace sssdk
 			const Texture drawTexture = TextureAsset(m_pCellmap->getTextureKey());
 			srcRect.moveBy(m_uvTranslate * drawTexture.size());
 			drawTexture(srcRect)
+				.resized(static_cast<double>(m_size.x), static_cast<double>(m_size.y))
 				.scaled(1.0 / m_uvScale.x, 1.0 / m_uvScale.y)
 				.flipped(m_isImageFlipV)
 				.mirrored(m_isImageFlipH)
