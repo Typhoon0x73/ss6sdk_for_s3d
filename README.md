@@ -3,8 +3,8 @@
 
 # 開発環境
 OS  : Windows 10 pro/Windows 11 pro  
-Lib : [OpenSiv3D v0.6.10](https://github.com/Siv3D/OpenSiv3D)  
-IDE : Microsoft Visual Studio Community 2022 (64 ビット) Version 17.6.2  
+Lib : [OpenSiv3D v0.6.13](https://github.com/Siv3D/OpenSiv3D)  
+IDE : Microsoft Visual Studio Community 2022 (64 ビット) Version 17.8.2  
 
 # ThirdParty
 ### SpriteStudio6-SDK
