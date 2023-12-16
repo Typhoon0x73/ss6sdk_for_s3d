@@ -4,7 +4,7 @@
 
 namespace sssdk
 {
-	SSDrawCellPart::SSDrawCellPart(StringView ssae, const SSAnimationPart* anim, ISSCellmaps* cellmaps)
+	SSDrawCellPart::SSDrawCellPart(StringView ssae, const SSAnimationPart* anim, const ISSCellmaps* cellmaps)
 		: SSDrawPart{ anim }
 		, m_packName{ ssae }
 		, m_pCellmap{ nullptr }
@@ -106,7 +106,7 @@ namespace sssdk
 		}
 	}
 
-	void SSDrawCellPart::setCellmaps(ISSCellmaps* cellmaps)
+	void SSDrawCellPart::setCellmaps(const ISSCellmaps* cellmaps)
 	{
 		m_pCellmaps = cellmaps;
 	}

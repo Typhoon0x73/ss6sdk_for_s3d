@@ -9,6 +9,8 @@ namespace sssdk
 	class SSProject;
 	class SSAnimeSettings;
 	class SSDrawPart;
+	class SSAnimationPack;
+	class SSAnimation;
 
 	class SSAnimationController
 	{
@@ -17,7 +19,7 @@ namespace sssdk
 		SSAnimationController();
 		virtual ~SSAnimationController();
 
-		bool build(SSProject* proj, StringView pack, StringView anim);
+		bool build(const SSProject* proj, StringView pack, StringView anim);
 
 		void update(double deltaTime);
 		void draw(const Vec2& pos) const;
@@ -32,8 +34,18 @@ namespace sssdk
 
 	private:
 
+		void createDrawParts();
+		void linkPart();
+		void sortDrawParts();
+
+	private:
+
 		int32 calcFrame();
 		void updatePart(int32 frame);
+
+		const SSProject* m_pProject;
+		const SSAnimationPack* m_pAnimationPack;
+		const SSAnimation* m_pAnimation;
 
 		double m_tick;
 		bool m_isLoop;
