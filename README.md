@@ -103,8 +103,8 @@ https://github.com/SpriteStudio/SpriteStudio6-SDK
    - [ ] pivot_y  
    - [ ] anchor_x  
    - [ ] anchor_y  
-   - [ ] size_x  
-   - [ ] size_y  
+   - [x] size_x  
+   - [x] size_y  
    - [x] image_flip_h  
    - [x] image_flip_v  
    - [x] uv_trans_x  
