@@ -11,6 +11,7 @@ namespace sssdk
 	class SSDrawPart;
 	class SSAnimationPack;
 	class SSAnimation;
+	class SSAnimationPart;
 
 	class SSAnimationController
 	{
@@ -46,6 +47,9 @@ namespace sssdk
 		const SSProject* m_pProject;
 		const SSAnimationPack* m_pAnimationPack;
 		const SSAnimation* m_pAnimation;
+
+		HashTable<String, const SSAnimationPart*> m_drawPartTable;
+		HashTable<String, const SSAnimationPart*> m_setupDrawPartTable;
 
 		double m_tick;
 		bool m_isLoop;

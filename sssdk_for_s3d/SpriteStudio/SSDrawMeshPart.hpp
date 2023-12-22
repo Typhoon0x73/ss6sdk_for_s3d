@@ -10,9 +10,10 @@ namespace sssdk
 	{
 	public:
 
-		explicit SSDrawMeshPart(StringView ssae, const SSAnimationPart* anim, ISSCellmaps* cellmaps);
+		explicit SSDrawMeshPart(StringView ssae, const SSAnimationPart* anim, const ISSCellmaps* cellmaps);
 		virtual ~SSDrawMeshPart();
 
+		virtual void update(int32 frame) override;
 		virtual void draw(const Vec2& canvasOffset) const override;
 
 	protected:

@@ -1,9 +1,11 @@
 ﻿
 #include "SSAnimationController.hpp"
 #include "SSAnimeSettings.hpp"
+#include "SSAnimationPart.hpp"
 #include "SSProject.hpp"
 #include "SSDrawPart.hpp"
 #include "SSDrawCellPart.hpp"
+#include "SSDrawMeshPart.hpp"
 
 namespace sssdk
 {
@@ -16,6 +18,7 @@ namespace sssdk
 			case ModelPartType::normal:
 				return new SSDrawCellPart(pack, part, proj);
 			case ModelPartType::mesh:
+				return new SSDrawMeshPart(pack, part, proj);
 				//break;
 			case ModelPartType::null:
 			case ModelPartType::shape:
@@ -44,6 +47,8 @@ namespace sssdk
 		: m_pProject{ nullptr }
 		, m_pAnimationPack{ nullptr }
 		, m_pAnimation{ nullptr }
+		, m_drawPartTable{}
+		, m_setupDrawPartTable{}
 		, m_tick{ 0.0 }
 		, m_isLoop{ false }
 		, m_pAnimeSettings{ nullptr }
@@ -162,27 +167,41 @@ namespace sssdk
 
 	void SSAnimationController::createDrawParts()
 	{
+		m_drawPartTable.clear();
+		m_setupDrawPartTable.clear();
+
 		const auto& model = m_pAnimationPack->getModel();
-		const auto& animParts = m_pAnimation->getAnimParts();
 		const auto& setupAnim = m_pAnimationPack->getSetupAnimation();
-		for (const auto& part : animParts)
+
+		for (const auto& partAnim : m_pAnimation->getAnimParts())
 		{
-			const auto* modelPart = model.getPart(part.getName());
-			if (not modelPart)
-			{
-				continue;
-			}
-			SSDrawPart* drawPart = createDrawPart(m_pProject, m_pAnimationPack->getName(), &part, modelPart->getType());
-			if (drawPart)
-			{
-				if (const auto* setupPart = setupAnim->getAnimPart(part.getName()))
-				{
-					drawPart->setSetupPart(setupPart);
-				}
-				drawPart->setModelPart(modelPart);
-			}
-			m_drawParts.emplace_back(drawPart);
+			m_drawPartTable[partAnim.getName()] = &partAnim;
 		}
+		for (const auto& setupPartAnim : setupAnim->getAnimParts())
+		{
+			m_setupDrawPartTable[setupPartAnim.getName()] = &setupPartAnim;
+		}
+
+
+		//const auto& animParts = m_pAnimation->getAnimParts();
+		//for (const auto& part : animParts)
+		//{
+		//	const auto* modelPart = model.getPart(part.getName());
+		//	if (not modelPart)
+		//	{
+		//		continue;
+		//	}
+		//	SSDrawPart* drawPart = createDrawPart(m_pProject, m_pAnimationPack->getName(), &part, modelPart->getType());
+		//	if (drawPart)
+		//	{
+		//		if (const auto* setupPart = setupAnim->getAnimPart(part.getName()))
+		//		{
+		//			drawPart->setSetupPart(setupPart);
+		//		}
+		//		drawPart->setModelPart(modelPart);
+		//	}
+		//	m_drawParts.emplace_back(drawPart);
+		//}
 	}
 
 	void SSAnimationController::linkPart()
