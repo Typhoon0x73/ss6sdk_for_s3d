@@ -40,6 +40,7 @@ namespace sssdk
 			return;
 		}
 		m_pCell = m_pCellmap->getCell(m_cell.name);
+		m_texture = TextureAsset(m_pCellmap->getTextureKey());
 	}
 
 	SSDrawCellPart::~SSDrawCellPart()
@@ -105,9 +106,8 @@ namespace sssdk
 			const BlendState blend = GetBlendState(m_pModelPart->getAlphaBlendType());
 			const SamplerState sampler{ m_pCellmap->getWrapMode(), m_pCellmap->getFilterMode() };
 			const ScopedRenderStates2D renderState{ blend, sampler };
-			const Texture drawTexture = TextureAsset(m_pCellmap->getTextureKey());
-			srcRect.moveBy(m_uvTranslate * drawTexture.size());
-			drawTexture(srcRect)
+			srcRect.moveBy(m_uvTranslate * m_texture.size());
+			m_texture(srcRect)
 				.resized(static_cast<double>(m_size.x), static_cast<double>(m_size.y))
 				.scaled(1.0 / m_uvScale.x, 1.0 / m_uvScale.y)
 				.flipped(m_isImageFlipV)

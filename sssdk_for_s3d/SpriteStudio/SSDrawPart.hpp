@@ -33,6 +33,8 @@ namespace sssdk
 		SIV3D_NODISCARD_CXX20 const SSAnimationPart* getSetupPart() const;
 		SIV3D_NODISCARD_CXX20 const SSAnimationPart* getAnimPart() const;
 
+		const Mat4x4& getWorldMatrix() const;
+
 	protected:
 
 		virtual void updateMatrix();
@@ -89,6 +91,7 @@ namespace sssdk
 		bool m_isFindSetupHideKey; // setupにHIDEのキーがあるか
 		bool m_isFindKeySizeX; // サイズXのキーがあるか
 		bool m_isFindKeySizeY; // サイズYのキーがあるか
+		bool m_isUsedDeform; // デフォームを使用しているか
 	};
 }
 

@@ -182,26 +182,25 @@ namespace sssdk
 			m_setupDrawPartTable[setupPartAnim.getName()] = &setupPartAnim;
 		}
 
-
-		//const auto& animParts = m_pAnimation->getAnimParts();
-		//for (const auto& part : animParts)
-		//{
-		//	const auto* modelPart = model.getPart(part.getName());
-		//	if (not modelPart)
-		//	{
-		//		continue;
-		//	}
-		//	SSDrawPart* drawPart = createDrawPart(m_pProject, m_pAnimationPack->getName(), &part, modelPart->getType());
-		//	if (drawPart)
-		//	{
-		//		if (const auto* setupPart = setupAnim->getAnimPart(part.getName()))
-		//		{
-		//			drawPart->setSetupPart(setupPart);
-		//		}
-		//		drawPart->setModelPart(modelPart);
-		//	}
-		//	m_drawParts.emplace_back(drawPart);
-		//}
+		const auto& animParts = m_pAnimation->getAnimParts();
+		for (const auto& part : animParts)
+		{
+			const auto* modelPart = model.getPart(part.getName());
+			if (not modelPart)
+			{
+				continue;
+			}
+			SSDrawPart* drawPart = createDrawPart(m_pProject, m_pAnimationPack->getName(), &part, modelPart->getType());
+			if (drawPart)
+			{
+				if (const auto* setupPart = setupAnim->getAnimPart(part.getName()))
+				{
+					drawPart->setSetupPart(setupPart);
+				}
+				drawPart->setModelPart(modelPart);
+			}
+			m_drawParts.emplace_back(drawPart);
+		}
 	}
 
 	void SSAnimationController::linkPart()

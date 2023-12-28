@@ -124,6 +124,7 @@
     <ClCompile Include="SpriteStudio\SSAttribute.cpp" />
     <ClCompile Include="SpriteStudio\SSAttributeKeyValue.cpp" />
     <ClCompile Include="SpriteStudio\SSBoneItem.cpp" />
+    <ClCompile Include="SpriteStudio\SSBoneWeight.cpp" />
     <ClCompile Include="SpriteStudio\SSCell.cpp" />
     <ClCompile Include="SpriteStudio\SSCellMap.cpp" />
     <ClCompile Include="SpriteStudio\SSDrawCellPart.cpp" />
@@ -342,6 +343,7 @@
     <ClInclude Include="SpriteStudio\SSAttribute.hpp" />
     <ClInclude Include="SpriteStudio\SSAttributeKeyValue.hpp" />
     <ClInclude Include="SpriteStudio\SSBoneItem.hpp" />
+    <ClInclude Include="SpriteStudio\SSBoneWeight.hpp" />
     <ClInclude Include="SpriteStudio\SSCell.hpp" />
     <ClInclude Include="SpriteStudio\SSCellMap.hpp" />
     <ClInclude Include="SpriteStudio\SSDefine.hpp" />

@@ -282,6 +282,7 @@ namespace sssdk
 		, m_isFindSetupHideKey{ false }
 		, m_isFindKeySizeX{ false }
 		, m_isFindKeySizeY{ false }
+		, m_isUsedDeform{ false }
 	{
 		setAnimPart(anim);
 	}
@@ -419,6 +420,11 @@ namespace sssdk
 			return m_pParentPart->getAlpha() * m_alpha;
 		}
 		return m_alpha;
+	}
+
+	const Mat4x4& SSDrawPart::getWorldMatrix() const
+	{
+		return m_worldMatrix;
 	}
 
 	void SSDrawPart::setValue(int32 frame, ATTRIBUTE_KIND kind, const SSAttributeKeyValue* left, const SSAttributeKeyValue* right)
@@ -563,6 +569,7 @@ namespace sssdk
 			SSInterpolationValue<SSEffectValue>(frame, left, right, m_effect);
 			break;
 		case sssdk::ATTRIBUTE_KIND_DEFM:
+			m_isUsedDeform = true;
 			SSInterpolationValue<SSDeformVertexValue>(frame, left, right, m_deform);
 			break;
 		case sssdk::ATTRIBUTE_KIND_ADIO:
