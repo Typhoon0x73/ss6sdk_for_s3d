@@ -12,9 +12,9 @@ namespace sssdk
 
 		struct Info
 		{
-			int32 m_boneIndex;
-			int32 m_weight;
-			Vec2 m_pos;
+			int32 boneIndex;
+			int32 weight;
+			Float3 offset;
 		};
 
 		explicit SSMeshBind();

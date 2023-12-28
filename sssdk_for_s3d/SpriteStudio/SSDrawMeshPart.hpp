@@ -14,13 +14,15 @@ namespace sssdk
 		explicit SSDrawMeshPart(StringView ssae, const SSAnimationPart* anim, const ISSCellmaps* cellmaps);
 		virtual ~SSDrawMeshPart();
 
-		virtual void update(int32 frame) override;
-		virtual void draw(const Vec2& canvasOffset) const override;
+		void updateTransformMesh();
+		virtual void draw() const override;
+
+		size_t getVertexNum() const;
+		Array<SSBoneWeight>& getBindBoneInfomations();
 
 	private:
 
 		void makeMesh();
-		void updateTransformMesh();
 
 		Float2 getOffsetWorldVerticesFromKey(size_t index);
 		Float2 getOffsetLocalVertices(size_t index);

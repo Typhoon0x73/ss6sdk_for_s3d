@@ -41,16 +41,24 @@ namespace sssdk
 	{
 	}
 
-	void SSDrawMeshPart::update(int32 frame)
-	{
-		SSDrawCellPart::update(frame);
-		updateTransformMesh();
-	}
-
-	void SSDrawMeshPart::draw(const Vec2& canvasOffset) const
+	void SSDrawMeshPart::draw() const
 	{
 		// TODO
-		SSDrawCellPart::draw(canvasOffset);
+		SSDrawCellPart::draw();
+	}
+
+	size_t SSDrawMeshPart::getVertexNum() const
+	{
+		if (m_pMesh2D == nullptr)
+		{
+			return 0;
+		}
+		return m_pMesh2D->vertices.size();
+	}
+
+	Array<SSBoneWeight>& SSDrawMeshPart::getBindBoneInfomations()
+	{
+		return m_bindBoneInfomations;
 	}
 
 	void SSDrawMeshPart::makeMesh()
@@ -87,8 +95,8 @@ namespace sssdk
 		offs.x = static_cast<float>(-cellSize.x * 0.5f);
 		offs.y = static_cast<float>(cellSize.y * 0.5f);
 
-		offs.x -= m_pCell->getPivot().x * cellSize.x;
-		offs.x -= m_pCell->getPivot().y * cellSize.y;
+		offs.x -= static_cast<float>(m_pCell->getPivot().x) * cellSize.x;
+		offs.x -= static_cast<float>(m_pCell->getPivot().y) * cellSize.y;
 
 		const float textureWidth = static_cast<float>(m_texture.width());
 		const float textureHeight = static_cast<float>(m_texture.height());
@@ -127,8 +135,7 @@ namespace sssdk
 			indices[i].i2 = static_cast<uint16>(t.i2);
 		}
 
-		Buffer2D* pMesh = new Buffer2D(drawVertices, indices);
-		m_pMesh2D.reset(pMesh);
+		m_pMesh2D = std::make_unique<Buffer2D>(drawVertices, indices);
 	}
 
 	void SSDrawMeshPart::updateTransformMesh()
@@ -190,15 +197,15 @@ namespace sssdk
 				{
 					// ボーンにより影響を受けた座標(ローカル座標)
 					Mat4x4 invMat = m_worldMatrix.inverse();
-					Float3 out = invMat.transformPoint(Float3{ outTotal, 0.0f });
+					Float3 out2 = invMat.transformPoint(Float3{ outTotal, 0.0f });
 
 					// デフォームによる影響(ローカル座標)
 					Float2 vec = getOffsetLocalVertices(i);
-					outTotal = out.xy() + vec;
+					outTotal = out2.xy() + vec;
 
 					// ワールド座標に変換
-					out = m_worldMatrix.transformPoint(Float3{ outTotal, 0.0f });
-					outTotal = out.xy();
+					out2 = m_worldMatrix.transformPoint(Float3{ outTotal, 0.0f });
+					outTotal = out2.xy();
 				}
 
 				drawVertices[i].pos = outTotal;

@@ -18,6 +18,12 @@ namespace sssdk
 
 		void Cleanup();
 
+		void setWeight(int32 n, int32 weight);
+		void setBonePart(int32 n, SSDrawPart* part);
+		void setOffset(int32 n, const Float3& offset);
+
+		void setBindBoneNum(int32 num);
+
 		int32 getBoneNum() const;
 
 		int32 getWeight(int32 n) const;

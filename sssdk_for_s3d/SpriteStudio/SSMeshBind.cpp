@@ -3,6 +3,7 @@
 
 namespace sssdk
 {
+
 	SSMeshBind::SSMeshBind()
 		: m_infos{}
 	{
@@ -21,17 +22,18 @@ namespace sssdk
 	bool SSMeshBind::load(const String& line)
 	{
 		const auto& lines = line.split(U' ');
+		// 空の場合もある
 		if (lines.isEmpty())
 		{
-			return false;
+			return true;
 		}
 		for (size_t i = 0; (i + 4) < lines.size(); i += 4)
 		{
 			int32 boneIndex = ParseOr<int32, int32>(lines[i + 1], 0);
 			int32 weight = ParseOr<int32, int32>(lines[i + 2], 0);
-			double x = ParseOr<double, double>(lines[i + 3], 0.0);
-			double y = ParseOr<double, double>(lines[i + 4], 0.0);
-			m_infos.emplace_back(boneIndex, weight, Vec2{ x, y });
+			float x = ParseOr<float, float>(lines[i + 3], 0.0f);
+			float y = ParseOr<float, float>(lines[i + 4], 0.0f);
+			m_infos.emplace_back(boneIndex, weight, Float3{ x, y, 0.0f });
 		}
 		return true;
 	}

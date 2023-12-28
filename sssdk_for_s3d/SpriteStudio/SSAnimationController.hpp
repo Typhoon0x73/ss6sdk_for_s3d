@@ -9,9 +9,11 @@ namespace sssdk
 	class SSProject;
 	class SSAnimeSettings;
 	class SSDrawPart;
+	class SSModel;
 	class SSAnimationPack;
 	class SSAnimation;
 	class SSAnimationPart;
+	class SSMeshAnimator;
 
 	class SSAnimationController
 	{
@@ -32,6 +34,12 @@ namespace sssdk
 		double getTime() const;
 		bool isLoop() const;
 		bool isAnimationEnd() const;
+
+		SSDrawPart* getDrawPart(size_t index);
+		const SSDrawPart* getDrawPart(size_t index) const;
+		size_t getDrawPartNum() const;
+
+		const SSModel* getModel() const;
 
 	private:
 
@@ -56,6 +64,7 @@ namespace sssdk
 		bool m_isAnimationEnd;
 		const SSAnimeSettings* m_pAnimeSettings;
 		Array<std::unique_ptr<SSDrawPart>> m_drawParts;
+		std::unique_ptr<SSMeshAnimator> m_pMeshAnimator;
 	};
 }
 

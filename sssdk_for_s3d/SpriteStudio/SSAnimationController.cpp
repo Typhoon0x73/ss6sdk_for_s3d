@@ -1,4 +1,5 @@
 ﻿
+#include "SSMeshAnimator.hpp"
 #include "SSAnimationController.hpp"
 #include "SSAnimeSettings.hpp"
 #include "SSAnimationPart.hpp"
@@ -6,20 +7,27 @@
 #include "SSDrawPart.hpp"
 #include "SSDrawCellPart.hpp"
 #include "SSDrawMeshPart.hpp"
+#include "SSModel.hpp"
 
 namespace sssdk
 {
 	namespace
 	{
-		SSDrawPart* createDrawPart(const SSProject* proj, StringView pack, const SSAnimationPart* part, const ModelPartType& type)
+		SSDrawPart* createDrawPart(
+			const SSProject* proj, StringView pack, const SSAnimationPart* part, const ModelPartType& type,
+			SSMeshAnimator* meshAnimator
+		)
 		{
 			switch (type)
 			{
 			case ModelPartType::normal:
 				return new SSDrawCellPart(pack, part, proj);
 			case ModelPartType::mesh:
-				return new SSDrawMeshPart(pack, part, proj);
-				//break;
+			{
+				auto* pMeshPart = new SSDrawMeshPart(pack, part, proj);
+				meshAnimator->addMeshPart(pMeshPart);
+				return pMeshPart;
+			}
 			case ModelPartType::null:
 			case ModelPartType::shape:
 			case ModelPartType::text:
@@ -54,6 +62,7 @@ namespace sssdk
 		, m_pAnimeSettings{ nullptr }
 		, m_drawParts{}
 		, m_isAnimationEnd{ false }
+		, m_pMeshAnimator{ nullptr }
 	{
 	}
 
@@ -103,6 +112,13 @@ namespace sssdk
 			}
 		}
 
+		// メッシュアニメーターの作成
+		{
+			auto* pMeshAnimator = new SSMeshAnimator();
+			pMeshAnimator->setAnimationController(this);
+			m_pMeshAnimator.reset(pMeshAnimator);
+		}
+
 		// 描画パーツの生成
 		createDrawParts();
 
@@ -111,6 +127,9 @@ namespace sssdk
 
 		// 描画パーツをソート
 		sortDrawParts();
+
+		// メッシュアニメーションを初期化
+		m_pMeshAnimator->makeMeshBoneList();
 
 		return true;
 	}
@@ -125,13 +144,14 @@ namespace sssdk
 		Vec2 pivot = m_pAnimeSettings->getPivot();
 		pivot.y *= -1; // スプライトスタジオでは上が＋なので反転しておく
 		const auto& canvasOffset = m_pAnimeSettings->getCanvasSize() * (pivot + Vec2{ 0.5, 0.5 }) + pos;
+		const Transformer2D canvasTrans{ Mat3x2::Translate(canvasOffset) };
 		for (const auto& it : m_drawParts)
 		{
 			if (not it)
 			{
 				continue;
 			}
-			it->draw(canvasOffset);
+			it->draw();
 		}
 	}
 
@@ -165,10 +185,43 @@ namespace sssdk
 		return m_isAnimationEnd;
 	}
 
+	SSDrawPart* SSAnimationController::getDrawPart(size_t index)
+	{
+		if (index >= m_drawParts.size())
+		{
+			return nullptr;
+		}
+		return m_drawParts[index].get();
+	}
+
+	const SSDrawPart* SSAnimationController::getDrawPart(size_t index) const
+	{
+		if (index >= m_drawParts.size())
+		{
+			return nullptr;
+		}
+		return m_drawParts[index].get();
+	}
+
+	size_t SSAnimationController::getDrawPartNum() const
+	{
+		return m_drawParts.size();
+	}
+
+	const SSModel* SSAnimationController::getModel() const
+	{
+		if (m_pAnimationPack == nullptr)
+		{
+			return nullptr;
+		}
+		return &(m_pAnimationPack->getModel());
+	}
+
 	void SSAnimationController::createDrawParts()
 	{
 		m_drawPartTable.clear();
 		m_setupDrawPartTable.clear();
+		m_pMeshAnimator->clearMeshList();
 
 		const auto& model = m_pAnimationPack->getModel();
 		const auto& setupAnim = m_pAnimationPack->getSetupAnimation();
@@ -190,7 +243,10 @@ namespace sssdk
 			{
 				continue;
 			}
-			SSDrawPart* drawPart = createDrawPart(m_pProject, m_pAnimationPack->getName(), &part, modelPart->getType());
+			SSDrawPart* drawPart = createDrawPart(
+				m_pProject, m_pAnimationPack->getName(), &part,
+				modelPart->getType(), m_pMeshAnimator.get()
+			);
 			if (drawPart)
 			{
 				if (const auto* setupPart = setupAnim->getAnimPart(part.getName()))
@@ -309,6 +365,10 @@ namespace sssdk
 				continue;
 			}
 			it->update(frame);
+		}
+		if (m_pMeshAnimator)
+		{
+			m_pMeshAnimator->update();
 		}
 	}
 }

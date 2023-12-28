@@ -130,6 +130,7 @@
     <ClCompile Include="SpriteStudio\SSDrawCellPart.cpp" />
     <ClCompile Include="SpriteStudio\SSDrawMeshPart.cpp" />
     <ClCompile Include="SpriteStudio\SSDrawPart.cpp" />
+    <ClCompile Include="SpriteStudio\SSMeshAnimator.cpp" />
     <ClCompile Include="SpriteStudio\SSMeshBind.cpp" />
     <ClCompile Include="SpriteStudio\SSModel.cpp" />
     <ClCompile Include="SpriteStudio\SSModelPart.cpp" />
@@ -350,6 +351,7 @@
     <ClInclude Include="SpriteStudio\SSDrawCellPart.hpp" />
     <ClInclude Include="SpriteStudio\SSDrawMeshPart.hpp" />
     <ClInclude Include="SpriteStudio\SSDrawPart.hpp" />
+    <ClInclude Include="SpriteStudio\SSMeshAnimator.hpp" />
     <ClInclude Include="SpriteStudio\SSMeshBind.hpp" />
     <ClInclude Include="SpriteStudio\SSModel.hpp" />
     <ClInclude Include="SpriteStudio\SSModelPart.hpp" />

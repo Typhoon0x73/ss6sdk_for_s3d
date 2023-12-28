@@ -319,7 +319,7 @@ namespace sssdk
 		updateMatrix();
 	}
 
-	void SSDrawPart::draw(const Vec2&) const
+	void SSDrawPart::draw() const
 	{
 	}
 
@@ -386,6 +386,15 @@ namespace sssdk
 	const SSAnimationPart* SSDrawPart::getAnimPart() const
 	{
 		return m_pAnimPart;
+	}
+
+	ModelPartType SSDrawPart::getModelPartType() const
+	{
+		if (m_pModelPart == nullptr)
+		{
+			return ModelPartType::null;
+		}
+		return m_pModelPart->getType();
 	}
 
 	void SSDrawPart::updateMatrix()

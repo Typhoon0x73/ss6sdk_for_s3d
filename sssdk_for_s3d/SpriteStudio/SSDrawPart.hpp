@@ -22,7 +22,7 @@ namespace sssdk
 		virtual ~SSDrawPart();
 
 		virtual void update(int32 frame);
-		virtual void draw(const Vec2& canvasOffset) const;
+		virtual void draw() const;
 
 		void setParent(SSDrawPart* const parent);
 		void setModelPart(const SSModelPart* const model);
@@ -32,6 +32,8 @@ namespace sssdk
 		SIV3D_NODISCARD_CXX20 SSDrawPart* getParent() const;
 		SIV3D_NODISCARD_CXX20 const SSAnimationPart* getSetupPart() const;
 		SIV3D_NODISCARD_CXX20 const SSAnimationPart* getAnimPart() const;
+
+		ModelPartType getModelPartType() const;
 
 		const Mat4x4& getWorldMatrix() const;
 

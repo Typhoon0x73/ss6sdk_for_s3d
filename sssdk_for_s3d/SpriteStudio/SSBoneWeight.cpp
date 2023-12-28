@@ -32,6 +32,26 @@ namespace sssdk
 		}
 	}
 
+	void SSBoneWeight::setWeight(int32 n, int32 weight)
+	{
+		m_weight[n] = weight;
+	}
+
+	void SSBoneWeight::setBonePart(int32 n, SSDrawPart* part)
+	{
+		m_bone[n] = part;
+	}
+
+	void SSBoneWeight::setOffset(int32 n, const Float3& offset)
+	{
+		m_offset[n] = offset;
+	}
+
+	void SSBoneWeight::setBindBoneNum(int32 num)
+	{
+		m_bindBoneNum = num;
+	}
+
 	int32 SSBoneWeight::getBoneNum() const
 	{
 		return m_bindBoneNum;

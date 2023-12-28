@@ -70,7 +70,7 @@ namespace sssdk
 		}
 	}
 
-	void SSDrawCellPart::draw(const Vec2& canvasOffset) const
+	void SSDrawCellPart::draw() const
 	{
 		if (m_isHide)
 		{
@@ -100,7 +100,7 @@ namespace sssdk
 		Float3 trans, scale;
 		Quaternion rotate;
 		m_worldMatrix.decompose(scale, rotate, trans);
-		const auto& drawAtPos = canvasOffset + cellOffset + Vec2{ trans.x, trans.y };
+		const auto& drawAtPos = cellOffset + Vec2{ trans.x, trans.y };
 		float alpha = getAlpha() * m_localAlpha;
 		{
 			const BlendState blend = GetBlendState(m_pModelPart->getAlphaBlendType());
